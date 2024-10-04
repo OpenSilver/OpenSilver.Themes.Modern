@@ -1,0 +1,234 @@
+﻿<Page x:Class="ModernThemeTest.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ModernThemeTest"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:flatdesign="clr-namespace:OpenSilver.Themes.Modern;assembly=OpenSilver.Themes.Modern"
+      mc:Ignorable="d">
+
+    <Grid Background="#FFFFFF">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Canvas Background="Transparent" Height="1500">
+                <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7" Foreground="#FFFFFFFF"/>
+                <Button Canvas.Left="150" Canvas.Top="54" Content="Button" FontSize="13" Padding="12,7" Style="{StaticResource ClearFlatButtonStyle}"/>
+                <Button Canvas.Left="250" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7" IsEnabled="False"/>
+                <TextBlock Canvas.Left="53" Canvas.Top="101" Text="Textblock" FontSize="13"/>
+                <TextBox Canvas.Left="55" Canvas.Top="129" Text="{Binding SomeString, Mode=TwoWay, ValidatesOnDataErrors=True}" FontSize="13" AcceptsReturn="True" MinWidth="80"/>
+                <TextBox Canvas.Left="155" Canvas.Top="129" Text="TextBox" FontSize="13" IsEnabled="False"/>
+                <CheckBox Canvas.Left="56" Canvas.Top="177" Content="Checkbox" FontSize="13" IsThreeState="True" />
+                <CheckBox Canvas.Left="156" Canvas.Top="177" Content="Checkbox" FontSize="13" IsThreeState="True" IsEnabled="False" IsChecked="True"/>
+                <CheckBox Canvas.Left="256" Canvas.Top="177" Content="Checkbox" FontSize="13" IsThreeState="True" IsEnabled="False"/>
+                <ToggleButton Canvas.Left="58" Canvas.Top="208" Content="ToggleButton" FontSize="13" Padding="12,7" />
+                <ToggleButton Canvas.Left="178" Canvas.Top="208" Content="ToggleButton" FontSize="13" Padding="12,7" />
+                <ToggleButton Canvas.Left="298" Canvas.Top="208" Content="ToggleButton" FontSize="13" Padding="12,7" IsEnabled="False"/>
+                <DatePicker Canvas.Left="57" Canvas.Top="254" FontSize="13" />
+                <DatePicker Canvas.Left="197" Canvas.Top="254" FontSize="13" IsEnabled="False"/>
+                <TimePicker Canvas.Left="356" Canvas.Top="253" FontSize="13"/>
+                <TimePicker Canvas.Left="500" Canvas.Top="253" FontSize="13" IsEnabled="False"/>
+                <Calendar x:Name="EnabledCalendar" Canvas.Left="640" Canvas.Top="254" SelectionMode="MultipleRange" />
+                <Calendar Canvas.Left="907" Canvas.Top="254" SelectionMode="MultipleRange" SelectedDate="{Binding ElementName=EnabledCalendar, Path=SelectedDate}" IsEnabled="False"/>
+                <PasswordBox Canvas.Left="60" Canvas.Top="300" Password="passw0rd" FontSize="13"/>
+                <RadioButton Canvas.Left="60" Canvas.Top="342" Content="RadioButton" FontSize="13" />
+                <RadioButton Canvas.Left="170" Canvas.Top="342" Content="RadioButton" FontSize="13" />
+                <RadioButton Canvas.Left="280" Canvas.Top="342" Content="RadioButton" FontSize="13" GroupName="disabled" IsChecked="True" IsEnabled="False"/>
+                <RadioButton Canvas.Left="390" Canvas.Top="342" Content="RadioButton" FontSize="13" GroupName="disabled" IsEnabled="False"/>
+                <Slider Canvas.Left="64" Canvas.Top="371" MinWidth="60" />
+                <Slider Canvas.Left="164" Canvas.Top="371" MinHeight="60" Orientation="Vertical"/>
+                <Slider Canvas.Left="264" Canvas.Top="371" MinWidth="60" IsEnabled="False"/>
+                <Slider Canvas.Left="364" Canvas.Top="371" MinHeight="60" Orientation="Vertical" IsEnabled="False"/>
+                <ListBox Canvas.Left="497" Canvas.Top="53" Width="200" Height="150" FontSize="13" SelectionMode="Multiple">
+                    <ListBoxItem Content="Item1" IsSelected="True" />
+                    <ListBoxItem Content="Item2 with a long text so we see the scrollbars" />
+                    <ListBoxItem Content="Item3" />
+                    <ListBoxItem Content="Item4" />
+                    <ListBoxItem Content="Item5" />
+                    <ListBoxItem Content="Item6" />
+                </ListBox>
+                <ListBox Canvas.Left="700" Canvas.Top="53" Width="200" Height="150" FontSize="13" SelectionMode="Multiple" IsEnabled="False">
+                    <ListBoxItem Content="Item1" IsSelected="True" />
+                    <ListBoxItem Content="Item2 with a long text so we see the scrollbars" />
+                    <ListBoxItem Content="Item3" />
+                    <ListBoxItem Content="Item4" />
+                    <ListBoxItem Content="Item5" />
+                    <ListBoxItem Content="Item6" />
+                </ListBox>
+                <ComboBox Canvas.Left="451" Canvas.Top="500" MinWidth="66" Padding="6,4" FontSize="13" flatdesign:FlatDesignProperties.Label="Pick an item">
+                    <ComboBoxItem Content="Item1" IsSelected="True" />
+                    <ComboBoxItem Content="Item2" />
+                </ComboBox>
+                <ComboBox Canvas.Left="451" Canvas.Top="540" MinWidth="66" Padding="6,4" FontSize="13" flatdesign:FlatDesignProperties.Label="Pick an item" IsEnabled="False">
+                    <ComboBoxItem Content="Item1" IsSelected="True" />
+                    <ComboBoxItem Content="Item2" />
+                </ComboBox>
+                <TreeView Canvas.Left="56" Canvas.Top="450" FontSize="13">
+                    <TreeViewItem Header="Root" IsExpanded="True">
+                        <TreeViewItem Header="Child 1" IsExpanded="True">
+                            <TreeViewItem Header="Grandchild 1" />
+                            <TreeViewItem Header="Grandchild 2" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Child 2">
+                            <TreeViewItem Header="Grandchild 3" />
+                            <TreeViewItem Header="Grandchild 4" />
+                        </TreeViewItem>
+                    </TreeViewItem>
+                </TreeView>
+                <TreeView Canvas.Left="274" Canvas.Top="450" FontSize="13" IsEnabled="False">
+                    <TreeViewItem Header="Root" IsExpanded="True">
+                        <TreeViewItem Header="Child 1" IsExpanded="True">
+                            <TreeViewItem Header="Grandchild 1" />
+                            <TreeViewItem Header="Grandchild 2" />
+                        </TreeViewItem>
+                        <TreeViewItem Header="Child 2">
+                            <TreeViewItem Header="Grandchild 3" />
+                            <TreeViewItem Header="Grandchild 4" />
+                        </TreeViewItem>
+                    </TreeViewItem>
+                </TreeView>
+                <ItemsControl Canvas.Left="457" Canvas.Top="423">
+                    <TextBlock Text="Item 1" />
+                    <TextBlock Text="Item 2" />
+                    <TextBlock Text="Item 3" />
+                </ItemsControl>
+                <DataForm Canvas.Left="760" Canvas.Top="575" ItemsSource="{Binding People}" Header="Person"/>
+                <DataForm Canvas.Left="1000" Canvas.Top="575" ItemsSource="{Binding People}" Header="Person" IsEnabled="False"/>
+                <DataGrid Canvas.Left="58" Canvas.Top="647" ItemsSource="{Binding People}" />
+                <DataGrid Canvas.Left="308" Canvas.Top="647" ItemsSource="{Binding People}" IsEnabled="False"/>
+                <DataPager Canvas.Left="560" Canvas.Top="577" DisplayMode="FirstLastNumeric"/>
+                <DataPager Canvas.Left="560" Canvas.Top="627" DisplayMode="FirstLastPreviousNext"/>
+                <DataPager Canvas.Left="560" Canvas.Top="677" DisplayMode="FirstLastPreviousNextNumeric"/>
+                <DataPager Canvas.Left="560" Canvas.Top="727" DisplayMode="Numeric"/>
+                <DataPager Canvas.Left="560" Canvas.Top="777" DisplayMode="PreviousNext"/>
+                <DataPager Canvas.Left="560" Canvas.Top="827" DisplayMode="PreviousNextNumeric"/>
+                <TabControl Canvas.Left="52" Canvas.Top="915" MinHeight="70">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="222" Canvas.Top="915" MinHeight="70" IsEnabled="False">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="52" Canvas.Top="1015" MinHeight="70" TabStripPlacement="Left">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="222" Canvas.Top="1015" MinHeight="70" IsEnabled="False" TabStripPlacement="Left">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="52" Canvas.Top="1115" MinHeight="70" TabStripPlacement="Right">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="222" Canvas.Top="1115" MinHeight="70" IsEnabled="False" TabStripPlacement="Right">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="52" Canvas.Top="1215" MinHeight="70" TabStripPlacement="Bottom">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <TabControl Canvas.Left="222" Canvas.Top="1215" MinHeight="70" IsEnabled="False" TabStripPlacement="Bottom">
+                    <TabItem Header="TabItem1">
+                        <RadioButton Content="Content1"/>
+                    </TabItem>
+                    <TabItem Header="TabItem2">
+                        <RadioButton Content="Content2"/>
+                    </TabItem>
+                </TabControl>
+                <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="20" Header="Expander" Content="Content" IsExpanded="True" />
+                <Expander Visibility="Collapsed" Canvas.Left="941" Canvas.Top="20" Header="Expander" Content="Content" IsExpanded="True" IsEnabled="False"/>
+                <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="100" Header="Expander" Content="Content" ExpandDirection="Up" IsExpanded="True" />
+                <Expander Visibility="Collapsed" Canvas.Left="941" Canvas.Top="100" Header="Expander" Content="Content" ExpandDirection="Up" IsExpanded="True" IsEnabled="False"/>
+
+                <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="180" Header="Expander" Content="Content" ExpandDirection="Left" IsExpanded="True" />
+                <Expander Visibility="Collapsed" Canvas.Left="981" Canvas.Top="180" Header="Expander" Content="Content" ExpandDirection="Left" IsExpanded="True" IsEnabled="False"/>
+
+                <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" />
+                <Expander Visibility="Collapsed" Canvas.Left="981" Canvas.Top="260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" IsEnabled="False"/>
+
+                <ChildWindow Canvas.Left="379" Canvas.Top="922" Title="Title" Content="ChildWindow" Width="300" Height="150" />
+                <Accordion Canvas.Left="1150" Canvas.Top="20" FontSize="13">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1250" Canvas.Top="20" FontSize="13" IsEnabled="False">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1150" Canvas.Top="110" FontSize="13" ExpandDirection="Up">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1250" Canvas.Top="110" FontSize="13" ExpandDirection="Up" IsEnabled="False">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1150" Canvas.Top="200" FontSize="13" ExpandDirection="Right">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1270" Canvas.Top="200" FontSize="13" ExpandDirection="Right" IsEnabled="False">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1150" Canvas.Top="290" FontSize="13" ExpandDirection="Left">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+                <Accordion Canvas.Left="1270" Canvas.Top="290" FontSize="13" ExpandDirection="Left" IsEnabled="False">
+                    <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
+                    <AccordionItem Header="Item2" Content="Content" />
+                </Accordion>
+
+                <Frame Canvas.Left="781" Canvas.Top="892" MinHeight="100" MinWidth="100" Content="Use the Frame control to navigate" BorderBrush="#FF808080" BorderThickness="1" />
+                <HyperlinkButton Canvas.Left="1009" Canvas.Top="888" Content="OpenSilver.net" FontSize="13" NavigateUri="https://opensilver.net/" TargetName="_blank" />
+
+                <AutoCompleteBox Canvas.Left="1009" Canvas.Top="958"  Width="120" Height="32" FontSize="13" ItemsSource="{Binding People}" ValueMemberPath="FirstName" />
+                <AutoCompleteBox Canvas.Left="1149" Canvas.Top="958"  Width="120" Height="32" FontSize="13" ItemsSource="{Binding People}" ValueMemberPath="FirstName" IsEnabled="False" />
+
+                <BusyIndicator Canvas.Left="379" Canvas.Top="1088" IsBusy="True" />
+
+
+
+                <TextBlock Canvas.Left="51" Canvas.Top="15" Height="24" Text="Textblock" FontSize="13" Padding="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" />
+                <Button Canvas.Left="138" Canvas.Top="15" Content="Button" FontSize="13" Padding="12,7" />
+                <TextBox Canvas.Left="222" Canvas.Top="15" Text="TextBox" FontSize="13" />
+                <CheckBox Canvas.Left="292" Canvas.Top="15" Content="Checkbox" FontSize="13" />
+                <ToggleButton Canvas.Left="386" Canvas.Top="15" Content="ToggleButton" FontSize="13" Padding="12,7" />
+                <DatePicker Canvas.Left="512" Canvas.Top="15" FontSize="13" />
+                <TimePicker Canvas.Left="657" Canvas.Top="15" FontSize="13" />
+                <PasswordBox Canvas.Left="797" Canvas.Top="15" Password="passw0rd" FontSize="13" />
+                <RadioButton Canvas.Left="876" Canvas.Top="15" Content="RadioButton" FontSize="13" />
+            </Canvas>
+        </ScrollViewer>
+    </Grid>
+</Page>

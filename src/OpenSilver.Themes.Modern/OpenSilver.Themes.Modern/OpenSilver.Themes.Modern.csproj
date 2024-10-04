@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <DefineSilverlight>true</DefineSilverlight>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>OpenSilver.Themes.Modern</Title>
+    <Version>0.1.0</Version>
+    <Authors>OpenSilver</Authors>
+    <Company>Userware</Company>
+    <Description>Styles for controls with a more modern look in OpenSilver</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="FlatDesignProperties.cs" />
+    <Compile Include="ThemeSelector.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Include="StylesDesign.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\BrightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>
