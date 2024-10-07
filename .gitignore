@@ -396,3 +396,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+src/OpenSilver.Themes.Modern/ModernThemeTest/ModernThemeTest.Browser/wwwroot/libs/
+src/OpenSilver.Themes.Modern/ModernThemeTest/ModernThemeTest.Browser/wwwroot/resources/
