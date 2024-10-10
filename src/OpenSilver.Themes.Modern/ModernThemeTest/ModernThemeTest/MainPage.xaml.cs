@@ -1,5 +1,4 @@
-﻿using OpenSilver.Themes.Modern;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,7 +15,6 @@ namespace ModernThemeTest
     {
         public MainPage()
         {
-            ThemeSelector.SelectTheme(ThemesSelection.Bright);
             this.InitializeComponent();
 
             this.DataContext = new DtCtx();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OpenSilver.Themes.Modern;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,9 +12,14 @@ namespace ModernThemeTest
     {
         public App()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            // Enter construction logic here...
+            // Apply theme globally. Controls with a DefaultStyleKey will first try to find a style in this theme,
+            // and fall back to the default theme (generic.xaml) if no style could be found.
+            Theme = new ModernTheme();
+
+            // Import themes in application resources. Styles are then used implicitely or via static resources.
+            //ThemeSelector.SelectTheme(ThemesSelection.Dark);
 
             var mainPage = new MainPage();
             Window.Current.Content = mainPage;

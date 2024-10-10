@@ -1,49 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace OpenSilver.Themes.Modern
 {
-    static public class ThemeSelector
+    public static class ThemeSelector
     {
-        static string _assemblyName;
-        static ThemesSelection _currentTheme;
+        private static ThemesSelection _currentTheme;
 
         public static StyleType StyleType { get; set; } = StyleType.Implicit;
 
-        static ThemeSelector()
-        {
-            Assembly currentAssembly = Assembly.GetExecutingAssembly();
-            _assemblyName = currentAssembly.GetName().Name;
-        }
-
-        public static void ApplyApplicationStyle()
-        {
-            LoadResourceFile("StylesDesign.xaml");
-        }
-
-        static public void SelectTheme(ThemesSelection theme)
+        public static void SelectTheme(ThemesSelection theme)
         {
             _currentTheme = theme;
-            LoadResourceFile($"Themes/{theme.ToString()}Theme.xaml");
-            ApplyApplicationStyle();
-            SaveThemeToIsolatedStorage(theme);
-        }
 
+            ResourceDictionary palette = Palette.LoadPalette(theme == ThemesSelection.Bright ? Palette.Light : Palette.Dark);
+            Application.Current.Resources.MergedDictionaries.Add(palette);
 
-        static void LoadResourceFile(string path)
-        {
-            ResourceDictionary resource = new ResourceDictionary
+            var themeResources = new ResourceDictionary
             {
-                Source = new Uri($"/{_assemblyName};component/{path}", UriKind.Relative)
+                Source = new Uri($"/OpenSilver.Themes.Modern;component/StylesDesign.xaml", UriKind.Relative)
             };
-            Application.LoadComponent(resource, resource.Source);
-            Application.Current.Resources.MergedDictionaries.Add(resource);
+            Application.LoadComponent(themeResources, themeResources.Source);
+            Application.Current.Resources.MergedDictionaries.Add(themeResources);
+
+            SaveThemeToIsolatedStorage(theme);
         }
 
         public static void SaveThemeToIsolatedStorage(ThemesSelection value)

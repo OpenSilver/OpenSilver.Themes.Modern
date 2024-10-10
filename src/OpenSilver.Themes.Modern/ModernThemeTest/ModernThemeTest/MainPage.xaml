@@ -11,7 +11,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Canvas Background="Transparent" Height="1500">
                 <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7" Foreground="#FFFFFFFF"/>
-                <Button Canvas.Left="150" Canvas.Top="54" Content="Button" FontSize="13" Padding="12,7" Style="{StaticResource ClearFlatButtonStyle}"/>
+                <!--<Button Canvas.Left="150" Canvas.Top="54" Content="Button" FontSize="13" Padding="12,7" Style="{StaticResource ClearFlatButtonStyle}"/>-->
                 <Button Canvas.Left="250" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7" IsEnabled="False"/>
                 <TextBlock Canvas.Left="53" Canvas.Top="101" Text="Textblock" FontSize="13"/>
                 <TextBox Canvas.Left="55" Canvas.Top="129" Text="{Binding SomeString, Mode=TwoWay, ValidatesOnDataErrors=True}" FontSize="13" AcceptsReturn="True" MinWidth="80"/>

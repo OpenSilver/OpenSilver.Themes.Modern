@@ -14,21 +14,50 @@
 
   <ItemGroup>
     <Compile Include="FlatDesignProperties.cs" />
+    <Compile Include="ModernTheme.cs" />
+    <Compile Include="Palettes\Palette.cs" />
     <Compile Include="ThemeSelector.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.0.1" />
+    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-10-08-162453-0a5117f1" />
   </ItemGroup>
 
   <ItemGroup>
     <Page Include="StylesDesign.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\BrightTheme.xaml">
+    <Page Include="Palettes\BrightPalette.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\DarkTheme.xaml">
+    <Page Include="Palettes\DarkPalette.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.Data.DataForm.Toolkit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.Data.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.Input.Toolkit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.Input.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.Layout.Toolkit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.Toolkit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\OpenSilver.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

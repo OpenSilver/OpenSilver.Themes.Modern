@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenSilver.Themes.Modern", "OpenSilver.Themes.Modern\OpenSilver.Themes.Modern.csproj", "{1A717458-CDD2-4D73-85C0-2FE99B309799}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenSilver.Themes.Modern", "OpenSilver.Themes.Modern\OpenSilver.Themes.Modern.csproj", "{1A717458-CDD2-4D73-85C0-2FE99B309799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernThemeTest.Browser", "ModernThemeTest\ModernThemeTest.Browser\ModernThemeTest.Browser.csproj", "{C4247AAD-5E0E-4F04-971E-D3BB1850CF8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernThemeTest.Browser", "ModernThemeTest\ModernThemeTest.Browser\ModernThemeTest.Browser.csproj", "{C4247AAD-5E0E-4F04-971E-D3BB1850CF8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernThemeTest", "ModernThemeTest\ModernThemeTest\ModernThemeTest.csproj", "{1EE7602D-582F-449A-9F26-DB37C4A86B18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModernThemeTest", "ModernThemeTest\ModernThemeTest\ModernThemeTest.csproj", "{1EE7602D-582F-449A-9F26-DB37C4A86B18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernThemeTest.Simulator", "ModernThemeTest\ModernThemeTest.Simulator\ModernThemeTest.Simulator.csproj", "{0E266F83-E766-4E50-9553-DFFD8FF7B759}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{0804C830-CABD-4773-8940-524D5DDF4DFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4247AAD-5E0E-4F04-971E-D3BB1850CF8B} = {0804C830-CABD-4773-8940-524D5DDF4DFA}
+		{1EE7602D-582F-449A-9F26-DB37C4A86B18} = {0804C830-CABD-4773-8940-524D5DDF4DFA}
+		{0E266F83-E766-4E50-9553-DFFD8FF7B759} = {0804C830-CABD-4773-8940-524D5DDF4DFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0E53191-D381-444A-A6D2-8476528118E7}
