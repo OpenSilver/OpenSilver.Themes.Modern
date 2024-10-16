@@ -160,7 +160,9 @@
     <Style x:Name="FlatDatePicker"
            TargetType="controls:DatePicker">
         <Setter Property="Background"
-                Value="#FFFFFFFF" />
+                Value="{StaticResource SecondaryBrush}" />
+        <Setter Property="Foreground"
+        Value="{StaticResource TextBrush}" />
         <Setter Property="Padding"
                 Value="2" />
         <Setter Property="SelectionBackground"
@@ -281,7 +283,9 @@
     <!--Following is for Month/Year buttons when in Year/Decade display Mode-->
     <Style TargetType="controlsPrimitives:CalendarButton">
         <Setter Property="Background"
-                Value="White" />
+                Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="Foreground"
+                Value="{StaticResource TextBrush}" />
         <Setter Property="MinWidth"
                 Value="40" />
         <Setter Property="MinHeight"
@@ -336,6 +340,12 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                      Storyboard.TargetName="NormalText"
+                                                                      Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="0"
+                                                                 Value="{StaticResource TextOverPrimaryColor}" />
+                                        </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>
@@ -397,7 +407,7 @@
                             <Border CornerRadius="12"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness=".5,0.5,1,1"
-                                    Background="White" />
+                                    Background="{TemplateBinding Background}" />
                         </Grid>
                         <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         Margin="3,3,3,3"
@@ -407,7 +417,7 @@
                                         IsTabStop="False"
                                         Content="{TemplateBinding Content}"
                                         ContentTemplate="{TemplateBinding ContentTemplate}"
-                                        Foreground="#FF333333" />
+                                        Foreground="{TemplateBinding Foreground}" />
                         <Rectangle x:Name="CalendarButtonFocusVisual"
                                    IsHitTestVisible="false"
                                    Visibility="Collapsed"
@@ -424,6 +434,8 @@
     <Style TargetType="controlsPrimitives:CalendarDayButton">
         <Setter Property="Background"
                 Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="Foreground"
+                Value="{StaticResource TextBrush}" />
         <Setter Property="MinWidth"
                 Value="33" />
         <Setter Property="MinHeight"
@@ -479,7 +491,7 @@
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="NormalText"
                                                                        Storyboard.TargetProperty="Opacity">
                                             <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value=".35" />
+                                                                  Value=".45" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DayButtonSelectedVisual"
                                                                        Storyboard.TargetProperty="Opacity">
@@ -512,7 +524,7 @@
                                                                       Storyboard.TargetName="NormalText"
                                                                       Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource SecondaryColor}" />
+                                                                 Value="{StaticResource TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -634,7 +646,8 @@
                                         IsTabStop="False"
                                         Content="{TemplateBinding Content}"
                                         ContentTemplate="{TemplateBinding ContentTemplate}"
-                                        Foreground="#FF605640" />
+                                        Foreground="{TemplateBinding Foreground}" />
+                        <!--Foreground="#FF605640" />-->
                         <Path Margin="3"
                               x:Name="Blackout"
                               Opacity="0"
@@ -829,7 +842,7 @@
                                         <ColumnDefinition Width="20" />
                                     </Grid.ColumnDefinitions>
                                     <Border x:Name="HeaderBackground"
-                                            Background="White"
+                                            Background="Transparent"
                                             BorderBrush="{StaticResource FadedBrush}"
                                             BorderThickness="1"
                                             CornerRadius="7"
@@ -925,7 +938,7 @@
         <Setter Property="BorderThickness"
                 Value="0" />
         <Setter Property="Background"
-                Value="White" />
+                Value="{StaticResource SecondaryColor}" />
         <Setter Property="Foreground"
                 Value="{StaticResource TextBrush}" />
         <Setter Property="Effect">
@@ -961,7 +974,7 @@
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Background"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="Transparent" />
         <Setter Property="Foreground"
                 Value="{StaticResource TextBrush}" />
         <Setter Property="BorderBrush"
@@ -1135,7 +1148,7 @@
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="Background"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="Transparent" />
         <Setter Property="BorderBrush"
                 Value="{StaticResource DarkBrush}" />
         <Setter Property="BorderThickness"

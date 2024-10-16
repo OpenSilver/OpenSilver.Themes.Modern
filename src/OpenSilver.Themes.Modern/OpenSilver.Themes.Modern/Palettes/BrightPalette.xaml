@@ -11,6 +11,7 @@
     <Color x:Key="FadedColor">#bababa</Color>
     <Color x:Key="VeryFadedColor">#fcfcfc</Color>
     <Color x:Key="TextColor">#000000</Color>
+    <Color x:Key="TextOverPrimaryColor">#FFFFFF</Color>
     <Color x:Key="PressColor">#000000</Color>
     <Color x:Key="DisabledColor">#a4a8bf</Color>
     <Color x:Key="AccentOverlayColor">#000000</Color>
@@ -21,6 +22,7 @@
     <SolidColorBrush x:Key="FadedBrush" Color="{StaticResource FadedColor}" />
     <SolidColorBrush x:Key="VeryFadedBrush" Color="{StaticResource VeryFadedColor}" />
     <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColor}" />
+    <SolidColorBrush x:Key="TextOverPrimaryBrush" Color="{StaticResource TextOverPrimaryColor}" />
     <SolidColorBrush x:Key="PressBrush" Color="{StaticResource PressColor}" />
     <SolidColorBrush x:Key="DisabledBrush" Color="{StaticResource DisabledColor}" />
     <SolidColorBrush x:Key="AccentOverlayBrush" Color="{StaticResource AccentOverlayColor}" />

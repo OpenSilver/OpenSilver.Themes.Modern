@@ -84,12 +84,12 @@
                         </vsm:VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
                                 CornerRadius="5"
-                                Background="{TemplateBinding Background}" />
+                                Background="Transparent" />
                         <Border x:Name="HasFocus"
                                 CornerRadius="7"
                                 Background="{TemplateBinding Background}"
                                 Margin="-3"
-                                Opacity=".7"
+                                Opacity=".4"
                                 Visibility="Collapsed" />
                         <Border x:Name="MouseHover"
                                 CornerRadius="5"
@@ -122,6 +122,8 @@
                 Value="{StaticResource FadedBrush}" />
         <Setter Property="Background"
                 Value="{StaticResource SecondaryBrush}" />
+        <Setter Property="Foreground"
+        Value="{StaticResource TextBrush}" />
         <Setter Property="DescriptionViewerPosition"
                 Value="Auto" />
         <Setter Property="LabelPosition"

@@ -7,10 +7,10 @@
       xmlns:flatdesign="clr-namespace:OpenSilver.Themes.Modern;assembly=OpenSilver.Themes.Modern"
       mc:Ignorable="d">
 
-    <Grid Background="#FFFFFF">
+    <Grid x:Name="MainBackground" Background="#FFFFFF">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <Canvas Background="Transparent" Height="1500">
-                <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7" Foreground="#FFFFFFFF"/>
+                <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7"/>
                 <!--<Button Canvas.Left="150" Canvas.Top="54" Content="Button" FontSize="13" Padding="12,7" Style="{StaticResource ClearFlatButtonStyle}"/>-->
                 <Button Canvas.Left="250" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7" IsEnabled="False"/>
                 <TextBlock Canvas.Left="53" Canvas.Top="101" Text="Textblock" FontSize="13"/>

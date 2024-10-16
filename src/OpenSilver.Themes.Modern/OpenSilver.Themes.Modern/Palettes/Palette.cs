@@ -37,6 +37,9 @@ namespace OpenSilver.Themes.Modern
             resources[nameof(TextColor)] = palette.TextColor;
             resources["TextBrush"] = new SolidColorBrush(palette.TextColor);
 
+            resources[nameof(TextOverPrimaryColor)] = palette.TextOverPrimaryColor;
+            resources["TextOverPrimaryBrush"] = new SolidColorBrush(palette.TextOverPrimaryColor);
+
             resources[nameof(PressColor)] = palette.PressColor;
             resources["PressBrush"] = new SolidColorBrush(palette.PressColor);
 
@@ -63,6 +66,7 @@ namespace OpenSilver.Themes.Modern
         public abstract Color FadedColor { get; }
         public abstract Color VeryFadedColor { get; }
         public abstract Color TextColor { get; }
+        public abstract Color TextOverPrimaryColor { get; }
         public abstract Color PressColor { get; }
         public abstract Color DisabledColor { get; }
         public abstract Color AccentOverlayColor { get; }
@@ -77,6 +81,7 @@ namespace OpenSilver.Themes.Modern
             public override Color FadedColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#bababa");
             public override Color VeryFadedColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#fcfcfc");
             public override Color TextColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
+            public override Color TextOverPrimaryColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
             public override Color PressColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
             public override Color DisabledColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#a4a8bf");
             public override Color AccentOverlayColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
@@ -87,11 +92,13 @@ namespace OpenSilver.Themes.Modern
         {
             public override Color PrimaryColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#1E2025");
             public override Color DarkColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#1E1025");
-            public override Color SecondaryColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#ffffff");
+            public override Color SecondaryColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#555555");
+            //public override Color SecondaryColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#ffffff");
             public override Color HoverColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#bababa");
             public override Color FadedColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#bababa");
             public override Color VeryFadedColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#0c0c0c");
             public override Color TextColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
+            public override Color TextOverPrimaryColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
             public override Color PressColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
             public override Color DisabledColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#a4a8bf");
             public override Color AccentOverlayColor { get; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");

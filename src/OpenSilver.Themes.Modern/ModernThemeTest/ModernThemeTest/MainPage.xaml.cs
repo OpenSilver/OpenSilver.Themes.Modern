@@ -8,6 +8,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using OpenSilver.Themes.Modern;
+using System.Windows.Media;
 
 namespace ModernThemeTest
 {
@@ -15,10 +17,26 @@ namespace ModernThemeTest
     {
         public MainPage()
         {
+            Application.Current.Theme = new ModernTheme() { CurrentPalette = ModernTheme.Palettes.Light };
             this.InitializeComponent();
+
+            UpdateBackground();
 
             this.DataContext = new DtCtx();
             // Enter construction logic here...
+        }
+
+        private void UpdateBackground()
+        {
+            var palette = Application.Current.Theme as ModernTheme;
+            if (palette.CurrentPalette == ModernTheme.Palettes.Dark)
+            {
+                MainBackground.Background = new SolidColorBrush(Color.FromRgb(51, 51, 51));
+            }
+            else
+            {
+                MainBackground.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            }
         }
     }
 

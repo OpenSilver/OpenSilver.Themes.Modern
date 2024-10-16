@@ -102,7 +102,7 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="{StaticResource TextOverPrimaryBrush}" />
         <Setter Property="Background"
                 Value="{StaticResource PrimaryBrush}" />
         <!--<Setter Property="BorderBrush" Value="{StaticResource DarkBrush}" />-->
@@ -219,7 +219,7 @@
     <Style x:Name="FlatToggleButton"
            TargetType="ToggleButton">
         <Setter Property="Foreground"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="{StaticResource TextOverPrimaryBrush}" />
         <Setter Property="Background"
                 Value="{StaticResource PrimaryBrush}" />
         <!--<Setter Property="BorderBrush" Value="{StaticResource DarkBrush}" />-->
@@ -365,9 +365,9 @@
         <Setter Property="Padding"
                 Value="4,0,4,2" />
         <Setter Property="Foreground"
-                Value="Black" />
+                Value="{StaticResource TextBrush}" />
         <Setter Property="Background"
-                Value="White" />
+                Value="{StaticResource SecondaryBrush}" />
         <Setter Property="BorderBrush"
                 Value="{StaticResource PrimaryBrush}" />
         <Setter Property="BorderThickness"
@@ -618,7 +618,7 @@
         <Setter Property="Padding"
                 Value="0,0,0,0" />
         <Setter Property="Foreground"
-                Value="Black" />
+                Value="{StaticResource TextBrush}" />
         <Setter Property="Background"
                 Value="{StaticResource PrimaryBrush}" />
         <Setter Property="BorderBrush"
@@ -822,7 +822,7 @@
                             <Rectangle Stroke="{x:Null}"
                                        StrokeThickness="0"
                                        x:Name="IndeterminateRectangle"
-                                       Fill="{StaticResource SecondaryBrush}"
+                                       Fill="{StaticResource TextOverPrimaryBrush}"
                                        Visibility="Collapsed"
                                        Height="2"
                                        Margin="4,4,4,4"
@@ -841,7 +841,7 @@
                                         <TranslateTransform />
                                     </TransformGroup>
                                 </Grid.RenderTransform>
-                                <Path Fill="{StaticResource SecondaryBrush}"
+                                <Path Fill="{StaticResource TextOverPrimaryBrush}"
                                       Data="M1.6045539,4.9657478 L3.9166667,6.7270508 L8.7999792,0.13644244 L10.335848,1.2280303 L4.1581869,9.0391064 L0.39386681,6.6038928 z"
                                       Stretch="Fill"
                                       StrokeLineJoin="Miter"
@@ -1368,6 +1368,8 @@
                 Value="Top" />
         <Setter Property="Background"
                 Value="Transparent" />
+        <Setter Property="Foreground"
+        Value="{StaticResource TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="TabNavigation"
@@ -1420,7 +1422,7 @@
                                                                       Storyboard.TargetName="SelectedTextControl"
                                                                       Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource SecondaryColor}" />
+                                                                 Value="{StaticResource TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1451,7 +1453,7 @@
                                 VerticalAlignment="Stretch"
                                 CornerRadius="4"
                                 Opacity="0" />
-                        <ContentControl x:Name="SelectedTextControl">
+                        <ContentControl x:Name="SelectedTextControl" Foreground="{TemplateBinding Foreground}">
                             <ContentPresenter HorizontalAlignment="Left"
                                               Margin="{TemplateBinding Padding}"
                                               x:Name="contentPresenter"
@@ -2249,7 +2251,7 @@
                                                                       Storyboard.TargetName="Header"
                                                                       Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource SecondaryColor}" />
+                                                                 Value="{StaticResource TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -2266,7 +2268,7 @@
                                                                       Storyboard.TargetName="Header"
                                                                       Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource SecondaryColor}" />
+                                                                 Value="{StaticResource TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -2479,7 +2481,7 @@
     <Style x:Name="FlatTreeViewStyle"
            TargetType="controls:TreeView">
         <Setter Property="Background"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="Transparent" />
         <Setter Property="Foreground"
                 Value="{StaticResource TextBrush}" />
         <Setter Property="HorizontalContentAlignment"

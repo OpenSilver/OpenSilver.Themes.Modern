@@ -16,7 +16,7 @@ namespace ModernThemeTest
 
             // Apply theme globally. Controls with a DefaultStyleKey will first try to find a style in this theme,
             // and fall back to the default theme (generic.xaml) if no style could be found.
-            Theme = new ModernTheme();
+            //Theme = new ModernTheme() {  CurrentPalette = ModernTheme.Palettes.Dark};
 
             // Import themes in application resources. Styles are then used implicitely or via static resources.
             //ThemeSelector.SelectTheme(ThemesSelection.Dark);
