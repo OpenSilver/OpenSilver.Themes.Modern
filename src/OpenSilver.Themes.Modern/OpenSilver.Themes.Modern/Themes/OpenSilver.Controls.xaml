@@ -192,7 +192,7 @@
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           Width="23"
-                                          Background="#11FFFFFF">
+                                          Background="Transparent">
                                         <Path HorizontalAlignment="Center"
                                               Margin="4,3,4,3"
                                               VerticalAlignment="Center"
@@ -607,8 +607,9 @@
                         <Rectangle x:Name="TodayBackground"
                                    Opacity="0"
                                    RadiusX="4"
-                                   RadiusY="4">
-                            <Rectangle.Stroke>
+                                   RadiusY="4"
+                                   Stroke="{StaticResource FadedBrush}">
+                            <!--<Rectangle.Stroke>
                                 <LinearGradientBrush EndPoint="0.5,1"
                                                      StartPoint="0.5,0">
                                     <GradientStop Color="{StaticResource FadedColor}" />
@@ -619,7 +620,7 @@
                                     <GradientStop Color="{StaticResource FadedColor}"
                                                   Offset="1" />
                                 </LinearGradientBrush>
-                            </Rectangle.Stroke>
+                            </Rectangle.Stroke>-->
                         </Rectangle>
                         <Rectangle x:Name="DayButtonFocusVisual"
                                    IsHitTestVisible="false"
@@ -697,7 +698,7 @@
                 <Border HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
                         Background="Transparent" />
-                <Path Height="16"
+                <Path Height="10"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center"
                       Width="6"
@@ -743,7 +744,7 @@
                 <Border HorizontalAlignment="Stretch"
                         VerticalAlignment="Stretch"
                         Background="Transparent" />
-                <Path Height="16"
+                <Path Height="10"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center"
                       Width="6"
