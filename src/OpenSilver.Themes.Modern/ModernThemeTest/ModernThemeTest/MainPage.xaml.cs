@@ -17,7 +17,7 @@ namespace ModernThemeTest
     {
         public MainPage()
         {
-            Application.Current.Theme = new ModernTheme() { CurrentPalette = ModernTheme.Palettes.Light };
+            Application.Current.Theme = new ModernTheme() { CurrentPalette = ModernTheme.Palettes.Dark };
             this.InitializeComponent();
 
             UpdateBackground();

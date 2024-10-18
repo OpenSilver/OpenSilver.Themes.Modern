@@ -24,7 +24,7 @@
                 <ToggleButton Canvas.Left="298" Canvas.Top="208" Content="ToggleButton" FontSize="13" Padding="12,7" IsEnabled="False"/>
                 <DatePicker Canvas.Left="57" Canvas.Top="254" FontSize="13" />
                 <DatePicker Canvas.Left="197" Canvas.Top="254" FontSize="13" IsEnabled="False"/>
-                <TimePicker Canvas.Left="356" Canvas.Top="253" FontSize="13"/>
+                <TimePicker Canvas.Left="356" Canvas.Top="253" FontSize="13"    />
                 <TimePicker Canvas.Left="500" Canvas.Top="253" FontSize="13" IsEnabled="False"/>
                 <Calendar x:Name="EnabledCalendar" Canvas.Left="640" Canvas.Top="254" SelectionMode="MultipleRange" />
                 <Calendar Canvas.Left="907" Canvas.Top="254" SelectionMode="MultipleRange" SelectedDate="{Binding ElementName=EnabledCalendar, Path=SelectedDate}" IsEnabled="False"/>
@@ -33,10 +33,10 @@
                 <RadioButton Canvas.Left="170" Canvas.Top="342" Content="RadioButton" FontSize="13" />
                 <RadioButton Canvas.Left="280" Canvas.Top="342" Content="RadioButton" FontSize="13" GroupName="disabled" IsChecked="True" IsEnabled="False"/>
                 <RadioButton Canvas.Left="390" Canvas.Top="342" Content="RadioButton" FontSize="13" GroupName="disabled" IsEnabled="False"/>
-                <Slider Canvas.Left="64" Canvas.Top="371" MinWidth="60" />
-                <Slider Canvas.Left="164" Canvas.Top="371" MinHeight="60" Orientation="Vertical"/>
-                <Slider Canvas.Left="264" Canvas.Top="371" MinWidth="60" IsEnabled="False"/>
-                <Slider Canvas.Left="364" Canvas.Top="371" MinHeight="60" Orientation="Vertical" IsEnabled="False"/>
+                <Slider x:Name="ValueSlider" Canvas.Left="64" Canvas.Top="371" MinWidth="60" />
+                <Slider x:Name="VerticalValueSlider" Canvas.Left="164" Canvas.Top="371" MinHeight="60" Orientation="Vertical"/>
+                <Slider Canvas.Left="264" Canvas.Top="371" MinWidth="60" IsEnabled="False" Value="{Binding ElementName=ValueSlider, Path=Value}"/>
+                <Slider Canvas.Left="364" Canvas.Top="371" MinHeight="60" Orientation="Vertical" IsEnabled="False" Value="{Binding ElementName=VerticalValueSlider, Path=Value}"/>
                 <ListBox Canvas.Left="497" Canvas.Top="53" Width="200" Height="150" FontSize="13" SelectionMode="Multiple">
                     <ListBoxItem Content="Item1" IsSelected="True" />
                     <ListBoxItem Content="Item2 with a long text so we see the scrollbars" />
@@ -93,13 +93,13 @@
                 <DataForm Canvas.Left="760" Canvas.Top="575" ItemsSource="{Binding People}" Header="Person"/>
                 <DataForm Canvas.Left="1000" Canvas.Top="575" ItemsSource="{Binding People}" Header="Person" IsEnabled="False"/>
                 <DataGrid Canvas.Left="58" Canvas.Top="647" ItemsSource="{Binding People}" />
-                <DataGrid Canvas.Left="308" Canvas.Top="647" ItemsSource="{Binding People}" IsEnabled="False"/>
-                <DataPager Canvas.Left="560" Canvas.Top="577" DisplayMode="FirstLastNumeric"/>
-                <DataPager Canvas.Left="560" Canvas.Top="627" DisplayMode="FirstLastPreviousNext"/>
-                <DataPager Canvas.Left="560" Canvas.Top="677" DisplayMode="FirstLastPreviousNextNumeric"/>
-                <DataPager Canvas.Left="560" Canvas.Top="727" DisplayMode="Numeric"/>
-                <DataPager Canvas.Left="560" Canvas.Top="777" DisplayMode="PreviousNext"/>
-                <DataPager Canvas.Left="560" Canvas.Top="827" DisplayMode="PreviousNextNumeric"/>
+                <DataGrid Canvas.Left="358" Canvas.Top="647" ItemsSource="{Binding People}" IsEnabled="False"/>
+                <DataPager Canvas.Left="560" Canvas.Top="530" DisplayMode="FirstLastNumeric"/>
+                <DataPager Canvas.Left="670" Canvas.Top="530" DisplayMode="FirstLastPreviousNext"/>
+                <DataPager Canvas.Left="870" Canvas.Top="530" DisplayMode="FirstLastPreviousNextNumeric"/>
+                <DataPager Canvas.Left="985" Canvas.Top="530" DisplayMode="Numeric"/>
+                <DataPager Canvas.Left="1010" Canvas.Top="530" DisplayMode="PreviousNext"/>
+                <DataPager Canvas.Left="1210" Canvas.Top="530" DisplayMode="PreviousNextNumeric"/>
                 <TabControl Canvas.Left="52" Canvas.Top="915" MinHeight="70">
                     <TabItem Header="TabItem1">
                         <RadioButton Content="Content1"/>
@@ -215,7 +215,7 @@
                 <AutoCompleteBox Canvas.Left="1009" Canvas.Top="958"  Width="120" Height="32" FontSize="13" ItemsSource="{Binding People}" ValueMemberPath="FirstName" />
                 <AutoCompleteBox Canvas.Left="1149" Canvas.Top="958"  Width="120" Height="32" FontSize="13" ItemsSource="{Binding People}" ValueMemberPath="FirstName" IsEnabled="False" />
 
-                <BusyIndicator Canvas.Left="379" Canvas.Top="1088" IsBusy="True" />
+                <!--<BusyIndicator Canvas.Left="379" Canvas.Top="1088" IsBusy="True" />-->
 
 
 
