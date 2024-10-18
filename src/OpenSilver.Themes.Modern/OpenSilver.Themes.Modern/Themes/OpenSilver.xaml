@@ -370,6 +370,8 @@
                 Value="{StaticResource SecondaryBrush}" />
         <Setter Property="BorderBrush"
                 Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="CaretBrush"
+                Value="{StaticResource TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="IsEnabled"
@@ -935,6 +937,8 @@
                 Value="{StaticResource SecondaryBrush}" />
         <Setter Property="BorderBrush"
                 Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="CaretBrush"
+                Value="{StaticResource TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="IsEnabled"

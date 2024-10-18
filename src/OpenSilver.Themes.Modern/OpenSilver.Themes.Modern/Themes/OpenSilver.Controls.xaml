@@ -18,6 +18,8 @@
                 Value="1" />
         <Setter Property="Foreground"
                 Value="Black" />
+        <Setter Property="CaretBrush"
+                Value="{StaticResource TextBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controlsPrimitives:DatePickerTextBox">
