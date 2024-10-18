@@ -2097,6 +2097,32 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Slider">
                     <Grid x:Name="Root">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver" />
+                                <vsm:VisualState x:Name="Pressed" />
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <!--<ColorAnimationUsingKeyFrames Duration="00:00:00.001"
+                                              Storyboard.TargetName="Background"
+                                              Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="0"
+                                         Value="{StaticResource FadedColor}" />
+                                        </ColorAnimationUsingKeyFrames>-->
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TrackValue"
+                                               Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0"
+                                          Value="0.4" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="VerticalTrackValue"
+                                                                       Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0:0:0" Value="0.4" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
                         <Grid.Resources>
                             <ControlTemplate x:Key="RepeatButtonTemplate">
                                 <Grid x:Name="Root"
@@ -2113,7 +2139,7 @@
                             </Grid.ColumnDefinitions>
                             <Border x:Name="TrackRectangle"
                                     Height="2"
-                                    Margin="5,0,5,0"
+                                    Margin="8,0,8,0"
                                     Grid.ColumnSpan="3"
                                     CornerRadius="1"
                                     Background="{TemplateBinding Background}"
@@ -2127,6 +2153,12 @@
                                     Grid.ColumnSpan="3"
                                     CornerRadius="1"
                                     Background="White" />
+                            <Border x:Name="TrackValue"
+                                    Height="2"
+                                    Margin="8,0,8,0"
+                                    Grid.ColumnSpan="2"
+                                    CornerRadius="1"
+                                    Background="{TemplateBinding BorderBrush}"/>
                             <RepeatButton x:Name="HorizontalTrackLargeChangeDecreaseRepeatButton"
                                           IsTabStop="False"
                                           Template="{StaticResource RepeatButtonTemplate}" />
@@ -2157,7 +2189,7 @@
                             </Grid.RowDefinitions>
                             <Border x:Name="VerticalTrackRectangle"
                                     Width="2"
-                                    Margin="0,5,0,5"
+                                    Margin="0,8,0,8"
                                     Grid.RowSpan="3"
                                     CornerRadius="1"
                                     Background="{TemplateBinding Background}"
@@ -2171,6 +2203,13 @@
                                     Grid.RowSpan="3"
                                     CornerRadius="1"
                                     Background="White" />
+                            <Border x:Name="VerticalTrackValue"
+                                    Width="2"
+                                    Margin="0,8,0,8"
+                                    Grid.RowSpan="2"
+                                    Grid.Row="1"
+                                    CornerRadius="1"
+                                    Background="{TemplateBinding BorderBrush}"/>
                             <RepeatButton x:Name="VerticalTrackLargeChangeDecreaseRepeatButton"
                                           IsTabStop="False"
                                           Template="{StaticResource RepeatButtonTemplate}"
