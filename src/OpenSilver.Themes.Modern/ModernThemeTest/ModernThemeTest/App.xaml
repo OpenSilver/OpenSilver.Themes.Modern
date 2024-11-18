@@ -2,4 +2,15 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:theme="clr-namespace:OpenSilver.Themes.Modern;assembly=OpenSilver.Themes.Modern">
+    
+    <!--<Application.Theme>
+        <theme:ModernTheme>
+            <theme:ModernTheme.LightPalette>
+                <ResourceDictionary Source="component/.../LightPalette.xaml"/>
+            </theme:ModernTheme.LightPalette>
+            <theme:ModernTheme.DarkPalette>
+                <ResourceDictionary Source="component/.../DarkPalette.xaml"/>
+            </theme:ModernTheme.DarkPalette>
+        </theme:ModernTheme>
+    </Application.Theme>-->
 </Application>

@@ -8,7 +8,18 @@
       mc:Ignorable="d">
 
     <Grid x:Name="MainBackground" Background="#FFFFFF">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Classic" Click="OnClassicThemeClick" Margin="5"/>
+            <Button Content="Modern Light" Click="OnModerLightThemeClick" Margin="5"/>
+            <Button Content="Modern Dark" Click="OnModernDarkThemeClick" Margin="5"/>
+        </StackPanel>
+        
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <Canvas Background="Transparent" Height="1500">
                 <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7"/>
                 <!--<Button Canvas.Left="150" Canvas.Top="54" Content="Button" FontSize="13" Padding="12,7" Style="{StaticResource ClearFlatButtonStyle}"/>-->

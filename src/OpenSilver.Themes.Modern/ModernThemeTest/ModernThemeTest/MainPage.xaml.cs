@@ -1,14 +1,13 @@
-﻿using System;
+﻿using OpenSilver.Themes.Modern;
+using OpenSilver.Theming;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
-using System.IO;
-using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using OpenSilver.Themes.Modern;
 using System.Windows.Media;
 
 namespace ModernThemeTest
@@ -17,26 +16,40 @@ namespace ModernThemeTest
     {
         public MainPage()
         {
-            Application.Current.Theme = new ModernTheme() { CurrentPalette = ModernTheme.Palettes.Dark };
-            this.InitializeComponent();
+            //Application.Current.Theme = new ModernTheme() { CurrentPalette = ModernTheme.Palettes.Dark };
+            InitializeComponent();
 
             UpdateBackground();
 
-            this.DataContext = new DtCtx();
-            // Enter construction logic here...
+            DataContext = new DtCtx();
         }
 
         private void UpdateBackground()
         {
-            var palette = Application.Current.Theme as ModernTheme;
-            if (palette.CurrentPalette == ModernTheme.Palettes.Dark)
-            {
-                MainBackground.Background = new SolidColorBrush(Color.FromRgb(51, 51, 51));
-            }
-            else
-            {
-                MainBackground.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
-            }
+            MainBackground.Background = Application.Current.Theme is ModernTheme theme && theme.CurrentPalette == ModernTheme.Palettes.Dark
+                ? new SolidColorBrush(Color.FromRgb(51, 51, 51))
+                : new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        }
+
+        private void OnClassicThemeClick(object sender, RoutedEventArgs e)
+        {
+            ApplyTheme(null);
+        }
+
+        private void OnModerLightThemeClick(object sender, RoutedEventArgs e)
+        {
+            ApplyTheme(new ModernTheme());
+        }
+
+        private void OnModernDarkThemeClick(object sender, RoutedEventArgs e)
+        {
+            ApplyTheme(new ModernTheme { CurrentPalette = ModernTheme.Palettes.Dark });
+        }
+
+        private void ApplyTheme(Theme theme)
+        {
+            Application.Current.Theme = theme;
+            Window.Current.Content = new MainPage();
         }
     }
 
