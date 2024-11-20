@@ -6,31 +6,28 @@
     <DefineSilverlight>true</DefineSilverlight>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>OpenSilver.Themes.Modern</Title>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>OpenSilver</Authors>
     <Company>Userware</Company>
     <Description>Styles for controls with a more modern look in OpenSilver</Description>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
     <Compile Include="FlatDesignProperties.cs" />
     <Compile Include="ModernTheme.cs" />
+    <Compile Include="Palettes\DarkPalette.cs" />
+    <Compile Include="Palettes\LightPalette.cs" />
     <Compile Include="Palettes\Palette.cs" />
-    <Compile Include="ThemeSelector.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-10-08-162453-0a5117f1" />
+    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-10-31-140659-468b0c84" />
   </ItemGroup>
 
   <ItemGroup>
     <Page Include="StylesDesign.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Palettes\BrightPalette.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Palettes\DarkPalette.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Styles.xaml">
