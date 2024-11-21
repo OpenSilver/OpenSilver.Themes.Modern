@@ -52,6 +52,7 @@ public class ModernTheme : Theme
             "OpenSilver.Controls.Input" or
             "OpenSilver.Controls.Input.Toolkit" or
             "OpenSilver.Controls.Data" or
+            "OpenSilver.Controls.DataVisualization.Toolkit" or
             "OpenSilver.Controls.Data.DataForm.Toolkit";
     }
 

@@ -1,0 +1,123 @@
+﻿<Page
+    x:Class="ModernThemeTest.Pages.ChartsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:flatdesign="clr-namespace:OpenSilver.Themes.Modern;assembly=OpenSilver.Themes.Modern"
+    xmlns:local="clr-namespace:ModernThemeTest.Pages">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Chart Margin="10" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1700" Height="300" Title="Sales">
+            <Chart.Series>
+                <ColumnSeries Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+                <ColumnSeries Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
+                <ColumnSeries Title="Product C" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductCSales}" />
+                <ColumnSeries Title="Product D" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductDSales}" />
+                <ColumnSeries Title="Product E" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductESales}" />
+                <ColumnSeries Title="Product F" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductFSales}" />
+                <ColumnSeries Title="Product G" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductGSales}" />
+                <ColumnSeries Title="Product H" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductHSales}" />
+                <ColumnSeries Title="Product I" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductISales}" />
+                <ColumnSeries Title="Product J" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductJSales}" />
+                <ColumnSeries Title="Product K" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductKSales}" />
+                <ColumnSeries Title="Product L" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductLSales}" />
+                <ColumnSeries Title="Product M" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductMSales}" />
+                <ColumnSeries Title="Product N" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductNSales}" />
+                <ColumnSeries Title="Product O" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+            </Chart.Series>                                                                                                                             
+        </Chart>
+        <Chart Margin="10" Grid.Row="1" Grid.RowSpan="4" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="1500" Title="Sales">
+            <Chart.Axes>
+                <CategoryAxis Title="Month" Orientation="X" />
+            </Chart.Axes>
+            <Chart.Series>
+                <BarSeries Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+                <BarSeries Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
+                <BarSeries Title="Product C" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductCSales}" />
+                <BarSeries Title="Product D" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductDSales}" />
+                <BarSeries Title="Product E" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductESales}" />
+                <BarSeries Title="Product F" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductFSales}" />
+                <BarSeries Title="Product G" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductGSales}" />
+                <BarSeries Title="Product H" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductHSales}" />
+                <BarSeries Title="Product I" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductISales}" />
+                <BarSeries Title="Product J" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductJSales}" />
+                <BarSeries Title="Product K" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductKSales}" />
+                <BarSeries Title="Product L" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductLSales}" />
+                <BarSeries Title="Product M" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductMSales}" />
+                <BarSeries Title="Product N" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductNSales}" />
+            </Chart.Series>
+        </Chart>
+        <Chart Margin="10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="500" Title="Sales">
+            <Chart.Axes>
+                <CategoryAxis Title="Month" Orientation="X" />
+            </Chart.Axes>
+            <Chart.Series>
+                <StackedBarSeries>
+                    <SeriesDefinition Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+                    <SeriesDefinition Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
+                    <SeriesDefinition Title="Product C" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductCSales}" />
+                    <SeriesDefinition Title="Product D" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductDSales}" />
+                </StackedBarSeries>
+            </Chart.Series>
+        </Chart>
+        <Chart Margin="10" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="500" Title="Sales">
+            <Chart.Axes>
+                <CategoryAxis Title="Month" Orientation="X" />
+            </Chart.Axes>
+            <Chart.Series>
+                <Stacked100BarSeries>
+                    <SeriesDefinition Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+                    <SeriesDefinition Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
+                    <SeriesDefinition Title="Product C" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductCSales}" />
+                    <SeriesDefinition Title="Product D" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductDSales}" />
+                </Stacked100BarSeries>
+            </Chart.Series>
+        </Chart>
+
+
+        <Chart Margin="10" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="400" Height="500" Title="Sales">
+            <Chart.Axes>
+                <CategoryAxis Title="Month" Orientation="X" />
+            </Chart.Axes>
+            <Chart.Series>
+                <StackedColumnSeries>
+                    <SeriesDefinition Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+                    <SeriesDefinition Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
+                    <SeriesDefinition Title="Product C" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductCSales}" />
+                    <SeriesDefinition Title="Product D" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductDSales}" />
+                </StackedColumnSeries>
+            </Chart.Series>
+        </Chart>
+        <Chart Margin="10" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="500" Title="Sales">
+            <Chart.Axes>
+                <CategoryAxis Title="Month" Orientation="X" />
+            </Chart.Axes>
+            <Chart.Series>
+                <Stacked100ColumnSeries>
+                    <SeriesDefinition Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+                    <SeriesDefinition Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
+                    <SeriesDefinition Title="Product C" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductCSales}" />
+                    <SeriesDefinition Title="Product D" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductDSales}" />
+                </Stacked100ColumnSeries>
+            </Chart.Series>
+        </Chart>
+
+
+        <Chart Margin="10" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" Height="500" Title="Sales">
+            <Chart.Series>
+                <PieSeries Title="Product A sales" DependentValuePath="SalesAmount" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
+            </Chart.Series>
+        </Chart>
+    </Grid>
+</Page>

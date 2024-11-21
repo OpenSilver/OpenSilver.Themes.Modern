@@ -17,15 +17,39 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\BasePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChartsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChartsPointSeriesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="App.xaml.cs" />
     <Compile Include="MainPage.xaml.cs" />
+    <Compile Include="Pages\BasePage.xaml.cs" />
+    <Compile Include="Pages\ChartsPage.xaml.cs" />
+    <Compile Include="Pages\ChartsPointSeriesPage.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\OpenSilver.Themes.Modern\OpenSilver.Themes.Modern.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ChartsPage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\BasePage.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ChartsPointSeriesPage.xaml" />
   </ItemGroup>
 
 </Project>

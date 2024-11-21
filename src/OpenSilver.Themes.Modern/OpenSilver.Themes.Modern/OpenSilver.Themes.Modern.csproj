@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Converters\ColorToGradientStopsConverter.cs" />
     <Compile Include="FlatDesignProperties.cs" />
     <Compile Include="ModernTheme.cs" />
     <Compile Include="Palettes\DarkPalette.cs" />
@@ -39,6 +40,9 @@
     <Page Include="Themes\OpenSilver.Controls.Data.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\OpenSilver.Controls.DataVisualization.Toolkit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\OpenSilver.Controls.Input.Toolkit.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -59,4 +63,7 @@
     </Page>
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Themes\OpenSilver.Controls.DataVisualization.Toolkit.xaml" />
+  </ItemGroup>
 </Project>

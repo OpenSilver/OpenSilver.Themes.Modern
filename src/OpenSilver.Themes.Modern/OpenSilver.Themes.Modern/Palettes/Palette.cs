@@ -49,7 +49,32 @@ public abstract class Palette
             ["AccentOverlayBrush"] = new SolidColorBrush(palette.AccentOverlayColor),
 
             [nameof(WatermarkColor)] = palette.WatermarkColor,
-            ["WatermarkBrush"] = new SolidColorBrush(palette.WatermarkColor)
+            ["WatermarkBrush"] = new SolidColorBrush(palette.WatermarkColor),
+
+            [nameof(ChartHaloOpacity)] = palette.ChartHaloOpacity,
+
+            //Colors for charts:
+            [nameof(ChartGridLineColor)] = palette.ChartGridLineColor,
+            ["ChartGridLineBrush"] = new SolidColorBrush(palette.ChartGridLineColor),
+            [nameof(ChartLegendForeground)] = palette.ChartLegendForeground,
+            ["ChartLegendForegroundBrush"] = new SolidColorBrush(palette.ChartLegendForeground),
+            [nameof(ChartAxisTextForeground)] = palette.ChartAxisTextForeground,
+            ["ChartAxisTextForegroundBrush"] = new SolidColorBrush(palette.ChartAxisTextForeground),
+            [nameof(ChartSeriesColor1)] = palette.ChartSeriesColor1,
+            [nameof(ChartSeriesColor2)] = palette.ChartSeriesColor2,
+            [nameof(ChartSeriesColor3)] = palette.ChartSeriesColor3,
+            [nameof(ChartSeriesColor4)] = palette.ChartSeriesColor4,
+            [nameof(ChartSeriesColor5)] = palette.ChartSeriesColor5,
+            [nameof(ChartSeriesColor6)] = palette.ChartSeriesColor6,
+            [nameof(ChartSeriesColor7)] = palette.ChartSeriesColor7,
+            [nameof(ChartSeriesColor8)] = palette.ChartSeriesColor8,
+            [nameof(ChartSeriesColor9)] = palette.ChartSeriesColor9,
+            [nameof(ChartSeriesColor10)] = palette.ChartSeriesColor10,
+            [nameof(ChartSeriesColor11)] = palette.ChartSeriesColor11,
+            [nameof(ChartSeriesColor12)] = palette.ChartSeriesColor12,
+            [nameof(ChartSeriesColor13)] = palette.ChartSeriesColor13,
+            [nameof(ChartSeriesColor14)] = palette.ChartSeriesColor14,
+            [nameof(ChartSeriesColor15)] = palette.ChartSeriesColor15
         };
 
         return resources;
@@ -71,4 +96,25 @@ public abstract class Palette
     public abstract Color DisabledColor { get; set; }
     public abstract Color AccentOverlayColor { get; set; }
     public abstract Color WatermarkColor { get; set; }
+
+    public abstract double ChartHaloOpacity { get; set; }
+    //Colors for Charts
+    public abstract Color ChartGridLineColor { get; set; }
+    public abstract Color ChartLegendForeground { get; set; }
+    public abstract Color ChartAxisTextForeground { get; set; }
+    public abstract Color ChartSeriesColor1 { get; set; }
+    public abstract Color ChartSeriesColor2 { get; set; }
+    public abstract Color ChartSeriesColor3 { get; set; }
+    public abstract Color ChartSeriesColor4 { get; set; }
+    public abstract Color ChartSeriesColor5 { get; set; }
+    public abstract Color ChartSeriesColor6 { get; set; }
+    public abstract Color ChartSeriesColor7 { get; set; }
+    public abstract Color ChartSeriesColor8 { get; set; }
+    public abstract Color ChartSeriesColor9 { get; set; }
+    public abstract Color ChartSeriesColor10 { get; set; }
+    public abstract Color ChartSeriesColor11 { get; set; }
+    public abstract Color ChartSeriesColor12 { get; set; }
+    public abstract Color ChartSeriesColor13 { get; set; }
+    public abstract Color ChartSeriesColor14 { get; set; }
+    public abstract Color ChartSeriesColor15 { get; set; }
 }

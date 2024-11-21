@@ -10,6 +10,7 @@
         <ResourceDictionary Source="/OpenSilver.Themes.Modern;component/Themes/OpenSilver.Controls.Input.Toolkit.xaml" />
         <ResourceDictionary Source="/OpenSilver.Themes.Modern;component/Themes/OpenSilver.Controls.Data.xaml" />
         <ResourceDictionary Source="/OpenSilver.Themes.Modern;component/Themes/OpenSilver.Controls.Data.DataForm.Toolkit.xaml" />
+        <ResourceDictionary Source="/OpenSilver.Themes.Modern;component/Themes/OpenSilver.Controls.DataVisualization.Toolkit.xaml" />
         <ResourceDictionary Source="/OpenSilver.Themes.Modern;component/Styles/Styles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
