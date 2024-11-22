@@ -264,10 +264,9 @@
                 <ResourceDictionaryCollection>
                     <!-- Blue -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor1}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor1}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -282,10 +281,9 @@
                     </ResourceDictionary>
                     <!-- Red -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor2}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor2}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -300,10 +298,9 @@
                     </ResourceDictionary>
                     <!-- Light Green -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor3}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor3}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -318,10 +315,9 @@
                     </ResourceDictionary>
                     <!-- Yellow -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor4}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor4}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -336,10 +332,9 @@
                     </ResourceDictionary>
                     <!-- Indigo -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor5}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor5}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -354,10 +349,9 @@
                     </ResourceDictionary>
                     <!-- Magenta -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor6}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor6}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -372,10 +366,9 @@
                     </ResourceDictionary>
                     <!-- Dark Green -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor7}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor7}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -390,10 +383,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor8}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor8}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -408,10 +400,9 @@
                     </ResourceDictionary>
                     <!-- Blue -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor9}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor9}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -426,10 +417,9 @@
                     </ResourceDictionary>
                     <!-- Brown -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor10}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor10}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -444,10 +434,9 @@
                     </ResourceDictionary>
                     <!-- Cyan -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor11}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor11}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -462,10 +451,9 @@
                     </ResourceDictionary>
                     <!-- Special Blue -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor12}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor12}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -480,10 +468,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade 2 -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor13}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor13}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -498,10 +485,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade 3 -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor14}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor14}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -516,10 +502,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade 4 -->
                     <ResourceDictionary>
-                        <modern:ColorToGradientStopsConverter x:Key="ColorToGradientConverter"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ColorToGradientConverter}" ConverterParameter="{StaticResource ChartSeriesColor15}"/>
+                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor15}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">

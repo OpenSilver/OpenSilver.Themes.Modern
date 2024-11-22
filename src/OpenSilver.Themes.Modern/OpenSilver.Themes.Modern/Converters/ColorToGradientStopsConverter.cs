@@ -20,8 +20,8 @@ namespace OpenSilver.Themes.Modern
                 var gradientStops = new GradientStopCollection
             {
                 new GradientStop() { Color = baseColor, Offset=0.0 },
-                new GradientStop() { Color = HslToColor((hue + 30) % 360, saturation, lightness), Offset=0.5 },
-                new GradientStop() { Color = HslToColor((hue + 60) % 360, saturation, lightness), Offset=1.0 }
+                new GradientStop() { Color = HslToColor((hue + 10) % 360, saturation, lightness), Offset=0.5 },
+                new GradientStop() { Color = HslToColor((hue + 20) % 360, saturation, lightness), Offset=1.0 }
             };
 
                 return gradientStops;

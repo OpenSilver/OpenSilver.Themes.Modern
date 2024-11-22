@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Data;
 using System.Windows.Media;
 
 namespace OpenSilver.Themes.Modern;
@@ -74,7 +75,10 @@ public abstract class Palette
             [nameof(ChartSeriesColor12)] = palette.ChartSeriesColor12,
             [nameof(ChartSeriesColor13)] = palette.ChartSeriesColor13,
             [nameof(ChartSeriesColor14)] = palette.ChartSeriesColor14,
-            [nameof(ChartSeriesColor15)] = palette.ChartSeriesColor15
+            [nameof(ChartSeriesColor15)] = palette.ChartSeriesColor15,
+
+            [nameof(ChartSeriesColorConverter)] = palette.ChartSeriesColorConverter
+
         };
 
         return resources;
@@ -117,4 +121,6 @@ public abstract class Palette
     public abstract Color ChartSeriesColor13 { get; set; }
     public abstract Color ChartSeriesColor14 { get; set; }
     public abstract Color ChartSeriesColor15 { get; set; }
+
+    public abstract IValueConverter ChartSeriesColorConverter { get; set; }
 }

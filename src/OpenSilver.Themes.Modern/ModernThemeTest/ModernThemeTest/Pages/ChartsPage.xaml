@@ -18,7 +18,7 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Chart Margin="10" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1700" Height="300" Title="Sales">
+        <Chart Margin="10" Grid.ColumnSpan="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="2700" Height="300" Title="Sales">
             <Chart.Series>
                 <ColumnSeries Title="Product A" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductASales}" />
                 <ColumnSeries Title="Product B" DependentValueBinding="{Binding SalesAmount}" IndependentValuePath="Month" ItemsSource="{Binding ProductBSales}" />
