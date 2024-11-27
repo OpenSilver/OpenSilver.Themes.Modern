@@ -14,6 +14,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-11-27-091646-30936416" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Converters\ColorToFlatGradientStopsConverter.cs" />
     <Compile Include="Converters\ColorToGradientStopsConverter.cs" />
@@ -22,10 +27,6 @@
     <Compile Include="Palettes\DarkPalette.cs" />
     <Compile Include="Palettes\LightPalette.cs" />
     <Compile Include="Palettes\Palette.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-10-31-140659-468b0c84" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,7 +65,4 @@
     </Page>
   </ItemGroup>
 
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Themes\OpenSilver.Controls.DataVisualization.Toolkit.xaml" />
-  </ItemGroup>
 </Project>

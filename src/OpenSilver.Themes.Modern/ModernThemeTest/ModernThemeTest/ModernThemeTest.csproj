@@ -7,7 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-10-31-140659-468b0c84" />
+    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-11-27-091646-30936416" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\OpenSilver.Themes.Modern\OpenSilver.Themes.Modern.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,22 +38,6 @@
     <Compile Include="Pages\BasePage.xaml.cs" />
     <Compile Include="Pages\ChartsPage.xaml.cs" />
     <Compile Include="Pages\ChartsPointSeriesPage.xaml.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\OpenSilver.Themes.Modern\OpenSilver.Themes.Modern.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\ChartsPage.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\BasePage.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Pages\ChartsPointSeriesPage.xaml" />
   </ItemGroup>
 
 </Project>
