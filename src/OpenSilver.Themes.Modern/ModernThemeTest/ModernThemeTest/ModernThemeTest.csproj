@@ -30,6 +30,9 @@
     <Page Include="Pages\ChartsPointSeriesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DataGridPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +41,7 @@
     <Compile Include="Pages\BasePage.xaml.cs" />
     <Compile Include="Pages\ChartsPage.xaml.cs" />
     <Compile Include="Pages\ChartsPointSeriesPage.xaml.cs" />
+    <Compile Include="Pages\DataGridPage.xaml.cs" />
   </ItemGroup>
 
 </Project>

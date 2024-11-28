@@ -1936,8 +1936,6 @@
     <Style TargetType="ScrollViewer">
         <Setter Property="Padding"
                 Value="1" />
-        <Setter Property="HorizontalScrollBarVisibility"
-                Value="Auto" />
         <Setter Property="VerticalScrollBarVisibility"
                 Value="Auto" />
         <Setter Property="Template">

@@ -19,6 +19,8 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal">
             <Button Content="Base page" Click="ButtonBasePage_Click"/>
+            <Button Content="DataGrid page" Click="ButtonDataGridPage_Click"/>
+            
             <Button Content="Charts (points) page" Click="ButtonChartsPointSeriesPage_Click"/>
             <Button Content="Charts (bars) page" Click="ButtonChartsPage_Click"/>
         </StackPanel>

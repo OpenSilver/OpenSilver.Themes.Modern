@@ -28,7 +28,7 @@ namespace ModernThemeTest
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            NavigateToPage("/ChartsPage");
+            NavigateToPage("/BasePage");
         }
 
         private void UpdateBackground()
@@ -64,6 +64,11 @@ namespace ModernThemeTest
             NavigateToPage("/BasePage");
         }
 
+        private void ButtonDataGridPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/DataGridPage");
+        }
+
         private void ButtonChartsPage_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/ChartsPage");
@@ -73,6 +78,7 @@ namespace ModernThemeTest
         {
             NavigateToPage("/ChartsPointSeriesPage");
         }
+        
 
         void NavigateToPage(string targetUri)
         {

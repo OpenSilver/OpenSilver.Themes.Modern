@@ -160,16 +160,16 @@
                 <RadioButton Content="Content2"/>
             </TabItem>
         </TabControl>
-        <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="20" Header="Expander" Content="Content" IsExpanded="True" />
-        <Expander Visibility="Collapsed" Canvas.Left="941" Canvas.Top="20" Header="Expander" Content="Content" IsExpanded="True" IsEnabled="False"/>
-        <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="100" Header="Expander" Content="Content" ExpandDirection="Up" IsExpanded="True" />
-        <Expander Visibility="Collapsed" Canvas.Left="941" Canvas.Top="100" Header="Expander" Content="Content" ExpandDirection="Up" IsExpanded="True" IsEnabled="False"/>
+        <Expander  Canvas.Left="1441" Canvas.Top="20" Header="Expander" Content="Content" IsExpanded="True" />
+        <Expander  Canvas.Left="1541" Canvas.Top="20" Header="Expander" Content="Content" IsExpanded="True" IsEnabled="False"/>
+        <Expander  Canvas.Left="1441" Canvas.Top="100" Header="Expander" Content="Content" ExpandDirection="Up" IsExpanded="True" />
+        <Expander  Canvas.Left="1541" Canvas.Top="100" Header="Expander" Content="Content" ExpandDirection="Up" IsExpanded="True" IsEnabled="False"/>
 
-        <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="180" Header="Expander" Content="Content" ExpandDirection="Left" IsExpanded="True" />
-        <Expander Visibility="Collapsed" Canvas.Left="981" Canvas.Top="180" Header="Expander" Content="Content" ExpandDirection="Left" IsExpanded="True" IsEnabled="False"/>
+        <Expander  Canvas.Left="1441" Canvas.Top="180" Header="Expander" Content="Content" ExpandDirection="Left" IsExpanded="True" />
+        <Expander  Canvas.Left="1581" Canvas.Top="180" Header="Expander" Content="Content" ExpandDirection="Left" IsExpanded="True" IsEnabled="False"/>
 
-        <Expander Visibility="Collapsed" Canvas.Left="841" Canvas.Top="260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" />
-        <Expander Visibility="Collapsed" Canvas.Left="981" Canvas.Top="260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" IsEnabled="False"/>
+        <Expander  Canvas.Left="1441" Canvas.Top="260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" />
+        <Expander  Canvas.Left="1581" Canvas.Top="260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" IsEnabled="False"/>
 
         <ChildWindow Canvas.Left="379" Canvas.Top="922" Title="Title" Content="ChildWindow" Width="300" Height="150" />
         <Accordion Canvas.Left="1150" Canvas.Top="20" FontSize="13">
