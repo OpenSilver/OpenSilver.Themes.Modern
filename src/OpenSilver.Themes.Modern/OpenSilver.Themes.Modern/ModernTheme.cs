@@ -18,6 +18,10 @@ public class ModernTheme : Theme
 
     public DarkPalette DarkPalette { get; set; }
 
+    public ResourceDictionary ThemeResources { get; private set; } = [];
+
+    public bool ImportThemeResources { get; set; }
+
     protected override ResourceDictionary GenerateResources(Assembly assembly)
     {
         string assemblyName = assembly.GetName().Name;
@@ -39,7 +43,18 @@ public class ModernTheme : Theme
             );
         resources.Source = new Uri($"/OpenSilver.Themes.Modern;component/Themes/{assemblyName}.xaml", UriKind.Relative);
         Application.LoadComponent(resources, resources.Source);
+
+        ThemeResources.MergedDictionaries.Add(resources);
+        ImportToAppResources();
         return resources;
+    }
+
+    private void ImportToAppResources()
+    {
+        if (ImportThemeResources && !Application.Current.Resources.MergedDictionaries.Contains(ThemeResources))
+        {
+            Application.Current.Resources.MergedDictionaries.Add(ThemeResources);
+        }
     }
 
     private static bool IsSupportedAssembly(string assemblyName)

@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Classic" Click="OnClassicThemeClick" Margin="5"/>
-            <Button Content="Modern Light" Click="OnModerLightThemeClick" Margin="5"/>
+            <Button Content="Modern Light" Click="OnModernLightThemeClick" Margin="5"/>
             <Button Content="Modern Dark" Click="OnModernDarkThemeClick" Margin="5"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">

@@ -4,11 +4,9 @@
              xmlns:mt="http://opensilver.net/themes/modern">
 
     <!--<Application.Theme>
-        <mt:ModernTheme CurrentPalette="Dark">
+        <mt:ModernTheme CurrentPalette="Dark" ImportThemeResources="True">
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette AccentOverlayColor="Blue"
-                                DarkColor="Red"
-                                FadedColor="Green"/>
+                <mt:DarkPalette AccentOverlayColor="Blue" DarkColor="Red"/>
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>-->

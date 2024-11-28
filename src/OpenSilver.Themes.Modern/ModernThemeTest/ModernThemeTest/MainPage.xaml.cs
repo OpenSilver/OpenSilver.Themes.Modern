@@ -43,7 +43,7 @@ namespace ModernThemeTest
             ApplyTheme(null);
         }
 
-        private void OnModerLightThemeClick(object sender, RoutedEventArgs e)
+        private void OnModernLightThemeClick(object sender, RoutedEventArgs e)
         {
             ApplyTheme(new ModernTheme());
         }
