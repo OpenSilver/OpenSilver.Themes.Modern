@@ -8,9 +8,9 @@
     <Style x:Name="FlatAccordionStyle"
            TargetType="layoutToolkit:Accordion">
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="HorizontalAlignment"
                 Value="Left" />
         <Setter Property="VerticalAlignment"
@@ -97,7 +97,7 @@
         <Setter Property="BorderThickness"
                 Value="0" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="HorizontalAlignment"
@@ -464,13 +464,13 @@
                                         Margin="0,0,0,0"
                                         VerticalAlignment="Stretch"
                                         Opacity="0.15"
-                                        Background="{StaticResource Theme_BorderBrush}" />
+                                        Background="{DynamicResource Theme_BorderBrush}" />
                                 <Border x:Name="MouseOverBackground"
                                         Height="Auto"
                                         Margin="0,0,0,0"
                                         VerticalAlignment="Stretch"
                                         Opacity="0"
-                                        Background="{StaticResource Theme_AccentOverlayBrush}" />
+                                        Background="{DynamicResource Theme_AccentOverlayBrush}" />
                                 <Grid Background="Transparent">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition x:Name="cd0"
@@ -501,7 +501,7 @@
                                             </TransformGroup>
                                         </Grid.RenderTransform>
                                         <Path x:Name="arrow"
-                                              Stroke="{StaticResource Theme_BorderBrush}"
+                                              Stroke="{DynamicResource Theme_BorderBrush}"
                                               StrokeThickness="2"
                                               Height="Auto"
                                               HorizontalAlignment="Center"
@@ -548,11 +548,11 @@
         <Setter Property="BorderThickness"
                 Value="0,0,0,0" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Margin"
                 Value="0" />
         <Setter Property="Padding"
@@ -839,7 +839,7 @@
                                                                          Grid.Row="0"
                                                                          IsChecked="{TemplateBinding IsSelected}"
                                                                          BorderThickness="0"
-                                                                         Foreground="{StaticResource Theme_TextBrush}" />
+                                                                         Foreground="{DynamicResource Theme_TextBrush}" />
                                 <layoutPrimitivesToolkit:ExpandableContentControl x:Name="ExpandSite"
                                                                                   FontFamily="{TemplateBinding FontFamily}"
                                                                                   FontSize="{TemplateBinding FontSize}"

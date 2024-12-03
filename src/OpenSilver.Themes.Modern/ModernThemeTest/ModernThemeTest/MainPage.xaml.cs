@@ -17,7 +17,6 @@ namespace ModernThemeTest
     {
         public MainPage()
         {
-            //Application.Current.Theme = new ModernTheme() { CurrentPalette = ModernTheme.Palettes.Dark };
             InitializeComponent();
 
             UpdateBackground();
@@ -33,24 +32,60 @@ namespace ModernThemeTest
 
         private void UpdateBackground()
         {
-            MainBackground.Background = Application.Current.Theme is ModernTheme theme && theme.CurrentPalette == ModernTheme.Palettes.Dark
-                ? new SolidColorBrush(Color.FromRgb(17, 17, 17))
-                : new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            if (Application.Current.Theme is ModernTheme theme && theme.CurrentPalette == ModernTheme.Palettes.Dark)
+            {
+                MainBackground.Background = new SolidColorBrush(Color.FromRgb(17, 17, 17));
+                Foreground = new SolidColorBrush(Colors.White);
+            }
+            else
+            {
+                MainBackground.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+                Foreground = new SolidColorBrush(Colors.Black);
+            }
         }
 
         private void OnClassicThemeClick(object sender, RoutedEventArgs e)
         {
+            if (Application.Current.Theme is null)
+            {
+                return;
+            }
+
             ApplyTheme(null);
         }
 
         private void OnModerLightThemeClick(object sender, RoutedEventArgs e)
         {
-            ApplyTheme(new ModernTheme());
+            if (Application.Current.Theme is ModernTheme modernTheme)
+            {
+                if (modernTheme.CurrentPalette == ModernTheme.Palettes.Light)
+                {
+                    return;
+                }
+                modernTheme.CurrentPalette = ModernTheme.Palettes.Light;
+                UpdateBackground();
+            }
+            else
+            {
+                ApplyTheme(new ModernTheme());
+            }
         }
 
         private void OnModernDarkThemeClick(object sender, RoutedEventArgs e)
         {
-            ApplyTheme(new ModernTheme { CurrentPalette = ModernTheme.Palettes.Dark });
+            if (Application.Current.Theme is ModernTheme modernTheme)
+            {
+                if (modernTheme.CurrentPalette == ModernTheme.Palettes.Dark)
+                {
+                    return;
+                }
+                modernTheme.CurrentPalette = ModernTheme.Palettes.Dark;
+                UpdateBackground();
+            }
+            else
+            {
+                ApplyTheme(new ModernTheme { CurrentPalette = ModernTheme.Palettes.Dark });
+            }
         }
 
         private void ApplyTheme(Theme theme)

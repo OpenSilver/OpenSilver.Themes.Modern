@@ -102,10 +102,10 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextOverPrimaryBrush}" />
+                Value="{DynamicResource Theme_TextOverPrimaryBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_PrimaryBrush}" />
-        <!--<Setter Property="BorderBrush" Value="{StaticResource Theme_PrimaryBrush}" />-->
+                Value="{DynamicResource Theme_PrimaryBrush}" />
+        <!--<Setter Property="BorderBrush" Value="{DynamicResource Theme_PrimaryBrush}" />-->
         <Setter Property="BorderThickness"
                 Value="0" />
         <Setter Property="Padding"
@@ -181,7 +181,7 @@
                                 Visibility="Collapsed" />
                         <Border x:Name="DisabledBackground"
                                 CornerRadius="5"
-                                Background="{StaticResource Theme_DisabledBrush}"
+                                Background="{DynamicResource Theme_DisabledBrush}"
                                 Opacity="0" />
                         <ContentPresenter x:Name="contentPresenter"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -199,10 +199,10 @@
     <Style x:Name="FlatToggleButton"
            TargetType="ToggleButton">
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextOverPrimaryBrush}" />
+                Value="{DynamicResource Theme_TextOverPrimaryBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_PrimaryBrush}" />
-        <!--<Setter Property="BorderBrush" Value="{StaticResource Theme_PrimaryBrush}" />-->
+                Value="{DynamicResource Theme_PrimaryBrush}" />
+        <!--<Setter Property="BorderBrush" Value="{DynamicResource Theme_PrimaryBrush}" />-->
         <Setter Property="BorderThickness"
                 Value="0" />
         <Setter Property="Padding"
@@ -317,11 +317,11 @@
                                 Visibility="Collapsed" />
                         <Border x:Name="Toggled"
                                 CornerRadius="5"
-                                Background="{StaticResource Theme_AccentOverlayBrush}"
+                                Background="{DynamicResource Theme_AccentOverlayBrush}"
                                 Opacity="0" />
                         <Border x:Name="DisabledBackground"
                                 CornerRadius="5"
-                                Background="{StaticResource Theme_DisabledBrush}"
+                                Background="{DynamicResource Theme_DisabledBrush}"
                                 Opacity="0" />
                         <ContentPresenter x:Name="contentPresenter"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -343,13 +343,13 @@
         <Setter Property="Padding"
                 Value="4,0,4,2" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="CaretBrush"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="IsEnabled"
@@ -440,7 +440,7 @@
                         </vsm:VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
                                 CornerRadius="4"
-                                BorderBrush="{StaticResource Theme_BorderBrush}"
+                                BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}" />
                         <Border x:Name="Theme_BorderColor"
@@ -537,7 +537,7 @@
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollViewer">
@@ -598,11 +598,11 @@
         <Setter Property="Padding"
                 Value="0,0,0,0" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Template">
@@ -686,13 +686,13 @@
                                                                       Storyboard.TargetName="Background"
                                                                       Storyboard.TargetProperty="(UIElement.Background)(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_DisabledColor}" />
+                                                                 Value="{DynamicResource Theme_DisabledColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                       Storyboard.TargetName="Background"
                                                                       Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_DisabledColor}" />
+                                                                 Value="{DynamicResource Theme_DisabledColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -802,7 +802,7 @@
                             <Rectangle Stroke="{x:Null}"
                                        StrokeThickness="0"
                                        x:Name="IndeterminateRectangle"
-                                       Fill="{StaticResource Theme_TextOverPrimaryBrush}"
+                                       Fill="{DynamicResource Theme_TextOverPrimaryBrush}"
                                        Visibility="Collapsed"
                                        Height="2"
                                        Margin="4,4,4,4"
@@ -821,7 +821,7 @@
                                         <TranslateTransform />
                                     </TransformGroup>
                                 </Grid.RenderTransform>
-                                <Path Fill="{StaticResource Theme_TextOverPrimaryBrush}"
+                                <Path Fill="{DynamicResource Theme_TextOverPrimaryBrush}"
                                       Data="M1.6045539,4.9657478 L3.9166667,6.7270508 L8.7999792,0.13644244 L10.335848,1.2280303 L4.1581869,9.0391064 L0.39386681,6.6038928 z"
                                       Stretch="Fill"
                                       StrokeLineJoin="Miter"
@@ -829,7 +829,7 @@
                             </Grid>
                             <Border x:Name="FadedBorder"
                                     CornerRadius="2"
-                                    BorderBrush="{StaticResource Theme_BorderBrush}"
+                                    BorderBrush="{DynamicResource Theme_BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     Background="Transparent" />
                             <Border x:Name="HasFocus"
@@ -910,13 +910,13 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="CaretBrush"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="IsEnabled"
@@ -1012,7 +1012,7 @@
                         </vsm:VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
                                 CornerRadius="4"
-                                BorderBrush="{StaticResource Theme_BorderBrush}"
+                                BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}" />
                         <Border x:Name="Theme_BorderColor"
@@ -1103,11 +1103,11 @@
         <Setter Property="Height"
                 Value="24" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Template">
@@ -1165,14 +1165,14 @@
                                                                        Storyboard.TargetName="BulletBorder"
                                                                        Storyboard.TargetProperty="(UIElement.BorderBrush)">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{StaticResource Theme_DisabledBrush}" />
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
 
                                         <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="Background"
                                                                        Storyboard.TargetProperty="(UIElement.BorderBrush)">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{StaticResource Theme_DisabledBrush}" />
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1351,7 +1351,7 @@
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Foreground"
-        Value="{StaticResource Theme_TextBrush}" />
+        Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="TabNavigation"
@@ -1388,7 +1388,7 @@
                                                                       Storyboard.TargetName="SelectedBackground"
                                                                       Storyboard.TargetProperty="Background.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_BorderColor}" />
+                                                                 Value="{DynamicResource Theme_BorderColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1407,7 +1407,7 @@
                                                                       Storyboard.TargetName="SelectedTextControl"
                                                                       Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_TextOverPrimaryColor}" />
+                                                                 Value="{DynamicResource Theme_TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1427,7 +1427,7 @@
                             </vsm:VisualStateGroup>
                         </vsm:VisualStateManager.VisualStateGroups>
                         <Border x:Name="SelectedBackground"
-                                Background="{StaticResource Theme_PrimaryBrush}"
+                                Background="{DynamicResource Theme_PrimaryBrush}"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 CornerRadius="4"
@@ -1447,7 +1447,7 @@
                         </ContentControl>
                         <Border x:Name="FocusVisualElement"
                                 Visibility="Collapsed"
-                                BorderBrush="{StaticResource Theme_PrimaryBrush}"
+                                BorderBrush="{DynamicResource Theme_PrimaryBrush}"
                                 BorderThickness="0.5"
                                 CornerRadius="4" />
                     </Grid>
@@ -1474,11 +1474,11 @@
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
 
         <Setter Property="Template">
             <Setter.Value>
@@ -1748,7 +1748,7 @@
                                                 Width="6" />
                                         <Border x:Name="Disable"
                                                 BorderThickness="0"
-                                                Background="{StaticResource Theme_DisabledBrush}"
+                                                Background="{DynamicResource Theme_DisabledBrush}"
                                                 CornerRadius="3"
                                                 Width="6"
                                                 Visibility="Collapsed" />
@@ -1787,7 +1787,7 @@
                                                 Height="6" />
                                         <Border x:Name="Disable"
                                                 BorderThickness="0"
-                                                Background="{StaticResource Theme_DisabledBrush}"
+                                                Background="{DynamicResource Theme_DisabledBrush}"
                                                 CornerRadius="3"
                                                 Height="6"
                                                 Visibility="Collapsed" />
@@ -1975,13 +1975,13 @@
     <Style x:Key="SliderThumbStyle"
            TargetType="Thumb">
         <Setter Property="Background"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="2" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Thumb">
@@ -1997,7 +1997,7 @@
                                                                       Storyboard.TargetName="Background"
                                                                       Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_BorderColor}" />
+                                                                 Value="{DynamicResource Theme_BorderColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ThumbVisual"
                                                                        Storyboard.TargetProperty="Opacity">
@@ -2063,9 +2063,9 @@
         <Setter Property="Value"
                 Value="0" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Orientation"
                 Value="Horizontal" />
         <Setter Property="Template">
@@ -2083,7 +2083,7 @@
                                               Storyboard.TargetName="Background"
                                               Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                         Value="{StaticResource Theme_BorderColor}" />
+                                         Value="{DynamicResource Theme_BorderColor}" />
                                         </ColorAnimationUsingKeyFrames>-->
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TrackValue"
                                                Storyboard.TargetProperty="Opacity">
@@ -2118,7 +2118,7 @@
                                     Grid.ColumnSpan="3"
                                     CornerRadius="1"
                                     Background="{TemplateBinding Background}"
-                                    BorderBrush="{StaticResource Theme_BorderBrush}"
+                                    BorderBrush="{DynamicResource Theme_BorderBrush}"
                                     BorderThickness="1" />
                             <Border x:Name="HorizontalTrackRectangleDisabledOverlay"
                                     Height="2"
@@ -2168,7 +2168,7 @@
                                     Grid.RowSpan="3"
                                     CornerRadius="1"
                                     Background="{TemplateBinding Background}"
-                                    BorderBrush="{StaticResource Theme_BorderBrush}"
+                                    BorderBrush="{DynamicResource Theme_BorderBrush}"
                                     BorderThickness="1" />
                             <Border x:Name="VerticalTrackRectangleDisabledOverlay"
                                     Width="2"
@@ -2265,7 +2265,7 @@
                                                                       Storyboard.TargetName="Header"
                                                                       Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_TextOverPrimaryColor}" />
+                                                                 Value="{DynamicResource Theme_TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -2282,7 +2282,7 @@
                                                                       Storyboard.TargetName="Header"
                                                                       Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{StaticResource Theme_TextOverPrimaryColor}" />
+                                                                 Value="{DynamicResource Theme_TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -2330,7 +2330,7 @@
                                     CornerRadius="12"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="1"
-                                    Background="{StaticResource Theme_PrimaryBrush}" />
+                                    Background="{DynamicResource Theme_PrimaryBrush}" />
                         </Grid>
                         <ToggleButton HorizontalAlignment="Stretch"
                                       x:Name="ExpanderButton"
@@ -2407,10 +2407,10 @@
                                                       StrokeLineJoin="Miter"
                                                       StrokeThickness=".75"
                                                       Data="M 0,0 L 0,10 L 5,5 Z"
-                                                      Fill="{StaticResource Theme_TextBrush}"
+                                                      Fill="{DynamicResource Theme_TextBrush}"
                                                       Opacity="0" />
                                                 <Path x:Name="Border"
-                                                      Stroke="{StaticResource Theme_TextBrush}"
+                                                      Stroke="{DynamicResource Theme_TextBrush}"
                                                       StrokeLineJoin="Miter"
                                                       StrokeThickness=".75"
                                                       Data="M 0,0 L 0,10 L 5,5 Z"
@@ -2481,7 +2481,7 @@
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Left" />
         <Setter Property="VerticalContentAlignment"
@@ -2603,7 +2603,7 @@
                                           ContentTemplate="{TemplateBinding ContentTemplate}" />
                         <Rectangle x:Name="FocusVisualElement"
                                    Visibility="Collapsed"
-                                   Stroke="{StaticResource Theme_PrimaryBrush}"
+                                   Stroke="{DynamicResource Theme_PrimaryBrush}"
                                    StrokeThickness="1"
                                    RadiusX="2"
                                    RadiusY="2" />
@@ -2623,11 +2623,11 @@
         <Setter Property="TabNavigation"
                 Value="Once" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="local:FlatDesignProperties.Label"
                 Value="Header" />
         <Setter Property="BorderThickness"
@@ -2832,7 +2832,7 @@
                                                                        Visibility="Collapsed"
                                                                        VerticalAlignment="Center"
                                                                        Margin="{TemplateBinding Padding}"
-                                                                       Foreground="{StaticResource Theme_WatermarkBrush}" />
+                                                                       Foreground="{DynamicResource Theme_WatermarkBrush}" />
                                                             <ContentPresenter x:Name="contentPresenter"
                                                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -2870,7 +2870,7 @@
                             </Grid>
                         </Border>
                         <Border CornerRadius="4"
-                                BorderBrush="{StaticResource Theme_BorderBrush}"
+                                BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="1"
                                 Padding="{TemplateBinding Padding}" />
                         <Border x:Name="HasFocus"
@@ -2925,7 +2925,7 @@
                         <Popup x:Name="Popup">
                             <Border x:Name="PopupBorder"
                                     Height="Auto"
-                                    BorderBrush="{StaticResource Theme_BorderBrush}"
+                                    BorderBrush="{DynamicResource Theme_BorderBrush}"
                                     CornerRadius="4"
                                     Background="{TemplateBinding Background}"
                                     BorderThickness="1">
@@ -2952,7 +2952,7 @@
         <Setter Property="TabNavigation"
                 Value="Cycle" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="HorizontalAlignment"
                 Value="Center" />
         <Setter Property="VerticalAlignment"
@@ -2967,9 +2967,9 @@
                 Value="16" />
 
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="OverlayBrush"
                 Value="#7F000000" />
         <Setter Property="OverlayOpacity"
@@ -2984,7 +2984,7 @@
                                 <Setter Property="Background"
                                         Value="Transparent" />
                                 <Setter Property="Foreground"
-                                        Value="{StaticResource Theme_TextBrush}" />
+                                        Value="{DynamicResource Theme_TextBrush}" />
                                 <Setter Property="Padding"
                                         Value="3" />
                                 <Setter Property="Template">
@@ -3146,8 +3146,8 @@
                                     CornerRadius="4">
                                 <Border Margin="1"
                                         CornerRadius="1.5"
-                                        Background="{StaticResource Theme_ControlBackgroundBrush}"
-                                        BorderBrush="{StaticResource Theme_PrimaryBrush}">
+                                        Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                                        BorderBrush="{DynamicResource Theme_PrimaryBrush}">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
@@ -3155,7 +3155,7 @@
                                         </Grid.RowDefinitions>
                                         <Border x:Name="Chrome"
                                                 Width="Auto"
-                                                BorderBrush="{StaticResource Theme_BorderBrush}"
+                                                BorderBrush="{DynamicResource Theme_BorderBrush}"
                                                 BorderThickness="0,0,0,1"
                                                 Background="Transparent"
                                                 Padding="0,2">
@@ -3171,7 +3171,7 @@
                                                                 FontWeight="Bold"
                                                                 IsTabStop="False"
                                                                 Content="{TemplateBinding Title}"
-                                                                Foreground="{StaticResource Theme_TextBrush}" />
+                                                                Foreground="{DynamicResource Theme_TextBrush}" />
                                                 <Button x:Name="CloseButton"
                                                         Height="14"
                                                         HorizontalAlignment="Center"
@@ -3207,7 +3207,7 @@
     <Style x:Name="FlatHyperlinkButtonStyle"
            TargetType="HyperlinkButton">
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Padding"
                 Value="2,0,2,2" />
         <Setter Property="Cursor"
@@ -3300,7 +3300,7 @@
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                    Visibility="Collapsed"
                                    Canvas.ZIndex="1"
-                                   Foreground="{StaticResource Theme_DisabledBrush}"
+                                   Foreground="{DynamicResource Theme_DisabledBrush}"
                                    Text="{TemplateBinding Content}" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           Margin="{TemplateBinding Padding}"

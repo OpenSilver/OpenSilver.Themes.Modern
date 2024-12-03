@@ -7,11 +7,11 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Padding"
@@ -103,7 +103,7 @@
                                 Opacity="0" />
                         <Border x:Name="DisabledBackground"
                                 CornerRadius="5"
-                                Background="{StaticResource Theme_DisabledBrush}"
+                                Background="{DynamicResource Theme_DisabledBrush}"
                                 Opacity="0" />
                         <ContentPresenter x:Name="contentPresenter"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"

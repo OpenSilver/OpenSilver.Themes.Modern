@@ -9,7 +9,7 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
@@ -44,7 +44,7 @@
                                         <!--<ColorAnimationUsingKeyFrames Duration="00:00:00"
                                                                       Storyboard.TargetName="ForegroundContentControl"
                                                                       Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_BorderColor}" />
+                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
                                         </ColorAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </VisualState>
@@ -69,7 +69,7 @@
                                         <ColorAnimationUsingKeyFrames Duration="00:00:00"
                                                                       Storyboard.TargetName="ForegroundContentControl"
                                                                       Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_DisabledColor}" />
+                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_DisabledColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -143,12 +143,12 @@
                                                                 <ColorAnimationUsingKeyFrames Duration="00:00:00"
                                                                                               Storyboard.TargetName="Background"
                                                                                               Storyboard.TargetProperty="(UIElement.Background).(SolidColorBrush.Color)">
-                                                                    <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_DisabledColor}" />
+                                                                    <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_DisabledColor}" />
                                                                 </ColorAnimationUsingKeyFrames>
                                                                 <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                                               Storyboard.TargetName="Background"
                                                                                               Storyboard.TargetProperty="(UIElement.BorderBrush).(SolidColorBrush.Color)">
-                                                                    <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_BorderColor}" />
+                                                                    <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
                                                                 </ColorAnimationUsingKeyFrames>
                                                             </Storyboard>
                                                         </VisualState>
@@ -188,7 +188,7 @@
                                                 </VisualStateManager.VisualStateGroups>
                                                 <Border x:Name="Background"
                                                         CornerRadius="6"
-                                                        BorderBrush="{StaticResource Theme_BorderBrush}"
+                                                        BorderBrush="{DynamicResource Theme_BorderBrush}"
                                                         BorderThickness="{TemplateBinding BorderThickness}"
                                                         Background="{TemplateBinding Background}"
                                                         Grid.ColumnSpan="2" />
@@ -199,7 +199,7 @@
                                                         VerticalAlignment="Center" />
                                                 <Border x:Name="HasFocus"
                                                         CornerRadius="6"
-                                                        BorderBrush="{StaticResource Theme_PrimaryBrush}"
+                                                        BorderBrush="{DynamicResource Theme_PrimaryBrush}"
                                                         BorderThickness="2"
                                                         Visibility="Collapsed"
                                                         Grid.ColumnSpan="2" />
@@ -489,7 +489,7 @@
                                     Background="{TemplateBinding Background}"
                                     Style="{StaticResource DataPagerButtonStyle}"
                                     BorderThickness="1"
-                                    Foreground="{StaticResource Theme_TextBrush}"
+                                    Foreground="{DynamicResource Theme_TextBrush}"
                                     Padding="1">
                                 <Path Stretch="Uniform"
                                       Height="9"
@@ -506,7 +506,7 @@
                                            Margin="4,0,0,0"
                                            VerticalAlignment="Center"
                                            Width="Auto"
-                                           Foreground="{StaticResource Theme_TextBrush}" />
+                                           Foreground="{DynamicResource Theme_TextBrush}" />
                                 <TextBox x:Name="CurrentPageTextBox"
                                          Margin="4,2,4,2"
                                          Width="46"
@@ -519,7 +519,7 @@
                                                Margin="0,0,4,0"
                                                VerticalAlignment="Center"
                                                Width="Auto"
-                                               Foreground="{StaticResource Theme_TextBrush}" />
+                                               Foreground="{DynamicResource Theme_TextBrush}" />
                             </StackPanel>
                             <Button x:Name="NextPageButton"
                                         Height="20"
@@ -545,7 +545,7 @@
                                         Background="{TemplateBinding Background}"
                                         Style="{StaticResource DataPagerButtonStyle}"
                                         BorderThickness="1"
-                                        Foreground="{StaticResource Theme_TextBrush}"
+                                        Foreground="{DynamicResource Theme_TextBrush}"
                                         Padding="1">
                                 <Path Stretch="Uniform"
                                           Height="9"
@@ -613,7 +613,7 @@
                                 Opacity="0"
                                 VerticalAlignment="Stretch"
                                 HorizontalAlignment="Stretch"
-                                BorderBrush="{StaticResource Theme_PrimaryBrush}"
+                                BorderBrush="{DynamicResource Theme_PrimaryBrush}"
                                 BorderThickness="1"
                                 Margin="-1,0,0,-1"
                                 Grid.ColumnSpan="2" />
@@ -628,9 +628,9 @@
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="SeparatorBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="SeparatorVisibility"
                 Value="Collapsed" />
         <Setter Property="Template">
@@ -764,7 +764,7 @@
     <!--DataGridColumnHeader-->
     <Style TargetType="DataGridColumnHeader">
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Center" />
         <Setter Property="VerticalContentAlignment"
@@ -776,7 +776,7 @@
         <Setter Property="FontWeight"
                 Value="Bold" />
         <Setter Property="SeparatorBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Padding"
                 Value="7,4,5,4" />
         <Setter Property="Template">
@@ -871,7 +871,7 @@
                                    Margin="3,0,0,0" />
                         <Path Grid.RowSpan="2"
                               x:Name="SortIcon"
-                              Fill="{StaticResource Theme_TextBrush}"
+                              Fill="{DynamicResource Theme_TextBrush}"
                               RenderTransformOrigin=".5,.5"
                               HorizontalAlignment="Right"
                               VerticalAlignment="Center"
@@ -975,8 +975,8 @@
     <Style TargetType="local:DataGridRowGroupHeader">
         <Setter Property="Cursor" Value="Arrow" />
         <Setter Property="IsTabStop" Value="False" />
-        <Setter Property="Background" Value="{StaticResource Theme_ControlBackgroundBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource Theme_TextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource Theme_ControlBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Height" Value="26"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -1069,7 +1069,7 @@
                             <TextBlock x:Name="ItemCountElement" Margin="4,0,0,0" Visibility="{TemplateBinding ItemCountVisibility}"/>
                         </StackPanel>
 
-                        <Rectangle Grid.Column="1" Grid.ColumnSpan="5" Fill="{StaticResource Theme_BorderBrush}" Height="1" Grid.Row="2"/>
+                        <Rectangle Grid.Column="1" Grid.ColumnSpan="5" Fill="{DynamicResource Theme_BorderBrush}" Height="1" Grid.Row="2"/>
 
                         <DataGridRowHeader Name="RowHeader" Grid.RowSpan="3" DataGridFrozenGrid.IsFrozen="True"/>
 
@@ -1083,23 +1083,23 @@
     <Style x:Name="FlatDataGridStyle"
            TargetType="data:DataGrid">
         <Setter Property="RowBackground"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="AlternatingRowBackground"
-                Value="{StaticResource Theme_AlternatingRowBackgroundBrush}" />
+                Value="{DynamicResource Theme_AlternatingRowBackgroundBrush}" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="HeadersVisibility"
                 Value="Column" />
         <Setter Property="HorizontalScrollBarVisibility"
                 Value="Auto" />
         <Setter Property="HorizontalGridLinesBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="VerticalScrollBarVisibility"
                 Value="Auto" />
         <Setter Property="VerticalGridLinesBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="SelectionMode"
                 Value="Extended" />
         <Setter Property="CanUserReorderColumns"
@@ -1113,7 +1113,7 @@
         <Setter Property="RowDetailsVisibilityMode"
                 Value="VisibleWhenSelected" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="DragIndicatorStyle">
@@ -1124,11 +1124,11 @@
                     <Setter Property="FontWeight"
                             Value="Bold" />
                     <Setter Property="Foreground"
-                            Value="{StaticResource Theme_TextBrush}" />
+                            Value="{DynamicResource Theme_TextBrush}" />
                     <Setter Property="Background"
-                            Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                            Value="{DynamicResource Theme_ControlBackgroundBrush}" />
                     <Setter Property="BorderBrush"
-                            Value="{StaticResource Theme_PrimaryColor}" />
+                            Value="{DynamicResource Theme_PrimaryColor}" />
                     <Setter Property="Opacity"
                             Value=".6" />
                     <Setter Property="Template">
@@ -1153,7 +1153,7 @@
             <Setter.Value>
                 <Style TargetType="Control">
                     <Setter Property="Background"
-                            Value="{StaticResource Theme_PrimaryBrush}" />
+                            Value="{DynamicResource Theme_PrimaryBrush}" />
                     <Setter Property="Width" Value="2" />
                     <Setter Property="Template">
                         <Setter.Value>
@@ -1219,7 +1219,7 @@
                                        Height="1"
                                        VerticalAlignment="Bottom"
                                        Width="Auto"
-                                       Fill="{StaticResource Theme_BorderBrush}"
+                                       Fill="{DynamicResource Theme_BorderBrush}"
                                        StrokeThickness="1" />
                             <DataGridRowsPresenter x:Name="RowsPresenter" Grid.ColumnSpan="2" Grid.Row="1" />
                         

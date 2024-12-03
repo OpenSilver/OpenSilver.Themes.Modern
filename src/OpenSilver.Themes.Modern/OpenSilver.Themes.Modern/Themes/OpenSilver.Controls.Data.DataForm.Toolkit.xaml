@@ -8,7 +8,7 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
@@ -43,7 +43,7 @@
                                         <!--<ColorAnimationUsingKeyFrames Duration="00:00:00"
                                                                   Storyboard.TargetName="ForegroundContentControl"
                                                                   Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                        <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_BorderColor}" />
+                                        <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
                                     </ColorAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </VisualState>
@@ -68,7 +68,7 @@
                                         <ColorAnimationUsingKeyFrames Duration="00:00:00"
                                                                   Storyboard.TargetName="ForegroundContentControl"
                                                                   Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_DisabledColor}" />
+                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_DisabledColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -101,11 +101,11 @@
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource Theme_BorderBrush}" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"
-        Value="{StaticResource Theme_TextBrush}" />
+        Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="DescriptionViewerPosition"
                 Value="Auto" />
         <Setter Property="LabelPosition"

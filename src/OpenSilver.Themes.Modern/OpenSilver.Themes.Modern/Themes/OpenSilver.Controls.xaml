@@ -54,7 +54,7 @@
     <Style TargetType="DatePickerTextBox">
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
-        <Setter Property="CaretBrush" Value="{StaticResource Theme_TextBrush}" />
+        <Setter Property="CaretBrush" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DatePickerTextBox">
@@ -65,7 +65,7 @@
                         </Grid.ColumnDefinitions>
                         <Grid.Resources>
                             <SolidColorBrush x:Key="Theme_WatermarkBrush"
-                                     Color="{StaticResource Theme_WatermarkColor}" />
+                                     Color="{DynamicResource Theme_WatermarkColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -86,13 +86,13 @@
                                                                   Storyboard.TargetName="Background"
                                                                   Storyboard.TargetProperty="(UIElement.Background).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                             Value="{StaticResource Theme_DisabledColor}" />
+                                                             Value="{DynamicResource Theme_DisabledColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                         <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
                                                      Storyboard.TargetName="Background"
                                                  Storyboard.TargetProperty="(UIElement.BorderBrush).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                             Value="{StaticResource Theme_BorderColor}" />
+                                                             Value="{DynamicResource Theme_BorderColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -134,7 +134,7 @@
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
                         CornerRadius="6"
-                        BorderBrush="{StaticResource Theme_BorderBrush}"
+                        BorderBrush="{DynamicResource Theme_BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}"
                         Grid.ColumnSpan="2" />
@@ -155,7 +155,7 @@
                             VerticalAlignment="Center" />
                             <ContentControl
                                     FontSize="{TemplateBinding FontSize}"
-                                    Foreground="{StaticResource Theme_WatermarkBrush}"
+                                    Foreground="{DynamicResource Theme_WatermarkBrush}"
                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                     IsTabStop="False"
                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -182,15 +182,15 @@
     <Style x:Name="FlatDatePicker"
    TargetType="controls:DatePicker">
         <Setter Property="Background"
-        Value="{StaticResource Theme_ControlBackgroundBrush}" />
+        Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"
-Value="{StaticResource Theme_TextBrush}" />
+Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="FontSize"
             Value="12"/>
         <Setter Property="Padding"
         Value="2" />
         <Setter Property="BorderBrush"
-        Value="{StaticResource Theme_PrimaryBrush}" />
+        Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
         Value="1" />
         <Setter Property="Width"
@@ -233,7 +233,7 @@ Value="{StaticResource Theme_TextBrush}" />
                                   RenderTransformOrigin="0.5,0.5"
                                   StrokeThickness="1"
                                   Stretch="Uniform"
-                                  Stroke="{StaticResource Theme_BorderBrush}"
+                                  Stroke="{DynamicResource Theme_BorderBrush}"
                                       Data="M48 4 L16 4 C10 4 8 6 8 12 L8 48 C8 52 10 56 16 56 L48 56 C54 56 56 54 56 48 L56 12 C56 6 54 4 48 4 M8 16 L56 16 M20 0 V8 M44 0 L44 8 M14 24 C14 18 22 18 22 24 C22 30 14 30 14 24 M28 24 C28 18 36 18 36 24 C36 30 28 30 28 24 M42 24 C42 18 50 18 50 24 C50 30 42 30 42 24 Z"/>
                                 <!--Data="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>-->
                             </Button.Content>
@@ -251,9 +251,9 @@ Value="{StaticResource Theme_TextBrush}" />
     <!--Following is for Month/Year buttons when in Year/Decade display Mode-->
     <Style TargetType="CalendarButton">
         <Setter Property="Background"
-        Value="{StaticResource Theme_PrimaryBrush}" />
+        Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Foreground"
-        Value="{StaticResource Theme_TextBrush}" />
+        Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="MinWidth"
         Value="40" />
         <Setter Property="MinHeight"
@@ -312,7 +312,7 @@ Value="{StaticResource Theme_TextBrush}" />
                                                               Storyboard.TargetName="NormalText"
                                                               Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                         Value="{StaticResource Theme_TextOverPrimaryColor}" />
+                                                         Value="{DynamicResource Theme_TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -363,7 +363,7 @@ Value="{StaticResource Theme_TextBrush}" />
                                Visibility="Collapsed"
                                RadiusX="18"
                                RadiusY="18"
-                               Fill="{StaticResource Theme_PrimaryBrush}" />
+                               Fill="{DynamicResource Theme_PrimaryBrush}" />
                         <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 Margin="18,3,18,5"
                                 x:Name="NormalText"
@@ -382,9 +382,9 @@ Value="{StaticResource Theme_TextBrush}" />
     <!-- CalendarDayButton -->
     <Style TargetType="CalendarDayButton">
         <Setter Property="Background"
-        Value="{StaticResource Theme_PrimaryBrush}" />
+        Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Foreground"
-        Value="{StaticResource Theme_TextBrush}" />
+        Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="MinWidth"
         Value="36" />
         <Setter Property="MinHeight"
@@ -453,7 +453,7 @@ Value="2" />
                                                               Storyboard.TargetName="NormalText"
                                                               Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
-                                                         Value="{StaticResource Theme_TextOverPrimaryColor}" />
+                                                         Value="{DynamicResource Theme_TextOverPrimaryColor}" />
                                         </ColorAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -508,7 +508,7 @@ Value="2" />
                         </VisualStateManager.VisualStateGroups>
                         <Ellipse x:Name="TodayBackground"
                            Opacity="0"
-                           Stroke="{StaticResource Theme_BorderBrush}" />
+                           Stroke="{DynamicResource Theme_BorderBrush}" />
 
                         <Ellipse x:Name="DayButtonSelectedVisual"
                            IsHitTestVisible="false"
@@ -641,7 +641,7 @@ Value="2" />
                                         Template="{StaticResource HeaderButtonTemplate}"
                                         HorizontalContentAlignment="Left"
                                         HorizontalAlignment="Stretch"
-                                        Foreground="{StaticResource Theme_TextBrush}"
+                                        Foreground="{DynamicResource Theme_TextBrush}"
                                         Margin="16,16,0,8"/>
                                     <Button Height="30"
                                         Width="30"
@@ -709,7 +709,7 @@ Value="2" />
                            Visibility="Collapsed"
                            RadiusX="2"
                            RadiusY="2"
-                           Fill="{StaticResource Theme_DisabledBrush}"
+                           Fill="{DynamicResource Theme_DisabledBrush}"
                            Stretch="Fill" />
                     </Grid>
                 </ControlTemplate>
@@ -722,8 +722,8 @@ Value="2" />
    TargetType="controls:Calendar">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Background" Value="{StaticResource Theme_ControlBackgroundBrush}" />
-        <Setter Property="Foreground" Value="{StaticResource Theme_TextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource Theme_ControlBackgroundBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="FontFamily" Value="&quot;Roboto&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif" />
         <Setter Property="Template">
             <Setter.Value>
@@ -754,8 +754,8 @@ Value="2" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="{StaticResource Theme_TextBrush}" />
-        <Setter Property="BorderBrush" Value="{StaticResource Theme_BorderBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Theme_BorderBrush}"/>
         <Setter Property="Padding" Value="5" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
@@ -826,7 +826,7 @@ Value="2" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="BorderBrush" Value="{StaticResource Theme_PrimaryBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="FontSize" Value="14" />
@@ -836,7 +836,7 @@ Value="2" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="MinWidth" Value="5" />
         <Setter Property="MinHeight" Value="32" />
-        <Setter Property="Foreground" Value="{StaticResource Theme_TextBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabItem">
