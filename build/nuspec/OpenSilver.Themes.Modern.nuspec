@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$PackageId$</id>
+    <version>$PackageVersion$</version>
+    <authors>Userware</authors>
+    <projectUrl>https://www.opensilver.net</projectUrl>
+    <repository type="git" url="$RepositoryUrl$" />
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Styles for controls with a more modern look in OpenSilver.</description>
+    <copyright>Copyright (c) 2024, Userware. All rights reserved.</copyright>
+    <tags>opensilver silverlight webassembly csharp xaml wasm dotnet .net C# javascript html html5 blazor mono modern theme styles</tags>
+    <icon>images\icon.png</icon>
+    <!--<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>-->
+    <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
+    <dependencies>
+      <group targetFramework="netstandard2.0">
+        <dependency id="OpenSilver" version="$OpenSilverVersion$" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+  
+    <!-- OpenSilver.Themes.Modern -->
+    <file src="..\..\src\OpenSilver.Themes.Modern\OpenSilver.Themes.Modern\bin\$Configuration$\netstandard2.0\OpenSilver.Themes.Modern.dll" target="lib\netstandard2.0\OpenSilver.Themes.Modern.dll" />
+    <file src="..\..\src\OpenSilver.Themes.Modern\OpenSilver.Themes.Modern\bin\$Configuration$\netstandard2.0\OpenSilver.Themes.Modern.pdb" target="lib\netstandard2.0\OpenSilver.Themes.Modern.pdb" />
+
+    <!-- Icon -->
+    <file src="icon.png" target="images\icon.png" />
+  </files>
+</package>

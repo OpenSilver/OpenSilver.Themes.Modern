@@ -1,0 +1,36 @@
+name: Build package
+env:
+  package-version: '3.1.0'
+  suffix: 'preview'
+  project-name: 'OpenSilver.Themes.Modern'
+on:
+  workflow_dispatch:
+
+jobs:
+  Build:
+    #We should not run these steps on the forks by default.
+    if: github.repository_owner == 'OpenSilver'
+    runs-on: windows-latest
+    steps:
+      - uses: microsoft/setup-msbuild@v1.1
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v3.x
+      - name: Fill vars
+        id: vars
+        run: |
+          echo "package-version=${{ env.package-version }}-${{ env.suffix }}-$(date +'%Y-%m-%d-%H%M%S')-${{ env.GITHUB_SHA_SHORT }}" >> $env:GITHUB_OUTPUT
+      - name: Print vars
+        run: |
+          echo "Package Version : ${{ steps.vars.outputs.package-version }}"
+      - name: Clone the repo
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+          path: ${{ env.project-name }}
+      - name: Build the package
+        working-directory: ${{ env.project-name }}\build\
+        run: |
+          .\build-nuget-package.bat "${{ steps.vars.outputs.package-version }}"
+      - name: Upload packages to MyGet
+        run: |
+          dotnet nuget push "${{ env.project-name }}\build\output\*.nupkg" -k ${{ secrets.MYGET_TOKEN }} -s https://www.myget.org/F/opensilver/api/v2/package
