@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <OpenSilverType>7</OpenSilverType>
     <PublishTrimmed>true</PublishTrimmed>
-    <WasmEnableSIMD>false</WasmEnableSIMD>
+    <!--<WasmEnableSIMD>false</WasmEnableSIMD>-->
     <!-- Uncomment to enable AOT compilation when publishing -->
     <!--<RunAOTCompilation>true</RunAOTCompilation>-->
   </PropertyGroup>
@@ -12,7 +12,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
-    <PackageReference Include="OpenSilver.WebAssembly" Version="3.1.0-preview-2024-11-27-091646-30936416" />
+    <PackageReference Include="OpenSilver.WebAssembly" Version="3.1.0-preview-2024-12-03-153828-f9951b66" />
   </ItemGroup>
 
   <PropertyGroup>

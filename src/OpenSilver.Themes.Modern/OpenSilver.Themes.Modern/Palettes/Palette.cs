@@ -77,9 +77,9 @@ public abstract class Palette
         return resources;
     }
 
-    public static Palette Light { get; } = new LightPalette();
+    internal static Palette Light { get; } = new LightPalette();
 
-    public static Palette Dark { get; } = new DarkPalette();
+    internal static Palette Dark { get; } = new DarkPalette();
 
     public abstract Color Theme_PrimaryColor { get; set; }
     public abstract Color Theme_ControlBackgroundColor { get; set; }

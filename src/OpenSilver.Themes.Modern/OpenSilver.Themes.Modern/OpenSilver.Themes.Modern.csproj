@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-11-27-091646-30936416" />
+    <PackageReference Include="OpenSilver" Version="3.1.0-preview-2024-12-03-153828-f9951b66" />
   </ItemGroup>
 
 
