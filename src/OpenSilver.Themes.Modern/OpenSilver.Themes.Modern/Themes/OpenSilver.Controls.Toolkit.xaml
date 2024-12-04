@@ -112,8 +112,8 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
-                                Background="{StaticResource SecondaryBrush}"
-                                BorderBrush="{StaticResource PrimaryBrush}"
+                                Background="{StaticResource Theme_ControlBackgroundBrush}"
+                                BorderBrush="{StaticResource Theme_PrimaryBrush}"
                                 CornerRadius="2">
                             <Border.Effect>
                                 <DropShadowEffect Direction="0"
@@ -183,15 +183,15 @@
                                                                         </VisualStateGroup>
                                                                     </VisualStateManager.VisualStateGroups>
                                                                     <Border x:Name="ProgressBarTrack"
-                                                                            Background="{StaticResource SecondaryBrush}"
-                                                                            BorderBrush="{StaticResource PrimaryBrush}"
+                                                                            Background="{StaticResource Theme_ControlBackgroundBrush}"
+                                                                            BorderBrush="{StaticResource Theme_PrimaryBrush}"
                                                                             BorderThickness="1"
                                                                             CornerRadius="4" />
                                                                     <Grid x:Name="ProgressBarRootGrid">
                                                                         <Grid x:Name="IndeterminateRoot"
                                                                               Visibility="Collapsed">
                                                                             <Rectangle x:Name="IndeterminateSolidFill"
-                                                                                       Fill="{StaticResource PrimaryBrush}"
+                                                                                       Fill="{StaticResource Theme_PrimaryBrush}"
                                                                                        Margin="1"
                                                                                        Opacity="1"
                                                                                        RenderTransformOrigin="0.5,0.5"
@@ -263,16 +263,16 @@
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
         <Setter Property="Foreground"
-                Value="{StaticResource TextBrush}" />
+                Value="{StaticResource Theme_TextBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource FadedBrush}" />
+                Value="{StaticResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
 
         <Setter Property="ExpandDirection"
                 Value="Down" />
         <Setter Property="Background"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="{StaticResource Theme_ControlBackgroundBrush}" />
         <Setter Property="MinHeight"
                 Value="32" />
         <Setter Property="ContentTemplate">
@@ -376,12 +376,12 @@
                                                         RenderTransformOrigin="0.5,0.5"
                                                         Width="16"
                                                         Height="16"
-                                                        Background="{StaticResource FadedBrush}"
+                                                        Background="{StaticResource Theme_BorderBrush}"
                                                         Opacity="0" />
                                                 <Path HorizontalAlignment="Center"
                                                       x:Name="Arrow"
                                                       VerticalAlignment="Center"
-                                                      Stroke="{StaticResource FadedBrush}"
+                                                      Stroke="{StaticResource Theme_BorderBrush}"
                                                       StrokeThickness="2"
                                                       Data="M 1,1.5 L 4.5,5 L 8,1.5"
                                                       RenderTransformOrigin="0.5,0.5">
@@ -480,12 +480,12 @@
                                                         RenderTransformOrigin="0.5,0.5"
                                                         Width="16"
                                                         Height="16"
-                                                        Background="{StaticResource FadedBrush}"
+                                                        Background="{StaticResource Theme_BorderBrush}"
                                                         Opacity="0" />
                                                 <Path HorizontalAlignment="Center"
                                                       x:Name="Arrow"
                                                       VerticalAlignment="Center"
-                                                      Stroke="{StaticResource FadedBrush}"
+                                                      Stroke="{StaticResource Theme_BorderBrush}"
                                                       StrokeThickness="2"
                                                       Data="M 1,1.5 L 4.5,5 L 8,1.5"
                                                       RenderTransformOrigin="0.5,0.5">
@@ -584,12 +584,12 @@
                                                         RenderTransformOrigin="0.5,0.5"
                                                         Width="16"
                                                         Height="16"
-                                                        Background="{StaticResource FadedBrush}"
+                                                        Background="{StaticResource Theme_BorderBrush}"
                                                         Opacity="0" />
                                                 <Path HorizontalAlignment="Center"
                                                       x:Name="Arrow"
                                                       VerticalAlignment="Center"
-                                                      Stroke="{StaticResource FadedBrush}"
+                                                      Stroke="{StaticResource Theme_BorderBrush}"
                                                       StrokeThickness="2"
                                                       Data="M 1,1.5 L 4.5,5 L 8,1.5"
                                                       RenderTransformOrigin="0.5,0.5">
@@ -688,12 +688,12 @@
                                                         RenderTransformOrigin="0.5,0.5"
                                                         Width="16"
                                                         Height="16"
-                                                        Background="{StaticResource FadedBrush}"
+                                                        Background="{StaticResource Theme_BorderBrush}"
                                                         Opacity="0" />
                                                 <Path HorizontalAlignment="Center"
                                                       x:Name="Arrow"
                                                       VerticalAlignment="Center"
-                                                      Stroke="{StaticResource FadedBrush}"
+                                                      Stroke="{StaticResource Theme_BorderBrush}"
                                                       StrokeThickness="2"
                                                       Data="M 1,1.5 L 4.5,5 L 8,1.5"
                                                       RenderTransformOrigin="0.5,0.5">
@@ -934,7 +934,7 @@
                                         CornerRadius="0,0,4,4"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}"
-                                        Background="{StaticResource VeryFadedBrush}"
+                                        Background="{StaticResource Theme_AlternatingRowBackgroundBrush}"
                                         Padding="5">
                                     <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                     Margin="{TemplateBinding Padding}"

@@ -64,7 +64,7 @@
                         <ToolTipService.ToolTip>
                             <ContentControl Content="{TemplateBinding FormattedDependentValue}" />
                         </ToolTipService.ToolTip>
-                        <Ellipse Fill="{TemplateBinding Background}" Opacity="{StaticResource ChartHaloOpacity}">
+                        <Ellipse Fill="{TemplateBinding Background}" Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Ellipse.Effect>
                                 <BlurEffect Radius="6"/>
                             </Ellipse.Effect>
@@ -105,7 +105,7 @@
     <Style TargetType="AxisLabel">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="StringFormat" Value="{}{0}" />
-        <Setter Property="Foreground" Value="{StaticResource ChartAxisTextForeground}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme_ChartAxisTextForeground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="AxisLabel">
@@ -165,7 +165,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Opacity="{StaticResource ChartHaloOpacity}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Border.Effect>
                                 <BlurEffect Radius="6"/>
                             </Border.Effect>
@@ -234,7 +234,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Ellipse Fill="{TemplateBinding Background}" Opacity="{StaticResource ChartHaloOpacity}">
+                        <Ellipse Fill="{TemplateBinding Background}" Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Ellipse.Effect>
                                 <BlurEffect Radius="6"/>
                             </Ellipse.Effect>
@@ -258,7 +258,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Padding" Value="10" />
-        <Setter Property="Foreground" Value="{StaticResource ChartLegendForegroundBrush}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme_ChartLegendForegroundBrush}" />
         <Setter Property="Palette">
             <Setter.Value>
                 <ResourceDictionaryCollection>
@@ -266,7 +266,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor1}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor1}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -283,7 +283,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor2}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor2}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -300,7 +300,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor3}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor3}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -317,7 +317,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor4}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor4}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -334,7 +334,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor5}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor5}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -351,7 +351,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor6}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor6}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -368,7 +368,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor7}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor7}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -385,7 +385,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor8}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor8}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -402,7 +402,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor9}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor9}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -419,7 +419,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor10}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor10}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -436,7 +436,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor11}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor11}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -453,7 +453,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor12}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor12}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -470,7 +470,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor13}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor13}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -487,7 +487,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor14}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor14}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -504,7 +504,7 @@
                     <ResourceDictionary>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
-                                <Binding Converter="{StaticResource ChartSeriesColorConverter}" ConverterParameter="{StaticResource ChartSeriesColor15}"/>
+                                <Binding Converter="{StaticResource Theme_ChartSeriesColorConverter}" ConverterParameter="{StaticResource Theme_ChartSeriesColor15}"/>
                             </LinearGradientBrush.GradientStops>
                         </LinearGradientBrush>
                         <Style x:Key="DataPointStyle" TargetType="Control">
@@ -534,7 +534,7 @@
                 <Style TargetType="Legend">
                     <Setter Property="Margin" Value="15,0,15,0" />
                     <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="BorderBrush" Value="{StaticResource FadedBrush}" />
+                    <Setter Property="BorderBrush" Value="{StaticResource Theme_BorderBrush}" />
                     <!--<Setter Property="Background">
                         <Setter.Value>
                             <LinearGradientBrush EndPoint="0.442,0.005" StartPoint="0.558,0.995">
@@ -647,7 +647,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Opacity="{StaticResource ChartHaloOpacity}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Border.Effect>
                                 <BlurEffect Radius="6"/>
                             </Border.Effect>
@@ -714,7 +714,7 @@
         <Setter Property="MinutesIntervalStringFormat" Value="{}{0:t}" />
         <Setter Property="SecondsIntervalStringFormat" Value="{}{0:T}" />
         <Setter Property="MillisecondsIntervalStringFormat" Value="{}{0:mm:ss.fff}" />
-        <Setter Property="Foreground" Value="{StaticResource ChartAxisTextForeground}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme_ChartAxisTextForeground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DateTimeAxisLabel">
@@ -763,7 +763,7 @@
         <Setter Property="TitleStyle">
             <Setter.Value>
                 <Style TargetType="Title">
-                    <Setter Property="Foreground" Value="{StaticResource ChartAxisTextForeground}" />
+                    <Setter Property="Foreground" Value="{StaticResource Theme_ChartAxisTextForeground}" />
                     <Setter Property="FontStyle" Value="Italic" />
                 </Style>
             </Setter.Value>
@@ -780,7 +780,7 @@
         <Setter Property="GridLineStyle">
             <Setter.Value>
                 <Style TargetType="Line">
-                    <Setter Property="Stroke" Value="{StaticResource ChartGridLineBrush}" />
+                    <Setter Property="Stroke" Value="{StaticResource Theme_ChartGridLineBrush}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -870,7 +870,7 @@
                         <ToolTipService.ToolTip>
                             <ContentControl Content="{TemplateBinding FormattedDependentValue}" />
                         </ToolTipService.ToolTip>
-                        <Ellipse Margin="1" Fill="{TemplateBinding Background}" Opacity="{StaticResource ChartHaloOpacity}">
+                        <Ellipse Margin="1" Fill="{TemplateBinding Background}" Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Ellipse.Effect>
                                 <BlurEffect Radius="6"/>
                             </Ellipse.Effect>
@@ -912,7 +912,7 @@
     <Style TargetType="NumericAxisLabel">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="StringFormat" Value="{}{0:0.##}" />
-        <Setter Property="Foreground" Value="{StaticResource ChartAxisTextForeground}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme_ChartAxisTextForeground}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="NumericAxisLabel">
@@ -973,7 +973,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Path Data="{TemplateBinding Geometry}" Fill="{TemplateBinding Background}" Opacity="{StaticResource ChartHaloOpacity}">
+                        <Path Data="{TemplateBinding Geometry}" Fill="{TemplateBinding Background}" Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Path.Effect>
                                 <BlurEffect Radius="10"/>
                             </Path.Effect>
@@ -1014,7 +1014,7 @@
             <Setter.Value>
                 <Style TargetType="Title">
                     <Setter Property="FontStyle" Value="Italic" />
-                    <Setter Property="Foreground" Value="{StaticResource ChartAxisTextForeground}" />
+                    <Setter Property="Foreground" Value="{StaticResource Theme_ChartAxisTextForeground}" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -1039,7 +1039,7 @@
         <Setter Property="GridLineStyle">
             <Setter.Value>
                 <Style TargetType="Line">
-                    <Setter Property="Stroke" Value="{StaticResource ChartGridLineBrush}" />
+                    <Setter Property="Stroke" Value="{StaticResource Theme_ChartGridLineBrush}" />
                     <Setter Property="StrokeThickness" Value="1" />
                 </Style>
             </Setter.Value>
@@ -1114,7 +1114,7 @@
                         <ToolTipService.ToolTip>
                             <ContentControl Content="{TemplateBinding FormattedDependentValue}" />
                         </ToolTipService.ToolTip>
-                        <Path Fill="{TemplateBinding Background}" Stretch="Fill" Data="F1 M 0,50 L40,40 50,0 60,40 100,50 60,60 50,100 40,60 0,50 Z " Opacity="{StaticResource ChartHaloOpacity}">
+                        <Path Fill="{TemplateBinding Background}" Stretch="Fill" Data="F1 M 0,50 L40,40 50,0 60,40 100,50 60,60 50,100 40,60 0,50 Z " Opacity="{StaticResource Theme_ChartHaloOpacity}">
                             <Path.Effect>
                                 <BlurEffect Radius="6"/>
                             </Path.Effect>

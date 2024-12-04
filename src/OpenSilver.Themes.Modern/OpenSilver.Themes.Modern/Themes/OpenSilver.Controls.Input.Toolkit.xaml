@@ -184,7 +184,7 @@
                                                     TextOptions.TextHintingMode="Fixed"
                                                     FontSize="{TemplateBinding FontSize}"
                                                     FontFamily="{TemplateBinding FontFamily}"
-                                                    Foreground="{StaticResource FadedBrush}"
+                                                    Foreground="{StaticResource Theme_BorderBrush}"
                                                     HorizontalAlignment="Right"
                                                     VerticalAlignment="Center"
                                                     Margin="3"
@@ -202,7 +202,7 @@
                                      Text="{TemplateBinding Value}"
                                      TextWrapping="NoWrap"
                                      TextAlignment="Left"
-                                     Background="{StaticResource SecondaryBrush}"
+                                     Background="{StaticResource Theme_ControlBackgroundBrush}"
                                      BorderBrush="{TemplateBinding BorderBrush}"
                                      BorderThickness="{TemplateBinding BorderThickness}"
                                      FontFamily="{TemplateBinding FontFamily}"
@@ -221,7 +221,7 @@
                             </TextBox>
                         </Grid>
                         <Border x:Name="DisabledVisualElement"
-                                Background="{StaticResource DisabledBrush}"
+                                Background="{StaticResource Theme_DisabledBrush}"
                                 Opacity="0"
                                 Margin="1,2"
                                 IsHitTestVisible="false" />
@@ -245,9 +245,9 @@
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Foreground"
-                Value="{StaticResource TextBrush}" />
+                Value="{StaticResource Theme_TextBrush}" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource PrimaryBrush}" />
+                Value="{StaticResource Theme_PrimaryBrush}" />
         <Setter Property="TimeUpDownStyle"
                 Value="{StaticResource FlatTimeUpDownStyle}" />
         <Setter Property="PopupTemplate">
@@ -380,9 +380,9 @@
                                               Stretch="Fill"
                                               Data="M10.108397,6.5404582 L10.108397,10.415268 L13.538931,13.738435"
                                               HorizontalAlignment="Left"
-                                              Stroke="{StaticResource FadedBrush}" />
+                                              Stroke="{StaticResource Theme_BorderBrush}" />
                                         <Ellipse Margin="0"
-                                                 Stroke="{StaticResource FadedBrush}"
+                                                 Stroke="{StaticResource Theme_BorderBrush}"
                                                  StrokeThickness="2"
                                                  x:Name="ellipse" />
                                         <Ellipse Margin="0"
@@ -440,7 +440,7 @@
                         <!-- Value is being synched in code, because of inability to do TwoWay TemplateBinding -->
                         <Popup x:Name="Popup">
                             <Border x:Name="PopupRoot"
-                                    BorderBrush="{StaticResource FadedBrush}"
+                                    BorderBrush="{StaticResource Theme_BorderBrush}"
                                     BorderThickness="1"
                                     CornerRadius="5">
                                 <ContentControl x:Name="PopupPlaceHolder"

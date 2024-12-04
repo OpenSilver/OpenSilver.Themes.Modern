@@ -22,6 +22,8 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="Converters\ColorToFlatGradientStopsConverter.cs" />
     <Compile Include="Converters\ColorToGradientStopsConverter.cs" />
+    <Compile Include="Converters\BrightenColorConverter.cs" />
+    <Compile Include="Converters\DarkenColorConverter.cs" />
     <Compile Include="FlatDesignProperties.cs" />
     <Compile Include="ModernTheme.cs" />
     <Compile Include="Palettes\DarkPalette.cs" />

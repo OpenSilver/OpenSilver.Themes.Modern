@@ -6,9 +6,9 @@
     <!--<Application.Theme>
         <mt:ModernTheme CurrentPalette="Dark">
             <mt:ModernTheme.DarkPalette>
-                <mt:DarkPalette AccentOverlayColor="Blue"
-                                DarkColor="Red"
-                                FadedColor="Green"/>
+                <mt:DarkPalette Theme_AccentOverlayColor="Blue"
+                                Theme_PrimaryColor="Red"
+                                Theme_BorderColor="Green"/>
             </mt:ModernTheme.DarkPalette>
         </mt:ModernTheme>
     </Application.Theme>-->

@@ -8,101 +8,83 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="{StaticResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource PrimaryBrush}" />
-        <!--<Setter Property="BorderBrush" Value="{StaticResource DarkBrush}" />-->
-        <Setter Property="BorderThickness"
-                Value="0" />
+                Value="Transparent" />
         <Setter Property="Padding"
                 Value="8,0,8,2" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <vsm:VisualStateManager.VisualStateGroups>
-                            <vsm:VisualStateGroup x:Name="FocusStates">
-                                <vsm:VisualState x:Name="Unfocused" />
-                                <vsm:VisualState x:Name="Focused">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="MouseEventOverlay" Color="#bababa"/>
+                        </Grid.Resources>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Unfocused" />
+                                <VisualState x:Name="Focused">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="HasFocus"
-                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="Visible" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </vsm:VisualState>
-                            </vsm:VisualStateGroup>
-                            <vsm:VisualStateGroup x:Name="CommonStates">
-                                <vsm:VisualStateGroup.Transitions>
-                                    <vsm:VisualTransition GeneratedDuration="00:00:00.2" />
-                                    <vsm:VisualTransition From="Pressed"
-                                                          GeneratedDuration="00:00:00" />
-                                    <vsm:VisualTransition From="MouseOver"
-                                                          GeneratedDuration="00:00:00"
-                                                          To="Pressed" />
-                                </vsm:VisualStateGroup.Transitions>
-                                <vsm:VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="MouseHover"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value="0.3" />
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Focus" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".6" />
                                         </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="Normal" />
-                                <vsm:VisualState x:Name="Pressed">
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="MousePress"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value="0.3" />
+                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="TextBlock.Foreground">
+                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding TextBlock.Foreground, ElementName=Root, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                    </ObjectAnimationUsingKeyFrames>-->
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".3" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="2.5,2.5,.5,.5" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <!--<ColorAnimationUsingKeyFrames Duration="00:00:00"
+                                                                  Storyboard.TargetName="ForegroundContentControl"
+                                                                  Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
+                                        <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_BorderColor}" />
+                                    </ColorAnimationUsingKeyFrames>-->
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="Disabled">
+                                </VisualState>
+                                <VisualState x:Name="Normal">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="contentPresenter"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value="0.35" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.300" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" />
+                                        <DoubleAnimation BeginTime="00:00:00.000" Duration="00:00:00.100" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="1" To="0" />
+                                        <DoubleAnimation BeginTime="00:00:00.000" Duration="00:00:00.100" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="1" To="0" />
                                     </Storyboard>
-                                </vsm:VisualState>
-                            </vsm:VisualStateGroup>
-                        </vsm:VisualStateManager.VisualStateGroups>
-                        <Border x:Name="Background"
-                                CornerRadius="5"
-                                Background="Transparent" />
-                        <Border x:Name="HasFocus"
-                                CornerRadius="7"
-                                Background="{TemplateBinding Background}"
-                                Margin="-3"
-                                Opacity=".4"
-                                Visibility="Collapsed" />
-                        <Border x:Name="MouseHover"
-                                CornerRadius="5"
-                                Background="{StaticResource HoverBrush}"
-                                Opacity="0" />
-                        <Border x:Name="MousePress"
-                                CornerRadius="5"
-                                Background="{StaticResource PressBrush}"
-                                Opacity="0" />
-                        <ContentPresenter x:Name="contentPresenter"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Margin="{TemplateBinding Padding}" />
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".3" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.300" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" />
+                                        <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.300" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimationUsingKeyFrames Duration="00:00:00"
+                                                                  Storyboard.TargetName="ForegroundContentControl"
+                                                                  Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="{StaticResource Theme_DisabledColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Ellipse x:Name="Hover" Opacity="0" Fill="{StaticResource MouseEventOverlay}" />
+                        <Ellipse x:Name="Focus" Opacity="0" Fill="{StaticResource MouseEventOverlay}" />
+                        <Ellipse x:Name="Press" Opacity=".3" Fill="{StaticResource MouseEventOverlay}" RenderTransformOrigin=".5,.5">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform ScaleX="0" ScaleY="0"/>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <ContentControl x:Name="ForegroundContentControl" Foreground="{TemplateBinding Foreground}">
+                            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" Width="23" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </ContentControl>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -119,11 +101,11 @@
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource FadedBrush}" />
+                Value="{StaticResource Theme_BorderBrush}" />
         <Setter Property="Background"
-                Value="{StaticResource SecondaryBrush}" />
+                Value="{StaticResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"
-        Value="{StaticResource TextBrush}" />
+        Value="{StaticResource Theme_TextBrush}" />
         <Setter Property="DescriptionViewerPosition"
                 Value="Auto" />
         <Setter Property="LabelPosition"

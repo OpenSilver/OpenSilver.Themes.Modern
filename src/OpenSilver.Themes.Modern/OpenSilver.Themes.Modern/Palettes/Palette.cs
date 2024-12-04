@@ -16,68 +16,61 @@ public abstract class Palette
 
         var resources = new ResourceDictionary
         {
-            [nameof(PrimaryColor)] = palette.PrimaryColor,
-            ["PrimaryBrush"] = new SolidColorBrush(palette.PrimaryColor),
+            [nameof(Theme_PrimaryColor)] = palette.Theme_PrimaryColor,
+            ["Theme_PrimaryBrush"] = new SolidColorBrush(palette.Theme_PrimaryColor),
 
-            [nameof(DarkColor)] = palette.DarkColor,
-            ["DarkBrush"] = new SolidColorBrush(palette.DarkColor),
+            [nameof(Theme_ControlBackgroundColor)] = palette.Theme_ControlBackgroundColor,
+            ["Theme_ControlBackgroundBrush"] = new SolidColorBrush(palette.Theme_ControlBackgroundColor),
 
-            [nameof(SecondaryColor)] = palette.SecondaryColor,
-            ["SecondaryBrush"] = new SolidColorBrush(palette.SecondaryColor),
+            [nameof(Theme_BorderColor)] = palette.Theme_BorderColor,
+            ["Theme_BorderBrush"] = new SolidColorBrush(palette.Theme_BorderColor),
 
-            [nameof(HoverColor)] = palette.HoverColor,
-            ["HoverBrush"] = new SolidColorBrush(palette.HoverColor),
+            [nameof(Theme_AlternatingRowBackgroundColor)] = palette.Theme_AlternatingRowBackgroundColor,
+            ["Theme_AlternatingRowBackgroundBrush"] = new SolidColorBrush(palette.Theme_AlternatingRowBackgroundColor),
 
-            [nameof(FadedColor)] = palette.FadedColor,
-            ["FadedBrush"] = new SolidColorBrush(palette.FadedColor),
+            [nameof(Theme_TextColor)] = palette.Theme_TextColor,
+            ["Theme_TextBrush"] = new SolidColorBrush(palette.Theme_TextColor),
 
-            [nameof(VeryFadedColor)] = palette.VeryFadedColor,
-            ["VeryFadedBrush"] = new SolidColorBrush(palette.VeryFadedColor),
+            [nameof(Theme_TextOverPrimaryColor)] = palette.Theme_TextOverPrimaryColor,
+            ["Theme_TextOverPrimaryBrush"] = new SolidColorBrush(palette.Theme_TextOverPrimaryColor),
 
-            [nameof(TextColor)] = palette.TextColor,
-            ["TextBrush"] = new SolidColorBrush(palette.TextColor),
+            [nameof(Theme_DisabledColor)] = palette.Theme_DisabledColor,
+            ["Theme_DisabledBrush"] = new SolidColorBrush(palette.Theme_DisabledColor),
 
-            [nameof(TextOverPrimaryColor)] = palette.TextOverPrimaryColor,
-            ["TextOverPrimaryBrush"] = new SolidColorBrush(palette.TextOverPrimaryColor),
+            [nameof(Theme_AccentOverlayColor)] = palette.Theme_AccentOverlayColor,
+            ["Theme_AccentOverlayBrush"] = new SolidColorBrush(palette.Theme_AccentOverlayColor),
 
-            [nameof(PressColor)] = palette.PressColor,
-            ["PressBrush"] = new SolidColorBrush(palette.PressColor),
+            [nameof(Theme_WatermarkColor)] = palette.Theme_WatermarkColor,
+            ["Theme_WatermarkBrush"] = new SolidColorBrush(palette.Theme_WatermarkColor),
 
-            [nameof(DisabledColor)] = palette.DisabledColor,
-            ["DisabledBrush"] = new SolidColorBrush(palette.DisabledColor),
+            [nameof(Theme_BrightnessColorConverter)] = palette.Theme_BrightnessColorConverter,
 
-            [nameof(AccentOverlayColor)] = palette.AccentOverlayColor,
-            ["AccentOverlayBrush"] = new SolidColorBrush(palette.AccentOverlayColor),
-
-            [nameof(WatermarkColor)] = palette.WatermarkColor,
-            ["WatermarkBrush"] = new SolidColorBrush(palette.WatermarkColor),
-
-            [nameof(ChartHaloOpacity)] = palette.ChartHaloOpacity,
+            [nameof(Theme_ChartHaloOpacity)] = palette.Theme_ChartHaloOpacity,
 
             //Colors for charts:
-            [nameof(ChartGridLineColor)] = palette.ChartGridLineColor,
-            ["ChartGridLineBrush"] = new SolidColorBrush(palette.ChartGridLineColor),
-            [nameof(ChartLegendForeground)] = palette.ChartLegendForeground,
-            ["ChartLegendForegroundBrush"] = new SolidColorBrush(palette.ChartLegendForeground),
-            [nameof(ChartAxisTextForeground)] = palette.ChartAxisTextForeground,
-            ["ChartAxisTextForegroundBrush"] = new SolidColorBrush(palette.ChartAxisTextForeground),
-            [nameof(ChartSeriesColor1)] = palette.ChartSeriesColor1,
-            [nameof(ChartSeriesColor2)] = palette.ChartSeriesColor2,
-            [nameof(ChartSeriesColor3)] = palette.ChartSeriesColor3,
-            [nameof(ChartSeriesColor4)] = palette.ChartSeriesColor4,
-            [nameof(ChartSeriesColor5)] = palette.ChartSeriesColor5,
-            [nameof(ChartSeriesColor6)] = palette.ChartSeriesColor6,
-            [nameof(ChartSeriesColor7)] = palette.ChartSeriesColor7,
-            [nameof(ChartSeriesColor8)] = palette.ChartSeriesColor8,
-            [nameof(ChartSeriesColor9)] = palette.ChartSeriesColor9,
-            [nameof(ChartSeriesColor10)] = palette.ChartSeriesColor10,
-            [nameof(ChartSeriesColor11)] = palette.ChartSeriesColor11,
-            [nameof(ChartSeriesColor12)] = palette.ChartSeriesColor12,
-            [nameof(ChartSeriesColor13)] = palette.ChartSeriesColor13,
-            [nameof(ChartSeriesColor14)] = palette.ChartSeriesColor14,
-            [nameof(ChartSeriesColor15)] = palette.ChartSeriesColor15,
+            [nameof(Theme_ChartGridLineColor)] = palette.Theme_ChartGridLineColor,
+            ["Theme_ChartGridLineBrush"] = new SolidColorBrush(palette.Theme_ChartGridLineColor),
+            [nameof(Theme_ChartLegendForeground)] = palette.Theme_ChartLegendForeground,
+            ["Theme_ChartLegendForegroundBrush"] = new SolidColorBrush(palette.Theme_ChartLegendForeground),
+            [nameof(Theme_ChartAxisTextForeground)] = palette.Theme_ChartAxisTextForeground,
+            ["Theme_ChartAxisTextForegroundBrush"] = new SolidColorBrush(palette.Theme_ChartAxisTextForeground),
+            [nameof(Theme_ChartSeriesColor1)] = palette.Theme_ChartSeriesColor1,
+            [nameof(Theme_ChartSeriesColor2)] = palette.Theme_ChartSeriesColor2,
+            [nameof(Theme_ChartSeriesColor3)] = palette.Theme_ChartSeriesColor3,
+            [nameof(Theme_ChartSeriesColor4)] = palette.Theme_ChartSeriesColor4,
+            [nameof(Theme_ChartSeriesColor5)] = palette.Theme_ChartSeriesColor5,
+            [nameof(Theme_ChartSeriesColor6)] = palette.Theme_ChartSeriesColor6,
+            [nameof(Theme_ChartSeriesColor7)] = palette.Theme_ChartSeriesColor7,
+            [nameof(Theme_ChartSeriesColor8)] = palette.Theme_ChartSeriesColor8,
+            [nameof(Theme_ChartSeriesColor9)] = palette.Theme_ChartSeriesColor9,
+            [nameof(Theme_ChartSeriesColor10)] = palette.Theme_ChartSeriesColor10,
+            [nameof(Theme_ChartSeriesColor11)] = palette.Theme_ChartSeriesColor11,
+            [nameof(Theme_ChartSeriesColor12)] = palette.Theme_ChartSeriesColor12,
+            [nameof(Theme_ChartSeriesColor13)] = palette.Theme_ChartSeriesColor13,
+            [nameof(Theme_ChartSeriesColor14)] = palette.Theme_ChartSeriesColor14,
+            [nameof(Theme_ChartSeriesColor15)] = palette.Theme_ChartSeriesColor15,
 
-            [nameof(ChartSeriesColorConverter)] = palette.ChartSeriesColorConverter
+            [nameof(Theme_ChartSeriesColorConverter)] = palette.Theme_ChartSeriesColorConverter
 
         };
 
@@ -88,39 +81,39 @@ public abstract class Palette
 
     public static Palette Dark { get; } = new DarkPalette();
 
-    public abstract Color PrimaryColor { get; set; }
-    public abstract Color DarkColor { get; set; }
-    public abstract Color SecondaryColor { get; set; }
-    public abstract Color HoverColor { get; set; }
-    public abstract Color FadedColor { get; set; }
-    public abstract Color VeryFadedColor { get; set; }
-    public abstract Color TextColor { get; set; }
-    public abstract Color TextOverPrimaryColor { get; set; }
-    public abstract Color PressColor { get; set; }
-    public abstract Color DisabledColor { get; set; }
-    public abstract Color AccentOverlayColor { get; set; }
-    public abstract Color WatermarkColor { get; set; }
+    public abstract Color Theme_PrimaryColor { get; set; }
+    public abstract Color Theme_ControlBackgroundColor { get; set; }
+    public abstract Color Theme_BorderColor { get; set; }
+    public abstract Color Theme_AlternatingRowBackgroundColor { get; set; }
+    public abstract Color Theme_TextColor { get; set; }
+    public abstract Color Theme_TextOverPrimaryColor { get; set; }
+    public abstract Color Theme_DisabledColor { get; set; }
+    public abstract Color Theme_AccentOverlayColor { get; set; }
+    public abstract Color Theme_WatermarkColor { get; set; }
 
-    public abstract double ChartHaloOpacity { get; set; }
+    public abstract IValueConverter Theme_BrightnessColorConverter { get; set; }
+
+
+    public abstract double Theme_ChartHaloOpacity { get; set; }
     //Colors for Charts
-    public abstract Color ChartGridLineColor { get; set; }
-    public abstract Color ChartLegendForeground { get; set; }
-    public abstract Color ChartAxisTextForeground { get; set; }
-    public abstract Color ChartSeriesColor1 { get; set; }
-    public abstract Color ChartSeriesColor2 { get; set; }
-    public abstract Color ChartSeriesColor3 { get; set; }
-    public abstract Color ChartSeriesColor4 { get; set; }
-    public abstract Color ChartSeriesColor5 { get; set; }
-    public abstract Color ChartSeriesColor6 { get; set; }
-    public abstract Color ChartSeriesColor7 { get; set; }
-    public abstract Color ChartSeriesColor8 { get; set; }
-    public abstract Color ChartSeriesColor9 { get; set; }
-    public abstract Color ChartSeriesColor10 { get; set; }
-    public abstract Color ChartSeriesColor11 { get; set; }
-    public abstract Color ChartSeriesColor12 { get; set; }
-    public abstract Color ChartSeriesColor13 { get; set; }
-    public abstract Color ChartSeriesColor14 { get; set; }
-    public abstract Color ChartSeriesColor15 { get; set; }
+    public abstract Color Theme_ChartGridLineColor { get; set; }
+    public abstract Color Theme_ChartLegendForeground { get; set; }
+    public abstract Color Theme_ChartAxisTextForeground { get; set; }
+    public abstract Color Theme_ChartSeriesColor1 { get; set; }
+    public abstract Color Theme_ChartSeriesColor2 { get; set; }
+    public abstract Color Theme_ChartSeriesColor3 { get; set; }
+    public abstract Color Theme_ChartSeriesColor4 { get; set; }
+    public abstract Color Theme_ChartSeriesColor5 { get; set; }
+    public abstract Color Theme_ChartSeriesColor6 { get; set; }
+    public abstract Color Theme_ChartSeriesColor7 { get; set; }
+    public abstract Color Theme_ChartSeriesColor8 { get; set; }
+    public abstract Color Theme_ChartSeriesColor9 { get; set; }
+    public abstract Color Theme_ChartSeriesColor10 { get; set; }
+    public abstract Color Theme_ChartSeriesColor11 { get; set; }
+    public abstract Color Theme_ChartSeriesColor12 { get; set; }
+    public abstract Color Theme_ChartSeriesColor13 { get; set; }
+    public abstract Color Theme_ChartSeriesColor14 { get; set; }
+    public abstract Color Theme_ChartSeriesColor15 { get; set; }
 
-    public abstract IValueConverter ChartSeriesColorConverter { get; set; }
+    public abstract IValueConverter Theme_ChartSeriesColorConverter { get; set; }
 }

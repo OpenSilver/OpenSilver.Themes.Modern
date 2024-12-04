@@ -7,11 +7,11 @@
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="Foreground"
-                Value="{StaticResource PrimaryBrush}" />
+                Value="{StaticResource Theme_PrimaryBrush}" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="BorderBrush"
-                Value="{StaticResource FadedBrush}" />
+                Value="{StaticResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Padding"
@@ -51,12 +51,7 @@
                                 </vsm:VisualStateGroup.Transitions>
                                 <vsm:VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="MouseHover"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value="0.3" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                       
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Normal" />
@@ -106,17 +101,9 @@
                                 BorderThickness="1"
                                 Margin="-1"
                                 Opacity="0" />
-                        <Border x:Name="MouseHover"
-                                CornerRadius="5"
-                                Background="{StaticResource HoverBrush}"
-                                Opacity="0" />
-                        <Border x:Name="MousePress"
-                                CornerRadius="5"
-                                Background="{StaticResource PressBrush}"
-                                Opacity="0" />
                         <Border x:Name="DisabledBackground"
                                 CornerRadius="5"
-                                Background="{StaticResource DisabledBrush}"
+                                Background="{StaticResource Theme_DisabledBrush}"
                                 Opacity="0" />
                         <ContentPresenter x:Name="contentPresenter"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
