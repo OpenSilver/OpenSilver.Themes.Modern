@@ -7,16 +7,19 @@ namespace OpenSilver.Themes.Modern;
 
 public class ModernTheme : Theme
 {
+    private readonly ResourceDictionary _paletteResources;
     private Palettes _currentPalette;
     private LightPalette _lightPalette;
     private DarkPalette _darkPalette;
-    private ResourceDictionary _paletteResources;
 
     public ModernTheme()
     {
         var resources = new ResourceDictionary();
         Application.LoadComponent(resources, new Uri("/OpenSilver.Themes.Modern;component/Styles/Styles.xaml", UriKind.Relative));
         Resources.MergedDictionaries.Add(resources);
+
+        _paletteResources = new ResourceDictionary();
+        Resources.MergedDictionaries.Add(_paletteResources);
     }
 
     public Palettes CurrentPalette
@@ -33,9 +36,7 @@ public class ModernTheme : Theme
 
             if (IsSealed)
             {
-                Resources.MergedDictionaries.Remove(_paletteResources);
-                _paletteResources = GeneratePaletteResources();
-                Resources.MergedDictionaries.Add(_paletteResources);
+                LoadPalette();
             }
         }
     }
@@ -51,9 +52,7 @@ public class ModernTheme : Theme
 
             if (IsSealed && CurrentPalette == Palettes.Light)
             {
-                Resources.MergedDictionaries.Remove(_paletteResources);
-                _paletteResources = GeneratePaletteResources();
-                Resources.MergedDictionaries.Add(_paletteResources);
+                LoadPalette();
             }
         }
     }
@@ -69,9 +68,7 @@ public class ModernTheme : Theme
 
             if (IsSealed && CurrentPalette == Palettes.Dark)
             {
-                Resources.MergedDictionaries.Remove(_paletteResources);
-                _paletteResources = GeneratePaletteResources();
-                Resources.MergedDictionaries.Add(_paletteResources);
+                LoadPalette();
             }
         }
     }
@@ -80,8 +77,7 @@ public class ModernTheme : Theme
     {
         base.OnSealed();
 
-        _paletteResources = GeneratePaletteResources();
-        Resources.MergedDictionaries.Add(_paletteResources);
+        LoadPalette();
     }
 
     protected override ResourceDictionary GenerateResources(Assembly assembly)
@@ -96,17 +92,19 @@ public class ModernTheme : Theme
         return null;
     }
 
-    private ResourceDictionary GeneratePaletteResources()
+    private void LoadPalette()
     {
-        return Palette.LoadPalette(CurrentPalette == Palettes.Light ?
-            (LightPalette ?? Palette.Light) :
-            (DarkPalette ?? Palette.Dark));
+        Palette palette = CurrentPalette == Palettes.Light ? (LightPalette ?? Palette.Light) : (DarkPalette ?? Palette.Dark);
+
+        _paletteResources.BeginInit();
+        Palette.LoadPalette(palette, _paletteResources);
+        _paletteResources.EndInit();
     }
 
     private ResourceDictionary CreateDictionary(string assemblyName)
     {
         var resources = new ResourceDictionary();
-        resources.MergedDictionaries.Add(GeneratePaletteResources());
+        resources.MergedDictionaries.Add(_paletteResources);
         resources.Source = new Uri($"/OpenSilver.Themes.Modern;component/Themes/{assemblyName}.xaml", UriKind.Relative);
         Application.LoadComponent(resources, resources.Source);
         return resources;

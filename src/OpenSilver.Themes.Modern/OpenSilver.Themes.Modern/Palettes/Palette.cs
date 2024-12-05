@@ -14,67 +14,69 @@ public abstract class Palette
             throw new ArgumentNullException(nameof(palette));
         }
 
-        var resources = new ResourceDictionary
-        {
-            [nameof(Theme_PrimaryColor)] = palette.Theme_PrimaryColor,
-            ["Theme_PrimaryBrush"] = new SolidColorBrush(palette.Theme_PrimaryColor),
-
-            [nameof(Theme_ControlBackgroundColor)] = palette.Theme_ControlBackgroundColor,
-            ["Theme_ControlBackgroundBrush"] = new SolidColorBrush(palette.Theme_ControlBackgroundColor),
-
-            [nameof(Theme_BorderColor)] = palette.Theme_BorderColor,
-            ["Theme_BorderBrush"] = new SolidColorBrush(palette.Theme_BorderColor),
-
-            [nameof(Theme_AlternatingRowBackgroundColor)] = palette.Theme_AlternatingRowBackgroundColor,
-            ["Theme_AlternatingRowBackgroundBrush"] = new SolidColorBrush(palette.Theme_AlternatingRowBackgroundColor),
-
-            [nameof(Theme_TextColor)] = palette.Theme_TextColor,
-            ["Theme_TextBrush"] = new SolidColorBrush(palette.Theme_TextColor),
-
-            [nameof(Theme_TextOverPrimaryColor)] = palette.Theme_TextOverPrimaryColor,
-            ["Theme_TextOverPrimaryBrush"] = new SolidColorBrush(palette.Theme_TextOverPrimaryColor),
-
-            [nameof(Theme_DisabledColor)] = palette.Theme_DisabledColor,
-            ["Theme_DisabledBrush"] = new SolidColorBrush(palette.Theme_DisabledColor),
-
-            [nameof(Theme_AccentOverlayColor)] = palette.Theme_AccentOverlayColor,
-            ["Theme_AccentOverlayBrush"] = new SolidColorBrush(palette.Theme_AccentOverlayColor),
-
-            [nameof(Theme_WatermarkColor)] = palette.Theme_WatermarkColor,
-            ["Theme_WatermarkBrush"] = new SolidColorBrush(palette.Theme_WatermarkColor),
-
-            [nameof(Theme_BrightnessColorConverter)] = palette.Theme_BrightnessColorConverter,
-
-            [nameof(Theme_ChartHaloOpacity)] = palette.Theme_ChartHaloOpacity,
-
-            //Colors for charts:
-            [nameof(Theme_ChartGridLineColor)] = palette.Theme_ChartGridLineColor,
-            ["Theme_ChartGridLineBrush"] = new SolidColorBrush(palette.Theme_ChartGridLineColor),
-            [nameof(Theme_ChartLegendForeground)] = palette.Theme_ChartLegendForeground,
-            ["Theme_ChartLegendForegroundBrush"] = new SolidColorBrush(palette.Theme_ChartLegendForeground),
-            [nameof(Theme_ChartAxisTextForeground)] = palette.Theme_ChartAxisTextForeground,
-            ["Theme_ChartAxisTextForegroundBrush"] = new SolidColorBrush(palette.Theme_ChartAxisTextForeground),
-            [nameof(Theme_ChartSeriesColor1)] = palette.Theme_ChartSeriesColor1,
-            [nameof(Theme_ChartSeriesColor2)] = palette.Theme_ChartSeriesColor2,
-            [nameof(Theme_ChartSeriesColor3)] = palette.Theme_ChartSeriesColor3,
-            [nameof(Theme_ChartSeriesColor4)] = palette.Theme_ChartSeriesColor4,
-            [nameof(Theme_ChartSeriesColor5)] = palette.Theme_ChartSeriesColor5,
-            [nameof(Theme_ChartSeriesColor6)] = palette.Theme_ChartSeriesColor6,
-            [nameof(Theme_ChartSeriesColor7)] = palette.Theme_ChartSeriesColor7,
-            [nameof(Theme_ChartSeriesColor8)] = palette.Theme_ChartSeriesColor8,
-            [nameof(Theme_ChartSeriesColor9)] = palette.Theme_ChartSeriesColor9,
-            [nameof(Theme_ChartSeriesColor10)] = palette.Theme_ChartSeriesColor10,
-            [nameof(Theme_ChartSeriesColor11)] = palette.Theme_ChartSeriesColor11,
-            [nameof(Theme_ChartSeriesColor12)] = palette.Theme_ChartSeriesColor12,
-            [nameof(Theme_ChartSeriesColor13)] = palette.Theme_ChartSeriesColor13,
-            [nameof(Theme_ChartSeriesColor14)] = palette.Theme_ChartSeriesColor14,
-            [nameof(Theme_ChartSeriesColor15)] = palette.Theme_ChartSeriesColor15,
-
-            [nameof(Theme_ChartSeriesColorConverter)] = palette.Theme_ChartSeriesColorConverter
-
-        };
+        var resources = new ResourceDictionary();
+        LoadPalette(palette, resources);
 
         return resources;
+    }
+
+    internal static void LoadPalette(Palette palette, ResourceDictionary resources)
+    {
+        resources[nameof(Theme_PrimaryColor)] = palette.Theme_PrimaryColor;
+        resources["Theme_PrimaryBrush"] = new SolidColorBrush(palette.Theme_PrimaryColor);
+
+        resources[nameof(Theme_ControlBackgroundColor)] = palette.Theme_ControlBackgroundColor;
+        resources["Theme_ControlBackgroundBrush"] = new SolidColorBrush(palette.Theme_ControlBackgroundColor);
+
+        resources[nameof(Theme_BorderColor)] = palette.Theme_BorderColor;
+        resources["Theme_BorderBrush"] = new SolidColorBrush(palette.Theme_BorderColor);
+
+        resources[nameof(Theme_AlternatingRowBackgroundColor)] = palette.Theme_AlternatingRowBackgroundColor;
+        resources["Theme_AlternatingRowBackgroundBrush"] = new SolidColorBrush(palette.Theme_AlternatingRowBackgroundColor);
+
+        resources[nameof(Theme_TextColor)] = palette.Theme_TextColor;
+        resources["Theme_TextBrush"] = new SolidColorBrush(palette.Theme_TextColor);
+
+        resources[nameof(Theme_TextOverPrimaryColor)] = palette.Theme_TextOverPrimaryColor;
+        resources["Theme_TextOverPrimaryBrush"] = new SolidColorBrush(palette.Theme_TextOverPrimaryColor);
+
+        resources[nameof(Theme_DisabledColor)] = palette.Theme_DisabledColor;
+        resources["Theme_DisabledBrush"] = new SolidColorBrush(palette.Theme_DisabledColor);
+
+        resources[nameof(Theme_AccentOverlayColor)] = palette.Theme_AccentOverlayColor;
+        resources["Theme_AccentOverlayBrush"] = new SolidColorBrush(palette.Theme_AccentOverlayColor);
+
+        resources[nameof(Theme_WatermarkColor)] = palette.Theme_WatermarkColor;
+        resources["Theme_WatermarkBrush"] = new SolidColorBrush(palette.Theme_WatermarkColor);
+
+        resources[nameof(Theme_BrightnessColorConverter)] = palette.Theme_BrightnessColorConverter;
+
+        resources[nameof(Theme_ChartHaloOpacity)] = palette.Theme_ChartHaloOpacity;
+
+        //Colors for charts:
+        resources[nameof(Theme_ChartGridLineColor)] = palette.Theme_ChartGridLineColor;
+        resources["Theme_ChartGridLineBrush"] = new SolidColorBrush(palette.Theme_ChartGridLineColor);
+        resources[nameof(Theme_ChartLegendForeground)] = palette.Theme_ChartLegendForeground;
+        resources["Theme_ChartLegendForegroundBrush"] = new SolidColorBrush(palette.Theme_ChartLegendForeground);
+        resources[nameof(Theme_ChartAxisTextForeground)] = palette.Theme_ChartAxisTextForeground;
+        resources["Theme_ChartAxisTextForegroundBrush"] = new SolidColorBrush(palette.Theme_ChartAxisTextForeground);
+        resources[nameof(Theme_ChartSeriesColor1)] = palette.Theme_ChartSeriesColor1;
+        resources[nameof(Theme_ChartSeriesColor2)] = palette.Theme_ChartSeriesColor2;
+        resources[nameof(Theme_ChartSeriesColor3)] = palette.Theme_ChartSeriesColor3;
+        resources[nameof(Theme_ChartSeriesColor4)] = palette.Theme_ChartSeriesColor4;
+        resources[nameof(Theme_ChartSeriesColor5)] = palette.Theme_ChartSeriesColor5;
+        resources[nameof(Theme_ChartSeriesColor6)] = palette.Theme_ChartSeriesColor6;
+        resources[nameof(Theme_ChartSeriesColor7)] = palette.Theme_ChartSeriesColor7;
+        resources[nameof(Theme_ChartSeriesColor8)] = palette.Theme_ChartSeriesColor8;
+        resources[nameof(Theme_ChartSeriesColor9)] = palette.Theme_ChartSeriesColor9;
+        resources[nameof(Theme_ChartSeriesColor10)] = palette.Theme_ChartSeriesColor10;
+        resources[nameof(Theme_ChartSeriesColor11)] = palette.Theme_ChartSeriesColor11;
+        resources[nameof(Theme_ChartSeriesColor12)] = palette.Theme_ChartSeriesColor12;
+        resources[nameof(Theme_ChartSeriesColor13)] = palette.Theme_ChartSeriesColor13;
+        resources[nameof(Theme_ChartSeriesColor14)] = palette.Theme_ChartSeriesColor14;
+        resources[nameof(Theme_ChartSeriesColor15)] = palette.Theme_ChartSeriesColor15;
+
+        resources[nameof(Theme_ChartSeriesColorConverter)] = palette.Theme_ChartSeriesColorConverter;
     }
 
     internal static Palette Light { get; } = new LightPalette();
