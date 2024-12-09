@@ -892,7 +892,7 @@
                             </Border>
                         </Grid>
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          Margin="3,0,3,2"
+                                          Margin="8,0,3,2"
                                           x:Name="contentPresenter"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Grid.Column="1"
@@ -1327,7 +1327,7 @@
                             </Border>
                         </Grid>
                         <ContentPresenter x:Name="contentPresenter"
-                                          Margin="3,0,0,2"
+                                          Margin="8,0,0,2"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                           Grid.Column="1"
