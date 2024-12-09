@@ -192,7 +192,7 @@
         <Setter Property="Foreground"
 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="FontSize"
-            Value="12"/>
+            Value="14"/>
         <Setter Property="Padding"
         Value="2" />
         <Setter Property="BorderBrush"

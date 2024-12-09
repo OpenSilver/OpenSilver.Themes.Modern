@@ -1125,6 +1125,8 @@
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="DragIndicatorStyle">
             <Setter.Value>
                 <Style TargetType="ContentControl">

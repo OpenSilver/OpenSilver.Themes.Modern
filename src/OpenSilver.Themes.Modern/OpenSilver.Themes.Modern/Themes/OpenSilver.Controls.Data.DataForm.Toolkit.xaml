@@ -113,6 +113,8 @@
                 Value="Auto" />
         <Setter Property="HeaderVisibility"
                 Value="Visible" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:DataForm">

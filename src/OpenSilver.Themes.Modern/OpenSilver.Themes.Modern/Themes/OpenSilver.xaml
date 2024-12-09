@@ -108,6 +108,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,0,8,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -213,6 +215,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,0,8,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -336,6 +340,8 @@
            TargetType="TextBox">
         <Setter Property="Padding"
                 Value="4,0,4,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -591,6 +597,8 @@
                 Value="Center" />
         <Setter Property="Padding"
                 Value="0,0,0,0" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -915,6 +923,8 @@
                 Value="True" />
         <Setter Property="Padding"
                 Value="5,0,5,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="PasswordBox">
@@ -1100,6 +1110,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
@@ -1468,6 +1480,8 @@
                 Value="Once" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
@@ -2491,7 +2505,8 @@
                 Value="Once" />
         <Setter Property="BorderThickness"
                 Value="0" />
-
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:TreeView">
@@ -2535,6 +2550,8 @@
                 Value="1" />
         <Setter Property="TabNavigation"
                 Value="Local" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">

@@ -241,6 +241,8 @@
                 Value="Transparent" />
         <Setter Property="Padding"
                 Value="4,0,4,4" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderBrush"
