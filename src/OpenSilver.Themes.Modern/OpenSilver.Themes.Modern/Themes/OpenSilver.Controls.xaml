@@ -2,11 +2,17 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:controls="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls"
-                    xmlns:controlsPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls">
+                    xmlns:controlsPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls"
+                    xmlns:local="http://opensilver.net/themes/modern">
 
     <!--Button template used in several places-->
     <ControlTemplate x:Key="CircleButtonTemplate" TargetType="Button">
         <Grid>
+            <Grid.Resources>
+                <local:BrushBuilder x:Key="PressBrushBuilder"
+                    BasedOn="{TemplateBinding Foreground}"
+                    BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+            </Grid.Resources>
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="FocusStates">
                     <VisualState x:Name="Unfocused" />
@@ -34,7 +40,7 @@
                     <VisualState x:Name="Pressed">
                         <Storyboard>
                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="(TextBlock.Foreground)">
-                                <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                             </ObjectAnimationUsingKeyFrames>
                         </Storyboard>
                     </VisualState>

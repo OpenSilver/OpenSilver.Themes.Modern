@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:data="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Data"
-                    xmlns:dataPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls.Data">
+                    xmlns:dataPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls.Data"
+                    xmlns:local="http://opensilver.net/themes/modern">
 
     <Style x:Key="DataPagerButtonStyle"
            TargetType="Button">
@@ -122,6 +123,11 @@
                                                     <ColumnDefinition Width="*" />
                                                     <ColumnDefinition Width="24" />
                                                 </Grid.ColumnDefinitions>
+                                                <Grid.Resources>
+                                                    <local:BrushBuilder x:Key="MouseEventBrushBuilder"
+                                                                        BasedOn="{TemplateBinding Background}"
+                                                                        BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                                                </Grid.Resources>
 
                                                 <VisualStateManager.VisualStateGroups>
                                                     <VisualStateGroup x:Name="CommonStates">
@@ -129,13 +135,8 @@
                                                         <VisualState x:Name="MouseOver">
                                                             <Storyboard>
                                                                 <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=20}"/>
+                                                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource MouseEventBrushBuilder}, Path=Brush}"/>
                                                                 </ObjectAnimationUsingKeyFrames>
-                                                                <!--<DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                               Storyboard.TargetName="Hover"
-                                                                                               Storyboard.TargetProperty="(UIElement.Opacity)">
-                                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1" />
-                                                                </DoubleAnimationUsingKeyFrames>-->
                                                             </Storyboard>
                                                         </VisualState>
                                                         <VisualState x:Name="Disabled">
@@ -902,6 +903,9 @@
                 <ControlTemplate TargetType="data:DataGridRow">
                     <DataGridFrozenGrid x:Name="Root">
                         <DataGridFrozenGrid.Resources>
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                BasedOn="{Binding Background, ElementName=Root}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
                             <Storyboard x:Key="DetailsVisibleTransition">
                                 <DoubleAnimation Storyboard.TargetName="DetailsPresenter"
                                                  Storyboard.TargetProperty="ContentHeight"
@@ -921,7 +925,7 @@
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SubRoot" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, ElementName=Root, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=20}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <!--<DoubleAnimation Storyboard.TargetName="Hover"
                                                          Storyboard.TargetProperty="Opacity"
@@ -933,7 +937,7 @@
                                 <VisualState x:Name="MouseOver Selected">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SubRoot" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, ElementName=Root, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=20}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -972,7 +976,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="local:DataGridRowGroupHeader">
+    <Style TargetType="DataGridRowGroupHeader">
         <Setter Property="Cursor" Value="Arrow" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Background" Value="{DynamicResource Theme_ControlBackgroundBrush}" />
@@ -980,7 +984,7 @@
         <Setter Property="Height" Value="26"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="local:DataGridRowGroupHeader">
+                <ControlTemplate TargetType="DataGridRowGroupHeader">
                     <DataGridFrozenGrid Name="Root" Background="{TemplateBinding Background}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CurrentStates">
@@ -995,26 +999,34 @@
                         <DataGridFrozenGrid.Resources>
                             <ControlTemplate x:Key="ToggleButtonTemplate" TargetType="ToggleButton">
                                 <Grid Background="Transparent">
+                                    <Grid.Resources>
+                                        <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                            BasedOn="{TemplateBinding Background}"
+                                                            BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                                        <local:BrushBuilder x:Key="PressBrushBuilder"
+                                                            BasedOn="{TemplateBinding Background}"
+                                                            BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                                    </Grid.Resources>
                                     <VisualStateManager.VisualStateGroups>
                                         <VisualStateGroup x:Name="CommonStates">
                                             <VisualState x:Name="Normal"/>
                                             <VisualState x:Name="MouseOver">
                                                 <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CollapsedArrow" Storyboard.TargetProperty="(Stroke).Color">
-                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CollapsedArrow" Storyboard.TargetProperty="Stroke">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                                     </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandedArrow" Storyboard.TargetProperty="(Fill).Color">
-                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandedArrow" Storyboard.TargetProperty="Fill">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </VisualState>
                                             <VisualState x:Name="Pressed">
                                                 <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CollapsedArrow" Storyboard.TargetProperty="(Stroke).Color">
-                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=50}"/>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="CollapsedArrow" Storyboard.TargetProperty="Stroke">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                                     </ObjectAnimationUsingKeyFrames>
-                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandedArrow" Storyboard.TargetProperty="(Fill).Color">
-                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=50}"/>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandedArrow" Storyboard.TargetProperty="Fill">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                                     </ObjectAnimationUsingKeyFrames>
                                                     
                                                 </Storyboard>

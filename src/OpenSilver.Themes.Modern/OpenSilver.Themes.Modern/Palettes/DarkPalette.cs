@@ -18,10 +18,13 @@ public class DarkPalette : Palette
 
     public override IValueConverter Theme_BrightnessColorConverter { get; set; } = new BrightenColorConverter();
 
+    public override double Theme_HoverBrightnessRatio { get; set; } = 20;
+    public override double Theme_PressBrightnessRatio { get; set; } = 40;
 
     public override double Theme_ChartHaloOpacity { get; set; } = 1;
 
     //Colors for Charts
+    public override BrushEffectMode Theme_ChartsBrushEffectMode { get; set; } = BrushEffectMode.Linear;
     public override Color Theme_ChartGridLineColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF1B1B1B");
     public override Color Theme_ChartLegendForeground { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFE5E5E5");
     public override Color Theme_ChartAxisTextForeground { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF777777");

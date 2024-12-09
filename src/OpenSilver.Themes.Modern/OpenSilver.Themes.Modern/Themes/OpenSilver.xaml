@@ -114,6 +114,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
+                        <Grid.Resources>
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                BasedOn="{TemplateBinding Background}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="PressBrushBuilder"
+                                                BasedOn="{TemplateBinding Background}"
+                                                BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                        </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="FocusStates">
                                 <vsm:VisualState x:Name="Unfocused" />
@@ -140,7 +148,7 @@
                                 <vsm:VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -148,7 +156,7 @@
                                 <vsm:VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=50}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -211,6 +219,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
                     <Grid>
+                        <Grid.Resources>
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                BasedOn="{TemplateBinding Background}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="PressBrushBuilder"
+                                                BasedOn="{TemplateBinding Background}"
+                                                BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                        </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
                                 <vsm:VisualStateGroup.Transitions>
@@ -225,33 +241,15 @@
                                 <vsm:VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
-                                        <!--<DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="MouseHover"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value="0.3" />
-                                        </DoubleAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
-                                        <!--<ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="2.5,2.5,.5,.5" />
-                                        </ObjectAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="MousePress"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value="0.3" />
-                                        </DoubleAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Disabled">
@@ -1361,13 +1359,18 @@
                 <ControlTemplate TargetType="ListBoxItem">
                     <Grid Background="{TemplateBinding Background}"
                           Margin="2,1">
+                        <Grid.Resources>
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                BasedOn="{Binding Background, ElementName=SelectedBackground}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                        </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
                                 <vsm:VisualState x:Name="Normal" />
                                 <vsm:VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBackground" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Background, ElementName=SelectedBackground, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=20}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover"
                                                                        Storyboard.TargetProperty="Opacity">

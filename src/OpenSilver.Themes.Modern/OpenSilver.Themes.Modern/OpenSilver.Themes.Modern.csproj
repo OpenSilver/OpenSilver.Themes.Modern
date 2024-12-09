@@ -20,11 +20,14 @@
 
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Helpers\BrushBuilder.cs" />
+    <Compile Include="Helpers\BrushEffectBuilder.cs" />
+    <Compile Include="Helpers\BrushEffectMode.cs" />
     <Compile Include="Converters\ColorToFlatGradientStopsConverter.cs" />
     <Compile Include="Converters\ColorToGradientStopsConverter.cs" />
     <Compile Include="Converters\BrightenColorConverter.cs" />
     <Compile Include="Converters\DarkenColorConverter.cs" />
-    <Compile Include="FlatDesignProperties.cs" />
+    <Compile Include="Helpers\FlatDesignProperties.cs" />
     <Compile Include="ModernTheme.cs" />
     <Compile Include="Palettes\DarkPalette.cs" />
     <Compile Include="Palettes\LightPalette.cs" />

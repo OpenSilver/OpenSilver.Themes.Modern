@@ -51,9 +51,14 @@ public abstract class Palette
 
         resources[nameof(Theme_BrightnessColorConverter)] = palette.Theme_BrightnessColorConverter;
 
+        resources[nameof(Theme_HoverBrightnessRatio)] = palette.Theme_HoverBrightnessRatio;
+        resources[nameof(Theme_PressBrightnessRatio)] = palette.Theme_PressBrightnessRatio;
+
         resources[nameof(Theme_ChartHaloOpacity)] = palette.Theme_ChartHaloOpacity;
 
         //Colors for charts:
+        
+        resources[nameof(Theme_ChartsBrushEffectMode)] = palette.Theme_ChartsBrushEffectMode;
         resources[nameof(Theme_ChartGridLineColor)] = palette.Theme_ChartGridLineColor;
         resources["Theme_ChartGridLineBrush"] = new SolidColorBrush(palette.Theme_ChartGridLineColor);
         resources[nameof(Theme_ChartLegendForeground)] = palette.Theme_ChartLegendForeground;
@@ -95,9 +100,13 @@ public abstract class Palette
 
     public abstract IValueConverter Theme_BrightnessColorConverter { get; set; }
 
+    public abstract double Theme_HoverBrightnessRatio { get; set; }
+    public abstract double Theme_PressBrightnessRatio { get; set; }
 
     public abstract double Theme_ChartHaloOpacity { get; set; }
     //Colors for Charts
+    
+    public abstract BrushEffectMode Theme_ChartsBrushEffectMode { get; set; }
     public abstract Color Theme_ChartGridLineColor { get; set; }
     public abstract Color Theme_ChartLegendForeground { get; set; }
     public abstract Color Theme_ChartAxisTextForeground { get; set; }
