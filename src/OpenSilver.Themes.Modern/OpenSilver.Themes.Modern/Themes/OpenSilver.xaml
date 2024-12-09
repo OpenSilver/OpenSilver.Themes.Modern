@@ -1950,8 +1950,7 @@
                                                     x:Name="ScrollContentPresenter"
                                                     ContentTemplate="{TemplateBinding ContentTemplate}" />
                             <ScrollBar x:Name="VerticalScrollBar"
-                                       Margin="-4,0,-2,2"
-                                       Width="9"
+                                       Width="16"
                                        HorizontalAlignment="Right"
                                        Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
                                        IsTabStop="False"
@@ -1962,8 +1961,7 @@
                                        Orientation="Vertical"
                                        ViewportSize="{TemplateBinding ViewportHeight}" />
                             <ScrollBar x:Name="HorizontalScrollBar"
-                                       Margin="0,-4,2,-2"
-                                       Height="9"
+                                       Height="16"
                                        VerticalAlignment="Bottom"
                                        Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
                                        IsTabStop="False"
