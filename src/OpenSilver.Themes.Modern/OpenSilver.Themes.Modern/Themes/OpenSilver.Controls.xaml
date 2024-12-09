@@ -758,13 +758,13 @@ Value="2" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Theme_BorderBrush}"/>
-        <Setter Property="Padding" Value="5" />
+        <Setter Property="Padding" Value="4" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TabControl">
-                    <Grid Margin="20">
+                    <Grid Margin="{TemplateBinding Padding}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
@@ -778,7 +778,7 @@ Value="2" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <TabPanel Margin="2,0,2,0" x:Name="TabPanelTop" Canvas.ZIndex="1" />
-                            <Border MinHeight="10" MinWidth="10" Grid.Row="2" x:Name="Background" Background="{TemplateBinding Background}" Padding="24" Margin="6">
+                            <Border MinHeight="10" MinWidth="10" Grid.Row="2" x:Name="Background" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="6">
                                 <ContentPresenter Cursor="{TemplateBinding Cursor}" x:Name="ContentTop" />
                             </Border>
                         </Grid>
@@ -789,7 +789,7 @@ Value="2" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
                             <TabPanel Margin="2,0,2,0" x:Name="TabPanelBottom" Grid.Row="2" Canvas.ZIndex="1" />
-                            <Border MinHeight="10" MinWidth="10" x:Name="BackgroundBottom" Background="{TemplateBinding Background}" Padding="24" Margin="6">
+                            <Border MinHeight="10" MinWidth="10" x:Name="BackgroundBottom" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="6">
                                 <ContentPresenter Cursor="{TemplateBinding Cursor}" x:Name="ContentBottom" />
                             </Border>
                         </Grid>
@@ -800,7 +800,7 @@ Value="2" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <TabPanel Margin="0,2,0,2" x:Name="TabPanelLeft" Canvas.ZIndex="1"/>
-                            <Border MinHeight="10" MinWidth="10" x:Name="BackgroundLeft" Background="{TemplateBinding Background}" Grid.Column="2" Padding="24" Margin="6">
+                            <Border MinHeight="10" MinWidth="10" x:Name="BackgroundLeft" Background="{TemplateBinding Background}" Grid.Column="2" Padding="{TemplateBinding Padding}" Margin="6">
                                 <ContentPresenter Cursor="{TemplateBinding Cursor}" x:Name="ContentLeft" />
                             </Border>
                         </Grid>
@@ -811,7 +811,7 @@ Value="2" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <TabPanel Margin="0,2,2,2" x:Name="TabPanelRight" Grid.Column="2" Canvas.ZIndex="2" />
-                            <Border MinHeight="10" MinWidth="10" x:Name="BackgroundRight" Background="{TemplateBinding Background}" Padding="24" Margin="6">
+                            <Border MinHeight="10" MinWidth="10" x:Name="BackgroundRight" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="6">
                                 <ContentPresenter Cursor="{TemplateBinding Cursor}" x:Name="ContentRight" />
                             </Border>
                         </Grid>
