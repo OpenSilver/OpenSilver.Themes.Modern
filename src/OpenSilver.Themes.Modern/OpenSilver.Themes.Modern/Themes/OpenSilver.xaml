@@ -2723,7 +2723,7 @@
                                 </Grid.ColumnDefinitions>
                                 <ToggleButton x:Name="DropDownToggle"
                                               HorizontalContentAlignment="Right"
-                                              Background="Transparent"
+                                              Background="{TemplateBinding Background}"
                                               Grid.ColumnSpan="2"
                                               local:FlatDesignProperties.Label="{TemplateBinding local:FlatDesignProperties.Label}"
                                               Padding="{TemplateBinding Padding}">
@@ -2825,11 +2825,6 @@
                                                                     <vsm:VisualState x:Name="Unfocused" />
                                                                 </vsm:VisualStateGroup>
                                                             </vsm:VisualStateManager.VisualStateGroups>
-                                                            <Border x:Name="Toggled"
-                                                                    CornerRadius="4"
-                                                                    Background="Transparent"
-                                                                    Opacity="0"
-                                                                    Grid.ColumnSpan="2" />
                                                             <TextBlock x:Name="Label"
                                                                        Text="{TemplateBinding local:FlatDesignProperties.Label}"
                                                                        Visibility="Collapsed"
@@ -2873,6 +2868,7 @@
                             </Grid>
                         </Border>
                         <Border CornerRadius="4"
+                                Background="{TemplateBinding Background}"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="1"
                                 Padding="{TemplateBinding Padding}" />
