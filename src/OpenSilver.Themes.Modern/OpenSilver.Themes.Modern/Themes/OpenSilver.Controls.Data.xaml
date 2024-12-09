@@ -571,8 +571,6 @@
                 Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Cursor"
                 Value="Arrow" />
         <Setter Property="IsTabStop"
@@ -981,7 +979,6 @@
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Background" Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
-        <Setter Property="Height" Value="26"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DataGridRowGroupHeader">

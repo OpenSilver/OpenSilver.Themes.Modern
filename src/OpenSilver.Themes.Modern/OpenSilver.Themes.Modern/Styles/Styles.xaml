@@ -4,8 +4,6 @@
 
     <Style x:Key="ClearFlatButtonStyle"
            TargetType="Button">
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Background"

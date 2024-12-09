@@ -54,12 +54,8 @@
            TargetType="inputToolkit:TimeUpDown">
         <Setter Property="FontSize"
                 Value="13" />
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="BorderThickness"
                 Value="1" />
-        <Setter Property="Padding"
-                Value="4,3,4,2" />
         <Setter Property="VerticalContentAlignment"
                 Value="Center" />
         <Setter Property="Template">
@@ -211,6 +207,7 @@
                                      FontStyle="{TemplateBinding FontStyle}"
                                      FontWeight="{TemplateBinding FontWeight}"
                                      Foreground="{TemplateBinding Foreground}"
+                                     Padding="{TemplateBinding Padding}"
                                      Height="{TemplateBinding Height}"
                                      VerticalContentAlignment="Center"
                                      HorizontalAlignment="Stretch"
@@ -238,12 +235,12 @@
                 Value="False" />
         <Setter Property="MinWidth"
                 Value="125" />
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Background"
                 Value="Transparent" />
+        <Setter Property="Padding"
+                Value="4,0,4,4" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderBrush"

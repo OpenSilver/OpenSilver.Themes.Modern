@@ -99,8 +99,6 @@
     <!-- Button -->
     <Style x:Key="FlatButtonStyle"
            TargetType="Button">
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
         <Setter Property="Background"
@@ -336,8 +334,6 @@
     <!-- TextBox -->
     <Style x:Key="FlatTextBoxStyle"
            TargetType="TextBox">
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Padding"
                 Value="4,0,4,2" />
         <Setter Property="Foreground"
@@ -905,8 +901,6 @@
     <!-- PasswordBox -->
     <Style x:Key="FlatPasswordBoxStyle"
            TargetType="PasswordBox">
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -1098,8 +1092,6 @@
                 Value="Center" />
         <Setter Property="Padding"
                 Value="0,0,0,0" />
-        <Setter Property="Height"
-                Value="24" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -2637,8 +2629,6 @@
                 Value="1" />
         <Setter Property="Padding"
                 Value="8,0,8,2" />
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">

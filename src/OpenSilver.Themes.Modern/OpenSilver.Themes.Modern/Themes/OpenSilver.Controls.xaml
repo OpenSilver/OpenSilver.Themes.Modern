@@ -199,10 +199,6 @@ Value="{DynamicResource Theme_TextBrush}" />
         Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
         Value="1" />
-        <Setter Property="Width"
-        Value="120" />
-        <Setter Property="Height"
-        Value="32" />
 
         <Setter Property="Template">
             <Setter.Value>
