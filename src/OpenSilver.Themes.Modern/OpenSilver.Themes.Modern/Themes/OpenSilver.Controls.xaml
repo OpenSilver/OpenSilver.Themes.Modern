@@ -139,13 +139,13 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                        CornerRadius="6"
+                        CornerRadius="4"
                         BorderBrush="{DynamicResource Theme_BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}"
                         Grid.ColumnSpan="2" />
                         <Border x:Name="Hover"
-                        CornerRadius="6"
+                        CornerRadius="4"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="Transparent"
