@@ -22,6 +22,12 @@ public abstract class Palette
 
     internal static void LoadPalette(Palette palette, ResourceDictionary resources)
     {
+        resources[nameof(Theme_BackgroundColor)] = palette.Theme_BackgroundColor;
+        resources["Theme_BackgroundBrush"] = new SolidColorBrush(palette.Theme_BackgroundColor);
+
+        resources[nameof(Theme_ContainerBackgroundColor)] = palette.Theme_ContainerBackgroundColor;
+        resources["Theme_ContainerBackgroundBrush"] = new SolidColorBrush(palette.Theme_ContainerBackgroundColor);
+
         resources[nameof(Theme_PrimaryColor)] = palette.Theme_PrimaryColor;
         resources["Theme_PrimaryBrush"] = new SolidColorBrush(palette.Theme_PrimaryColor);
 
@@ -31,14 +37,14 @@ public abstract class Palette
         resources[nameof(Theme_BorderColor)] = palette.Theme_BorderColor;
         resources["Theme_BorderBrush"] = new SolidColorBrush(palette.Theme_BorderColor);
 
-        resources[nameof(Theme_AlternatingRowBackgroundColor)] = palette.Theme_AlternatingRowBackgroundColor;
-        resources["Theme_AlternatingRowBackgroundBrush"] = new SolidColorBrush(palette.Theme_AlternatingRowBackgroundColor);
+        resources[nameof(Theme_AlternateRowColor)] = palette.Theme_AlternateRowColor;
+        resources["Theme_AlternateRowBrush"] = new SolidColorBrush(palette.Theme_AlternateRowColor);
 
         resources[nameof(Theme_TextColor)] = palette.Theme_TextColor;
         resources["Theme_TextBrush"] = new SolidColorBrush(palette.Theme_TextColor);
 
-        resources[nameof(Theme_TextOverPrimaryColor)] = palette.Theme_TextOverPrimaryColor;
-        resources["Theme_TextOverPrimaryBrush"] = new SolidColorBrush(palette.Theme_TextOverPrimaryColor);
+        resources[nameof(Theme_TextOnPrimaryColor)] = palette.Theme_TextOnPrimaryColor;
+        resources["Theme_TextOnPrimaryBrush"] = new SolidColorBrush(palette.Theme_TextOnPrimaryColor);
 
         resources[nameof(Theme_DisabledColor)] = palette.Theme_DisabledColor;
         resources["Theme_DisabledBrush"] = new SolidColorBrush(palette.Theme_DisabledColor);
@@ -88,12 +94,15 @@ public abstract class Palette
 
     internal static Palette Dark { get; } = new DarkPalette();
 
+    public abstract Color Theme_BackgroundColor { get; set; }
+    public abstract Color Theme_ContainerBackgroundColor { get; set; }
+
     public abstract Color Theme_PrimaryColor { get; set; }
     public abstract Color Theme_ControlBackgroundColor { get; set; }
     public abstract Color Theme_BorderColor { get; set; }
-    public abstract Color Theme_AlternatingRowBackgroundColor { get; set; }
+    public abstract Color Theme_AlternateRowColor { get; set; }
     public abstract Color Theme_TextColor { get; set; }
-    public abstract Color Theme_TextOverPrimaryColor { get; set; }
+    public abstract Color Theme_TextOnPrimaryColor { get; set; }
     public abstract Color Theme_DisabledColor { get; set; }
     public abstract Color Theme_AccentOverlayColor { get; set; }
     public abstract Color Theme_WatermarkColor { get; set; }

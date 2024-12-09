@@ -19,7 +19,6 @@ namespace ModernThemeTest
         {
             InitializeComponent();
 
-            UpdateBackground();
             Loaded += MainPage_Loaded;
             this.DataContext = new DtCtx();
             // Enter construction logic here...
@@ -28,20 +27,6 @@ namespace ModernThemeTest
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/BasePage");
-        }
-
-        private void UpdateBackground()
-        {
-            if (Application.Current.Theme is ModernTheme theme && theme.CurrentPalette == ModernTheme.Palettes.Dark)
-            {
-                MainBackground.Background = new SolidColorBrush(Color.FromRgb(17, 17, 17));
-                Foreground = new SolidColorBrush(Colors.White);
-            }
-            else
-            {
-                MainBackground.Background = new SolidColorBrush(Color.FromRgb(255, 255, 255));
-                Foreground = new SolidColorBrush(Colors.Black);
-            }
         }
 
         private void OnClassicThemeClick(object sender, RoutedEventArgs e)
@@ -63,7 +48,6 @@ namespace ModernThemeTest
                     return;
                 }
                 modernTheme.CurrentPalette = ModernTheme.Palettes.Light;
-                UpdateBackground();
             }
             else
             {
@@ -80,7 +64,6 @@ namespace ModernThemeTest
                     return;
                 }
                 modernTheme.CurrentPalette = ModernTheme.Palettes.Dark;
-                UpdateBackground();
             }
             else
             {

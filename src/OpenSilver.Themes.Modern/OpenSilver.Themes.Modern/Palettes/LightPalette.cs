@@ -5,13 +5,16 @@ using System.Windows.Media;
 namespace OpenSilver.Themes.Modern;
 
 public class LightPalette : Palette
-{
+{    
+    public override Color Theme_BackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
+    public override Color Theme_ContainerBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#fcfcfc");
+
     public override Color Theme_PrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#1157fa");
     public override Color Theme_ControlBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#ffffff");
     public override Color Theme_BorderColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#bababa");
-    public override Color Theme_AlternatingRowBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#fcfcfc");
+    public override Color Theme_AlternateRowColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#fcfcfc");
     public override Color Theme_TextColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
-    public override Color Theme_TextOverPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
+    public override Color Theme_TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
     public override Color Theme_DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#a4a8bf");
     public override Color Theme_AccentOverlayColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
     public override Color Theme_WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFAAAAAA");

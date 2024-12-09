@@ -934,7 +934,7 @@
                                         CornerRadius="0,0,4,4"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="{TemplateBinding BorderThickness}"
-                                        Background="{DynamicResource Theme_AlternatingRowBackgroundBrush}"
+                                        Background="{DynamicResource Theme_AlternateRowBrush}"
                                         Padding="5">
                                     <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                     Margin="{TemplateBinding Padding}"

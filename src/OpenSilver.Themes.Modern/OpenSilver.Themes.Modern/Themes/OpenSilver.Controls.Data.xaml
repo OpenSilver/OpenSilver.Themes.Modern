@@ -1097,7 +1097,7 @@
         <Setter Property="RowBackground"
                 Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="AlternatingRowBackground"
-                Value="{DynamicResource Theme_AlternatingRowBackgroundBrush}" />
+                Value="{DynamicResource Theme_AlternateRowBrush}" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"

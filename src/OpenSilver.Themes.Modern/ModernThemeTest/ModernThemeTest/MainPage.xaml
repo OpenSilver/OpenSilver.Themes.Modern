@@ -7,7 +7,7 @@
       xmlns:flatdesign="clr-namespace:OpenSilver.Themes.Modern;assembly=OpenSilver.Themes.Modern"
       mc:Ignorable="d">
 
-    <Grid x:Name="MainBackground" Background="#FFFFFF">
+    <Grid x:Name="MainBackground" Background="{DynamicResource Theme_BackgroundBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
