@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Layout.Toolkit"
-                    xmlns:layoutPrimitivesToolkit="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls.Layout.Toolkit">
+                    xmlns:layoutPrimitivesToolkit="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls.Layout.Toolkit"
+                    xmlns:local="http://opensilver.net/themes/modern">
 
     <!--Accordion-->
     <Style x:Name="FlatAccordionStyle"
@@ -117,6 +118,14 @@
                 <ControlTemplate TargetType="layoutPrimitivesToolkit:AccordionButton">
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="Transparent">
+                        <Grid.Resources>
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                BasedOn="{DynamicResource Theme_BorderBrush}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="PressBrushBuilder"
+                                                BasedOn="{DynamicResource Theme_BorderBrush}"
+                                                BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                        </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="ExpandDirectionStates">
                                 <VisualStateGroup.Transitions>
@@ -395,42 +404,16 @@
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ColorAnimation BeginTime="0"
-                                                        Storyboard.TargetName="arrow"
-                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
-                                                        To="#222" />
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="MouseOverBackground"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="0.3" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="MouseOverBackground"
-                                                                       Storyboard.TargetProperty="(Border.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="00:00:00">
-                                                <DiscreteObjectKeyFrame.Value>
-                                                    <Thickness>0</Thickness>
-                                                </DiscreteObjectKeyFrame.Value>
-                                            </DiscreteObjectKeyFrame>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ColorAnimation BeginTime="0"
-                                                        Storyboard.TargetName="arrow"
-                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
-                                                        To="#FF003366" />
-                                        <ColorAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                      Duration="00:00:00.0010000"
-                                                                      Storyboard.TargetName="MouseOverBackground"
-                                                                      Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="00:00:00"
-                                                                 Value="#ff737573" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
@@ -460,17 +443,12 @@
                         <Border x:Name="background"
                                 Background="{TemplateBinding Background}">
                             <Grid>
-                                <Border Height="Auto"
-                                        Margin="0,0,0,0"
-                                        VerticalAlignment="Stretch"
-                                        Opacity="0.15"
-                                        Background="{DynamicResource Theme_BorderBrush}" />
-                                <Border x:Name="MouseOverBackground"
+                                <Border x:Name="ButtonBackground"
                                         Height="Auto"
                                         Margin="0,0,0,0"
                                         VerticalAlignment="Stretch"
-                                        Opacity="0"
-                                        Background="{DynamicResource Theme_AccentOverlayBrush}" />
+                                        Opacity="0.2"
+                                        Background="{DynamicResource Theme_BorderBrush}" />
                                 <Grid Background="Transparent">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition x:Name="cd0"

@@ -49,9 +49,6 @@ public abstract class Palette
         resources[nameof(Theme_DisabledColor)] = palette.Theme_DisabledColor;
         resources["Theme_DisabledBrush"] = new SolidColorBrush(palette.Theme_DisabledColor);
 
-        resources[nameof(Theme_AccentOverlayColor)] = palette.Theme_AccentOverlayColor;
-        resources["Theme_AccentOverlayBrush"] = new SolidColorBrush(palette.Theme_AccentOverlayColor);
-
         resources[nameof(Theme_WatermarkColor)] = palette.Theme_WatermarkColor;
         resources["Theme_WatermarkBrush"] = new SolidColorBrush(palette.Theme_WatermarkColor);
 
@@ -104,7 +101,6 @@ public abstract class Palette
     public abstract Color Theme_TextColor { get; set; }
     public abstract Color Theme_TextOnPrimaryColor { get; set; }
     public abstract Color Theme_DisabledColor { get; set; }
-    public abstract Color Theme_AccentOverlayColor { get; set; }
     public abstract Color Theme_WatermarkColor { get; set; }
 
     public abstract IValueConverter Theme_BrightnessColorConverter { get; set; }

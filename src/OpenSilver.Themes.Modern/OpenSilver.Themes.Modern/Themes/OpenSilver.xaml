@@ -315,7 +315,7 @@
                                 Visibility="Collapsed" />
                         <Border x:Name="Toggled"
                                 CornerRadius="5"
-                                Background="{DynamicResource Theme_AccentOverlayBrush}"
+                                Background="#000000"
                                 Opacity="0" />
                         <Border x:Name="DisabledBackground"
                                 CornerRadius="5"

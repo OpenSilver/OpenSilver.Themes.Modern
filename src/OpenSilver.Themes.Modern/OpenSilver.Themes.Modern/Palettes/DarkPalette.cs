@@ -16,7 +16,6 @@ public class DarkPalette : Palette
     public override Color Theme_TextColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#cad3ff");
     public override Color Theme_TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#eef0ff");
     public override Color Theme_DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#a4a8bf");
-    public override Color Theme_AccentOverlayColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
     public override Color Theme_WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFAAAAAA");
 
     public override IValueConverter Theme_BrightnessColorConverter { get; set; } = new BrightenColorConverter();
