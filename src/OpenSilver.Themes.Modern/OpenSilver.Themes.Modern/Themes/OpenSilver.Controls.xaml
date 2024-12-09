@@ -187,6 +187,8 @@
     <!-- DatePicker -->
     <Style x:Name="FlatDatePicker"
    TargetType="controls:DatePicker">
+        <Setter Property="Height"
+        Value="32" />
         <Setter Property="Background"
         Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"

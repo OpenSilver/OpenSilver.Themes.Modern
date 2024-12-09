@@ -338,6 +338,8 @@
     <!-- TextBox -->
     <Style x:Key="FlatTextBoxStyle"
            TargetType="TextBox">
+        <Setter Property="Height"
+                Value="32" />
         <Setter Property="Padding"
                 Value="4,0,4,2" />
         <Setter Property="FontSize"
@@ -909,6 +911,8 @@
     <!-- PasswordBox -->
     <Style x:Key="FlatPasswordBoxStyle"
            TargetType="PasswordBox">
+        <Setter Property="Height"
+                Value="32" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -2628,6 +2632,8 @@
     <!-- ComboBox -->
     <Style x:Name="FlatComboBoxStyle"
            TargetType="ComboBox">
+        <Setter Property="Height"
+                Value="32" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Left" />
         <Setter Property="TabNavigation"

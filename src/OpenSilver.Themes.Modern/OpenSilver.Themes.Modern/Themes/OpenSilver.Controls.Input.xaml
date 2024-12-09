@@ -5,6 +5,8 @@
 
     <!-- AutoCompleteBox-->
     <Style TargetType="input:AutoCompleteBox">
+        <Setter Property="Height"
+                Value="32" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="Template">

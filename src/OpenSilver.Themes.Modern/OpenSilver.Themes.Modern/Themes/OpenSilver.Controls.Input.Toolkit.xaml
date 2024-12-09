@@ -52,6 +52,8 @@
     <!--TimeUpDown-->
     <Style x:Name="FlatTimeUpDownStyle"
            TargetType="inputToolkit:TimeUpDown">
+        <Setter Property="Height"
+                Value="32" />
         <Setter Property="FontSize"
                 Value="13" />
         <Setter Property="BorderThickness"
@@ -231,6 +233,8 @@
     <!-- TimePicker -->
     <Style x:Name="FlatTimePickerStyle"
            TargetType="inputToolkit:TimePicker">
+        <Setter Property="Height"
+                Value="32" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="MinWidth"
