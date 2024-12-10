@@ -6,17 +6,17 @@ namespace OpenSilver.Themes.Modern;
 
 public class DarkPalette : Palette
 {
-    public override Color Theme_BackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#0F0F0F");
-    public override Color Theme_ContainerBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
+    public override Color Theme_BackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#000000");
+    public override Color Theme_ContainerBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#0D0D0D");
 
-    public override Color Theme_PrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#6983b9");
-    public override Color Theme_ControlBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#434659");
-    public override Color Theme_BorderColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#496399");
-    public override Color Theme_AlternateRowColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#232639");
-    public override Color Theme_TextColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#cad3ff");
-    public override Color Theme_TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#eef0ff");
-    public override Color Theme_DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#a4a8bf");
-    public override Color Theme_WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFAAAAAA");
+    public override Color Theme_PrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#0C68E9");
+    public override Color Theme_ControlBackgroundColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#141414");
+    public override Color Theme_BorderColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#303030");
+    public override Color Theme_AlternateRowColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#212121");
+    public override Color Theme_TextColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#DEDEDE");
+    public override Color Theme_TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
+    public override Color Theme_DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#171717");
+    public override Color Theme_WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#575757");
 
     public override IValueConverter Theme_BrightnessColorConverter { get; set; } = new BrightenColorConverter();
 
