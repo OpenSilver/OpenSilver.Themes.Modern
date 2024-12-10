@@ -262,13 +262,10 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="0.35" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value=".5,.5,.5,.5" />
-                                        </ObjectAnimationUsingKeyFrames>
-
+                                        <ThicknessAnimation Duration="00:00:00"
+                                                            Storyboard.TargetName="Background"
+                                                            Storyboard.TargetProperty="BorderThickness"
+                                                            To=".5,.5,.5,.5" />
                                         <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="DisabledBackground"
                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
@@ -612,7 +609,6 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
-
                     <Grid Margin="{TemplateBinding Padding}"
                           VerticalAlignment="Center">
                         <Grid.ColumnDefinitions>
@@ -646,12 +642,10 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="1.5,1.5,.5,.5" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <ThicknessAnimation Duration="00:00:00"
+                                                            Storyboard.TargetName="Background"
+                                                            Storyboard.TargetProperty="BorderThickness"
+                                                            To="1.5,1.5,.5,.5" />
                                         <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="Bullet"
                                                                        Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.X)">
@@ -679,12 +673,10 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="0.5" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value=".5,.5,.5,.5" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <ThicknessAnimation Duration="00:00:00"
+                                                            Storyboard.TargetName="Background"
+                                                            Storyboard.TargetProperty="BorderThickness"
+                                                            To=".5,.5,.5,.5" />
                                         <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="Background"
                                                                        Storyboard.TargetProperty="Background">
@@ -959,12 +951,10 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="0.35" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value=".5,.5,.5,.5" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <ThicknessAnimation Duration="00:00:00"
+                                                            Storyboard.TargetName="Background"
+                                                            Storyboard.TargetProperty="BorderThickness"
+                                                            To=".5,.5,.5,.5" />
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="ReadOnly" />
@@ -1148,12 +1138,10 @@
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00"
-                                                                       Storyboard.TargetName="Hover"
-                                                                       Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="6" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <ThicknessAnimation Duration="00:00:00"
+                                                            Storyboard.TargetName="Hover"
+                                                            Storyboard.TargetProperty="BorderThickness"
+                                                            To="6" />
                                         <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="Hover"
                                                                        Storyboard.TargetProperty="(UIElement.Visibility)">
@@ -2774,12 +2762,10 @@
                                                                     </vsm:VisualState>
                                                                     <vsm:VisualState x:Name="Pressed">
                                                                         <Storyboard>
-                                                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                                           Storyboard.TargetName="Background"
-                                                                                                           Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                                        Value="2.5,2.5,.5,.5" />
-                                                                            </ObjectAnimationUsingKeyFrames>
+                                                                            <ThicknessAnimation Duration="00:00:00"
+                                                                                                Storyboard.TargetName="Background"
+                                                                                                Storyboard.TargetProperty="BorderThickness"
+                                                                                                To="2.5,2.5,.5,.5" />
                                                                             <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                                                            Storyboard.TargetName="MousePress"
                                                                                                            Storyboard.TargetProperty="(UIElement.Opacity)">
@@ -2796,13 +2782,10 @@
                                                                                 <SplineDoubleKeyFrame KeyTime="0"
                                                                                                       Value="0.35" />
                                                                             </DoubleAnimationUsingKeyFrames>
-                                                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                                           Storyboard.TargetName="Background"
-                                                                                                           Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                                        Value=".5,.5,.5,.5" />
-                                                                            </ObjectAnimationUsingKeyFrames>
-
+                                                                            <ThicknessAnimation Duration="00:00:00"
+                                                                                                Storyboard.TargetName="Background"
+                                                                                                Storyboard.TargetProperty="BorderThickness"
+                                                                                                To=".5,.5,.5,.5" />
                                                                             <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                                                            Storyboard.TargetName="DisabledBackground"
                                                                                                            Storyboard.TargetProperty="(UIElement.Opacity)">

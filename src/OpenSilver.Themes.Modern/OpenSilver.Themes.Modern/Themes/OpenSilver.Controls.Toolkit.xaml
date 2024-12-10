@@ -344,12 +344,10 @@
                                         <vsm:VisualStateGroup x:Name="FocusStates">
                                             <vsm:VisualState x:Name="Focused">
                                                 <Storyboard>
-                                                    <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                   Storyboard.TargetName="Background"
-                                                                                   Storyboard.TargetProperty="(UIElement.BorderThickness)">
-                                                        <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                Value="0.75,0.75,2,2" />
-                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ThicknessAnimation Duration="00:00:00"
+                                                                        Storyboard.TargetName="Background"
+                                                                        Storyboard.TargetProperty="BorderThickness"
+                                                                        To="0.75,0.75,2,2" />
                                                     <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                                    Storyboard.TargetName="Background"
                                                                                    Storyboard.TargetProperty="Margin">
