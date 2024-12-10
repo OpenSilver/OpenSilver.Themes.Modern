@@ -2726,6 +2726,11 @@
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>
                         </vsm:VisualStateManager.VisualStateGroups>
+                        <Border CornerRadius="4"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{DynamicResource Theme_BorderBrush}"
+                                BorderThickness="1"
+                                Padding="{TemplateBinding Padding}" />
                         <Border x:Name="ContentPresenterBorder">
                             <Grid Height="{TemplateBinding Height}">
                                 <Grid.ColumnDefinitions>
@@ -2878,11 +2883,6 @@
                                 </ContentPresenter>
                             </Grid>
                         </Border>
-                        <Border CornerRadius="4"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{DynamicResource Theme_BorderBrush}"
-                                BorderThickness="1"
-                                Padding="{TemplateBinding Padding}" />
                         <Border x:Name="HasFocus"
                                 CornerRadius="4"
                                 BorderBrush="{TemplateBinding BorderBrush}"
