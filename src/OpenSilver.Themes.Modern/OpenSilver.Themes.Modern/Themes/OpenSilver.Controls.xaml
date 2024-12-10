@@ -94,18 +94,18 @@
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                  Storyboard.TargetName="Background"
-                                                                  Storyboard.TargetProperty="(UIElement.Background).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                             Value="{DynamicResource Theme_DisabledColor}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                     Storyboard.TargetName="Background"
-                                                 Storyboard.TargetProperty="(UIElement.BorderBrush).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                             Value="{DynamicResource Theme_BorderColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00"
+                                                                       Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_BorderBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="ReadOnly" />
@@ -280,6 +280,9 @@ Value="{DynamicResource Theme_TextBrush}" />
             <Setter.Value>
                 <ControlTemplate TargetType="CalendarButton">
                     <Grid Cursor="{TemplateBinding Cursor}" Margin="0,8">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="inactiveBrush">#FF777777</SolidColorBrush>
+                        </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualStateGroup.Transitions>
@@ -318,12 +321,12 @@ Value="{DynamicResource Theme_TextBrush}" />
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                           Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                              Storyboard.TargetName="NormalText"
-                                                              Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                         Value="{DynamicResource Theme_TextOnPrimaryColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="NormalText"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -334,12 +337,12 @@ Value="{DynamicResource Theme_TextBrush}" />
                                 <VisualState x:Name="Active" />
                                 <VisualState x:Name="Inactive">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                              Storyboard.TargetName="NormalText"
-                                                              Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                         Value="#FF777777" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="NormalText"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource inactiveBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -459,12 +462,12 @@ Value="2" />
                                             <DiscreteObjectKeyFrame KeyTime="0"
                                                             Value="Visible" />
                                         </ObjectAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                              Storyboard.TargetName="NormalText"
-                                                              Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                         Value="{DynamicResource Theme_TextOnPrimaryColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="NormalText"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -476,12 +479,15 @@ Value="2" />
                                 <VisualState x:Name="Active" />
                                 <VisualState x:Name="Inactive">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                              Storyboard.TargetName="NormalText"
-                                                              Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                         Value="Transparent" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="NormalText"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="Transparent" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>

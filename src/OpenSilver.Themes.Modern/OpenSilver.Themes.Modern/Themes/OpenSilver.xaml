@@ -685,19 +685,18 @@
                                             <DiscreteObjectKeyFrame KeyTime="0"
                                                                     Value=".5,.5,.5,.5" />
                                         </ObjectAnimationUsingKeyFrames>
-
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="Background"
-                                                                      Storyboard.TargetProperty="(UIElement.Background)(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_DisabledColor}" />
-                                        </ColorAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="Background"
-                                                                      Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_DisabledColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>
@@ -720,12 +719,15 @@
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Unchecked">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="Background"
-                                                                      Storyboard.TargetProperty="(UIElement.Background)(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="Transparent" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="Transparent" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Indeterminate">
@@ -1394,13 +1396,12 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value=".55" />
                                         </DoubleAnimationUsingKeyFrames>
-
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="SelectedBackground"
-                                                                      Storyboard.TargetProperty="Background.(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_BorderColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="SelectedBackground"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_BorderBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>
@@ -1413,13 +1414,12 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
-
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="SelectedTextControl"
-                                                                      Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_TextOnPrimaryColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="SelectedTextControl"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>
@@ -2004,12 +2004,12 @@
                                 <vsm:VisualState x:Name="Pressed" />
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="Background"
-                                                                      Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_BorderColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="BorderBrush">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_BorderBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ThumbVisual"
                                                                        Storyboard.TargetProperty="Opacity">
                                             <SplineDoubleKeyFrame KeyTime="0:0:0"
@@ -2092,7 +2092,7 @@
                                     <Storyboard>
                                         <!--<ColorAnimationUsingKeyFrames Duration="00:00:00.001"
                                               Storyboard.TargetName="Background"
-                                              Storyboard.TargetProperty="(UIElement.BorderBrush)(SolidColorBrush.Color)">
+                                              Storyboard.TargetProperty="(UIElement.BorderBrush).(SolidColorBrush.Color)">
                                             <SplineColorKeyFrame KeyTime="0"
                                          Value="{DynamicResource Theme_BorderColor}" />
                                         </ColorAnimationUsingKeyFrames>-->
@@ -2271,13 +2271,12 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="1" />
                                         </DoubleAnimationUsingKeyFrames>
-
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="Header"
-                                                                      Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_TextOnPrimaryColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Header"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="SelectedInactive">
@@ -2288,13 +2287,12 @@
                                             <SplineDoubleKeyFrame KeyTime="0"
                                                                   Value="0.8" />
                                         </DoubleAnimationUsingKeyFrames>
-
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                      Storyboard.TargetName="Header"
-                                                                      Storyboard.TargetProperty="Foreground.(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0"
-                                                                 Value="{DynamicResource Theme_TextOnPrimaryColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                       Storyboard.TargetName="Header"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>

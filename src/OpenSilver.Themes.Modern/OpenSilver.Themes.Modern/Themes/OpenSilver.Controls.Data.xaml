@@ -67,11 +67,12 @@
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                      Storyboard.TargetName="ForegroundContentControl"
-                                                                      Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_DisabledColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00"
+                                                                       Storyboard.TargetName="ForegroundContentControl"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -141,16 +142,18 @@
                                                         </VisualState>
                                                         <VisualState x:Name="Disabled">
                                                             <Storyboard>
-                                                                <ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                                              Storyboard.TargetName="Background"
-                                                                                              Storyboard.TargetProperty="(UIElement.Background).(SolidColorBrush.Color)">
-                                                                    <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_DisabledColor}" />
-                                                                </ColorAnimationUsingKeyFrames>
-                                                                <ColorAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                              Storyboard.TargetName="Background"
-                                                                                              Storyboard.TargetProperty="(UIElement.BorderBrush).(SolidColorBrush.Color)">
-                                                                    <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
-                                                                </ColorAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Duration="00:00:00"
+                                                                                               Storyboard.TargetName="Background"
+                                                                                               Storyboard.TargetProperty="Background">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0"
+                                                                                            Value="{DynamicResource Theme_DisabledBrush}" />
+                                                                </ObjectAnimationUsingKeyFrames>
+                                                                <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                                               Storyboard.TargetName="Background"
+                                                                                               Storyboard.TargetProperty="BorderBrush">
+                                                                    <DiscreteObjectKeyFrame KeyTime="0"
+                                                                                            Value="{DynamicResource Theme_BorderBrush}" />
+                                                                </ObjectAnimationUsingKeyFrames>
                                                             </Storyboard>
                                                         </VisualState>
                                                         <VisualState x:Name="ReadOnly" />

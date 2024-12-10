@@ -66,11 +66,12 @@
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                  Storyboard.TargetName="ForegroundContentControl"
-                                                                  Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_DisabledColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00"
+                                                                       Storyboard.TargetName="ForegroundContentControl"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
