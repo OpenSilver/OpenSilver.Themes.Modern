@@ -32,8 +32,6 @@
                 Value="0" />
         <Setter Property="IsTabStop"
                 Value="False" />
-        <Setter Property="FontSize"
-                Value="14" />
         <Setter Property="TabNavigation"
                 Value="Once" />
         <!-- Accordion expects a stackpanel to layout its children. -->

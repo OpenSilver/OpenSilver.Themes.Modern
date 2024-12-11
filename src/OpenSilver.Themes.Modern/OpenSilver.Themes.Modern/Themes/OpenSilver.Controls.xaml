@@ -7,7 +7,6 @@
 
     <!-- TextBlock -->
     <Style TargetType="TextBlock">
-        <Setter Property="FontSize" Value="14" />
         <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
     </Style>
     
@@ -159,11 +158,10 @@
                         Grid.ColumnSpan="2" />
 
                         <Grid x:Name="WatermarkContent"
-                      Margin="14,0,2,2"
+                      Margin="8,2,2,2"
                       HorizontalAlignment="Left">
                             <Border x:Name="ContentElement"
                             BorderThickness="0"
-                            Margin="2,0,0,0"
                             VerticalAlignment="Center" />
                             <ContentControl
                                     FontSize="{TemplateBinding FontSize}"
@@ -194,19 +192,17 @@
     <Style x:Name="FlatDatePicker"
    TargetType="controls:DatePicker">
         <Setter Property="Height"
-        Value="32" />
+                Value="32" />
         <Setter Property="Background"
-        Value="{DynamicResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"
-Value="{DynamicResource Theme_TextBrush}" />
-        <Setter Property="FontSize"
-            Value="14"/>
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Padding"
-        Value="2" />
+                Value="2" />
         <Setter Property="BorderBrush"
-        Value="{DynamicResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
-        Value="1" />
+                Value="1" />
 
         <Setter Property="Template">
             <Setter.Value>
@@ -845,7 +841,6 @@ Value="2" />
         <Setter Property="BorderBrush" Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="FontSize" Value="14" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

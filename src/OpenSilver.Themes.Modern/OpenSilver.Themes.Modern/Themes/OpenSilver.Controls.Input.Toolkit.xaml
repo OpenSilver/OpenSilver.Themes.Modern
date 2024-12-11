@@ -52,10 +52,6 @@
     <!--TimeUpDown-->
     <Style x:Name="FlatTimeUpDownStyle"
            TargetType="inputToolkit:TimeUpDown">
-        <Setter Property="Height"
-                Value="32" />
-        <Setter Property="FontSize"
-                Value="13" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="VerticalContentAlignment"
@@ -244,9 +240,7 @@
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
-                Value="4,0,4,4" />
-        <Setter Property="FontSize"
-                Value="14" />
+                Value="8,4,4,4" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderBrush"
