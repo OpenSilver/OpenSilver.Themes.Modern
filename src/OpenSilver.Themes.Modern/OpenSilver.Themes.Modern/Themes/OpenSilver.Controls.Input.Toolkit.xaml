@@ -2,6 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Input.Toolkit">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="OpenSilver.xaml" />
+    </ResourceDictionary.MergedDictionaries>
 
     <!-- ListTimePickerPopup Style -->
     <Style TargetType="inputToolkit:ListTimePickerPopup">
@@ -50,7 +53,7 @@
     </Style>
 
     <!--TimeUpDown-->
-    <Style x:Name="FlatTimeUpDownStyle"
+    <Style x:Name="FlatTimeStyle"
            TargetType="inputToolkit:TimeUpDown">
         <Setter Property="BorderThickness"
                 Value="1" />
@@ -246,7 +249,7 @@
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="TimeUpDownStyle"
-                Value="{StaticResource FlatTimeUpDownStyle}" />
+                Value="{StaticResource FlatTimeStyle}" />
         <Setter Property="PopupTemplate">
             <Setter.Value>
                 <inputToolkit:TimePickerPopupTemplate>
@@ -451,70 +454,391 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style TargetType="inputToolkit:TimePicker"
            BasedOn="{StaticResource FlatTimePickerStyle}" />
 
-    <!-- ButtonSpinner -->
-    <Style x:Key="FlatButtonSpinnerStyle"
-           TargetType="inputToolkit:ButtonSpinner">
+    <Style x:Name="FlatTimeUpDownStyle"
+           TargetType="TimeUpDown">
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Height"
+                Value="32" />
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="MinWidth"
+                Value="125" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Padding"
+                Value="8,4,4,4" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="inputToolkit:ButtonSpinner">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="*" />
-                        </Grid.RowDefinitions>
+                <ControlTemplate TargetType="inputToolkit:TimeUpDown">
+                    <Grid x:Name="Root"
+                       TextOptions.TextHintingMode="Fixed">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <!-- common states -->
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDownToggle"
+                            Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                       Value=".55" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed" />
+                            </VisualStateGroup>
+                            <!-- focus states -->
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <!-- Popup states -->
+                            <VisualStateGroup x:Name="PopupStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.1"
+                                                   To="PopupOpened" />
+                                    <VisualTransition GeneratedDuration="0:0:0.2"
+                                                   To="PopupClosed" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="PopupOpened">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupRoot"
+                                                      Storyboard.TargetProperty="Opacity"
+                                                      To="1.0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="PopupClosed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="PopupRoot"
+                                                      Storyboard.TargetProperty="Opacity"
+                                                      To="0.0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Grid.Resources>
+                            <ControlTemplate x:Key="PopupButtonTemplate"
+                                          TargetType="ToggleButton">
+                                <!-- clock icon -->
+                                <Grid FlowDirection="LeftToRight"
+                                   Height="20"
+                                   Width="22"
+                                   Background="Transparent">
+                                    <vsm:VisualStateManager.VisualStateGroups>
+                                        <vsm:VisualStateGroup x:Name="CommonStates">
+                                            <vsm:VisualStateGroup.Transitions>
+                                                <vsm:VisualTransition GeneratedDuration="00:00:00.1000000" />
+                                            </vsm:VisualStateGroup.Transitions>
+                                            <vsm:VisualState x:Name="Normal" />
+                                            <vsm:VisualState x:Name="MouseOver">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                                Storyboard.TargetName="ellipse"
+                                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="0"
+                                                                             Value="Collapsed" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                                Storyboard.TargetName="Highlight"
+                                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="0"
+                                                                             Value="Visible" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Pressed">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                                Storyboard.TargetName="ellipse"
+                                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="0"
+                                                                             Value="Collapsed" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                    <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                                Storyboard.TargetName="Highlight"
+                                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="0"
+                                                                             Value="Visible" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Disabled" />
+                                        </vsm:VisualStateGroup>
+                                        <vsm:VisualStateGroup x:Name="CheckStates">
+                                            <vsm:VisualState x:Name="Checked">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                                Storyboard.TargetName="HighlightChecked"
+                                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                        <DiscreteObjectKeyFrame KeyTime="0"
+                                                                             Value="Visible" />
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Unchecked" />
+                                        </vsm:VisualStateGroup>
+                                        <vsm:VisualStateGroup x:Name="FocusStates">
+                                            <vsm:VisualState x:Name="Focused"></vsm:VisualState>
+                                            <vsm:VisualState x:Name="Unfocused" />
+                                        </vsm:VisualStateGroup>
+                                    </vsm:VisualStateManager.VisualStateGroups>
+                                    <Grid Margin="0,0,2,0">
+                                        <Path Fill="{x:Null}"
+                                           Height="8.258"
+                                           Margin="9,6,5,0"
+                                           VerticalAlignment="Top"
+                                           Stretch="Fill"
+                                           Data="M10.108397,6.5404582 L10.108397,10.415268 L13.538931,13.738435"
+                                           HorizontalAlignment="Left"
+                                           Stroke="{DynamicResource Theme_BorderBrush}" />
+                                        <Ellipse Margin="0"
+                                              Stroke="{DynamicResource Theme_BorderBrush}"
+                                              StrokeThickness="2"
+                                              x:Name="ellipse" />
+                                        <Ellipse Margin="0"
+                                              Stroke="{TemplateBinding BorderBrush}"
+                                              StrokeThickness="2"
+                                              x:Name="Highlight"
+                                              Visibility="Collapsed" />
+                                        <Ellipse Margin="0"
+                                              Stroke="{TemplateBinding BorderBrush}"
+                                              StrokeThickness="2"
+                                              x:Name="HighlightChecked"
+                                              Visibility="Collapsed" />
+
+                                        <!-- disabled visual -->
+                                        <Rectangle x:Name="DisabledVisualElement"
+                                                IsHitTestVisible="false"
+                                                Opacity="0"
+                                                Fill="#FFFFFFFF"
+                                                RadiusX="3"
+                                                RadiusY="3" />
+                                    </Grid>
+                                </Grid>
+                            </ControlTemplate>
+                        </Grid.Resources>
+
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
+                        <Popup x:Name="TimeHintPopup"
+                            IsOpen="True"
+                            VerticalOffset="0">
+                            <Border x:Name="TimeHintVisualElement"
+                                 HorizontalAlignment="Stretch"
+                                 IsHitTestVisible="True"
+                                 Visibility="Collapsed"
+                                 Background="Red"
+                                 BorderBrush="Green"
+                                 BorderThickness="1">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Grid>
+                                    <ContentControl Content="{TemplateBinding TimeHintContent}"
+                                                 TextOptions.TextHintingMode="Fixed"
+                                                 FontSize="{TemplateBinding FontSize}"
+                                                 FontFamily="{TemplateBinding FontFamily}"
+                                                 Foreground="{DynamicResource Theme_BorderBrush}"
+                                                 HorizontalAlignment="Right"
+                                                 VerticalAlignment="Center"
+                                                 Margin="3"
+                                                 IsTabStop="False"
+                                                 IsHitTestVisible="False" />
+                                </Grid>
+                            </Border>
+                        </Popup>
+                        <Grid>
+                            <TextBox x:Name="Text"
+                                  Text="{TemplateBinding Value}"
+                                  TextWrapping="NoWrap"
+                                  TextAlignment="Left"
+                                  Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  FontFamily="{TemplateBinding FontFamily}"
+                                  FontSize="{TemplateBinding FontSize}"
+                                  FontStretch="{TemplateBinding FontStretch}"
+                                  FontStyle="{TemplateBinding FontStyle}"
+                                  FontWeight="{TemplateBinding FontWeight}"
+                                  Foreground="{TemplateBinding Foreground}"
+                                  Padding="{TemplateBinding Padding}"
+                                  Height="{TemplateBinding Height}"
+                                  VerticalContentAlignment="Center"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Center"
+                                  AcceptsReturn="False"
+                                  Grid.ColumnSpan="2">
 
-                        <RepeatButton x:Name="IncreaseButton"
-                                      Grid.Column="1"
-                                      Width="24"
-                                      VerticalAlignment="Stretch"
-                                      HorizontalAlignment="Center"
-                                      IsTabStop="False"
-                                      Margin="0,0,1,0.5"
-                                      BorderThickness="1"
-                                      ClickMode="Press">
-                            <Path Fill="{DynamicResource Theme_TextOnPrimaryBrush}"
-                                  Height="8"
-                                  Width="8"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Bottom"
-                                  Data="M0,8 L8,8 L4,4 Z" />
-                        </RepeatButton>
+                            </TextBox>
+                            <ButtonSpinner x:Name="Spinner"
+                                   Background="{TemplateBinding Background}"
+                                   BorderBrush="{TemplateBinding BorderBrush}"
+                                   BorderThickness="{TemplateBinding BorderThickness}"
+                                   Padding="{TemplateBinding Padding}"
+                                   MinWidth="35"
+                                   Margin="1,2"
+                                   HorizontalContentAlignment="Stretch"
+                                   VerticalContentAlignment="Stretch"
+                                   IsTabStop="False"/>
 
-                        <ContentPresenter Grid.RowSpan="2"
-                                          Content="{TemplateBinding Content}"
-                                          HorizontalAlignment="Center"
-                                          VerticalAlignment="Center" />
-
-                        <RepeatButton x:Name="DecreaseButton"
-                                      Grid.Row="1"
-                                      Grid.Column="1"
-                                      Width="24"
-                                      VerticalAlignment="Stretch"
-                                      HorizontalAlignment="Center"
-                                      IsTabStop="False"
-                                      Margin="0,0.5,1,0"
-                                      BorderThickness="1"
-                                      ClickMode="Press">
-                            <Path Fill="{DynamicResource Theme_TextOnPrimaryBrush}"
-                                  Height="8"
-                                  Width="8"
-                                  HorizontalAlignment="Center"
-                                  VerticalAlignment="Top"
-                                  Data="M0,0 L8,0 L4,4 Z" />
-                        </RepeatButton>
+                        </Grid>
+                        <Border x:Name="DisabledVisualElement"
+                             Background="{DynamicResource Theme_DisabledBrush}"
+                             Opacity="0"
+                             Margin="1,2"
+                             IsHitTestVisible="false" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="ButtonSpinner"
-           BasedOn="{StaticResource FlatButtonSpinnerStyle}" />
+    <Style TargetType="TimeUpDown"
+           BasedOn="{StaticResource FlatTimeUpDownStyle}" />
+    
+    <Style  
+       TargetType="inputToolkit:DomainUpDown">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="inputToolkit:DomainUpDown">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                     To="0.5"
+                                                     Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                     Storyboard.TargetName="DisabledVisualElement" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="36" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox x:Name="Text"
+                                 Text="{TemplateBinding Value}"
+                                 TextWrapping="NoWrap"
+                                 TextAlignment="Right"
+                                 Background="{Binding WindowBrush, Source={StaticResource SystemBrushes}}"
+                                 SelectionBackground="{Binding ControlDarkBrush, Source={StaticResource SystemBrushes}}"
+                                 SelectionForeground="{Binding WindowBrush, Source={StaticResource SystemBrushes}}"
+                                 FontFamily="Segoe UI"
+                                 FontSize="14"
+                                 FontStretch="{TemplateBinding FontStretch}"
+                                 FontStyle="{TemplateBinding FontStyle}"
+                                 FontWeight="{TemplateBinding FontWeight}"
+                                 Foreground="{Binding ControlDarkDarkBrush, Source={StaticResource SystemBrushes}}"
+                                 HorizontalAlignment="Stretch"
+                                 BorderBrush="#ccc"
+                                 BorderThickness="1"
+                                 Padding="8"
+                                 Margin="0,0"
+                                 AcceptsReturn="False">
+                                <TextBox.Template>
+                                    <ControlTemplate>
+                                        <Grid x:Name="grid" Margin="0">
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Normal" />
+                                                    <VisualState x:Name="MouseOver" />
+                                                    <VisualState x:Name="Disabled" />
+                                                    <VisualState x:Name="ReadOnly">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetName="ReadOnlyVisualElement"
+                                                                         Storyboard.TargetProperty="Opacity"
+                                                                         To="0.3" />
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                                <VisualStateGroup x:Name="FocusStates">
+                                                    <VisualState x:Name="Focused">
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetName="FocusVisualElement"
+                                                                         Storyboard.TargetProperty="Opacity"
+                                                                         To="1" />
+                                                        </Storyboard>
+                                                    </VisualState>
+                                                    <VisualState x:Name="Unfocused" />
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                            <Border x:Name="ReadOnlyVisualElement"
+                                                Background="#f7f7f7"
+                                                IsHitTestVisible="False"
+                                                Opacity="0" />
+                                            <ScrollViewer x:Name="ContentElement"
+                                                      VerticalAlignment="Center"
+                                                      VerticalContentAlignment="Stretch"
+                                                      HorizontalContentAlignment="Stretch"
+                                                      BorderThickness="0"
+                                                      Margin="0"
+                                                      Padding="0,2"
+                                                      IsTabStop="False" />
+                                            <Border x:Name="FocusVisualElement"
+                                                BorderBrush="#007bff"
+                                                BorderThickness="2"
+                                                Margin="-2,-2,-2,-2"
+                                                Opacity="0"
+                                                IsHitTestVisible="False" />
+                                        </Grid>
+                                    </ControlTemplate>
+                                </TextBox.Template>
+                            </TextBox>
+                            <Rectangle x:Name="SpinnerBlockingColor"
+                                   Fill="#f7f7f7"
+                                   Grid.Column="1"
+                                   Margin="0,3,0,3" />
+                            <ButtonSpinner x:Name="Spinner"
+                                                    Grid.Column="1"
+                                                    IsTabStop="False"
+                                                    Margin="0,3,0,3" />
+                        </Grid>
+                        <Border x:Name="TextBoxBorder"
+                            Background="Transparent"
+                            BorderBrush="#ddd"
+                            BorderThickness="1"
+                            Margin="1,2"
+                            IsHitTestVisible="False" />
+                        <Border x:Name="DisabledVisualElement"
+                            Background="#f0f0f0"
+                            Opacity="0.5"
+                            Margin="1,2"
+                            IsHitTestVisible="false" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
