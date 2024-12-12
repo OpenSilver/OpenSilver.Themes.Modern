@@ -680,12 +680,12 @@
                                   FontStyle="{TemplateBinding FontStyle}"
                                   FontWeight="{TemplateBinding FontWeight}"
                                   Foreground="{TemplateBinding Foreground}"
-                                  Padding="{TemplateBinding Padding}"
                                   Height="{TemplateBinding Height}"
                                   VerticalContentAlignment="Center"
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Center"
                                   AcceptsReturn="False"
+                                  Padding="4,0,32,0"
                                   >
 
                             </TextBox>
@@ -785,7 +785,7 @@
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Center"
                                   AcceptsReturn="False"
-                                  Padding="2,0,24,0"
+                                  Padding="4,0,32,0"
                                   >
 
                             </TextBox>
@@ -804,6 +804,113 @@
                         <Border x:Name="DisabledVisualElement"
                                 IsHitTestVisible="false"
                                 Opacity="0"
+                                Background="{DynamicResource Theme_DisabledBrush}"
+                                CornerRadius="2.5,2.5,2.5,2.5" />
+                        <Border x:Name="FocusVisualElement"
+                                IsHitTestVisible="False"
+                                Opacity="0"
+                                BorderBrush="{DynamicResource Theme_PrimaryBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="2" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="DomainUpDown"
+           BasedOn="{StaticResource FlatDomainUpDownStyle}" />
+
+    <Style x:Key="FlatNumericUpDownStyle"
+        TargetType="controls:NumericUpDown">
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="Height"
+                Value="32" />
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="MinWidth"
+                Value="125" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="Padding"
+                Value="8,4,4,4" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource Theme_PrimaryBrush}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:NumericUpDown">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="DisabledVisualElement"
+                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
+                                                         To="1" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement"
+                                                                       Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid>
+                            <TextBox x:Name="Text"
+                                  Text="{TemplateBinding Value}"
+                                  TextWrapping="NoWrap"
+                                  TextAlignment="Right"
+                                  Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                  FontFamily="{TemplateBinding FontFamily}"
+                                  FontSize="{TemplateBinding FontSize}"
+                                  FontStretch="{TemplateBinding FontStretch}"
+                                  FontStyle="{TemplateBinding FontStyle}"
+                                  FontWeight="{TemplateBinding FontWeight}"
+                                  Foreground="{TemplateBinding Foreground}"
+                                  Height="{TemplateBinding Height}"
+                                  VerticalContentAlignment="Center"
+                                  HorizontalAlignment="Stretch"
+                                  VerticalAlignment="Center"
+                                  AcceptsReturn="False"
+                                  Padding="4,0,32,0"
+                                  >
+
+                            </TextBox>
+                            <ButtonSpinner x:Name="Spinner"
+                                   Background="{TemplateBinding Background}"
+                                   BorderBrush="{TemplateBinding BorderBrush}"
+                                   BorderThickness="{TemplateBinding BorderThickness}"
+                                   Padding="{TemplateBinding Padding}"
+                                   MinWidth="24"
+                                   Margin="1,2"
+                                   HorizontalContentAlignment="Stretch"
+                                   VerticalContentAlignment="Stretch"
+                                   IsTabStop="False"/>
+
+                        </Grid>
+
+                        <Border x:Name="DisabledVisualElement"
+                                IsHitTestVisible="false"
+                                Opacity="0"
                                 Background="#A5FFFFFF"
                                 CornerRadius="2.5,2.5,2.5,2.5" />
                         <Border x:Name="FocusVisualElement"
@@ -817,6 +924,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="DomainUpDown"
-           BasedOn="{StaticResource FlatDomainUpDownStyle}" />
+    <Style TargetType="NumericUpDown"
+    BasedOn="{StaticResource FlatNumericUpDownStyle}" />
+    
 </ResourceDictionary>
