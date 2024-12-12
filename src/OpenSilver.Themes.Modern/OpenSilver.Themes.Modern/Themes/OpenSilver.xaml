@@ -328,6 +328,186 @@
     <Style TargetType="ToggleButton"
            BasedOn="{StaticResource FlatToggleButton}" />
 
+    <!--RepeatButton Style-->
+    <Style x:Key="FlatRepeatButtonStyle"
+        TargetType="RepeatButton">
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+        <Setter Property="Background"
+                Value="{DynamicResource Theme_PrimaryBrush}" />
+        <!--<Setter Property="BorderBrush" Value="{DynamicResource Theme_PrimaryBrush}" />-->
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="Padding"
+                Value="8,2,8,2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Grid Cursor="Hand"
+                          TextOptions.TextHintingMode="Fixed">
+                        <Grid.Resources>
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                                BasedOn="{TemplateBinding Background}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="PressBrushBuilder"
+                                                BasedOn="{TemplateBinding Background}"
+                                                BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                        </Grid.Resources>
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Unfocused" />
+                                <vsm:VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                Storyboard.TargetName="HasFocus"
+                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                             Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualStateGroup.Transitions>
+                                    <vsm:VisualTransition GeneratedDuration="00:00:00.2" />
+                                    <vsm:VisualTransition From="Pressed"
+                                                   GeneratedDuration="00:00:00" />
+                                    <vsm:VisualTransition From="MouseOver"
+                                                   GeneratedDuration="00:00:00"
+                                                   To="Pressed" />
+                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                Storyboard.TargetName="contentPresenter"
+                                                                Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                           Value="0.35" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
+                                                                Storyboard.TargetName="DisabledBackground"
+                                                                Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                           Value="1.0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+
+                        <Border x:Name="Background"
+                                CornerRadius="5"
+                                Background="{TemplateBinding Background}"/>
+                        <Border x:Name="HasFocus"
+                                CornerRadius="7"
+                                Background="{TemplateBinding Background}"
+                                Margin="-3"
+                                Opacity=".7"
+                                Visibility="Collapsed" />
+                        <ContentControl x:Name="contentControl"
+                                        Foreground="{DynamicResource Theme_TextOnPrimaryBrush}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center">
+                            <ContentPresenter x:Name="contentPresenter"
+                                              Content="{TemplateBinding Content}"
+                                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="8,3" />
+                        </ContentControl>
+                        <Border x:Name="DisabledBackground"
+                                CornerRadius="5"
+                                Background="{DynamicResource Theme_DisabledBrush}"
+                                Opacity="0" />
+ 
+                        
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="RepeatButton"
+           BasedOn="{StaticResource FlatRepeatButtonStyle}"/>
+    
+    <!-- ButtonSpinner -->
+    <Style 
+        x:Key="FlatButtonSpinnerStyle"
+        TargetType="ButtonSpinner">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="inputToolkit:ButtonSpinner">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <RepeatButton x:Name="IncreaseButton"
+                                  Grid.Column="1"
+                                  Width="24"
+                                  VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Center"
+                                  IsTabStop="False"
+                                  Margin="0,0,1,0.5"
+                                  BorderThickness="1"
+                                  ClickMode="Press">
+                            <Path Fill="{DynamicResource Theme_TextOnPrimaryBrush}"
+                              Height="8"
+                              Width="8"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Bottom"
+                              Data="M0,8 L8,8 L4,4 Z" />
+                        </RepeatButton>
+
+                        <ContentPresenter Grid.RowSpan="2"
+                                      Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center" />
+                        
+                        <RepeatButton x:Name="DecreaseButton"
+                                  Grid.Row="1"
+                                  Grid.Column="1"
+                                  Width="24"
+                                  VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Center"
+                                  IsTabStop="False"
+                                  Margin="0,0.5,1,0"
+                                  BorderThickness="1"
+                                  ClickMode="Press">
+                            <Path Fill="{DynamicResource Theme_TextOnPrimaryBrush}"
+                                 Height="8"
+                                 Width="8"
+                                 HorizontalAlignment="Center"
+                                 VerticalAlignment="Top"
+                                 Data="M0,0 L8,0 L4,4 Z" />
+                        </RepeatButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ButtonSpinner"
+           BasedOn="{StaticResource FlatButtonSpinnerStyle}"/>
+
     <!-- TextBox -->
     <Style x:Key="FlatTextBoxStyle"
            TargetType="TextBox">
