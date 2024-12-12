@@ -47,5 +47,5 @@ public class LightPalette : Palette
     public override Color ChartSeriesColor15 { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#999999");
 
     public override IValueConverter ChartSeriesColorConverter { get; set; } = new ColorToFlatGradientStopsConverter();
-
+    public override double TreeMapContainerOpacity { get; set; } = 0.7;
 }

@@ -1231,15 +1231,23 @@
 
     <!--  TreeMap  -->
     <Style TargetType="TreeMap">
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
+         <Setter Property="Background" Value="{DynamicResource Theme_BackgroundBrush}" />
         <Setter Property="IsTabStop" Value="false" />
         <Setter Property="MinWidth" Value="20" />
         <Setter Property="MinHeight" Value="20" />
+        <Setter Property="Opacity" Value="{DynamicResource Theme_TreeMapContainerOpacity}" />
+        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TreeMap">
-                    <Border Padding="{TemplateBinding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Cursor="{TemplateBinding Cursor}" Opacity="{TemplateBinding Opacity}" OpacityMask="{TemplateBinding OpacityMask}">
+                    <Grid>
+                        <Border Padding="{TemplateBinding Padding}" BorderBrush="{DynamicResource Theme_BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" Cursor="{TemplateBinding Cursor}" OpacityMask="{TemplateBinding OpacityMask}">
+                        </Border>
                         <Canvas x:Name="Container" />
-                    </Border>
+
+                    </Grid>
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -1248,8 +1256,8 @@
                 <TreeMapItemDefinition ValueBinding="{Binding}">
                     <TreeMapItemDefinition.ItemTemplate>
                         <DataTemplate>
-                            <Border BorderBrush="Black" Background="Transparent" BorderThickness="1" ToolTipService.ToolTip="{Binding}">
-                                <ContentControl Content="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border BorderBrush="{DynamicResource Theme_BorderBrush}"  BorderThickness="1" ToolTipService.ToolTip="{Binding}">
+                                <ContentControl Content="{Binding}" Foreground="{DynamicResource Theme_TextBrush}" Background="{DynamicResource Theme_BackgroundBrush}" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                         </DataTemplate>
                     </TreeMapItemDefinition.ItemTemplate>

@@ -48,7 +48,8 @@ public class DarkPalette : Palette
     public override Color ChartSeriesColor15 { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#57FF33");
 
     public override IValueConverter ChartSeriesColorConverter { get; set; } = new ColorToGradientStopsConverter();
+    public override double TreeMapContainerOpacity { get; set; } = 0.3;
 
-    
+
 
 }

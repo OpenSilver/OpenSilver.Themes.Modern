@@ -60,6 +60,7 @@ public abstract class Palette
         resources[ThemePrefix + nameof(PressBrightnessRatio)] = palette.PressBrightnessRatio;
 
         resources[ThemePrefix + nameof(ChartHaloOpacity)] = palette.ChartHaloOpacity;
+        resources[ThemePrefix + nameof(TreeMapContainerOpacity)] = palette.TreeMapContainerOpacity;
 
         //Colors for charts:
 
@@ -111,6 +112,7 @@ public abstract class Palette
     public abstract double PressBrightnessRatio { get; set; }
 
     public abstract double ChartHaloOpacity { get; set; }
+    public abstract double TreeMapContainerOpacity { get; set; }
     //Colors for Charts
 
     public abstract BrushEffectMode ChartsBrushEffectMode { get; set; }

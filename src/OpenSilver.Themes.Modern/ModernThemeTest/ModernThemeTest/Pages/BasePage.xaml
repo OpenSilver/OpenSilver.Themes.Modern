@@ -224,5 +224,19 @@
         <TimePicker Canvas.Left="657" Canvas.Top="15" FontSize="13" />
         <PasswordBox Canvas.Left="797" Canvas.Top="15" Password="passw0rd" FontSize="13" />
         <RadioButton Canvas.Left="876" Canvas.Top="15" Content="RadioButton" FontSize="13" />
+        <TreeMap Canvas.Left="88" Canvas.Top="1336" Width="300" Height="200" ItemsSource="{Binding People}">
+            <TreeMap.ItemDefinition>
+                <TreeMapItemDefinition ValuePath="Quantity">
+                    <DataTemplate>
+                        <Border  Background="BlueViolet" BorderBrush="{DynamicResource Theme_BorderBrush}" BorderThickness="1" ToolTipService.ToolTip="{Binding Age}">
+                            <TextBlock VerticalAlignment="Center" Text="{Binding FirstName}" Foreground="{DynamicResource Theme_TextBrush}" TextAlignment="Center" TextWrapping="Wrap" />
+                        </Border>
+                    </DataTemplate>
+                </TreeMapItemDefinition>
+            </TreeMap.ItemDefinition>
+        </TreeMap>
+
+        <TreeMap Canvas.Left="488" Canvas.Top="1336" Width="300" Height="200" ItemsSource="{Binding People}" >
+        </TreeMap>
     </Canvas>
 </Page>
