@@ -579,15 +579,6 @@
                 <Style TargetType="Legend">
                     <Setter Property="Margin" Value="15,0,15,0" />
                     <Setter Property="VerticalAlignment" Value="Center" />
-                    <Setter Property="BorderBrush" Value="{DynamicResource Theme_BorderBrush}" />
-                    <!--<Setter Property="Background">
-                        <Setter.Value>
-                            <LinearGradientBrush EndPoint="0.442,0.005" StartPoint="0.558,0.995">
-                                <GradientStop Color="#FFDBDBDB" />
-                                <GradientStop Color="#FFFFFFFF" Offset="1" />
-                            </LinearGradientBrush>
-                        </Setter.Value>
-                    </Setter>-->
                 </Style>
             </Setter.Value>
         </Setter>
@@ -1181,8 +1172,6 @@
 
     <!--  Legend  -->
     <Style TargetType="Legend">
-        <Setter Property="BorderBrush" Value="Black" />
-        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="TitleStyle">
             <Setter.Value>
