@@ -21,6 +21,8 @@
                     <Grid>
                         <Grid.Resources>
                             <SolidColorBrush x:Key="MouseEventOverlay" Color="#bababa"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{DynamicResource Theme_DisabledColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="FocusStates">
@@ -71,7 +73,7 @@
                                                                        Storyboard.TargetName="ForegroundContentControl"
                                                                        Storyboard.TargetProperty="Foreground">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                                                    Value="{StaticResource DisabledBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -128,6 +130,10 @@
                                                     <local:BrushBuilder x:Key="MouseEventBrushBuilder"
                                                                         BasedOn="{TemplateBinding Background}"
                                                                         BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                                                    <SolidColorBrush x:Key="DisabledBackgroundBrush"
+                                                                     Color="{DynamicResource Theme_DisabledColor}" />
+                                                    <SolidColorBrush x:Key="DisabledBorderBrush"
+                                                                     Color="{DynamicResource Theme_BorderColor}" />
                                                 </Grid.Resources>
 
                                                 <VisualStateManager.VisualStateGroups>
@@ -146,13 +152,13 @@
                                                                                                Storyboard.TargetName="Background"
                                                                                                Storyboard.TargetProperty="Background">
                                                                     <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                            Value="{DynamicResource Theme_DisabledBrush}" />
+                                                                                            Value="{StaticResource DisabledBackgroundBrush}" />
                                                                 </ObjectAnimationUsingKeyFrames>
                                                                 <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                                                Storyboard.TargetName="Background"
                                                                                                Storyboard.TargetProperty="BorderBrush">
                                                                     <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                            Value="{DynamicResource Theme_BorderBrush}" />
+                                                                                            Value="{StaticResource DisabledBorderBrush}" />
                                                                 </ObjectAnimationUsingKeyFrames>
                                                             </Storyboard>
                                                         </VisualState>

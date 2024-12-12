@@ -76,7 +76,11 @@
                         </Grid.ColumnDefinitions>
                         <Grid.Resources>
                             <SolidColorBrush x:Key="Theme_WatermarkBrush"
-                                     Color="{DynamicResource Theme_WatermarkColor}" />
+                                             Color="{DynamicResource Theme_WatermarkColor}" />
+                            <SolidColorBrush x:Key="DisabledBackgroundBrush"
+                                             Color="{DynamicResource Theme_DisabledColor}" />
+                            <SolidColorBrush x:Key="DisabledBorderBrush"
+                                             Color="{DynamicResource Theme_BorderColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -97,13 +101,13 @@
                                                                        Storyboard.TargetName="Background"
                                                                        Storyboard.TargetProperty="Background">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                                                    Value="{StaticResource DisabledBackgroundBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="Background"
                                                                        Storyboard.TargetProperty="BorderBrush">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_BorderBrush}" />
+                                                                    Value="{StaticResource DisabledBorderBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -277,7 +281,9 @@
                 <ControlTemplate TargetType="CalendarButton">
                     <Grid Cursor="{TemplateBinding Cursor}" Margin="0,8">
                         <Grid.Resources>
-                            <SolidColorBrush x:Key="inactiveBrush">#FF777777</SolidColorBrush>
+                            <SolidColorBrush x:Key="InactiveBrush">#FF777777</SolidColorBrush>
+                            <SolidColorBrush x:Key="SelectedBrush"
+                                             Color="{DynamicResource Theme_TextOnPrimaryColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -321,7 +327,7 @@
                                                                        Storyboard.TargetName="NormalText"
                                                                        Storyboard.TargetProperty="Foreground">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                                                    Value="{StaticResource SelectedBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -337,7 +343,7 @@
                                                                        Storyboard.TargetName="NormalText"
                                                                        Storyboard.TargetProperty="Foreground">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{StaticResource inactiveBrush}" />
+                                                                    Value="{StaticResource InactiveBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -413,6 +419,10 @@ Value="2" />
                 <ControlTemplate TargetType="CalendarDayButton">
                     <Grid x:Name="Root"
                   Cursor="{TemplateBinding Cursor}">
+                        <Grid.Resources>
+                            <SolidColorBrush x:Key="SelectedBrush"
+                                             Color="{DynamicResource Theme_TextOnPrimaryColor}" />
+                        </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
@@ -462,7 +472,7 @@ Value="2" />
                                                                        Storyboard.TargetName="NormalText"
                                                                        Storyboard.TargetProperty="Foreground">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                                                                    Value="{StaticResource SelectedBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

@@ -20,6 +20,8 @@
                     <Grid>
                         <Grid.Resources>
                             <SolidColorBrush x:Key="MouseEventOverlay" Color="#bababa"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{DynamicResource Theme_DisabledColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="FocusStates">
@@ -70,7 +72,7 @@
                                                                        Storyboard.TargetName="ForegroundContentControl"
                                                                        Storyboard.TargetProperty="Foreground">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_DisabledBrush}" />
+                                                                    Value="{StaticResource DisabledBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
