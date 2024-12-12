@@ -241,6 +241,7 @@
         <NumericUpDown Width="120" Height="32" FontSize="13" Canvas.Left="248" Canvas.Top="64" />
         <TimeUpDown Canvas.Left="248" Canvas.Top="112" Width="120" Height="32" Value="00:00" FontSize="13" />
         <RepeatButton Canvas.Left="376" Canvas.Top="64" Width="120" Height="32" Content="Repeat Button" FontSize="13" Padding="12,7" />
+        <DomainUpDown Canvas.Left="360" Canvas.Top="160" Width="120" Height="32" ItemsSource="{Binding People}" ValueMemberPath="FirstName" />
          
         
         
