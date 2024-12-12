@@ -2,9 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Input.Toolkit">
-    <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="OpenSilver.xaml" />
-    </ResourceDictionary.MergedDictionaries>
 
     <!-- ListTimePickerPopup Style -->
     <Style TargetType="inputToolkit:ListTimePickerPopup">
@@ -926,5 +923,68 @@
     </Style>
     <Style TargetType="NumericUpDown"
     BasedOn="{StaticResource FlatNumericUpDownStyle}" />
-    
+
+    <!-- ButtonSpinner -->
+    <Style x:Key="FlatButtonSpinnerStyle"
+           TargetType="inputToolkit:ButtonSpinner">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="inputToolkit:ButtonSpinner">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+
+                        <RepeatButton x:Name="IncreaseButton"
+                                      Grid.Column="1"
+                                      Width="24"
+                                      VerticalAlignment="Stretch"
+                                      HorizontalAlignment="Center"
+                                      IsTabStop="False"
+                                      Margin="0,0,1,0.5"
+                                      BorderThickness="1"
+                                      ClickMode="Press">
+                            <Path Fill="{DynamicResource Theme_TextOnPrimaryBrush}"
+                                  Height="8"
+                                  Width="8"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Bottom"
+                                  Data="M0,8 L8,8 L4,4 Z" />
+                        </RepeatButton>
+
+                        <ContentPresenter Grid.RowSpan="2"
+                                          Content="{TemplateBinding Content}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+
+                        <RepeatButton x:Name="DecreaseButton"
+                                      Grid.Row="1"
+                                      Grid.Column="1"
+                                      Width="24"
+                                      VerticalAlignment="Stretch"
+                                      HorizontalAlignment="Center"
+                                      IsTabStop="False"
+                                      Margin="0,0.5,1,0"
+                                      BorderThickness="1"
+                                      ClickMode="Press">
+                            <Path Fill="{DynamicResource Theme_TextOnPrimaryBrush}"
+                                  Height="8"
+                                  Width="8"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Top"
+                                  Data="M0,0 L8,0 L4,4 Z" />
+                        </RepeatButton>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ButtonSpinner"
+           BasedOn="{StaticResource FlatButtonSpinnerStyle}" />
+
 </ResourceDictionary>
