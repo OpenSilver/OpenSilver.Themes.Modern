@@ -231,6 +231,8 @@
            TargetType="inputToolkit:TimePicker">
         <Setter Property="Height"
                 Value="32" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="MinWidth"
@@ -461,6 +463,8 @@
                 Value="Center" />
         <Setter Property="Height"
                 Value="32" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="MinWidth"

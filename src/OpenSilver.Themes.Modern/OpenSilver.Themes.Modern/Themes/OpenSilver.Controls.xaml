@@ -201,6 +201,8 @@
                 Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Padding"
                 Value="2" />
         <Setter Property="BorderBrush"
@@ -851,6 +853,7 @@ Value="2" />
         <Setter Property="BorderBrush" Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="0" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />

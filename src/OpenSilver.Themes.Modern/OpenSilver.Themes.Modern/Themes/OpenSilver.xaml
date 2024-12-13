@@ -108,6 +108,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -213,6 +215,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -340,6 +344,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
@@ -463,6 +469,8 @@
                 Value="1" />
         <Setter Property="IsEnabled"
                 Value="True" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -706,6 +714,8 @@
                 Value="Center" />
         <Setter Property="Padding"
                 Value="0,2,0,0" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -1019,6 +1029,8 @@
            TargetType="PasswordBox">
         <Setter Property="Height"
                 Value="32" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -1208,6 +1220,8 @@
                 Value="Center" />
         <Setter Property="Padding"
                 Value="0,2,0,0" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -1587,6 +1601,8 @@
                 Value="Once" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
@@ -2614,6 +2630,8 @@
                 Value="Once" />
         <Setter Property="BorderThickness"
                 Value="0" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:TreeView">
@@ -2657,6 +2675,8 @@
                 Value="1" />
         <Setter Property="TabNavigation"
                 Value="Local" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">
@@ -2685,6 +2705,8 @@
            TargetType="ComboBox">
         <Setter Property="Height"
                 Value="32" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Left" />
         <Setter Property="TabNavigation"
@@ -3256,6 +3278,8 @@
            TargetType="HyperlinkButton">
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_PrimaryBrush}" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Padding"
                 Value="0,2,2,2" />
         <Setter Property="Cursor"
