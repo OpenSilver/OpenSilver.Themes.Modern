@@ -268,11 +268,12 @@
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
-
         <Setter Property="ExpandDirection"
                 Value="Down" />
         <Setter Property="Background"
                 Value="{DynamicResource Theme_ControlBackgroundBrush}" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="MinHeight"
                 Value="32" />
         <Setter Property="ContentTemplate">
