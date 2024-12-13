@@ -108,6 +108,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
@@ -215,6 +217,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
@@ -344,6 +348,8 @@
                 Value="0" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
