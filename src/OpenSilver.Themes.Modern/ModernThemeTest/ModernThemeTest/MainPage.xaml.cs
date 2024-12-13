@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ModernThemeTest
 {
@@ -82,6 +83,12 @@ namespace ModernThemeTest
             NavigateToPage("/BasePage");
         }
 
+        private void ButtonAlignmentsPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/AlignmentsPage");
+        }
+        
+
         private void ButtonDataGridPage_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/DataGridPage");
@@ -126,6 +133,19 @@ namespace ModernThemeTest
         public ObservableCollection<SalesData> ProductLSales = SalesData.GetSalesL();
         public ObservableCollection<SalesData> ProductMSales = SalesData.GetSalesM();
         public ObservableCollection<SalesData> ProductNSales = SalesData.GetSalesN();
+
+        ObservableCollection<string> _names;
+        public ObservableCollection<string> Names
+        {
+            get
+            {
+                if (_names == null)
+                {
+                    _names = new ObservableCollection<string>(People.Select(person => person.LastName));
+                }
+                return _names;
+            }
+        }
         string _someString;
         [Required(ErrorMessage = "SomeString is required")]
         public string SomeString

@@ -686,7 +686,7 @@
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Center"
                                   AcceptsReturn="False"
-                                  Padding="4,0,32,0"
+                                  Padding="8,0,32,0"
                                   >
 
                             </TextBox>
@@ -735,6 +735,8 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_PrimaryBrush}" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="inputToolkit:DomainUpDown">
@@ -786,7 +788,7 @@
                                   HorizontalAlignment="Stretch"
                                   VerticalAlignment="Center"
                                   AcceptsReturn="False"
-                                  Padding="4,0,32,0"
+                                  Padding="8,0,32,0"
                                   >
 
                             </TextBox>
@@ -827,6 +829,8 @@
                 Value="Center" />
         <Setter Property="Height"
                 Value="32" />
+        <Setter Property="FontSize"
+                Value="14" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="MinWidth"

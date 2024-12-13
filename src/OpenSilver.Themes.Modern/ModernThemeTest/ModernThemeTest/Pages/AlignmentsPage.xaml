@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="ModernThemeTest.Pages.AlignmentsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:flatdesign="clr-namespace:OpenSilver.Themes.Modern;assembly=OpenSilver.Themes.Modern"
+    xmlns:local="clr-namespace:ModernThemeTest.Pages">
+
+
+    <Grid>
+        <TextBlock Text="Textblock" Margin="8,120,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="Button" Margin="60,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <TextBox Text="TextBox" Margin="122,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <CheckBox Content="Checkbox" Margin="190,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+        <ToggleButton Content="ToggleButton" Margin="280,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <DatePicker Margin="390,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <TimePicker  Margin="510,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <PasswordBox Password="passw0rd" Margin="640,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <RadioButton Content="RadioButton"  Margin="710,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+        <HyperlinkButton Margin="820,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" Height="32" />
+        <ComboBox Margin="880,112,0,0" Height="32" HorizontalAlignment="Left" VerticalAlignment="Top" flatdesign:FlatDesignProperties.Label="Pick an item">
+            <ComboBoxItem Content="TItem1" IsSelected="True" />
+            <ComboBoxItem Content="TItem2" />
+        </ComboBox>
+        <RepeatButton Margin="976,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Content="Repeat Button" />
+        <NumericUpDown Margin="1104,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+        <TimeUpDown Margin="1240,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Value="00:00" />
+        <DomainUpDown Margin="1376,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" ItemsSource="{Binding Names}" />
+
+        <!--Vertical alignment-->
+        <Button Content="1Button" Margin="8,150,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <TextBox Text="1TextBox" Margin="8,190,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <CheckBox Content="1Checkbox" Margin="8,230,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+        <ToggleButton Content="1ToggleButton" Margin="8,270,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <DatePicker Margin="8,310,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <TimePicker  Margin="8,350,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <PasswordBox Password="passw0rd" Margin="8,390,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32"/>
+        <RadioButton Content="1RadioButton"  Margin="8,420,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+        <HyperlinkButton Margin="8,450,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="TOpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" Height="32" />
+        <ComboBox Margin="8,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" flatdesign:FlatDesignProperties.Label="Pick an item">
+            <ComboBoxItem Content="1Item1" IsSelected="True" />
+            <ComboBoxItem Content="1Item2" />
+        </ComboBox>
+        <RepeatButton Margin="8,528,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Content="Repeat Button" />
+        <NumericUpDown Margin="8,568,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" />
+        <TimeUpDown Margin="8,608,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Value="00:00" />
+        <DomainUpDown Margin="8,648,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" ItemsSource="{Binding Names}" />
+
+        <!--Other lines-->
+        <!--
+        
+        <TextBlock Text="Textblock" Margin="8,208,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button Content="Button" Margin="60,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <TextBox Text="TextBox" Margin="112,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <CheckBox Content="Checkbox" Margin="160,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <ToggleButton Content="ToggleButton" Margin="230,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <DatePicker Margin="320,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <TimePicker  Margin="450,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <PasswordBox Password="passw0rd" Margin="580,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <RadioButton Content="RadioButton"  Margin="630,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24"/>
+        <HyperlinkButton Margin="710,200,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" Height="24"/>
+
+        <TextBlock Text="Textblock" Margin="8,308,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Button Content="Button" Margin="60,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TextBox Text="TextBox" Margin="112,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" AcceptsReturn="True" />
+        <CheckBox Content="Checkbox" Margin="160,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <ToggleButton Content="ToggleButton" Margin="230,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <DatePicker Margin="320,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <TimePicker  Margin="450,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <PasswordBox Password="passw0rd" Margin="580,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <RadioButton Content="RadioButton"  Margin="630,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <HyperlinkButton Margin="710,300,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" />-->
+    </Grid>
+</Page>

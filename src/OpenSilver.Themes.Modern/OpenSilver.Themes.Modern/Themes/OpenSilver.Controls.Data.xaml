@@ -38,17 +38,9 @@
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="TextBlock.Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding TextBlock.Foreground, ElementName=Root, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
-                                        </ObjectAnimationUsingKeyFrames>-->
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity">
                                             <SplineDoubleKeyFrame KeyTime="0" Value=".3" />
                                         </DoubleAnimationUsingKeyFrames>
-                                        <!--<ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                      Storyboard.TargetName="ForegroundContentControl"
-                                                                      Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
-                                        </ColorAnimationUsingKeyFrames>-->
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Normal">
@@ -75,6 +67,11 @@
                                             <DiscreteObjectKeyFrame KeyTime="0"
                                                                     Value="{StaticResource DisabledBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
+
+                                        <!--Setting the opacity of Focus to 0 because if it has focus it when it becomes disabled (which is often the case), it doesn't go back to 0-->
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Focus" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
