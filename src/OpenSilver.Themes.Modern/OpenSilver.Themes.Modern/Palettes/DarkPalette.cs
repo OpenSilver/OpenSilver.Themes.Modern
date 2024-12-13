@@ -27,7 +27,7 @@ public class DarkPalette : Palette
 
     //Colors for Charts
     public override BrushEffectMode ChartsBrushEffectMode { get; set; } = BrushEffectMode.Linear;
-    public override Color ChartGridLineColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF1B1B1B");
+    public override Color ChartGridLineColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF2B2B2B");
     public override Color ChartLegendForeground { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFE5E5E5");
     public override Color ChartAxisTextForeground { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF777777");
 
