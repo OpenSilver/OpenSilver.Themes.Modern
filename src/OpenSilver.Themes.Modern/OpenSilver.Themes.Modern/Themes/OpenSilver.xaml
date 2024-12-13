@@ -182,9 +182,9 @@
                                 CornerRadius="5"
                                 Background="{TemplateBinding Background}"/>
                         <Border x:Name="HasFocus"
-                                CornerRadius="7"
+                                CornerRadius="6"
                                 Background="{TemplateBinding Background}"
-                                Margin="-3"
+                                Margin="-1"
                                 Opacity=".7"
                                 Visibility="Collapsed" />
                         <Border x:Name="DisabledBackground"
@@ -307,9 +307,9 @@
                                 CornerRadius="5"
                                 Background="{TemplateBinding Background}" />
                         <Border x:Name="HasFocus"
-                                CornerRadius="7"
+                                CornerRadius="6"
                                 Background="{TemplateBinding Background}"
-                                Margin="-3"
+                                Margin="-1"
                                 Opacity=".7"
                                 Visibility="Collapsed" />
                         <Border x:Name="Toggled"
@@ -420,9 +420,9 @@
                                 CornerRadius="5"
                                 Background="{TemplateBinding Background}"/>
                         <Border x:Name="HasFocus"
-                                CornerRadius="7"
+                                CornerRadius="6"
                                 Background="{TemplateBinding Background}"
-                                Margin="-3"
+                                Margin="-1"
                                 Opacity=".7"
                                 Visibility="Collapsed" />
                         <ContentControl x:Name="contentControl"
