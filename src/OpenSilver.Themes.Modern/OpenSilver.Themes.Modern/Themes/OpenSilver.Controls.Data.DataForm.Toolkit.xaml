@@ -74,6 +74,10 @@
                                             <DiscreteObjectKeyFrame KeyTime="0"
                                                                     Value="{StaticResource DisabledBrush}" />
                                         </ObjectAnimationUsingKeyFrames>
+                                        <!--Setting the opacity of Focus to 0 because if it has focus it when it becomes disabled (which is often the case), it doesn't go back to 0-->
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Focus" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
