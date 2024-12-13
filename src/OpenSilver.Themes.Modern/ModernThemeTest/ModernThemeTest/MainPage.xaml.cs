@@ -87,8 +87,11 @@ namespace ModernThemeTest
         {
             NavigateToPage("/AlignmentsPage");
         }
-        
 
+        private void ButtonDefaultControlsPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateToPage("/DefaultControlsPage");
+        }
         private void ButtonDataGridPage_Click(object sender, RoutedEventArgs e)
         {
             NavigateToPage("/DataGridPage");

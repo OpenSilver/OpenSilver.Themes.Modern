@@ -24,6 +24,9 @@
     <Page Include="Pages\AlignmentsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\DefaultControlsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\BasePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -42,6 +45,7 @@
     <Compile Include="App.xaml.cs" />
     <Compile Include="MainPage.xaml.cs" />
     <Compile Include="Pages\AlignmentsPage.xaml.cs" />
+    <Compile Include="Pages\DefaultControlsPage.xaml.cs" />
     <Compile Include="Pages\BasePage.xaml.cs" />
     <Compile Include="Pages\ChartsPage.xaml.cs" />
     <Compile Include="Pages\ChartsPointSeriesPage.xaml.cs" />
