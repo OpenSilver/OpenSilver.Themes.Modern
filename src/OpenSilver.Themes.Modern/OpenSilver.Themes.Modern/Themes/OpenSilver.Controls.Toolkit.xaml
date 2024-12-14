@@ -10,8 +10,6 @@
                 Value="Please wait..." />
         <Setter Property="IsTabStop"
                 Value="False" />
-        <Setter Property="Width"
-                Value="200" />
         <Setter Property="DisplayAfter"
                 Value="00:00:00.1" />
         <Setter Property="HorizontalAlignment"
