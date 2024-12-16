@@ -219,7 +219,16 @@
 
         <TextBlock Canvas.Left="51" Canvas.Top="15" Height="24" Text="Textblock" FontSize="13" Padding="0,4,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" />
         <Button Canvas.Left="138" Canvas.Top="15" Content="Button" FontSize="13" Padding="12,7" />
-        <TextBox Canvas.Left="222" Canvas.Top="15" Text="TextBox" FontSize="13" />
+        <TextBox Canvas.Left="222" Canvas.Top="15" Text="TextBox" FontSize="13" >
+            <TextBox.ContextMenu>
+                <ContextMenu HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <MenuItem Header="Item1" />
+                    <MenuItem Header="Item2" />
+                    <MenuItem Header="Item3" />
+                    <MenuItem Header="Item4" />
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
         <CheckBox Canvas.Left="292" Canvas.Top="15" Content="Checkbox" FontSize="13" />
         <ToggleButton Canvas.Left="386" Canvas.Top="15" Content="ToggleButton" FontSize="13" Padding="12,7" />
         <DatePicker Canvas.Left="512" Canvas.Top="15" FontSize="13" />

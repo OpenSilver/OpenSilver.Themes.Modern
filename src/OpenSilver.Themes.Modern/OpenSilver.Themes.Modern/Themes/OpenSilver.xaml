@@ -2349,7 +2349,7 @@
 
     <!-- TreeViewItem -->
     <Style x:Name="FlatTreeViewItemStyle"
-           TargetType="controls:TreeViewItem">
+           TargetType="TreeViewItem">
         <Setter Property="Padding"
                 Value="3" />
         <Setter Property="HorizontalContentAlignment"
@@ -2368,7 +2368,7 @@
                 Value="Once" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:TreeViewItem">
+                <ControlTemplate TargetType="TreeViewItem">
                     <Grid Background="{x:Null}"
                           x:Name="Root">
                         <Grid.Resources>
@@ -2612,12 +2612,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="controls:TreeViewItem"
+    <Style TargetType="TreeViewItem"
            BasedOn="{StaticResource FlatTreeViewItemStyle}" />
 
     <!-- TreeView -->
     <Style x:Name="FlatTreeViewStyle"
-           TargetType="controls:TreeView">
+           TargetType="TreeView">
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Foreground"
@@ -2640,7 +2640,7 @@
                 Value="14" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:TreeView">
+                <ControlTemplate TargetType="TreeView">
                     <Border x:Name="Root"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
@@ -2663,7 +2663,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="controls:TreeView"
+    <Style TargetType="TreeView"
            BasedOn="{StaticResource FlatTreeViewStyle}" />
 
     <!-- ComboBoxItem -->
@@ -3030,7 +3030,7 @@
 
     <!--ChildWindow-->
     <Style x:Name="FlatChildWindowStyle"
-           TargetType="controls:ChildWindow">
+           TargetType="ChildWindow">
         <Setter Property="IsTabStop"
                 Value="false" />
         <Setter Property="TabNavigation"
@@ -3059,7 +3059,7 @@
                 Value="1" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:ChildWindow">
+                <ControlTemplate TargetType="ChildWindow">
                     <Grid x:Name="Root">
                         <Grid.Resources>
                             <Style x:Key="CloseButtonStyle"
@@ -3276,7 +3276,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style TargetType="controls:ChildWindow"
+    <Style TargetType="ChildWindow"
            BasedOn="{StaticResource FlatChildWindowStyle}" />
 
     <!-- HyperlinkButton -->
@@ -3425,4 +3425,168 @@
         </Setter>
     </Style>
 
+   
+    <!--  ContextMenu  -->
+    <Style x:Key="FlatContextMenuStyle"
+        TargetType="ContextMenu">
+        <Setter Property="Background"
+                Value="{DynamicResource Theme_BackgroundBrush}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource Theme_BorderBrush}" />
+        <Setter Property="Padding"
+                Value="2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContextMenu">
+                    <Border x:Name="ContextBorder" BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="4">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="0"
+                          Color="{Binding ElementName=ContextBorder, Path=BorderBrush.(SolidColorBrush.Color)}"
+                          Opacity="1"
+                          BlurRadius="2" />
+                        </Border.Effect>
+                        <Grid>
+                            <Border CornerRadius="4"
+                                    Background="{DynamicResource Theme_BackgroundBrush}"
+                                    Opacity="0.7"
+                                    Width="28"
+                                    Margin="2"
+                                    HorizontalAlignment="Left" />
+                            <Border  CornerRadius="4"                             
+                                    Background="{DynamicResource Theme_BackgroundBrush}"
+                                    Opacity="0.9"
+                                    Width="1"
+                                    Margin="30,2,0,2"
+                                    HorizontalAlignment="Left" />
+                            <Border   CornerRadius="4" 
+                                    Background="{DynamicResource Theme_BackgroundBrush}"
+                                    Opacity="0.9"
+                                    Width="1"
+                                    Margin="31,2,0,2"
+                                    HorizontalAlignment="Left" />
+                            <ItemsPresenter Margin="{TemplateBinding Padding}" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ContextMenu"
+           BasedOn="{StaticResource FlatContextMenuStyle}"/>
+    
+    <!--  MenuItem  -->
+    <Style x:Key="FlatMenuItemStyle"
+        TargetType="MenuItem">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="Padding"
+                Value="4,3,2,3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="MenuItem">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Presenter"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Unfocused" />
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Bg"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="InnerBorder"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.25" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border CornerRadius="2"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1" />
+                        <Border x:Name="Bg"
+                                CornerRadius="4"
+                                BorderBrush="Transparent"
+                                Background="{DynamicResource Theme_PrimaryBrush}"
+                                BorderThickness="1"
+                                Opacity="0">
+                        </Border>
+                        <Border x:Name="InnerBorder"
+                                CornerRadius="4"
+                                Opacity="0"
+                                BorderBrush="{DynamicResource Theme_BorderBrush}"
+                                BorderThickness="1"
+                                Margin="1" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"
+                                                  MinWidth="24" />
+                                <ColumnDefinition Width="4" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="17" />
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Content="{TemplateBinding Icon}"
+                                              Margin="1"
+                                              VerticalAlignment="Center" />
+
+                            <ContentPresenter x:Name="Presenter"
+                                              Content="{TemplateBinding Header}"
+                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                              Margin="{TemplateBinding Padding}"
+                                              Grid.Column="2" />
+      
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="MenuItem"
+           BasedOn="{StaticResource FlatMenuItemStyle}"/>
+    
+    <!--  Separator  -->
+    <Style x:Key="FlatSeparatorStyle"
+        TargetType="Separator">
+        <Setter Property="Background"
+                Value="{DynamicResource Theme_BorderBrush}" />
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="Margin"
+                Value="32,2,2,2" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Separator">
+                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}"
+                            Height="1" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Separator"
+           BasedOn="{StaticResource FlatSeparatorStyle}"/>
+    
 </ResourceDictionary>
