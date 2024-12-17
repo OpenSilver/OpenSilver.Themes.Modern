@@ -23,5 +23,15 @@ namespace ModernThemeTest.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
+
+        private void Thumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+            var thumb = sender as Thumb;
+            var left = Canvas.GetLeft(thumb) + e.HorizontalChange;
+            var top = Canvas.GetTop(thumb) + e.VerticalChange;
+
+            Canvas.SetLeft(thumb, left);
+            Canvas.SetTop(thumb, top);
+        }
     }
 }

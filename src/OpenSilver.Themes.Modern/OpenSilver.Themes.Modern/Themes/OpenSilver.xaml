@@ -446,8 +446,8 @@
                                 CornerRadius="5"
                                 Background="{DynamicResource Theme_DisabledBrush}"
                                 Opacity="0" />
- 
-                        
+
+
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -3227,32 +3227,32 @@
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     CornerRadius="4">
-                                
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto" />
-                                            <RowDefinition />
-                                        </Grid.RowDefinitions>
-                                        <Border x:Name="Chrome"
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Border x:Name="Chrome"
                                                 Width="Auto"
                                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                                 BorderThickness="0,0,0,1"
                                                 Background="Transparent"
                                                 Padding="0,2">
-                                            <Grid Height="Auto"
+                                        <Grid Height="Auto"
                                                   Width="Auto">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition />
-                                                    <ColumnDefinition Width="30" />
-                                                </Grid.ColumnDefinitions>
-                                                <ContentControl HorizontalAlignment="Stretch"
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition />
+                                                <ColumnDefinition Width="30" />
+                                            </Grid.ColumnDefinitions>
+                                            <ContentControl HorizontalAlignment="Stretch"
                                                                 Margin="10,5"
                                                                 VerticalAlignment="Center"
                                                                 FontWeight="Bold"
                                                                 IsTabStop="False"
                                                                 Content="{TemplateBinding Title}"
                                                                 Foreground="{DynamicResource Theme_TextBrush}" />
-                                                <Button x:Name="CloseButton"
+                                            <Button x:Name="CloseButton"
                                                         Height="14"
                                                         HorizontalAlignment="Center"
                                                         Style="{StaticResource CloseButtonStyle}"
@@ -3260,15 +3260,15 @@
                                                         Width="15"
                                                         IsTabStop="False"
                                                         Grid.Column="1" />
-                                            </Grid>
-                                        </Border>
-                                            <ContentPresenter x:Name="ContentPresenter"
+                                        </Grid>
+                                    </Border>
+                                    <ContentPresenter x:Name="ContentPresenter"
                                                               Grid.Row="1"
                                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                               Content="{TemplateBinding Content}"
                                                               ContentTemplate="{TemplateBinding ContentTemplate}"/>
-                                    </Grid>
+                                </Grid>
                             </Border>
                         </Grid>
                     </Grid>
@@ -3425,7 +3425,7 @@
         </Setter>
     </Style>
 
-   
+
     <!--  ContextMenu  -->
     <Style x:Key="FlatContextMenuStyle"
         TargetType="ContextMenu">
@@ -3480,7 +3480,7 @@
     </Style>
     <Style TargetType="ContextMenu"
            BasedOn="{StaticResource FlatContextMenuStyle}"/>
-    
+
     <!--  MenuItem  -->
     <Style x:Key="FlatMenuItemStyle"
         TargetType="MenuItem">
@@ -3556,7 +3556,7 @@
                                               ContentTemplate="{TemplateBinding HeaderTemplate}"
                                               Margin="{TemplateBinding Padding}"
                                               Grid.Column="2" />
-      
+
                         </Grid>
                     </Grid>
                 </ControlTemplate>
@@ -3565,7 +3565,7 @@
     </Style>
     <Style TargetType="MenuItem"
            BasedOn="{StaticResource FlatMenuItemStyle}"/>
-    
+
     <!--  Separator  -->
     <Style x:Key="FlatSeparatorStyle"
         TargetType="Separator">
@@ -3588,5 +3588,106 @@
     </Style>
     <Style TargetType="Separator"
            BasedOn="{StaticResource FlatSeparatorStyle}"/>
-    
+
+    <!--  Thumb  -->
+    <Style x:Key="FlatThumbStyle"
+        TargetType="Thumb">
+        <Setter Property="IsTabStop"
+                Value="False" />
+        <Setter Property="Background"
+                Value="{DynamicResource Theme_ContainerBackgroundBrush}"/>
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextBrush}"/>
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource Theme_BorderBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Grid Cursor="Hand">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ColorChange"
+                                                                       Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                                  Value=".20" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ColorChange"
+                                                                       Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                                  Value=".1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DisabledVisualElement"
+                                                                       Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                                  Value=".55" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition From="Unfocused"
+                                                      GeneratedDuration="0:0:1"
+                                                      To="Focused" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="FocusVisualElement"
+                                                                       Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="FocusVisualElement"
+                                   Stroke="{DynamicResource Theme_PrimaryBrush}"
+                                   StrokeThickness="3"
+                                   RadiusX="100"
+                                   RadiusY="100"
+                                   Margin="-2"
+                                   Opacity="0"
+                                   IsHitTestVisible="false" />
+                        <Border x:Name="Background"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="Transparent"
+                                BorderThickness="0"
+                                CornerRadius="100">
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0"
+                                         Color="{TemplateBinding BorderBrush}"
+                                         Opacity="0.4"
+                                         BlurRadius="2" />
+                            </Border.Effect>
+                            <Border x:Name="ColorChange"
+                                    Background="{TemplateBinding Foreground}"
+                                    Opacity=".35"
+                                    CornerRadius="100" />
+                        </Border>
+                        <Rectangle x:Name="DisabledVisualElement"
+                                   Fill="{DynamicResource Theme_DisableBrush}"
+                                   RadiusX="100"
+                                   RadiusY="100"
+                                   IsHitTestVisible="false"
+                                   Opacity="0" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Thumb"
+           BasedOn="{StaticResource FlatThumbStyle}"/>
 </ResourceDictionary>
