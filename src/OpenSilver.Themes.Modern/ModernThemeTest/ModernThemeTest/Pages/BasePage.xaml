@@ -15,6 +15,7 @@
     <Canvas Background="Transparent" Height="2000">
         <TextBlock Canvas.Left="53" Canvas.Top="11" Text="Textblock" FontSize="13"/>
         <HyperlinkButton Canvas.Left="150" Canvas.Top="11" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" />
+        <HyperlinkButton Canvas.Left="250" Canvas.Top="11" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" IsEnabled="False"/>
 
 
         <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7"/>
@@ -29,15 +30,16 @@
         <RepeatButton Canvas.Left="376" Canvas.Top="53" Width="120" Height="32" Content="Repeat Button" FontSize="13" Padding="12,7" IsEnabled="False"/>
 
 
-        <TextBox Canvas.Left="55" Canvas.Top="129" Text="{Binding SomeString, Mode=TwoWay, ValidatesOnDataErrors=True}" FontSize="13" AcceptsReturn="True" MinWidth="80"/>
-        <TextBox.ContextMenu>
-            <ContextMenu HorizontalAlignment="Center" VerticalAlignment="Center">
-                <MenuItem Header="Item1" />
-                <MenuItem Header="Item2" />
-                <MenuItem Header="Item3" />
-                <MenuItem Header="Item4" />
-            </ContextMenu>
-        </TextBox.ContextMenu>
+        <TextBox Canvas.Left="55" Canvas.Top="129" Text="{Binding SomeString, Mode=TwoWay, ValidatesOnDataErrors=True}" FontSize="13" AcceptsReturn="True" MinWidth="80">
+            <TextBox.ContextMenu>
+                <ContextMenu HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <MenuItem Header="Item1" />
+                    <MenuItem Header="Item2" />
+                    <MenuItem Header="Item3" />
+                    <MenuItem Header="Item4" />
+                </ContextMenu>
+            </TextBox.ContextMenu>
+        </TextBox>
         <TextBox Canvas.Left="155" Canvas.Top="129" Text="TextBox" FontSize="13" IsEnabled="False"/>
 
         <PasswordBox Canvas.Left="240" Canvas.Top="129" Password="passw0rd" FontSize="13"/>
