@@ -335,6 +335,8 @@
            TargetType="controlsToolkit:Expander">
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="Padding"
+                Value="4" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
