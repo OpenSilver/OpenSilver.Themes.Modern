@@ -41,6 +41,9 @@
     <Page Include="Styles\Styles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\OpenSilver.Controls.Data.Input.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\OpenSilver.Controls.Data.DataForm.Toolkit.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
