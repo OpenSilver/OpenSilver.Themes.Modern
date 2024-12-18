@@ -1,4 +1,122 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--DescriptionViewer-->
+    <Style TargetType="DescriptionViewer">
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Background" Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource Theme_BackgroundBrush}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="GlyphTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Width="18" Height="18">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Icon"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1"
+                                                     Duration="0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Icon"
+                                                     Storyboard.TargetProperty="Opacity"
+                                                     To="1"
+                                                     Duration="0" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="Icon"
+                          Opacity="0.8"
+                          Width="16"
+                          Height="16"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                            <Ellipse Fill="{TemplateBinding Background}" />
+                            <Path Height="12"
+                                HorizontalAlignment="Center"
+                                Margin="0,0,0,1"
+                                VerticalAlignment="Center"
+                                Width="4"
+                                Data="M0.5,0.60000002 C0.5,0.54477155 0.54477155,0.5 0.60000002,0.5 L2.4000001,0.5 C2.4552286,0.5 2.5,0.54477155 2.5,0.60000002 L2.5,1.6215254 C2.5,1.6767539 2.4552286,1.7215254 2.4000001,1.7215254 L0.60000002,1.7215254 C0.54477155,1.7215254 0.5,1.6767539 0.5,1.6215254 z M0.50000548,3.3151906 C0.50000548,3.2599623 0.54477704,3.2151906 0.60000551,3.2151906 L2.4000056,3.2151906 C2.4552341,3.2151906 2.5000055,3.2599623 2.5000055,3.3151906 L2.5000055,8.4000092 C2.5000055,8.4552374 2.4552341,8.5000095 2.4000056,8.5000095 L0.60000551,8.5000095 C0.54477704,8.5000095 0.50000548,8.4552374 0.50000548,8.4000092 z"
+                                Stretch="Fill"
+                                Fill="{TemplateBinding Foreground}"
+                                Stroke="Transparent">
+                            </Path>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTipStyle">
+            <Setter.Value>
+                <Style TargetType="ToolTip">
+                    <Setter Property="IsHitTestVisible" Value="True" />
+                    <Setter Property="MaxWidth" Value="250" />
+                    <Setter Property="Margin" Value="5,0,5,0" />
+                    <Setter Property="Background" Value="#333333" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="Padding" Value="5" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="ContentTemplate">
+                        <Setter.Value>
+                            <DataTemplate>
+                                <TextBlock TextWrapping="Wrap"
+                                       Text="{Binding}" />
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DescriptionViewer">
+                    <StackPanel Orientation="Horizontal">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="DescriptionStates">
+                                <VisualState x:Name="NoDescription" />
+                                <VisualState x:Name="HasDescription">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DescriptionContent"
+                                                                   Storyboard.TargetProperty="Visibility"
+                                                                   Duration="0">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Background="Transparent"
+                            BorderThickness="1"
+                            Padding="{TemplateBinding Padding}">
+                            <Button x:Name="DescriptionContent"
+                                Visibility="Collapsed"
+                                IsTabStop="False"
+                                Template="{TemplateBinding GlyphTemplate}"
+                                Background="{TemplateBinding Background}"
+                                Foreground="{TemplateBinding Foreground}"
+                                BorderThickness="0"
+                                Padding="5"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <ToolTipService.ToolTip>
+                                    <ToolTip Style="{TemplateBinding ToolTipStyle}"
+                                         Content="{TemplateBinding Description}" />
+                                </ToolTipService.ToolTip>
+                            </Button>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>
