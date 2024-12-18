@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Threading;
 
 namespace ModernThemeTest
 {
@@ -106,7 +107,7 @@ namespace ModernThemeTest
         {
             NavigateToPage("/ChartsPointSeriesPage");
         }
-        
+
 
         void NavigateToPage(string targetUri)
         {
@@ -157,13 +158,17 @@ namespace ModernThemeTest
             set { _someString = value; OnPropertyChanged(); UpdateValidation(); }
         }
 
+        private int _progressValue;
+        public int ProgressValue { get => _progressValue; set { _progressValue = value; OnPropertyChanged(); } }
+
+
         private void UpdateValidation()
         {
             ValidateProperty("SomeString", _someString);
         }
 
         private Dictionary<string, List<string>> _errors = new Dictionary<string, List<string>>();
-
+        private DispatcherTimer _timer;
         public bool HasErrors => _errors.Count > 0;
 
 
@@ -176,6 +181,27 @@ namespace ModernThemeTest
 
 
         public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+        public DtCtx()
+        {
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromMilliseconds(100);
+            _timer.Tick += Timer_Tick;
+            ProgressValue = 0;
+            _timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (ProgressValue >= 100)
+            {
+                ProgressValue = 0;
+            }
+            else
+            {
+                ProgressValue += 2;
+            }
+        }
 
         public IEnumerable GetErrors(string propertyName)
         {

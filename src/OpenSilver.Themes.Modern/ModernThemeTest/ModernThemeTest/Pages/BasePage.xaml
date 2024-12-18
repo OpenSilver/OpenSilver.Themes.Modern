@@ -267,8 +267,9 @@
         <TreeMap Canvas.Left="400" Canvas.Top="1630" Width="300" Height="200" ItemsSource="{Binding People}" >
         </TreeMap>
         <Thumb Canvas.Left="72" Canvas.Top="1872" Width="20" Height="20" DragDelta="Thumb_DragDelta" />
-         
-        
-        
+        <ProgressBar  Value="{Binding ProgressValue}" Canvas.Left="72" Canvas.Top="1900"  HorizontalAlignment="Left" VerticalAlignment="Top"  MinWidth="100" Minimum="1" Maximum="100" />
+
+
+
     </Canvas>
 </Page>

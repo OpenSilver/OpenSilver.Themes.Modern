@@ -3690,4 +3690,66 @@
     </Style>
     <Style TargetType="Thumb"
            BasedOn="{StaticResource FlatThumbStyle}"/>
+
+    <!-- ProgressBar -->
+    <Style TargetType="ProgressBar">
+        <Setter Property="Foreground" 
+                Value="{DynamicResource Theme_PrimaryBrush}"
+                />
+        <Setter Property="Background"
+                Value="{DynamicResource Theme_BorderBrush}"
+                />
+        <Setter Property="MinHeight"
+                Value="8" />
+        <Setter Property="MinWidth"
+                Value="100"/>
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Maximum" Value="100" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Determinate" />
+                                <vsm:VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="IndeterminateRoot" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="DeterminateRoot" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateGradientFill" Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.Transform).(TransformGroup.Children)[0].X">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value="0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:.5" Value="20" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ProgressBarTrack" Background="{TemplateBinding BorderBrush}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4,4,4,4" />
+                        <Grid x:Name="ProgressBarRootGrid">
+                            <Grid x:Name="IndeterminateRoot" Visibility="Collapsed">
+                                <Rectangle Margin="{TemplateBinding BorderThickness}" x:Name="IndeterminateSolidFill" Opacity="1" RenderTransformOrigin="0.5,0.5" RadiusX="4" RadiusY="4" Fill="{TemplateBinding Foreground}" Stroke="{DynamicResource Theme_PrimaryBrush}" StrokeThickness="0" />
+                                <Rectangle Margin="{TemplateBinding BorderThickness}" x:Name="IndeterminateGradientFill" Opacity="0.7" RadiusX="4" RadiusY="4" StrokeThickness="1" Fill="{DynamicResource Theme_BackgroundBrush}" />
+                            </Grid>
+                            <Grid x:Name="DeterminateRoot">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Border Background="{TemplateBinding Background}" CornerRadius="0,4,4,0" Grid.Column="1" Margin="-4,1,1,1" Opacity="0.5">
+ 
+                                </Border>
+                                <Border x:Name="ProgressBarIndicator" CornerRadius="4,4,4,4" Background="{TemplateBinding Foreground}" Margin="1,1,1,1" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>
