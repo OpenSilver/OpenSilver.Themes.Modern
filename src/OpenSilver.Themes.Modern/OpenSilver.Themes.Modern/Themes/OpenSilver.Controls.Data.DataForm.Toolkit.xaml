@@ -11,7 +11,7 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="Transparent" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Padding"
                 Value="8,0,8,2" />
         <Setter Property="Template">
@@ -21,7 +21,7 @@
                         <Grid.Resources>
                             <local:BrushBuilder x:Key="HoverBrushBuilder"
                                             BasedOn="{TemplateBinding Background}"
-                                            BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                                            BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}" />
                             <local:BrushBuilder x:Key="PressBrushBuilder"
                                             BasedOn="{TemplateBinding Background}"
                                             BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
@@ -312,8 +312,6 @@
                                         </Button>
                                         <Button x:Name="PreviousItemButton"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
@@ -325,8 +323,6 @@
                                         </Button>
                                         <Button x:Name="NextItemButton"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
@@ -338,8 +334,6 @@
                                         </Button>
                                         <Button x:Name="LastItemButton"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Grid Height="9"
                                                   Margin="6,5,5,5"
@@ -368,8 +362,6 @@
                                         <Button x:Name="EditButton"
                                                 ToolTipService.ToolTip="Edit"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Grid Height="19"
                                                   HorizontalAlignment="Center"
@@ -413,8 +405,6 @@
                                         <Button x:Name="NewItemButton"
                                                 ToolTipService.ToolTip="Add"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
@@ -440,8 +430,6 @@
                                         <Button x:Name="DeleteItemButton"
                                                 ToolTipService.ToolTip="Delete"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"

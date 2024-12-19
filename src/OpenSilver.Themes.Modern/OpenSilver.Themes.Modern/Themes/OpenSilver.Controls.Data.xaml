@@ -12,7 +12,7 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-                Value="Transparent" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Padding"
                 Value="8,0,8,2" />
         <Setter Property="Template">
@@ -353,7 +353,6 @@
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"
                                     Width="20"
-                                    Background="{TemplateBinding Background}"
                                     Style="{StaticResource DataPagerButtonStyle}"
                                     BorderThickness="1"
                                     Padding="1">
@@ -368,7 +367,6 @@
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"
                                     Width="20"
-                                    Background="{TemplateBinding Background}"
                                     Style="{StaticResource DataPagerButtonStyle}"
                                     BorderThickness="1"
                                     Foreground="{DynamicResource Theme_TextBrush}"
@@ -407,7 +405,6 @@
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Center"
                                         Width="20"
-                                        Background="{TemplateBinding Background}"
                                         Style="{StaticResource DataPagerButtonStyle}"
                                         BorderThickness="1"
                                         Padding="1">
@@ -423,7 +420,6 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Width="20"
-                                        Background="{TemplateBinding Background}"
                                         Style="{StaticResource DataPagerButtonStyle}"
                                         BorderThickness="1"
                                         Foreground="{DynamicResource Theme_TextBrush}"
