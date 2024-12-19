@@ -7,8 +7,6 @@
 
     <Style x:Key="DataPagerButtonStyle"
            TargetType="Button">
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
@@ -349,10 +347,8 @@
                                     Orientation="Horizontal"
                                     Margin="10,0,10,0">
                             <Button x:Name="FirstPageButton"
-                                    Height="20"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"
-                                    Width="20"
                                     Style="{StaticResource DataPagerButtonStyle}"
                                     BorderThickness="1"
                                     Padding="1">
@@ -363,10 +359,8 @@
                                           Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" />
                             </Button>
                             <Button x:Name="PreviousPageButton"
-                                    Height="20"
                                     HorizontalAlignment="Right"
                                     VerticalAlignment="Center"
-                                    Width="20"
                                     Style="{StaticResource DataPagerButtonStyle}"
                                     BorderThickness="1"
                                     Foreground="{DynamicResource Theme_TextBrush}"
@@ -401,10 +395,8 @@
                                                Foreground="{DynamicResource Theme_TextBrush}" />
                             </StackPanel>
                             <Button x:Name="NextPageButton"
-                                        Height="20"
                                         HorizontalAlignment="Right"
                                         VerticalAlignment="Center"
-                                        Width="20"
                                         Style="{StaticResource DataPagerButtonStyle}"
                                         BorderThickness="1"
                                         Padding="1">
@@ -416,10 +408,8 @@
                                           Fill="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}" />
                             </Button>
                             <Button x:Name="LastPageButton"
-                                        Height="20"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
-                                        Width="20"
                                         Style="{StaticResource DataPagerButtonStyle}"
                                         BorderThickness="1"
                                         Foreground="{DynamicResource Theme_TextBrush}"

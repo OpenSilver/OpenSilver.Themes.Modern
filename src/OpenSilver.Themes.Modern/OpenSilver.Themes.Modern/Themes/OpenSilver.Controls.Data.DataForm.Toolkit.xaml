@@ -6,8 +6,6 @@
 
     <Style x:Key="DataPagerButtonStyle"
            TargetType="Button">
-        <Setter Property="Height"
-                Value="32" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
