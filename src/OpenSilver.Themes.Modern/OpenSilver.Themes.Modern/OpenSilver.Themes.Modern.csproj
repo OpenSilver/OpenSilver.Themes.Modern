@@ -20,6 +20,9 @@
 
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Helpers\ColorInterpolator.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Helpers\BrushBuilder.cs" />
     <Compile Include="Helpers\BrushEffectBuilder.cs" />
     <Compile Include="Helpers\BrushEffectMode.cs" />

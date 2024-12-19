@@ -26,13 +26,12 @@
                             <local:BrushBuilder x:Key="PressBrushBuilder"
                                                 BasedOn="{TemplateBinding Background}"
                                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}">
-                                <local:BrushBuilder.BasedOn>
-                                    <SolidColorBrush Color="Red"/>
-                                </local:BrushBuilder.BasedOn>
-                            </local:BrushBuilder>
+                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledForegroundBrush"
+                 Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="FocusStates">
@@ -64,7 +63,7 @@
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ForegroundContentControl" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>

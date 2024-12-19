@@ -123,10 +123,12 @@
                             <local:BrushBuilder x:Key="PressBrushBuilder"
                                                 BasedOn="{TemplateBinding Background}"
                                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding Background}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                BaseColor="{TemplateBinding Background}"
+                                                TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="FocusStates">
@@ -172,7 +174,7 @@
                                             <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -226,10 +228,12 @@
                             <local:BrushBuilder x:Key="PressBrushBuilder"
                                                 BasedOn="{TemplateBinding Background}"
                                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding Background}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                     BaseColor="{TemplateBinding Background}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -258,12 +262,11 @@
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
-
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
                                             <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -349,10 +352,13 @@
                             <local:BrushBuilder x:Key="PressBrushBuilder"
                                                 BasedOn="{TemplateBinding Background}"
                                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding Background}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                     BaseColor="{TemplateBinding Background}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
+
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="FocusStates">
@@ -398,7 +404,7 @@
                                             <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -465,14 +471,19 @@
                 <ControlTemplate TargetType="TextBox">
                     <Grid x:Name="RootElement">
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBorderBuilder"
-                                                BasedOn="{TemplateBinding BorderBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
-                                                BasedOn="{TemplateBinding BorderBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBorderBuilder"
+                                                     BaseColor="{TemplateBinding BorderBrush}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            
+                            <SolidColorBrush x:Key="DisabledBorderBrush"
+                                             Color="{Binding Source={StaticResource DisabledBorderBuilder}, Path=ResultColor}" />
+                            <SolidColorBrush x:Key="DisabledForegroundBrush"
+                                             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -493,10 +504,10 @@
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBorderBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBorderBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -730,10 +741,12 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding Background}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                     BaseColor="{TemplateBinding Background}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -798,10 +811,10 @@
                                                             Storyboard.TargetProperty="BorderThickness"
                                                             To=".5,.5,.5,.5" />
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1042,14 +1055,19 @@
                 <ControlTemplate TargetType="PasswordBox">
                     <Grid x:Name="RootElement">
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBorderBuilder"
-                                                BasedOn="{TemplateBinding BorderBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
-                                                BasedOn="{TemplateBinding Foreground}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBorderBuilder"
+                                                     BaseColor="{TemplateBinding BorderBrush}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+
+                            <SolidColorBrush x:Key="DisabledBorderBrush"
+                                             Color="{Binding Source={StaticResource DisabledBorderBuilder}, Path=ResultColor}" />
+                            <SolidColorBrush x:Key="DisabledForegroundBrush"
+                                             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -1070,10 +1088,10 @@
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBorderBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBorderBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElementForeground" Storyboard.TargetProperty="(TextBlock.Foreground)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1238,10 +1256,12 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding BorderBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledColorBuilder"
+                                                     BaseColor="{TemplateBinding BorderBrush}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledColorBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -1285,10 +1305,10 @@
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BulletBorder"
                                                                        Storyboard.TargetProperty="(UIElement.BorderBrush)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="(UIElement.BorderBrush)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -1483,10 +1503,13 @@
                                                 BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{Binding Background, ElementName=SelectedBackground}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                     BaseColor="{Binding Background, ElementName=SelectedBackground}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -1511,7 +1534,7 @@
                                                                   Value=".55" />
                                         </DoubleAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="SelectedBackground" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -2109,12 +2132,12 @@
                 <ControlTemplate TargetType="Thumb">
                     <Grid>
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding BorderBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                     BaseColor="{TemplateBinding BorderBrush}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
                             <SolidColorBrush x:Key="DisabledBrush"
-                                             Color="{DynamicResource BorderColor}"/>
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -2124,7 +2147,7 @@
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="BorderBrush">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ThumbVisual"
                                                                        Storyboard.TargetProperty="Opacity">
@@ -2364,21 +2387,20 @@
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
 
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{DynamicResource Theme_PrimaryBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                     BaseColor="{DynamicResource Theme_PrimaryBrush}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
                                 <vsm:VisualState x:Name="Normal" />
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <!--<ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="Header" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="#FF999999" />
-                                        </ObjectAnimationUsingKeyFrames>-->
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
                                                                        Storyboard.TargetName="Header"
@@ -2731,14 +2753,19 @@
                 <ControlTemplate TargetType="ComboBox">
                     <Grid x:Name="Root">
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBorderBuilder"
-                                                BasedOn="{TemplateBinding BorderBrush}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
-                                                BasedOn="{TemplateBinding Foreground}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledBorderBuilder"
+                                                     BaseColor="{DynamicResource Theme_BorderColor}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            
+                            <SolidColorBrush x:Key="DisabledBorderBrush"
+                                             Color="{Binding Source={StaticResource DisabledBorderBuilder}, Path=ResultColor}" />
+                            <SolidColorBrush x:Key="DisabledForegroundBrush"
+                                             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -2746,12 +2773,11 @@
                                 <vsm:VisualState x:Name="MouseOver" />
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
-
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BtnArrow" Storyboard.TargetProperty="Fill">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBorderBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter" Storyboard.TargetProperty="(TextBlock.Foreground)">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -3295,10 +3321,12 @@
                           Background="{TemplateBinding Background}"
                           VerticalAlignment="Center">
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
-                                                BasedOn="{TemplateBinding Foreground}"
-                                                DesaturationRatio="0.8"
-                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                     Ratio="0.5"/>
+                            <SolidColorBrush x:Key="DisabledBrush"
+                                             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <vsm:VisualStateManager.VisualStateGroups>
                             <vsm:VisualStateGroup x:Name="CommonStates">
@@ -3376,7 +3404,7 @@
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                    Visibility="Collapsed"
                                    Canvas.ZIndex="1"
-                                   Foreground="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"
+                                   Foreground="{StaticResource DisabledBrush}"
                                    Text="{TemplateBinding Content}" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           Margin="{TemplateBinding Padding}"
