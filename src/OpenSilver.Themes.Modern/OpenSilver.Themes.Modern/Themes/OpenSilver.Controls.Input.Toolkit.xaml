@@ -215,11 +215,6 @@
 
                             </TextBox>
                         </Grid>
-                        <Border x:Name="DisabledVisualElement"
-                                Background="{DynamicResource Theme_DisabledBrush}"
-                                Opacity="0"
-                                Margin="1,2"
-                                IsHitTestVisible="false" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

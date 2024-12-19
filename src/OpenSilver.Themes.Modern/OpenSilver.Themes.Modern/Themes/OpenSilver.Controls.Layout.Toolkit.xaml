@@ -54,17 +54,7 @@
                                 <vsm:VisualState x:Name="Normal" />
                                 <vsm:VisualState x:Name="Pressed" />
                                 <vsm:VisualState x:Name="MouseOver" />
-                                <vsm:VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="Border"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="0.5" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled" />
                             </vsm:VisualStateGroup>
                             <!-- focus states -->
                             <vsm:VisualStateGroup x:Name="FocusStates">
@@ -129,6 +119,14 @@
                             <local:BrushBuilder x:Key="PressBrushBuilder"
                                                 BasedOn="{DynamicResource Theme_BorderBrush}"
                                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="DisabledBackgroundBuilder"
+                                                BasedOn="{DynamicResource Theme_BorderBrush}"
+                                                DesaturationRatio="0.8"
+                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                                BasedOn="{TemplateBinding Foreground}"
+                                                DesaturationRatio="0.8"
+                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="ExpandDirectionStates">
@@ -421,6 +419,17 @@
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ButtonBackground" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="header" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="arrow" Storyboard.TargetProperty="Stroke">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
@@ -483,7 +492,7 @@
                                             </TransformGroup>
                                         </Grid.RenderTransform>
                                         <Path x:Name="arrow"
-                                              Stroke="{DynamicResource Theme_BorderBrush}"
+                                              Stroke="{TemplateBinding Foreground}"
                                               StrokeThickness="2"
                                               Height="Auto"
                                               HorizontalAlignment="Center"

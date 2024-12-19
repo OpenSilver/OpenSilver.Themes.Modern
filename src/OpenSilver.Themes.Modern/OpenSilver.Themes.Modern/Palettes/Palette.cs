@@ -61,6 +61,7 @@ public abstract class Palette
 
         resources[ThemePrefix + nameof(HoverBrightnessRatio)] = palette.HoverBrightnessRatio;
         resources[ThemePrefix + nameof(PressBrightnessRatio)] = palette.PressBrightnessRatio;
+        resources[ThemePrefix + nameof(DisabledBrightnessRatio)] = palette.DisabledBrightnessRatio;
 
         resources[ThemePrefix + nameof(ChartHaloOpacity)] = palette.ChartHaloOpacity;
         resources[ThemePrefix + nameof(TreeMapContainerOpacity)] = palette.TreeMapContainerOpacity;
@@ -114,6 +115,7 @@ public abstract class Palette
 
     public abstract double HoverBrightnessRatio { get; set; }
     public abstract double PressBrightnessRatio { get; set; }
+    public abstract double DisabledBrightnessRatio { get; set; }
 
     public abstract double ChartHaloOpacity { get; set; }
     public abstract double TreeMapContainerOpacity { get; set; }
