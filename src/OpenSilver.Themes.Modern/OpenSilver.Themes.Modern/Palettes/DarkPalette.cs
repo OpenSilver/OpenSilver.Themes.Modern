@@ -17,6 +17,7 @@ public class DarkPalette : Palette
     public override Color TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
     public override Color DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#171717");
     public override Color WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#575757");
+    public override Color ErrorColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF5963");
 
     public override IValueConverter BrightnessColorConverter { get; set; } = new BrightenColorConverter();
 
@@ -49,7 +50,4 @@ public class DarkPalette : Palette
 
     public override IValueConverter ChartSeriesColorConverter { get; set; } = new ColorToGradientStopsConverter();
     public override double TreeMapContainerOpacity { get; set; } = 0.3;
-
-
-
 }

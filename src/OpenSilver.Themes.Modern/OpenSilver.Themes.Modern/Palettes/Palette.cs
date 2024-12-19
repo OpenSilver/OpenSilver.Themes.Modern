@@ -54,6 +54,9 @@ public abstract class Palette
         resources[ThemePrefix + nameof(WatermarkColor)] = palette.WatermarkColor;
         resources["Theme_WatermarkBrush"] = new SolidColorBrush(palette.WatermarkColor);
 
+        resources[ThemePrefix + nameof(ErrorColor)] = palette.ErrorColor;
+        resources["Theme_ErrorBrush"] = new SolidColorBrush(palette.ErrorColor);
+
         resources[ThemePrefix + nameof(BrightnessColorConverter)] = palette.BrightnessColorConverter;
 
         resources[ThemePrefix + nameof(HoverBrightnessRatio)] = palette.HoverBrightnessRatio;
@@ -105,6 +108,7 @@ public abstract class Palette
     public abstract Color TextOnPrimaryColor { get; set; }
     public abstract Color DisabledColor { get; set; }
     public abstract Color WatermarkColor { get; set; }
+    public abstract Color ErrorColor { get; set; }
 
     public abstract IValueConverter BrightnessColorConverter { get; set; }
 

@@ -17,6 +17,7 @@ public class LightPalette : Palette
     public override Color TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
     public override Color DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#D4D4D4");
     public override Color WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFAAAAAA");
+    public override Color ErrorColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF5963");
 
     public override IValueConverter BrightnessColorConverter { get; set; } = new DarkenColorConverter();
 
