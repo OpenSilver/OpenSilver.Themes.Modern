@@ -23,6 +23,7 @@ public class DarkPalette : Palette
 
     public override double HoverBrightnessRatio { get; set; } = 20;
     public override double PressBrightnessRatio { get; set; } = 40;
+    public override double DisabledBrightnessRatio { get; set; } = -40;
 
     public override double ChartHaloOpacity { get; set; } = 1;
 

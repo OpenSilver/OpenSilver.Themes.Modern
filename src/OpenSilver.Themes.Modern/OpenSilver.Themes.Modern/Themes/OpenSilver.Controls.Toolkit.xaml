@@ -57,17 +57,21 @@
 
     <ControlTemplate x:Key="GlobalHeaderButtonTemplate" TargetType="Button">
         <Grid Cursor="Hand">
+            <Grid.Resources>
+                <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                    BasedOn="{TemplateBinding Foreground}"
+                                    DesaturationRatio="0.8"
+                                    BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+            </Grid.Resources>
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="CommonStates">
                     <VisualState x:Name="Normal" />
                     <VisualState x:Name="MouseOver" />
                     <VisualState x:Name="Disabled">
                         <Storyboard>
-                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="buttonContent"
-                                                  Storyboard.TargetProperty="Opacity">
-                                <SplineDoubleKeyFrame KeyTime="0"
-                                             Value=".5" />
-                            </DoubleAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="buttonContent" Storyboard.TargetProperty="Foreground">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                            </ObjectAnimationUsingKeyFrames>
                         </Storyboard>
                     </VisualState>
                 </VisualStateGroup>
@@ -374,6 +378,12 @@
                             <ControlTemplate x:Key="ExpanderDownHeaderTemplate"
                                              TargetType="ToggleButton">
                                 <Grid Background="Transparent">
+                                    <Grid.Resources>
+                                        <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                                BasedOn="{TemplateBinding Foreground}"
+                                                DesaturationRatio="0.8"
+                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                                    </Grid.Resources>
                                     <vsm:VisualStateManager.VisualStateGroups>
                                         <vsm:VisualStateGroup x:Name="CheckStates">
                                             <vsm:VisualStateGroup.Transitions>
@@ -418,6 +428,13 @@
                                                         <SplineDoubleKeyFrame KeyTime="0"
                                                                               Value="0.7" />
                                                     </DoubleAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="header" Storyboard.TargetProperty="Foreground">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
                                         </vsm:VisualStateGroup>
@@ -470,12 +487,13 @@
                                                     </Path.RenderTransform>
                                                 </Path>
                                             </Grid>
-                                            <ContentPresenter HorizontalAlignment="Left"
-                                                              Margin="10"
-                                                              x:Name="header"
-                                                              VerticalAlignment="Center"
-                                                              Content="{TemplateBinding Content}"
-                                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                            <ContentControl HorizontalAlignment="Left"
+                                                            Margin="10"
+                                                            x:Name="header"
+                                                            VerticalAlignment="Center"
+                                                            Foreground="{TemplateBinding Foreground}"
+                                                            Content="{TemplateBinding Content}"
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -483,6 +501,12 @@
                             <ControlTemplate x:Key="ExpanderUpHeaderTemplate"
                                              TargetType="ToggleButton">
                                 <Grid Background="Transparent">
+                                    <Grid.Resources>
+                                        <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                                            BasedOn="{TemplateBinding Foreground}"
+                                                            DesaturationRatio="0.8"
+                                                            BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                                    </Grid.Resources>
                                     <vsm:VisualStateManager.VisualStateGroups>
                                         <vsm:VisualStateGroup x:Name="CheckStates">
                                             <vsm:VisualStateGroup.Transitions>
@@ -527,6 +551,13 @@
                                                         <SplineDoubleKeyFrame KeyTime="0"
                                                                               Value="0.7" />
                                                     </DoubleAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="header" Storyboard.TargetProperty="Foreground">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
                                         </vsm:VisualStateGroup>
@@ -574,12 +605,13 @@
                                                     </Path.RenderTransform>
                                                 </Path>
                                             </Grid>
-                                            <ContentPresenter HorizontalAlignment="Left"
-                                                              Margin="10"
-                                                              x:Name="header"
-                                                              VerticalAlignment="Center"
-                                                              Content="{TemplateBinding Content}"
-                                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                            <ContentControl HorizontalAlignment="Left"
+                                                            Margin="10"
+                                                            x:Name="header"
+                                                            VerticalAlignment="Center"
+                                                            Foreground="{TemplateBinding Foreground}"
+                                                            Content="{TemplateBinding Content}"
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -587,6 +619,12 @@
                             <ControlTemplate x:Key="ExpanderLeftHeaderTemplate"
                                              TargetType="ToggleButton">
                                 <Grid Background="Transparent">
+                                    <Grid.Resources>
+                                        <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                                            BasedOn="{TemplateBinding Foreground}"
+                                                            DesaturationRatio="0.8"
+                                                            BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                                    </Grid.Resources>
                                     <vsm:VisualStateManager.VisualStateGroups>
                                         <vsm:VisualStateGroup x:Name="CheckStates">
                                             <vsm:VisualStateGroup.Transitions>
@@ -631,6 +669,13 @@
                                                         <SplineDoubleKeyFrame KeyTime="0"
                                                                               Value="0.7" />
                                                     </DoubleAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="header" Storyboard.TargetProperty="Foreground">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
                                         </vsm:VisualStateGroup>
@@ -678,12 +723,13 @@
                                                     </Path.RenderTransform>
                                                 </Path>
                                             </Grid>
-                                            <ContentPresenter HorizontalAlignment="Left"
-                                                              Margin="10"
-                                                              x:Name="header"
-                                                              VerticalAlignment="Center"
-                                                              Content="{TemplateBinding Content}"
-                                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                            <ContentControl HorizontalAlignment="Left"
+                                                            Margin="10"
+                                                            x:Name="header"
+                                                            VerticalAlignment="Center"
+                                                            Foreground="{TemplateBinding Foreground}"
+                                                            Content="{TemplateBinding Content}"
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -691,6 +737,12 @@
                             <ControlTemplate x:Key="ExpanderRightHeaderTemplate"
                                              TargetType="ToggleButton">
                                 <Grid Background="Transparent">
+                                    <Grid.Resources>
+                                        <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                                            BasedOn="{TemplateBinding Foreground}"
+                                                            DesaturationRatio="0.8"
+                                                            BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
+                                    </Grid.Resources>
                                     <vsm:VisualStateManager.VisualStateGroups>
                                         <vsm:VisualStateGroup x:Name="CheckStates">
                                             <vsm:VisualStateGroup.Transitions>
@@ -735,6 +787,13 @@
                                                         <SplineDoubleKeyFrame KeyTime="0"
                                                                               Value="0.7" />
                                                     </DoubleAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </vsm:VisualState>
+                                            <vsm:VisualState x:Name="Disabled">
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="header" Storyboard.TargetProperty="Foreground">
+                                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                                    </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
                                         </vsm:VisualStateGroup>
@@ -782,12 +841,13 @@
                                                     </Path.RenderTransform>
                                                 </Path>
                                             </Grid>
-                                            <ContentPresenter HorizontalAlignment="Left"
-                                                              Margin="10"
-                                                              x:Name="header"
-                                                              VerticalAlignment="Center"
-                                                              Content="{TemplateBinding Content}"
-                                                              ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                            <ContentControl HorizontalAlignment="Left"
+                                                            Margin="10"
+                                                            x:Name="header"
+                                                            VerticalAlignment="Center"
+                                                            Foreground="{TemplateBinding Foreground}"
+                                                            Content="{TemplateBinding Content}"
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -799,14 +859,7 @@
                                     <vsm:VisualTransition GeneratedDuration="0" />
                                 </vsm:VisualStateGroup.Transitions>
                                 <vsm:VisualState x:Name="Normal" />
-                                <vsm:VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="DisabledVisualElement"
-                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                         To="1" />
-                                    </Storyboard>
-                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Disabled" />
                             </vsm:VisualStateGroup>
                             <vsm:VisualStateGroup x:Name="FocusStates">
                                 <vsm:VisualState x:Name="Focused" />
@@ -1030,11 +1083,6 @@
                                 </Border>
                             </Grid>
                         </Border>
-                        <Border x:Name="DisabledVisualElement"
-                                IsHitTestVisible="false"
-                                Opacity="0"
-                                Background="#A5FFFFFF"
-                                CornerRadius="3" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

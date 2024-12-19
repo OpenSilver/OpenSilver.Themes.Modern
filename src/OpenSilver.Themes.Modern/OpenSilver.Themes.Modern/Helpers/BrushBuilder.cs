@@ -26,13 +26,13 @@ namespace OpenSilver.Themes.Modern
         public static readonly DependencyProperty BrightnessRatioProperty =
             DependencyProperty.Register("BrightnessRatio", typeof(double), typeof(BrushBuilder), new PropertyMetadata(0d, OnChange));
 
-
-        private static void OnChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        public double DesaturationRatio
         {
-            BrushBuilder builder = (BrushBuilder)d;
-            builder.UpdateBrush();
+            get { return (double)GetValue(DesaturationRatioProperty); }
+            set { SetValue(DesaturationRatioProperty, value); }
         }
-
+        public static readonly DependencyProperty DesaturationRatioProperty =
+            DependencyProperty.Register("DesaturationRatio", typeof(double), typeof(BrushBuilder), new PropertyMetadata(0d, OnChange));
 
         public Brush Brush
         {
@@ -41,6 +41,13 @@ namespace OpenSilver.Themes.Modern
         }
         public static readonly DependencyProperty BrushProperty =
             DependencyProperty.Register("Brush", typeof(Brush), typeof(BrushBuilder), new PropertyMetadata(null));
+
+
+        private static void OnChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            BrushBuilder builder = (BrushBuilder)d;
+            builder.UpdateBrush();
+        }
 
         void UpdateBrush()
         {
@@ -53,7 +60,10 @@ namespace OpenSilver.Themes.Modern
                     //    return ConvertColor(color);
 
                     case SolidColorBrush brush:
-                        Color brushColor = ConvertColor(brush.Color);
+                        //Color brushColor = ConvertColor(brush.Color);
+                        //brushColor = PartiallyDesaturate(brushColor, DesaturationRatio);
+                        Color brushColor = PartiallyDesaturate(brush.Color, DesaturationRatio);
+                        brushColor = ConvertColor(brushColor);
                         Brush = new SolidColorBrush(brushColor);
                         break;
 
@@ -61,7 +71,6 @@ namespace OpenSilver.Themes.Modern
                         Brush = BasedOn; // Return original value if the type is not handled
                         break;
                 }
-
             }
         }
 
@@ -90,6 +99,22 @@ namespace OpenSilver.Themes.Modern
                 return Color.FromArgb(color.A, r, g, b);
             }
             return color;
+        }
+
+        Color PartiallyDesaturate(Color color, double factor)
+        {
+            if (factor < 0 || factor > 1)
+                throw new ArgumentOutOfRangeException(nameof(factor), "Factor must be between 0 and 1.");
+
+            // Convert the color to grayscale
+            byte gray = (byte)((color.R * 0.3) + (color.G * 0.59) + (color.B * 0.11));
+
+            // Blend the original color with the grayscale value
+            byte r = (byte)(color.R + (gray - color.R) * factor);
+            byte g = (byte)(color.G + (gray - color.G) * factor);
+            byte b = (byte)(color.B + (gray - color.B) * factor);
+
+            return Color.FromRgb(r, g, b);
         }
     }
 }

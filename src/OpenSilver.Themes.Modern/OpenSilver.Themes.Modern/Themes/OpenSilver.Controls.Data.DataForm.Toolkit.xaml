@@ -19,9 +19,19 @@
                 <ControlTemplate TargetType="Button">
                     <Grid>
                         <Grid.Resources>
-                            <SolidColorBrush x:Key="MouseEventOverlay" Color="#bababa"/>
-                            <SolidColorBrush x:Key="DisabledBrush"
-                                             Color="{DynamicResource Theme_DisabledColor}" />
+                            <local:BrushBuilder x:Key="HoverBrushBuilder"
+                                            BasedOn="{TemplateBinding Background}"
+                                            BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="PressBrushBuilder"
+                                            BasedOn="{TemplateBinding Background}"
+                                            BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                            DesaturationRatio="0.8"
+                                            BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}">
+                                <local:BrushBuilder.BasedOn>
+                                    <SolidColorBrush Color="Red"/>
+                                </local:BrushBuilder.BasedOn>
+                            </local:BrushBuilder>
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="FocusStates">
@@ -37,59 +47,30 @@
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content" Storyboard.TargetProperty="TextBlock.Foreground">
-                                        <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding TextBlock.Foreground, ElementName=Root, Converter={StaticResource Theme_BrightnessColorConverter}, ConverterParameter=30}"/>
-                                    </ObjectAnimationUsingKeyFrames>-->
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value=".3" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <!--<ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                  Storyboard.TargetName="ForegroundContentControl"
-                                                                  Storyboard.TargetProperty="(UIElement.Foreground).(SolidColorBrush.Color)">
-                                        <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
-                                    </ColorAnimationUsingKeyFrames>-->
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
-                                <VisualState x:Name="Normal">
-                                    <Storyboard>
-                                        <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.300" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.Opacity)" To="0" />
-                                        <DoubleAnimation BeginTime="00:00:00.000" Duration="00:00:00.100" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" From="1" To="0" />
-                                        <DoubleAnimation BeginTime="00:00:00.000" Duration="00:00:00.100" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" From="1" To="0" />
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value=".3" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.300" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)" To="1" />
-                                        <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.300" Storyboard.TargetName="Press" Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)" To="1" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00"
-                                                                       Storyboard.TargetName="ForegroundContentControl"
-                                                                       Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{StaticResource DisabledBrush}" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ForegroundContentControl" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
-                                        <!--Setting the opacity of Focus to 0 because if it has focus it when it becomes disabled (which is often the case), it doesn't go back to 0-->
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Focus" Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
 
-                        <Ellipse x:Name="Hover" Opacity="0" Fill="{StaticResource MouseEventOverlay}" />
-                        <Ellipse x:Name="Focus" Opacity="0" Fill="{StaticResource MouseEventOverlay}" />
-                        <Ellipse x:Name="Press" Opacity=".3" Fill="{StaticResource MouseEventOverlay}" RenderTransformOrigin=".5,.5">
-                            <Ellipse.RenderTransform>
-                                <ScaleTransform ScaleX="0" ScaleY="0"/>
-                            </Ellipse.RenderTransform>
-                        </Ellipse>
+                        <Ellipse x:Name="Background" Fill="Transparent" />
                         <ContentControl x:Name="ForegroundContentControl" Foreground="{TemplateBinding Foreground}">
                             <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" Width="23" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </ContentControl>
@@ -190,16 +171,19 @@
                                     </Setter.Value>
                                 </Setter>
                             </Style>
+                            <local:BrushBuilder x:Key="DisabledForegroundBuilder"
+                                                BasedOn="{TemplateBinding Foreground}"
+                                                DesaturationRatio="0.8"
+                                                BrightnessRatio="{DynamicResource Theme_DisabledBrightnessRatio}"/>
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="DisabledVisual"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="1" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="HeaderElement" Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=Brush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -514,11 +498,6 @@
                                 </StackPanel>
                             </Grid>
                         </Border>
-                        <Border x:Name="DisabledVisual"
-                                IsHitTestVisible="False"
-                                Opacity="0"
-                                Background="#8CFFFFFF"
-                                CornerRadius="2" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
