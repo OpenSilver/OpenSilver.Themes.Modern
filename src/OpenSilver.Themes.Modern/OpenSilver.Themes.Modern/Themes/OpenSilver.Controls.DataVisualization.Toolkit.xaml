@@ -839,7 +839,7 @@
                 <ControlTemplate TargetType="LegendItem">
                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <StackPanel Orientation="Horizontal">
-                            <Rectangle Width="8" Height="8" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" StrokeThickness="1" Margin="0,0,3,0" />
+                            <Rectangle Width="8" Height="8" Fill="{Binding Background}" Stroke="{Binding BorderBrush}" StrokeThickness="0" Margin="0,0,3,0" />
                             <Title Content="{TemplateBinding Content}" />
                         </StackPanel>
                     </Border>
@@ -961,9 +961,8 @@
 
     <!--  PieDataPoint  -->
     <Style TargetType="PieDataPoint">
-        <Setter Property="Background" Value="Orange" />
-        <Setter Property="BorderBrush" Value="White" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Background" Value="{DynamicResource Theme_PrimaryBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="RatioStringFormat" Value="{}{0:p2}" />
         <Setter Property="Template">
@@ -1014,7 +1013,7 @@
                                 <BlurEffect Radius="10"/>
                             </Path.Effect>
                         </Path>
-                        <Path x:Name="Slice" Data="{TemplateBinding Geometry}" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}" StrokeMiterLimit="1">
+                        <Path x:Name="Slice" Data="{TemplateBinding Geometry}" Fill="{TemplateBinding Background}" Stroke="Transparent" StrokeMiterLimit="1">
                             <ToolTipService.ToolTip>
                                 <StackPanel>
                                     <ContentControl Content="{TemplateBinding FormattedDependentValue}" />
@@ -1022,8 +1021,8 @@
                                 </StackPanel>
                             </ToolTipService.ToolTip>
                         </Path>
-                        <Path x:Name="SelectionHighlight" Data="{TemplateBinding GeometrySelection}" Fill="Red" StrokeMiterLimit="1" IsHitTestVisible="False" Opacity="0" />
-                        <Path x:Name="MouseOverHighlight" Data="{TemplateBinding GeometryHighlight}" Fill="White" StrokeMiterLimit="1" IsHitTestVisible="False" Opacity="0" />
+                        <Path x:Name="SelectionHighlight" Data="{TemplateBinding GeometrySelection}" Fill="{DynamicResource Theme_ErrorBrush}" StrokeMiterLimit="1" IsHitTestVisible="False" Opacity="0" />
+                        <Path x:Name="MouseOverHighlight" Data="{TemplateBinding GeometryHighlight}" Fill="{DynamicResource Theme_BackgroundBrush}" StrokeMiterLimit="1" IsHitTestVisible="False" Opacity="0" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
