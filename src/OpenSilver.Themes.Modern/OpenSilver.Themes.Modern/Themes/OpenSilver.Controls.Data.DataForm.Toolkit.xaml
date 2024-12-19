@@ -306,14 +306,12 @@
                                         <Button x:Name="FirstItemButton"
                                                 Visibility="Collapsed"
                                                 Padding="3,0"
-                                                Background="White"
-                                                BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
                                             <Grid Height="9"
                                                   Margin="6,5,5,5"
                                                   Width="8"
                                                   Opacity="1">
-                                                <Path Fill="{TemplateBinding Foreground}"
+                                                <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                       Stretch="Fill"
                                                       Height="9"
                                                       HorizontalAlignment="Right"
@@ -321,7 +319,7 @@
                                                       Width="5"
                                                       Opacity="0.85"
                                                       Data="M1,0 L1,2 L0,1 Z" />
-                                                <Rectangle Fill="{TemplateBinding Foreground}"
+                                                <Rectangle Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                            HorizontalAlignment="Left"
                                                            Width="2"
                                                            Opacity="0.85" />
@@ -332,7 +330,7 @@
                                                 Background="White"
                                                 BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
-                                            <Path Fill="{TemplateBinding Foreground}"
+                                            <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
                                                   Height="9"
                                                   Margin="6,5,8,5"
@@ -345,7 +343,7 @@
                                                 Background="White"
                                                 BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
-                                            <Path Fill="{TemplateBinding Foreground}"
+                                            <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
                                                   Height="9"
                                                   Margin="8,5,6,5"
@@ -362,14 +360,14 @@
                                                   Margin="6,5,5,5"
                                                   Width="8"
                                                   Opacity="1">
-                                                <Path Fill="{TemplateBinding Foreground}"
+                                                <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                       Stretch="Fill"
                                                       Height="9"
                                                       HorizontalAlignment="Left"
                                                       Width="5"
                                                       Opacity="0.85"
                                                       Data="M0,0 L1,1 L0,2 Z" />
-                                                <Rectangle Fill="{TemplateBinding Foreground}"
+                                                <Rectangle Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                            HorizontalAlignment="Right"
                                                            Width="2"
                                                            Opacity="0.85" />
@@ -395,14 +393,14 @@
                                                 <Canvas HorizontalAlignment="Stretch"
                                                         Margin="2,2,0,0"
                                                         VerticalAlignment="Stretch">
-                                                    <Path Fill="{TemplateBinding Foreground}"
+                                                    <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                           Stretch="Fill"
                                                           Height="10.5"
                                                           Width="10.56"
                                                           Canvas.Left="2.53"
                                                           Canvas.Top="3.01"
                                                           Data="F1 M 2.53,9.96L 4.96,11.1L 6.08,13.50L 13.09,6.50L 9.6,3L 2.53,9.96 Z " />
-                                                    <Path Fill="{TemplateBinding Foreground}"
+                                                    <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                           Stretch="Fill"
                                                           Height="6.74"
                                                           Width="6.81"
@@ -410,14 +408,14 @@
                                                           Canvas.Top="1.89"
                                                           Data="M1.41,1.83 L0.71,2.54 L4.20,6.03 L4.91,5.33 z M3.24,0 L6.81,3.42 L3.5,6.74 L0,3.24 z" />
                                                     <Path Stretch="Fill"
-                                                          Stroke="{TemplateBinding Foreground}"
+                                                          Stroke="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                           StrokeLineJoin="Round"
                                                           Height="12.5"
                                                           Width="12.43"
                                                           Canvas.Left="2.03"
                                                           Canvas.Top="1.50"
                                                           Data="F1 M 13.77,4.22L 11.73,2.18C 11.12,1.78 10.46,2.15 10,2.5L 3.04,9.45C 2.65,9.86 2.53,10.47 2.53,10.73L 2.53,13.5L 5.32,13.5C 5.57,13.5 6.33,13.36 6.64,12.93L 13.54,6.03C 13.86,5.72 14.17,4.74 13.77,4.22 Z" />
-                                                    <Path Fill="{TemplateBinding Foreground}"
+                                                    <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                           Stretch="Fill"
                                                           Height="2.29"
                                                           Width="2.33"
@@ -433,7 +431,7 @@
                                                 Background="White"
                                                 BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
-                                            <Path Fill="{TemplateBinding Foreground}"
+                                            <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
                                                   Height="9"
                                                   HorizontalAlignment="Center"
@@ -460,7 +458,7 @@
                                                 Background="White"
                                                 BorderBrush="White"
                                                 Style="{StaticResource DataPagerButtonStyle}">
-                                            <Path Fill="{TemplateBinding Foreground}"
+                                            <Path Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ContentControl}}"
                                                   Stretch="Fill"
                                                   Height="9"
                                                   HorizontalAlignment="Center"
