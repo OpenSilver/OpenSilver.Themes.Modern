@@ -15,15 +15,11 @@ public class DarkPalette : Palette
     public override Color AlternateRowColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#212121");
     public override Color TextColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#DEDEDE");
     public override Color TextOnPrimaryColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FFFFFF");
-    public override Color DisabledColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#171717");
     public override Color WatermarkColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#575757");
     public override Color ErrorColor { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#FF5963");
 
-    public override IValueConverter BrightnessColorConverter { get; set; } = new BrightenColorConverter();
-
     public override double HoverBrightnessRatio { get; set; } = 20;
     public override double PressBrightnessRatio { get; set; } = 40;
-    public override double DisabledBrightnessRatio { get; set; } = -40;
 
     public override double ChartHaloOpacity { get; set; } = 1;
 
@@ -49,6 +45,5 @@ public class DarkPalette : Palette
     public override Color ChartSeriesColor14 { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#00C005");
     public override Color ChartSeriesColor15 { get; set; } = RuntimeHelpers.ConvertFromInvariantString<Color>("#54B2FC");
 
-    public override IValueConverter ChartSeriesColorConverter { get; set; } = new ColorToGradientStopsConverter();
     public override double TreeMapContainerOpacity { get; set; } = 0.3;
 }

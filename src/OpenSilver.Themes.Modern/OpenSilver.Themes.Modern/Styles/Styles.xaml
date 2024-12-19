@@ -99,10 +99,6 @@
                                 BorderThickness="1"
                                 Margin="-1"
                                 Opacity="0" />
-                        <Border x:Name="DisabledBackground"
-                                CornerRadius="5"
-                                Background="{DynamicResource Theme_DisabledBrush}"
-                                Opacity="0" />
                         <ContentPresenter x:Name="contentPresenter"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

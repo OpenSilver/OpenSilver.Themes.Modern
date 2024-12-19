@@ -1580,14 +1580,6 @@
                                 </Grid>
                             </Border>
                         </Border>
-                        <Rectangle Margin="0,2,0,2"
-                           x:Name="DisabledVisual"
-                           Opacity="0"
-                           Visibility="Collapsed"
-                           RadiusX="2"
-                           RadiusY="2"
-                           Fill="{DynamicResource Theme_DisabledBrush}"
-                           Stretch="Fill" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

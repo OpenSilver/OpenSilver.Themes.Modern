@@ -48,20 +48,14 @@ public abstract class Palette
         resources[ThemePrefix + nameof(TextOnPrimaryColor)] = palette.TextOnPrimaryColor;
         resources["Theme_TextOnPrimaryBrush"] = new SolidColorBrush(palette.TextOnPrimaryColor);
 
-        resources[ThemePrefix + nameof(DisabledColor)] = palette.DisabledColor;
-        resources["Theme_DisabledBrush"] = new SolidColorBrush(palette.DisabledColor);
-
         resources[ThemePrefix + nameof(WatermarkColor)] = palette.WatermarkColor;
         resources["Theme_WatermarkBrush"] = new SolidColorBrush(palette.WatermarkColor);
 
         resources[ThemePrefix + nameof(ErrorColor)] = palette.ErrorColor;
         resources["Theme_ErrorBrush"] = new SolidColorBrush(palette.ErrorColor);
 
-        resources[ThemePrefix + nameof(BrightnessColorConverter)] = palette.BrightnessColorConverter;
-
         resources[ThemePrefix + nameof(HoverBrightnessRatio)] = palette.HoverBrightnessRatio;
         resources[ThemePrefix + nameof(PressBrightnessRatio)] = palette.PressBrightnessRatio;
-        resources[ThemePrefix + nameof(DisabledBrightnessRatio)] = palette.DisabledBrightnessRatio;
 
         resources[ThemePrefix + nameof(ChartHaloOpacity)] = palette.ChartHaloOpacity;
         resources[ThemePrefix + nameof(TreeMapContainerOpacity)] = palette.TreeMapContainerOpacity;
@@ -90,8 +84,6 @@ public abstract class Palette
         resources[ThemePrefix + nameof(ChartSeriesColor13)] = palette.ChartSeriesColor13;
         resources[ThemePrefix + nameof(ChartSeriesColor14)] = palette.ChartSeriesColor14;
         resources[ThemePrefix + nameof(ChartSeriesColor15)] = palette.ChartSeriesColor15;
-
-        resources[ThemePrefix + nameof(ChartSeriesColorConverter)] = palette.ChartSeriesColorConverter;
     }
 
     internal static Palette Light { get; } = new LightPalette();
@@ -107,15 +99,12 @@ public abstract class Palette
     public abstract Color AlternateRowColor { get; set; }
     public abstract Color TextColor { get; set; }
     public abstract Color TextOnPrimaryColor { get; set; }
-    public abstract Color DisabledColor { get; set; }
     public abstract Color WatermarkColor { get; set; }
     public abstract Color ErrorColor { get; set; }
 
-    public abstract IValueConverter BrightnessColorConverter { get; set; }
 
     public abstract double HoverBrightnessRatio { get; set; }
     public abstract double PressBrightnessRatio { get; set; }
-    public abstract double DisabledBrightnessRatio { get; set; }
 
     public abstract double ChartHaloOpacity { get; set; }
     public abstract double TreeMapContainerOpacity { get; set; }
@@ -140,6 +129,4 @@ public abstract class Palette
     public abstract Color ChartSeriesColor13 { get; set; }
     public abstract Color ChartSeriesColor14 { get; set; }
     public abstract Color ChartSeriesColor15 { get; set; }
-
-    public abstract IValueConverter ChartSeriesColorConverter { get; set; }
 }

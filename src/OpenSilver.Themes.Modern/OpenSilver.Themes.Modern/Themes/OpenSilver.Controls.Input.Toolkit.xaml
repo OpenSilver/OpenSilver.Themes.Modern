@@ -599,14 +599,6 @@
                                               StrokeThickness="2"
                                               x:Name="HighlightChecked"
                                               Visibility="Collapsed" />
-
-                                        <!-- disabled visual -->
-                                        <Rectangle x:Name="DisabledVisualElement"
-                                                IsHitTestVisible="false"
-                                                Opacity="0"
-                                                Fill="#FFFFFFFF"
-                                                RadiusX="3"
-                                                RadiusY="3" />
                                     </Grid>
                                 </Grid>
                             </ControlTemplate>
@@ -683,11 +675,6 @@
                                    IsTabStop="False"/>
 
                         </Grid>
-                        <Border x:Name="DisabledVisualElement"
-                             Background="{DynamicResource Theme_DisabledBrush}"
-                             Opacity="0"
-                             Margin="1,2"
-                             IsHitTestVisible="false" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -873,12 +860,6 @@
                                    IsTabStop="False"/>
 
                         </Grid>
-
-                        <Border x:Name="DisabledVisualElement"
-                                IsHitTestVisible="false"
-                                Opacity="0"
-                                Background="#A5FFFFFF"
-                                CornerRadius="2.5,2.5,2.5,2.5" />
                         <Border x:Name="FocusVisualElement"
                                 IsHitTestVisible="False"
                                 Opacity="0"
