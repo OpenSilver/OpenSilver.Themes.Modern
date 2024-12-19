@@ -66,13 +66,7 @@
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" />
                                 <VisualState x:Name="Pressed" />
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimation To=".5"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         Storyboard.TargetName="Root" />
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="Disabled" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
                                 <VisualState x:Name="Focused" />
@@ -389,14 +383,6 @@
                                                  StrokeThickness="2"
                                                  x:Name="HighlightChecked"
                                                  Visibility="Collapsed" />
-
-                                        <!-- disabled visual -->
-                                        <Rectangle x:Name="DisabledVisualElement"
-                                                   IsHitTestVisible="false"
-                                                   Opacity="0"
-                                                   Fill="#FFFFFFFF"
-                                                   RadiusX="3"
-                                                   RadiusY="3" />
                                     </Grid>
                                 </Grid>
                             </ControlTemplate>
@@ -742,14 +728,7 @@
                                     <VisualTransition GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="DisabledVisualElement"
-                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                         To="1" />
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="Disabled" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
                                 <VisualState x:Name="Focused">
@@ -798,12 +777,6 @@
                                    VerticalContentAlignment="Stretch"
                                    IsTabStop="False"/>
                         </Grid>
-
-                        <Border x:Name="DisabledVisualElement"
-                                IsHitTestVisible="false"
-                                Opacity="0"
-                                Background="{DynamicResource Theme_DisabledBrush}"
-                                CornerRadius="2.5,2.5,2.5,2.5" />
                         <Border x:Name="FocusVisualElement"
                                 IsHitTestVisible="False"
                                 Opacity="0"
@@ -850,14 +823,7 @@
                                     <VisualTransition GeneratedDuration="0" />
                                 </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="DisabledVisualElement"
-                                                         Storyboard.TargetProperty="(UIElement.Opacity)"
-                                                         To="1" />
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="Disabled" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
                                 <VisualState x:Name="Focused">
