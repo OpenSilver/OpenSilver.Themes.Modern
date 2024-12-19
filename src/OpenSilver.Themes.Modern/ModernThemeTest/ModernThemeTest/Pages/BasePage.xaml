@@ -274,6 +274,8 @@
                 <ValidationSummaryItem Message="Age must be a positive number." />
             </ValidationSummary.Errors>
         </ValidationSummary>
+        <Rating Canvas.Left="592" Canvas.Top="1880" Width="104" Height="32" ItemCount="5" Value="0.65"   />
+        <Rating Canvas.Left="592" Canvas.Top="1928" Width="104" Height="32" ItemCount="5" Value="0.65" IsEnabled="False"  />
 
 
 

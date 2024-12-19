@@ -937,4 +937,294 @@
     <Style TargetType="ButtonSpinner"
            BasedOn="{StaticResource FlatButtonSpinnerStyle}" />
 
+    <!--  controls:Rating  -->
+    <Style TargetType="Rating">
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="Foreground" 
+                Value="{DynamicResource Theme_PrimaryBrush}" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,-6,0"  />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Rating">
+                    <Grid x:Name="Root">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Pressed" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="ReadOnlyVisualElement"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="0.03" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border Background="Transparent"
+                                BorderThickness="0">
+                            <ItemsPresenter />
+                        </Border>
+                        <Border x:Name="ReadOnlyVisualElement"
+                                IsHitTestVisible="False"
+                                Opacity="0"
+                                Background="Transparent"
+                                BorderBrush="{DynamicResource Theme_BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Border x:Name="DisabledVisualElement"
+                                IsHitTestVisible="False"
+                                Opacity="0"
+                                Background="{TemplateBinding BorderBrush}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+                        <Rectangle x:Name="FocusVisualElement"
+                                   StrokeThickness="1"
+                                   RadiusX="1"
+                                   RadiusY="1"
+                                   IsHitTestVisible="false"
+                                   Visibility="Collapsed" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  controls:RatingItem  -->
+    <Style TargetType="RatingItem">
+        <Setter Property="BorderBrush"
+                Value="{DynamicResource Theme_BorderBrush}" />
+        <Setter Property="Background"
+                Value="{DynamicResource Theme_BackgroundBrush}" />
+        <Setter Property="Margin" 
+                Value="1,0,1,0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RatingItem">
+                    <Grid Background="{TemplateBinding Background}"
+                          Width="20">
+                        <Grid.Resources>
+                            <Style x:Key="StarPathStyle" TargetType="Path">
+                                <Setter Property="Data"         
+                                        Value="M26.285,2.486l5.407,10.956c0.376,0.762,1.103,1.29,1.944,1.412l12.091,1.757  c2.118,0.308,2.963,2.91,1.431,4.403l-8.749,8.528c-0.608,0.593-0.886,1.448-0.742,2.285l2.065,12.042  c0.362,2.109-1.852,3.717-3.746,2.722l-10.814-5.685c-0.752-0.395-1.651-0.395-2.403,0l-10.814,5.685  c-1.894,0.996-4.108-0.613-3.746-2.722l2.065-12.042c0.144-0.837-0.134-1.692-0.742-2.285l-8.749-8.528  c-1.532-1.494-0.687-4.096,1.431-4.403l12.091-1.757c0.841-0.122,1.568-0.65,1.944-1.412l5.407-10.956  C22.602,0.567,25.338,0.567,26.285,2.486z"/>
+                            </Style>
+
+                        </Grid.Resources>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="00:00:00.2000000" />
+                                    <VisualTransition From="MouseOver"
+                                                      GeneratedDuration="00:00:00.2000000"
+                                                      To="Normal" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="MouseOverRatingItem"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="MouseOverHighlight"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="0.325" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="PressedRatingItem"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="0.39" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="DisabledRatingItem"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="DisabledRatingItemBackground"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimationUsingKeyFrames Duration="00:00:00"
+                                                                      Storyboard.TargetName="clipper"
+                                                                      Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
+                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
+                                        </ColorAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="ReadOnly">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Duration="00:00:00.0010000"
+                                                                       Storyboard.TargetName="ReadOnlyRatingItem"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
+                                                                  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="00:00:00.1000000" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Focused">
+                                    <Storyboard />
+                                </VisualState>
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FillStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="00:00:00.1000000" />
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="Empty" />
+                                <VisualState x:Name="Partial" />
+                                <VisualState x:Name="Filled" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+
+                        <Path x:Name="DefaultRatingItem"
+                              Fill="Transparent"
+                              Stretch="Fill"
+                              Stroke="{TemplateBinding BorderBrush}"
+                              StrokeLineJoin="Round"
+                              StrokeThickness="0.6"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              Opacity="1"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"/>
+                        <LinearClipper RatioVisible="{TemplateBinding DisplayValue}"
+                                                  ExpandDirection="Right">
+                            <Path 
+                                  x:Name="clipper"
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Fill"
+                                  Stroke="{x:Null}"
+                                  StrokeLineJoin="Round"
+                                  VerticalAlignment="Stretch"
+                                  Opacity="1"
+                                  UseLayoutRounding="False"
+                                  Style="{StaticResource StarPathStyle}"/>
+                        </LinearClipper>
+                        <Path x:Name="MouseOverRatingItem"
+                              Fill="{TemplateBinding Foreground}"
+                              Stretch="Fill"
+                              Stroke="{x:Null}"
+                              StrokeLineJoin="Round"
+                              VerticalAlignment="Stretch"
+                              Opacity="0"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"/>
+                        <Path x:Name="MouseOverHighlight"
+                              Fill="Transparent"
+                              Stretch="Fill"
+                              Stroke="{x:Null}"
+                              StrokeLineJoin="Round"
+                              VerticalAlignment="Stretch"
+                              Opacity="0"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"/>
+                        <Path x:Name="PressedRatingItem"
+                              Stretch="Fill"
+                              Stroke="{x:Null}"
+                              StrokeLineJoin="Round"
+                              VerticalAlignment="Stretch"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"
+                              Fill="{TemplateBinding BorderBrush}"
+                              Opacity="0" />
+                        <Path x:Name="FocusRatingItem"
+                              Stretch="Fill"
+                              Stroke="{TemplateBinding Foreground}"
+                              StrokeLineJoin="Round"
+                              StrokeThickness="0.1"
+                              VerticalAlignment="Stretch"
+                              Opacity="0"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"/>
+                        <Path x:Name="ReadOnlyRatingItem"
+                              Fill="Transparent"
+                              Stretch="Fill"
+                              Stroke="{TemplateBinding BorderBrush}"
+                              StrokeLineJoin="Round"
+                              StrokeThickness="0"
+                              VerticalAlignment="Stretch"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"
+                              IsHitTestVisible="False"
+                              Opacity="0" />
+                        <Path x:Name="DisabledRatingItemBackground"
+                              Stretch="Fill"
+                              Stroke="{x:Null}"
+                              StrokeLineJoin="Round"
+                              VerticalAlignment="Stretch"
+                              UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"
+                              Fill="Transparent"
+                              Opacity="0" />
+                        <LinearClipper x:Name="DisabledRatingItem"
+                                                  RatioVisible="{TemplateBinding DisplayValue}"
+                                                  ExpandDirection="Right"
+                                                  Opacity="0">
+                            <Path Stretch="Fill"
+                                  Stroke="{x:Null}"
+                                  StrokeLineJoin="Round"
+                                  VerticalAlignment="Stretch"
+                                  Opacity="1"
+                                  UseLayoutRounding="False"
+                              Style="{StaticResource StarPathStyle}"
+                              Fill="{DynamicResource Theme_BorderBrush}" />
+                        </LinearClipper>
+                        <ContentPresenter x:Name="Content"
+                                          Cursor="{TemplateBinding Cursor}"
+                                          HorizontalAlignment="Left"
+                                          Margin="{TemplateBinding Padding}"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          Grid.RowSpan="2"
+                                          Grid.Row="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>
