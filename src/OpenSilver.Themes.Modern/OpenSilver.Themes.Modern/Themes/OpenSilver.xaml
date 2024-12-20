@@ -4,6 +4,11 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:OpenSilver.Themes.Modern">
 
+    <!-- TextBlock -->
+    <Style TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
     <!--ValidationTooltipTemplate-->
     <ControlTemplate x:Key="ValidationToolTipTemplate">
         <Grid x:Name="Root"
@@ -1736,7 +1741,7 @@
     </Style>
     <Style TargetType="ListBox"
            BasedOn="{StaticResource FlatListBoxStyle}" />
-
+    
     <!-- ScrollBar -->
     <Style TargetType="ScrollBar">
         <Setter Property="IsTabStop"

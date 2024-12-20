@@ -4,11 +4,6 @@
                     xmlns:controls="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls"
                     xmlns:controlsPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls"
                     xmlns:local="http://opensilver.net/themes/modern">
-
-    <!-- TextBlock -->
-    <Style TargetType="TextBlock">
-        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
-    </Style>
     
     <!--Button template used in several places-->
     <ControlTemplate x:Key="CircleButtonTemplate" TargetType="Button">
