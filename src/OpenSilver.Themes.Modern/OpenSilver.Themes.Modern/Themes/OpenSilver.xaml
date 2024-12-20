@@ -6,7 +6,7 @@
 
     <!-- TextBlock -->
     <Style TargetType="TextBlock">
-        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
     </Style>
 
     <!--ValidationTooltipTemplate-->
