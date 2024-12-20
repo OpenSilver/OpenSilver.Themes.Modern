@@ -3523,6 +3523,9 @@
                                                          Storyboard.TargetName="InnerBorder"
                                                          Storyboard.TargetProperty="Opacity"
                                                          To="0.25" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter" Storyboard.TargetProperty="(TextBlock.Foreground)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
+                                        </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
