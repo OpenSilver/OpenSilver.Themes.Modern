@@ -277,7 +277,10 @@
         <Rating Canvas.Left="592" Canvas.Top="1880" Width="104" Height="32" ItemCount="5" Value="0.65"   />
         <Rating Canvas.Left="592" Canvas.Top="1928" Width="104" Height="32" ItemCount="5" Value="0.65" IsEnabled="False"  />
 
-
+        <InkPresenter           
+            Style="{DynamicResource InkPresenterStyle}"
+            Canvas.Left="784" Canvas.Top="1872" Width="240" Height="120"  
+                      />
 
     </Canvas>
 </Page>

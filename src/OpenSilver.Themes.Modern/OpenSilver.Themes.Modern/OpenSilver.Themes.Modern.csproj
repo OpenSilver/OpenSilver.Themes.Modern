@@ -27,6 +27,7 @@
     <Compile Include="Helpers\BrushEffectBuilder.cs" />
     <Compile Include="Helpers\BrushEffectMode.cs" />
     <Compile Include="Helpers\FlatDesignProperties.cs" />
+    <Compile Include="Helpers\InkPresenterExtensions.cs" />
     <Compile Include="ModernTheme.cs" />
     <Compile Include="Palettes\DarkPalette.cs" />
     <Compile Include="Palettes\LightPalette.cs" />
