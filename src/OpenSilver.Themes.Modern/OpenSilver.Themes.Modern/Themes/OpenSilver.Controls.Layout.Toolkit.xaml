@@ -122,11 +122,13 @@
                             <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
                                                      BaseColor="{DynamicResource Theme_BorderBrush}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     Ratio="0.5"/>
+                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
                                                      BaseColor="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     Ratio="0.5"/>
+                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
 
                             <SolidColorBrush x:Key="DisabledBackgroundBrush"
                                              Color="{Binding Source={StaticResource DisabledBackgroundBuilder}, Path=ResultColor}" />

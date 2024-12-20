@@ -21,6 +21,9 @@ public class LightPalette : Palette
     public override double HoverBrightnessRatio { get; set; } = -20;
     public override double PressBrightnessRatio { get; set; } = -40;
 
+    public override double DisabledInterpolationRatio { get; set; } = 0.2;
+    public override double DisabledDesaturationRatio { get; set; } = 0.8;
+
     public override double ChartHaloOpacity { get; set; } = 0;
 
     public override BrushEffectMode ChartsBrushEffectMode { get; set; } = BrushEffectMode.Solid;

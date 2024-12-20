@@ -21,6 +21,9 @@ public class DarkPalette : Palette
     public override double HoverBrightnessRatio { get; set; } = 20;
     public override double PressBrightnessRatio { get; set; } = 40;
 
+    public override double DisabledInterpolationRatio { get; set; } = 0.6;
+    public override double DisabledDesaturationRatio { get; set; } = 0.4;
+
     public override double ChartHaloOpacity { get; set; } = 1;
 
     //Colors for Charts

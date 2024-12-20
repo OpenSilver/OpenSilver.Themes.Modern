@@ -27,13 +27,21 @@ namespace OpenSilver.Themes.Modern
         public static readonly DependencyProperty TargetColorProperty =
             DependencyProperty.Register("TargetColor", typeof(Color), typeof(ColorInterpolator), new PropertyMetadata(Colors.White, OnChange));
 
-        public double Ratio
+        public double InterpolationRatio
         {
-            get { return (double)GetValue(RatioProperty); }
-            set { SetValue(RatioProperty, value); }
+            get { return (double)GetValue(InterpolationRatioProperty); }
+            set { SetValue(InterpolationRatioProperty, value); }
         }
-        public static readonly DependencyProperty RatioProperty =
-            DependencyProperty.Register("Ratio", typeof(double), typeof(ColorInterpolator), new PropertyMetadata(0d, OnChange));
+        public static readonly DependencyProperty InterpolationRatioProperty =
+            DependencyProperty.Register("InterpolationRatio", typeof(double), typeof(ColorInterpolator), new PropertyMetadata(0d, OnChange));
+
+        public double DesaturationRatio
+        {
+            get { return (double)GetValue(DesaturationRatioProperty); }
+            set { SetValue(DesaturationRatioProperty, value); }
+        }
+        public static readonly DependencyProperty DesaturationRatioProperty =
+            DependencyProperty.Register("DesaturationRatio", typeof(double), typeof(ColorInterpolator), new PropertyMetadata(0d, OnChange));
 
         public Color ResultColor
         {
@@ -65,7 +73,7 @@ namespace OpenSilver.Themes.Modern
                     break;
             }
 
-            ResultColor = InterpolateColor(color, TargetColor, Ratio);
+            ResultColor = PartiallyDesaturate(InterpolateColor(color, TargetColor, InterpolationRatio), DesaturationRatio);
         }
 
         Color InterpolateColor(Color baseColor, Color targetColor, double ratio)
@@ -78,6 +86,22 @@ namespace OpenSilver.Themes.Modern
                 (byte)(baseColor.B + (ratio * (targetColor.B - baseColor.B))));
 
             return color;
+        }
+
+        Color PartiallyDesaturate(Color color, double factor)
+        {
+            if (factor < 0 || factor > 1)
+                throw new ArgumentOutOfRangeException(nameof(factor), "Factor must be between 0 and 1.");
+
+            // Convert the color to grayscale
+            byte gray = (byte)((color.R * 0.3) + (color.G * 0.59) + (color.B * 0.11));
+
+            // Blend the original color with the grayscale value
+            byte r = (byte)(color.R + (gray - color.R) * factor);
+            byte g = (byte)(color.G + (gray - color.G) * factor);
+            byte b = (byte)(color.B + (gray - color.B) * factor);
+
+            return Color.FromRgb(r, g, b);
         }
     }
 }

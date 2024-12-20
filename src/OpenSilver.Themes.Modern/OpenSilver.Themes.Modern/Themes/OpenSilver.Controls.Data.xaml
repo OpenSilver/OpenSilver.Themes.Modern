@@ -27,7 +27,8 @@
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
                                                      BaseColor="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     Ratio="0.5"/>
+                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledForegroundBrush"
                  Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
