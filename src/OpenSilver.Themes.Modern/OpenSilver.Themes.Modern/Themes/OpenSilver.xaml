@@ -1744,7 +1744,7 @@
         <Setter Property="Value"
                 Value="0" />
         <Setter Property="Foreground"
-                Value="#9297a1" />
+                Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollBar">
@@ -1949,7 +1949,7 @@
                                           x:Name="HorizontalSmallDecrease"
                                           Width="16"
                                           Interval="50"
-                                          Background="#001F3B53"
+                                          Background="{DynamicResource Theme_ControlBackgroundBrush}"
                                           BorderBrush="{x:Null}"
                                           Foreground="{TemplateBinding Foreground}" />
                             <RepeatButton IsTabStop="False"
@@ -1976,7 +1976,7 @@
                                           Width="16"
                                           Grid.Column="4"
                                           Interval="50"
-                                          Background="#001F3B53"
+                                          Background="{DynamicResource Theme_ControlBackgroundBrush}"
                                           BorderBrush="{x:Null}"
                                           Foreground="{TemplateBinding Foreground}" />
                         </Grid>
@@ -2026,7 +2026,7 @@
                                           Interval="50"
                                           BorderBrush="{x:Null}"
                                           Foreground="{TemplateBinding Foreground}"
-                                          Background="#001F3B53" />
+                                          Background="{DynamicResource Theme_ControlBackgroundBrush}" />
                         </Grid>
                     </Grid>
                 </ControlTemplate>
