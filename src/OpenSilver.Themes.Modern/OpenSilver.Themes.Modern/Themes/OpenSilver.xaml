@@ -59,37 +59,14 @@
                 <TranslateTransform x:Name="xform"
                                     X="-25" />
             </Grid.RenderTransform>
-            <Border Margin="4,4,-4,-4"
-                    Background="#152A2E31"
-                    CornerRadius="4" />
-            <Border Margin="3,3,-3,-3"
-                    Background="#252A2E31"
-                    CornerRadius="4" />
-            <Border Margin="2,2,-2,-2"
-                    Background="#352A2E31"
-                    CornerRadius="4" />
-            <Border Margin="1,1,-1,-1"
-                    Background="#452A2E31"
-                    CornerRadius="4" />
-            <Border Background="#FFDC000C"
+            <Border Background="{DynamicResource Theme_ErrorBrush}"
                     CornerRadius="4" />
             <Border CornerRadius="4">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1"
-                                         StartPoint="0.5,0">
-                        <GradientStop Color="#66FFFFFF" />
-                        <GradientStop Color="#66000000"
-                                      Offset="1" />
-                        <GradientStop Color="#00E5E5E5"
-                                      Offset="0.1" />
-                        <GradientStop Color="#00161616"
-                                      Offset="0.9" />
-                    </LinearGradientBrush>
-                </Border.Background>
+
                 <TextBlock Margin="8,3,8,4"
                            MaxWidth="250"
                            UseLayoutRounding="false"
-                           Foreground="White"
+                           Foreground="{DynamicResource Theme_TextOnPrimaryBrush}"
                            Text="{Binding Path=(Validation.Errors)[0].ErrorContent}"
                            TextWrapping="Wrap" />
             </Border>
@@ -1716,7 +1693,7 @@
                                 </ToolTip>
                             </ToolTipService.ToolTip>
                             <Grid Height="12"
-                                  HorizontalAlignment="Right"
+                                    HorizontalAlignment="Right"
                                   Margin="1,-4,-4,0"
                                   VerticalAlignment="Top"
                                   Width="12"
