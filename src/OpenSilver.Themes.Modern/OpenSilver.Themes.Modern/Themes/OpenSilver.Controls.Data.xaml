@@ -645,6 +645,8 @@
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Padding"
                 Value="7,4,5,4" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DataGridColumnHeader">
