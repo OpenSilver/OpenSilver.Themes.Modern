@@ -707,6 +707,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBox">
@@ -1225,6 +1227,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
