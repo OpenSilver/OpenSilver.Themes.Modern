@@ -197,7 +197,7 @@
                                     Content="{TemplateBinding Watermark}" />
                         </Grid>
                         <Border x:Name="HasFocus"
-                            CornerRadius="6"
+                            CornerRadius="4"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Visibility="Collapsed"
