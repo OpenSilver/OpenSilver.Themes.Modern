@@ -819,6 +819,7 @@
                                                    Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <layoutPrimitivesToolkit:AccordionButton x:Name="ExpanderButton"
+                                                                         Cursor="Hand"
                                                                          Background="{TemplateBinding Background}"
                                                                          FontFamily="{TemplateBinding FontFamily}"
                                                                          FontSize="{TemplateBinding FontSize}"

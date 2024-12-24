@@ -12,7 +12,7 @@
 
     
     
-    <Canvas Background="Transparent" Height="2000">
+    <Canvas Background="Transparent" Height="2500">
         <TextBlock Canvas.Left="53" Canvas.Top="11" Text="Textblock" FontSize="13"/>
         <HyperlinkButton Canvas.Left="150" Canvas.Top="11" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" />
         <HyperlinkButton Canvas.Left="250" Canvas.Top="11" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" IsEnabled="False"/>
@@ -211,40 +211,40 @@
         <Expander  Canvas.Left="800" Canvas.Top="1260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" />
         <Expander  Canvas.Left="940" Canvas.Top="1260" Header="Expander" Content="Content" ExpandDirection="Right" IsExpanded="True" IsEnabled="False"/>
 
-        <Accordion Canvas.Left="53" Canvas.Top="1350">
+        <Accordion Canvas.Left="48" Canvas.Top="1408">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="130" Canvas.Top="1350" FontSize="13" IsEnabled="False">
+        <Accordion Canvas.Left="128" Canvas.Top="1408" FontSize="13" IsEnabled="False">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="210" Canvas.Top="1350" FontSize="13" ExpandDirection="Up">
+        <Accordion Canvas.Left="208" Canvas.Top="1408" FontSize="13" ExpandDirection="Up">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="280" Canvas.Top="1350" FontSize="13" ExpandDirection="Up" IsEnabled="False">
+        <Accordion Canvas.Left="280" Canvas.Top="1408" FontSize="13" ExpandDirection="Up" IsEnabled="False">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="360" Canvas.Top="1350" FontSize="13" ExpandDirection="Right">
+        <Accordion Canvas.Left="360" Canvas.Top="1408" FontSize="13" ExpandDirection="Right">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="480" Canvas.Top="1350" FontSize="13" ExpandDirection="Right" IsEnabled="False">
+        <Accordion Canvas.Left="480" Canvas.Top="1408" FontSize="13" ExpandDirection="Right" IsEnabled="False">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="620" Canvas.Top="1350" FontSize="13" ExpandDirection="Left">
+        <Accordion Canvas.Left="616" Canvas.Top="1408" FontSize="13" ExpandDirection="Left">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
-        <Accordion Canvas.Left="740" Canvas.Top="1350" FontSize="13" ExpandDirection="Left" IsEnabled="False">
+        <Accordion Canvas.Left="736" Canvas.Top="1408" FontSize="13" ExpandDirection="Left" IsEnabled="False">
             <AccordionItem Header="Item1" IsSelected="True" Content="Content" />
             <AccordionItem Header="Item2" Content="Content" />
         </Accordion>
 
-        <ChildWindow Canvas.Left="53" Canvas.Top="1450" Title="Title" Content="ChildWindow" Width="300" Height="150" />
+        <ChildWindow Canvas.Left="56" Canvas.Top="1504" Title="Title" Content="ChildWindow" Width="304" Height="152" />
 
         <Frame Canvas.Left="781" Canvas.Top="1000" MinHeight="100" MinWidth="100" Content="Use the Frame control to navigate" BorderBrush="#FF808080" BorderThickness="1" />
 
@@ -252,7 +252,7 @@
         <!--<BusyIndicator Canvas.Left="379" Canvas.Top="1088" IsBusy="True" />-->
 
 
-        <TreeMap Canvas.Left="53" Canvas.Top="1630" Width="300" Height="200" ItemsSource="{Binding People}">
+        <TreeMap Canvas.Left="56" Canvas.Top="1688" Width="304" Height="200" ItemsSource="{Binding People}">
             <TreeMap.ItemDefinition>
                 <TreeMapItemDefinition ValuePath="Quantity">
                     <DataTemplate>
@@ -264,18 +264,18 @@
             </TreeMap.ItemDefinition>
         </TreeMap>
 
-        <TreeMap Canvas.Left="400" Canvas.Top="1630" Width="300" Height="200" ItemsSource="{Binding People}" >
+        <TreeMap Canvas.Left="400" Canvas.Top="1688" Width="304" Height="200" ItemsSource="{Binding People}" >
         </TreeMap>
-        <Thumb Canvas.Left="72" Canvas.Top="1872" Width="20" Height="20" DragDelta="Thumb_DragDelta" />
-        <ProgressBar  Value="{Binding ProgressValue}" Canvas.Left="72" Canvas.Top="1900"  HorizontalAlignment="Left" VerticalAlignment="Top" MinHeight="8"  MinWidth="100" Minimum="1" Maximum="100" />
-        <ValidationSummary Canvas.Left="264" Canvas.Top="1872" Width="240" Height="80">
+        <Thumb Canvas.Left="72" Canvas.Top="1976" Width="32" Height="16" DragDelta="Thumb_DragDelta" />
+        <ProgressBar  Value="{Binding ProgressValue}" Canvas.Left="72" Canvas.Top="2008"  HorizontalAlignment="Left" VerticalAlignment="Top" MinHeight="8"  MinWidth="100" Minimum="1" Maximum="100" Width="96" />
+        <ValidationSummary Canvas.Left="264" Canvas.Top="1976" Width="240" Height="80">
             <ValidationSummary.Errors>
                 <ValidationSummaryItem Message="Name is required." />
                 <ValidationSummaryItem Message="Age must be a positive number." />
             </ValidationSummary.Errors>
         </ValidationSummary>
-        <Rating Canvas.Left="592" Canvas.Top="1880" Width="104" Height="32" ItemCount="5" Value="0.65"   />
-        <Rating Canvas.Left="592" Canvas.Top="1928" Width="104" Height="32" ItemCount="5" Value="0.65" IsEnabled="False"  />
+        <Rating Canvas.Left="592" Canvas.Top="1984" Width="104" Height="32" ItemCount="5" Value="0.65"   />
+        <Rating Canvas.Left="592" Canvas.Top="2032" Width="104" Height="32" ItemCount="5" Value="0.65" IsEnabled="False"  />
 
 
 

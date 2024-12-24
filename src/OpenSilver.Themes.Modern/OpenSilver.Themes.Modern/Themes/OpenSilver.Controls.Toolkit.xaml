@@ -506,7 +506,7 @@
                             </ControlTemplate>
                             <ControlTemplate x:Key="ExpanderUpHeaderTemplate"
                                              TargetType="ToggleButton">
-                                <Grid Background="Transparent">
+                                <Grid Background="Transparent" Cursor="Hand">
                                     <Grid.Resources>
                                         <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
                                                                  BaseColor="{TemplateBinding Foreground}"
@@ -1058,6 +1058,7 @@
                                 <ToggleButton Margin="1"
                                               MinHeight="0"
                                               MinWidth="0"
+                                              Cursor="Hand"
                                               x:Name="ExpanderButton"
                                               FontFamily="{TemplateBinding FontFamily}"
                                               FontSize="{TemplateBinding FontSize}"
