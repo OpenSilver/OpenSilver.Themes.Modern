@@ -2192,6 +2192,8 @@
                 Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Orientation"
                 Value="Horizontal" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Slider">
@@ -2724,6 +2726,8 @@
                 Value="1" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
+        <Setter Property="Cursor"
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
