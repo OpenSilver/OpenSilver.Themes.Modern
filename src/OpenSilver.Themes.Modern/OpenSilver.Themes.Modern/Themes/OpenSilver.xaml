@@ -2721,7 +2721,7 @@
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="local:FlatDesignProperties.Label"
-                Value="Header" />
+                Value=" " />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="Padding"
@@ -2838,7 +2838,6 @@
                                               HorizontalContentAlignment="Right"
                                               Background="{TemplateBinding Background}"
                                               Grid.ColumnSpan="2"
-                                              local:FlatDesignProperties.Label="{TemplateBinding local:FlatDesignProperties.Label}"
                                               Padding="{TemplateBinding Padding}">
                                     <ToggleButton.Style>
                                         <Style TargetType="ToggleButton">
@@ -2852,86 +2851,26 @@
                                                             </Grid.ColumnDefinitions>
                                                             <vsm:VisualStateManager.VisualStateGroups>
                                                                 <vsm:VisualStateGroup x:Name="CommonStates">
-                                                                    <vsm:VisualStateGroup.Transitions>
-                                                                        <vsm:VisualTransition GeneratedDuration="00:00:00.2" />
-                                                                        <vsm:VisualTransition From="Pressed"
-                                                                                              GeneratedDuration="00:00:00" />
-                                                                        <vsm:VisualTransition From="MouseOver"
-                                                                                              GeneratedDuration="00:00:00"
-                                                                                              To="Pressed" />
-                                                                    </vsm:VisualStateGroup.Transitions>
                                                                     <vsm:VisualState x:Name="Normal" />
-                                                                    <vsm:VisualState x:Name="MouseOver">
-                                                                        <Storyboard>
-                                                                            <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                                           Storyboard.TargetName="MouseHover"
-                                                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
-                                                                                <SplineDoubleKeyFrame KeyTime="0"
-                                                                                                      Value="0.3" />
-                                                                            </DoubleAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </vsm:VisualState>
-                                                                    <vsm:VisualState x:Name="Pressed">
-                                                                        <Storyboard>
-                                                                            <ThicknessAnimation Duration="00:00:00"
-                                                                                                Storyboard.TargetName="Background"
-                                                                                                Storyboard.TargetProperty="BorderThickness"
-                                                                                                To="2.5,2.5,.5,.5" />
-                                                                            <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                                           Storyboard.TargetName="MousePress"
-                                                                                                           Storyboard.TargetProperty="(UIElement.Opacity)">
-                                                                                <SplineDoubleKeyFrame KeyTime="0"
-                                                                                                      Value="0.3" />
-                                                                            </DoubleAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </vsm:VisualState>
+                                                                    <vsm:VisualState x:Name="MouseOver" />
+                                                                    <vsm:VisualState x:Name="Pressed" />
                                                                     <vsm:VisualState x:Name="Disabled" />
                                                                 </vsm:VisualStateGroup>
                                                                 <vsm:VisualStateGroup x:Name="CheckStates">
-                                                                    <vsm:VisualState x:Name="Checked">
-                                                                        <Storyboard>
-                                                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                                           Storyboard.TargetName="Label"
-                                                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                                        Value="Visible" />
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </vsm:VisualState>
+                                                                    <vsm:VisualState x:Name="Checked" />
                                                                     <vsm:VisualState x:Name="Unchecked" />
                                                                 </vsm:VisualStateGroup>
                                                                 <vsm:VisualStateGroup x:Name="FocusStates">
-                                                                    <vsm:VisualState x:Name="Focused">
-                                                                        <Storyboard>
-                                                                            <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                                                           Storyboard.TargetName="HasFocus"
-                                                                                                           Storyboard.TargetProperty="(UIElement.Visibility)">
-                                                                                <DiscreteObjectKeyFrame KeyTime="0"
-                                                                                                        Value="Visible" />
-                                                                            </ObjectAnimationUsingKeyFrames>
-                                                                        </Storyboard>
-                                                                    </vsm:VisualState>
+                                                                    <vsm:VisualState x:Name="Focused" />
                                                                     <vsm:VisualState x:Name="Unfocused" />
                                                                 </vsm:VisualStateGroup>
                                                             </vsm:VisualStateManager.VisualStateGroups>
-                                                            <TextBlock x:Name="Label"
-                                                                       Text="{TemplateBinding local:FlatDesignProperties.Label}"
-                                                                       Visibility="Collapsed"
-                                                                       VerticalAlignment="Center"
-                                                                       Margin="{TemplateBinding Padding}"
-                                                                       Foreground="{DynamicResource Theme_WatermarkBrush}" />
                                                             <ContentPresenter x:Name="contentPresenter"
                                                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                                               Margin="{TemplateBinding Padding}"
                                                                               RenderTransformOrigin="0.5,0.5"
-                                                                              Grid.Column="1">
-                                                                <ContentPresenter.RenderTransform>
-                                                                    <TransformGroup>
-                                                                        <TranslateTransform />
-                                                                    </TransformGroup>
-                                                                </ContentPresenter.RenderTransform>
-                                                            </ContentPresenter>
+                                                                              Grid.Column="1" />
                                                         </Grid>
                                                     </ControlTemplate>
                                                 </Setter.Value>
@@ -2953,7 +2892,8 @@
                                                   TextBlock.Foreground="{TemplateBinding Foreground}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                                   IsHitTestVisible="False">
-                                    <TextBlock Text=" " />
+                                    <TextBlock Text="{TemplateBinding local:FlatDesignProperties.Label}"
+                                               Foreground="{DynamicResource Theme_WatermarkBrush}" />
                                 </ContentPresenter>
                             </Grid>
                         </Border>
