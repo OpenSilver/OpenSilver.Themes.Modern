@@ -21,8 +21,9 @@ namespace ModernThemeTest
             // Import themes in application resources. Styles are then used implicitely or via static resources.
             //ThemeSelector.SelectTheme(ThemesSelection.Dark);
 
-            var mainPage = new MainPage();
-            Window.Current.Content = mainPage;
+            var grid = new Grid();
+            grid.Children.Add(new MainPage());
+            RootVisual = grid;
         }
     }
 }

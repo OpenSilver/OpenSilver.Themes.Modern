@@ -8,7 +8,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Threading;
@@ -75,8 +74,12 @@ namespace ModernThemeTest
 
         private void ApplyTheme(Theme theme)
         {
+            var mainGrid = (Grid)Application.Current.RootVisual;
+            mainGrid.Children.Clear();
+
             Application.Current.Theme = theme;
-            Window.Current.Content = new MainPage();
+
+            mainGrid.Children.Add(new MainPage());
         }
 
         private void ButtonBasePage_Click(object sender, RoutedEventArgs e)
