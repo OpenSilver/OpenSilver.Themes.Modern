@@ -1,6 +1,6 @@
 name: Build package
 env:
-  package-version: '3.1.0'
+  package-version: '3.1.3'
   suffix: 'preview'
   project-name: 'OpenSilver.Themes.Modern'
 on:
