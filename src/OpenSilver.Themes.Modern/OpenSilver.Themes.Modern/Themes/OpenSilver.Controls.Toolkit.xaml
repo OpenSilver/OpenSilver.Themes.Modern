@@ -101,13 +101,15 @@
         <Setter Property="HorizontalAlignment"
                 Value="Stretch" />
         <Setter Property="VerticalAlignment"
-                Value="Center" />
+                Value="Stretch" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Stretch" />
         <Setter Property="VerticalContentAlignment"
                 Value="Stretch" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="Width"
+        Value="Auto" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controlsToolkit:BusyIndicator">
