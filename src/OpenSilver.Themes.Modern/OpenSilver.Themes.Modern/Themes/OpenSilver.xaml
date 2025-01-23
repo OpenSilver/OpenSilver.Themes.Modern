@@ -1160,12 +1160,6 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
                                 Opacity="0" />
-
-                        <Border x:Name="ContentElement"
-                                BorderThickness="0"
-                                Margin="{TemplateBinding Padding}"
-                                HorizontalAlignment="Stretch"
-                                VerticalAlignment="Stretch" />
                         <Border x:Name="HasFocus"
                                 CornerRadius="4"
                                 BorderBrush="{TemplateBinding BorderBrush}"
@@ -1179,6 +1173,11 @@
                                                   BlurRadius="2" />
                             </Border.Effect>
                         </Border>
+                        <Border x:Name="ContentElement"
+                                BorderThickness="0"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch" />
                         <Border x:Name="ValidationErrorElement"
                                 Visibility="Collapsed"
                                 BorderBrush="{DynamicResource Theme_ErrorBrush}"
