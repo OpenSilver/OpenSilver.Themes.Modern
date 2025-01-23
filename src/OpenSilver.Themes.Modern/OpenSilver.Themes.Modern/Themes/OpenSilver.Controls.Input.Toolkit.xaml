@@ -464,15 +464,7 @@
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver" />
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDownToggle"
-                            Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                       Value=".55" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
+                                <VisualState x:Name="Disabled" />
                                 <VisualState x:Name="Pressed" />
                             </VisualStateGroup>
                             <!-- focus states -->
@@ -480,28 +472,17 @@
                                 <VisualState x:Name="Focused" />
                                 <VisualState x:Name="Unfocused" />
                             </VisualStateGroup>
-                            <!-- Popup states -->
-                            <VisualStateGroup x:Name="PopupStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0:0:0.1"
-                                                   To="PopupOpened" />
-                                    <VisualTransition GeneratedDuration="0:0:0.2"
-                                                   To="PopupClosed" />
-                                </VisualStateGroup.Transitions>
-                                <VisualState x:Name="PopupOpened">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="PopupRoot"
-                                                      Storyboard.TargetProperty="Opacity"
-                                                      To="1.0" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="PopupClosed">
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="PopupRoot"
-                                                      Storyboard.TargetProperty="Opacity"
-                                                      To="0.0" />
-                                    </Storyboard>
-                                </VisualState>
+                            <!-- TimeHintStates -->
+                            <VisualStateGroup x:Name="TimeHintStates">
+                                <VisualState x:Name="TimeHintOpenedUp" />
+                                <VisualState x:Name="TimeHintOpenedDown" />
+                                <VisualState x:Name="TimeHintClosed" />
+                            </VisualStateGroup>
+                            <!-- ParsingStates -->
+                            <VisualStateGroup x:Name="ParsingStates">
+                                <VisualState x:Name="ValidTime" />
+                                <VisualState x:Name="InvalidTime" />
+                                <VisualState x:Name="EmptyTime" />
                             </VisualStateGroup>
                         </vsm:VisualStateManager.VisualStateGroups>
                         <Grid.Resources>

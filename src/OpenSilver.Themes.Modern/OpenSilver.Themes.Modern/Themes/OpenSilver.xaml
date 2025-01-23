@@ -1093,7 +1093,7 @@
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="BorderColor" Storyboard.TargetProperty="BorderBrush">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBorderBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElementForeground" Storyboard.TargetProperty="(TextBlock.Foreground)">
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentElement" Storyboard.TargetProperty="(TextBlock.Foreground)">
                                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
