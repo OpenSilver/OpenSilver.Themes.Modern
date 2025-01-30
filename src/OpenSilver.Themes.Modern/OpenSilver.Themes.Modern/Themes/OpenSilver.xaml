@@ -458,8 +458,6 @@
                 Value="1" />
         <Setter Property="IsEnabled"
                 Value="True" />
-        <Setter Property="VerticalContentAlignment"
-        Value="Center" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
@@ -589,8 +587,6 @@
                                       BorderThickness="0"
                                       IsTabStop="False"
                                       Margin="{TemplateBinding Padding}"
-                                      HorizontalAlignment="Stretch"
-                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                       Style="{StaticResource TextBoxScrollViewer}"
                                       Foreground="{TemplateBinding Foreground}" />
 
