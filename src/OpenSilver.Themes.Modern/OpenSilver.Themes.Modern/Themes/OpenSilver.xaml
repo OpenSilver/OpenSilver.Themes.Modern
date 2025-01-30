@@ -456,8 +456,6 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
-        <Setter Property="IsEnabled"
-                Value="True" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
@@ -1043,8 +1041,6 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
-        <Setter Property="IsEnabled"
-                Value="True" />
         <Setter Property="Padding"
                 Value="9,0,9,2" />
         <Setter Property="Template">
@@ -1994,7 +1990,6 @@
                                           BorderBrush="{x:Null}"
                                           Foreground="{TemplateBinding Foreground}"
                                           Background="Transparent"
-                                          IsEnabled="True"
                                           BorderThickness="0,0,0,0" />
                             <RepeatButton IsTabStop="False"
                                           Template="{StaticResource RepeatButtonTemplate}"
