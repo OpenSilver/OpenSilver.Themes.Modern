@@ -89,7 +89,105 @@
         </Grid>
     </ControlTemplate>
 
-    
+
+    <Style TargetType="ProgressBar" x:Key="BusyIndicatorProgressBarStyle">
+        <Setter Property="Maximum"
+            Value="100" />
+        <Setter Property="IsTabStop"
+            Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ProgressBar">
+                    <Grid x:Name="Root"
+                      Height="10">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Determinate" />
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateRoot"
+                                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DeterminateRoot"
+                                                                   Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Collapsed</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateGradientFill"
+                                                                   Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.Transform).(TransformGroup.Children)[0].X">
+                                            <SplineDoubleKeyFrame KeyTime="0"
+                                                              Value="0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:.5"
+                                                              Value="20" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border x:Name="ProgressBarTrack"
+                            Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                            BorderBrush="{DynamicResource Theme_PrimaryBrush}"
+                            BorderThickness="1"
+                            CornerRadius="4" />
+                        <Grid x:Name="ProgressBarRootGrid">
+                            <Grid x:Name="IndeterminateRoot"
+                              Visibility="Collapsed">
+                                <Rectangle x:Name="IndeterminateSolidFill"
+                                       Fill="{DynamicResource Theme_PrimaryBrush}"
+                                       Margin="1"
+                                       Opacity="1"
+                                       RenderTransformOrigin="0.5,0.5"
+                                       RadiusX="4"
+                                       RadiusY="4" />
+                                <Rectangle x:Name="IndeterminateGradientFill"
+                                       Margin="1"
+                                       Opacity="0.75"
+                                       RadiusX="4"
+                                       RadiusY="4">
+                                    <Rectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0,1"
+                                                         StartPoint="20,1"
+                                                         MappingMode="Absolute"
+                                                         SpreadMethod="Repeat">
+                                            <LinearGradientBrush.Transform>
+                                                <TransformGroup>
+                                                    <TranslateTransform X="0" />
+                                                    <SkewTransform AngleX="-30" />
+                                                </TransformGroup>
+                                            </LinearGradientBrush.Transform>
+                                            <GradientStop Color="#FFFFFFFF"
+                                                      Offset="0" />
+                                            <GradientStop Color="#00FFFFFF"
+                                                      Offset=".25" />
+                                            <GradientStop Color="#FFFFFFFF"
+                                                      Offset="0.85" />
+                                        </LinearGradientBrush>
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                            </Grid>
+                            <Grid x:Name="DeterminateRoot"
+                              Margin="1">
+                                <Rectangle x:Name="ProgressBarIndicator"
+                                       Fill="Red"
+                                       HorizontalAlignment="Left"
+                                       RadiusX="4"
+                                       RadiusY="4" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!-- BusyIndicator -->
     <Style TargetType="controlsToolkit:BusyIndicator">
         <Setter Property="BusyContent"
@@ -108,6 +206,7 @@
                 Value="Stretch" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="ProgressBarStyle" Value="{StaticResource BusyIndicatorProgressBarStyle}"/>
         <Setter Property="Width"
         Value="Auto" />
         <Setter Property="Template">
@@ -224,106 +323,8 @@
                                         <ProgressBar Grid.Row="1"
                                                      IsIndeterminate="True"
                                                      Height="10"
-                                                     Margin="12,0,15,12">
-                                            <ProgressBar.Style>
-                                                <Style TargetType="ProgressBar">
-                                                    <Setter Property="Maximum"
-                                                            Value="100" />
-                                                    <Setter Property="IsTabStop"
-                                                            Value="False" />
-                                                    <Setter Property="Template">
-                                                        <Setter.Value>
-                                                            <ControlTemplate TargetType="ProgressBar">
-                                                                <Grid x:Name="Root"
-                                                                      Height="10">
-                                                                    <VisualStateManager.VisualStateGroups>
-                                                                        <VisualStateGroup x:Name="CommonStates">
-                                                                            <VisualState x:Name="Determinate" />
-                                                                            <VisualState x:Name="Indeterminate">
-                                                                                <Storyboard RepeatBehavior="Forever">
-                                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateRoot"
-                                                                                                                   Storyboard.TargetProperty="Visibility">
-                                                                                        <DiscreteObjectKeyFrame KeyTime="0">
-                                                                                            <DiscreteObjectKeyFrame.Value>
-                                                                                                <Visibility>Visible</Visibility>
-                                                                                            </DiscreteObjectKeyFrame.Value>
-                                                                                        </DiscreteObjectKeyFrame>
-                                                                                    </ObjectAnimationUsingKeyFrames>
-                                                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DeterminateRoot"
-                                                                                                                   Storyboard.TargetProperty="Visibility">
-                                                                                        <DiscreteObjectKeyFrame KeyTime="0">
-                                                                                            <DiscreteObjectKeyFrame.Value>
-                                                                                                <Visibility>Collapsed</Visibility>
-                                                                                            </DiscreteObjectKeyFrame.Value>
-                                                                                        </DiscreteObjectKeyFrame>
-                                                                                    </ObjectAnimationUsingKeyFrames>
-                                                                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="IndeterminateGradientFill"
-                                                                                                                   Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.Transform).(TransformGroup.Children)[0].X">
-                                                                                        <SplineDoubleKeyFrame KeyTime="0"
-                                                                                                              Value="0" />
-                                                                                        <SplineDoubleKeyFrame KeyTime="00:00:.5"
-                                                                                                              Value="20" />
-                                                                                    </DoubleAnimationUsingKeyFrames>
-                                                                                </Storyboard>
-                                                                            </VisualState>
-                                                                        </VisualStateGroup>
-                                                                    </VisualStateManager.VisualStateGroups>
-                                                                    <Border x:Name="ProgressBarTrack"
-                                                                            Background="{DynamicResource Theme_ControlBackgroundBrush}"
-                                                                            BorderBrush="{DynamicResource Theme_PrimaryBrush}"
-                                                                            BorderThickness="1"
-                                                                            CornerRadius="4" />
-                                                                    <Grid x:Name="ProgressBarRootGrid">
-                                                                        <Grid x:Name="IndeterminateRoot"
-                                                                              Visibility="Collapsed">
-                                                                            <Rectangle x:Name="IndeterminateSolidFill"
-                                                                                       Fill="{DynamicResource Theme_PrimaryBrush}"
-                                                                                       Margin="1"
-                                                                                       Opacity="1"
-                                                                                       RenderTransformOrigin="0.5,0.5"
-                                                                                       RadiusX="4"
-                                                                                       RadiusY="4" />
-                                                                            <Rectangle x:Name="IndeterminateGradientFill"
-                                                                                       Margin="1"
-                                                                                       Opacity="0.75"
-                                                                                       RadiusX="4"
-                                                                                       RadiusY="4">
-                                                                                <Rectangle.Fill>
-                                                                                    <LinearGradientBrush EndPoint="0,1"
-                                                                                                         StartPoint="20,1"
-                                                                                                         MappingMode="Absolute"
-                                                                                                         SpreadMethod="Repeat">
-                                                                                        <LinearGradientBrush.Transform>
-                                                                                            <TransformGroup>
-                                                                                                <TranslateTransform X="0" />
-                                                                                                <SkewTransform AngleX="-30" />
-                                                                                            </TransformGroup>
-                                                                                        </LinearGradientBrush.Transform>
-                                                                                        <GradientStop Color="#FFFFFFFF"
-                                                                                                      Offset="0" />
-                                                                                        <GradientStop Color="#00FFFFFF"
-                                                                                                      Offset=".25" />
-                                                                                        <GradientStop Color="#FFFFFFFF"
-                                                                                                      Offset="0.85" />
-                                                                                    </LinearGradientBrush>
-                                                                                </Rectangle.Fill>
-                                                                            </Rectangle>
-                                                                        </Grid>
-                                                                        <Grid x:Name="DeterminateRoot"
-                                                                              Margin="1">
-                                                                            <Rectangle x:Name="ProgressBarIndicator"
-                                                                                       Fill="Red"
-                                                                                       HorizontalAlignment="Left"
-                                                                                       RadiusX="4"
-                                                                                       RadiusY="4" />
-                                                                        </Grid>
-                                                                    </Grid>
-                                                                </Grid>
-                                                            </ControlTemplate>
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </Style>
-                                            </ProgressBar.Style>
+                                                     Margin="12,0,15,12"
+                                                     Style="{TemplateBinding ProgressBarStyle}">
                                         </ProgressBar>
                                         <ContentPresenter ContentTemplate="{TemplateBinding BusyContentTemplate}"
                                                           Content="{TemplateBinding BusyContent}"
