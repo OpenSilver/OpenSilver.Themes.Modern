@@ -456,6 +456,8 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
@@ -585,6 +587,7 @@
                                       BorderThickness="0"
                                       IsTabStop="False"
                                       Margin="{TemplateBinding Padding}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                       Style="{StaticResource TextBoxScrollViewer}"
                                       Foreground="{TemplateBinding Foreground}" />
 
