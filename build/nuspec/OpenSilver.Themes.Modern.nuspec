@@ -8,8 +8,8 @@
     <repository type="git" url="$RepositoryUrl$" />
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Styles for controls with a more modern look in OpenSilver.</description>
-    <copyright>Copyright (c) 2024, Userware. All rights reserved.</copyright>
-    <tags>opensilver silverlight webassembly csharp xaml wasm dotnet .net C# javascript html html5 blazor mono modern theme styles</tags>
+    <copyright>Copyright (c) 2025, Userware. All rights reserved.</copyright>
+    <tags>opensilver silverlight wpf webassembly csharp xaml wasm dotnet .net C# javascript html html5 blazor mono modern theme styles</tags>
     <icon>images\icon.png</icon>
     <!--<licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>-->
     <!--<releaseNotes>Summary of changes made in this release of the package.</releaseNotes>-->
