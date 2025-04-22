@@ -279,17 +279,6 @@
                 Value="14" />
         <Setter Property="MinHeight"
                 Value="32" />
-        <Setter Property="ContentTemplate">
-            <Setter.Value>
-                <DataTemplate>
-                    <ContentPresenter Margin="5"
-                                      VerticalAlignment="Center"
-                                      HorizontalAlignment="Left"
-                                      MinHeight="16"
-                                      Content="{Binding}" />
-                </DataTemplate>
-            </Setter.Value>
-        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controlsToolkit:Expander">
