@@ -4,7 +4,7 @@
                     xmlns:inputToolkit="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Input.Toolkit">
 
     <!-- ListTimePickerPopup Style -->
-    <Style TargetType="inputToolkit:ListTimePickerPopup">
+    <Style TargetType="ListTimePickerPopup">
         <Setter Property="PopupMinutesInterval"
                 Value="30" />
         <Setter Property="PopupSecondsInterval"
@@ -13,7 +13,7 @@
                 Value="False" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="inputToolkit:ListTimePickerPopup">
+                <ControlTemplate TargetType="ListTimePickerPopup">
                     <Grid Background="Transparent">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
@@ -36,13 +36,21 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <ListBox x:Name="ListBox"
+                                 Style="{TemplateBinding ListBoxStyle}"
+                                 ItemContainerStyle="{TemplateBinding ListBoxItemStyle}"
                                  IsTabStop="True"
                                  TabIndex="1"
                                  MaxHeight="130"
                                  DisplayMemberPath="Key"
                                  DataContext="{TemplateBinding TimeItemsSelection}"
                                  ItemsSource="{Binding Items}"
-                                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}" />
+                                 SelectedItem="{Binding SelectedItem, Mode=TwoWay}">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                        </ListBox>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -217,7 +225,7 @@
 
     <!-- TimePicker -->
     <Style x:Name="FlatTimePickerStyle" 
-           TargetType="inputToolkit:TimePicker">
+           TargetType="TimePicker">
         <Setter Property="Height"
                 Value="32" />
         <Setter Property="FontSize"
@@ -240,14 +248,14 @@
                 Value="{StaticResource FlatTimeStyle}" />
         <Setter Property="PopupTemplate">
             <Setter.Value>
-                <inputToolkit:TimePickerPopupTemplate>
-                    <inputToolkit:ListTimePickerPopup />
-                </inputToolkit:TimePickerPopupTemplate>
+                <TimePickerPopupTemplate>
+                    <ListTimePickerPopup />
+                </TimePickerPopupTemplate>
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="inputToolkit:TimePicker">
+                <ControlTemplate TargetType="TimePicker">
                     <Grid x:Name="RootElement">
                         <vsm:VisualStateManager.VisualStateGroups>
                             <!-- common states -->
@@ -257,7 +265,7 @@
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
                                         <DoubleAnimationUsingKeyFrames Storyboard.TargetName="DropDownToggle"
-                                                                   Storyboard.TargetProperty="Opacity">
+                                                                       Storyboard.TargetProperty="Opacity">
                                             <SplineDoubleKeyFrame KeyTime="0" 
                                                                   Value=".55" />
                                         </DoubleAnimationUsingKeyFrames>
@@ -275,27 +283,27 @@
                                 <VisualState x:Name="PopupOpened">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="PopupRoot"
-                                                     Storyboard.TargetProperty="Opacity"
-                                                     To="1.0" />
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1.0" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="PopupClosed">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="PopupRoot"
-                                                     Storyboard.TargetProperty="Opacity"
-                                                     To="0.0" />
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.0" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </vsm:VisualStateManager.VisualStateGroups>
                         <Grid.Resources>
                             <ControlTemplate x:Key="PopupButtonTemplate"
-                      TargetType="ToggleButton">
+                                             TargetType="ToggleButton">
                                 <!-- clock icon -->
                                 <Grid FlowDirection="LeftToRight"
-               Height="20"
-               Width="22"
-               Background="Transparent">
+                                      Height="20"
+                                      Width="22"
+                                      Background="Transparent">
                                     <vsm:VisualStateManager.VisualStateGroups>
                                         <vsm:VisualStateGroup x:Name="CommonStates">
                                             <vsm:VisualStateGroup.Transitions>
@@ -305,32 +313,32 @@
                                             <vsm:VisualState x:Name="MouseOver">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                            Storyboard.TargetName="ellipse"
-                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                                   Storyboard.TargetName="ellipse"
+                                                                                   Storyboard.TargetProperty="(UIElement.Visibility)">
                                                         <DiscreteObjectKeyFrame KeyTime="0"
-                                                         Value="Collapsed" />
+                                                                                Value="Collapsed" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                     <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                            Storyboard.TargetName="Highlight"
-                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                                   Storyboard.TargetName="Highlight"
+                                                                                   Storyboard.TargetProperty="(UIElement.Visibility)">
                                                         <DiscreteObjectKeyFrame KeyTime="0"
-                                                         Value="Visible" />
+                                                                                Value="Visible" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
                                             <vsm:VisualState x:Name="Pressed">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                            Storyboard.TargetName="ellipse"
-                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                                   Storyboard.TargetName="ellipse"
+                                                                                   Storyboard.TargetProperty="(UIElement.Visibility)">
                                                         <DiscreteObjectKeyFrame KeyTime="0"
-                                                         Value="Collapsed" />
+                                                                                Value="Collapsed" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                     <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                            Storyboard.TargetName="Highlight"
-                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                                   Storyboard.TargetName="Highlight"
+                                                                                   Storyboard.TargetProperty="(UIElement.Visibility)">
                                                         <DiscreteObjectKeyFrame KeyTime="0"
-                                                         Value="Visible" />
+                                                                                Value="Visible" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
@@ -340,43 +348,43 @@
                                             <vsm:VisualState x:Name="Checked">
                                                 <Storyboard>
                                                     <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                            Storyboard.TargetName="HighlightChecked"
-                                                            Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                                                   Storyboard.TargetName="HighlightChecked"
+                                                                                   Storyboard.TargetProperty="(UIElement.Visibility)">
                                                         <DiscreteObjectKeyFrame KeyTime="0"
-                                                         Value="Visible" />
+                                                                                Value="Visible" />
                                                     </ObjectAnimationUsingKeyFrames>
                                                 </Storyboard>
                                             </vsm:VisualState>
                                             <vsm:VisualState x:Name="Unchecked" />
                                         </vsm:VisualStateGroup>
                                         <vsm:VisualStateGroup x:Name="FocusStates">
-                                            <vsm:VisualState x:Name="Focused"></vsm:VisualState>
+                                            <vsm:VisualState x:Name="Focused" />
                                             <vsm:VisualState x:Name="Unfocused" />
                                         </vsm:VisualStateGroup>
                                     </vsm:VisualStateManager.VisualStateGroups>
                                     <Grid Margin="0,0,2,0">
                                         <Path Fill="{x:Null}"
-                       Height="8.258"
-                       Margin="9,6,5,0"
-                       VerticalAlignment="Top"
-                       Stretch="Fill"
-                       Data="M10.108397,6.5404582 L10.108397,10.415268 L13.538931,13.738435"
-                       HorizontalAlignment="Left"
-                       Stroke="{DynamicResource Theme_BorderBrush}" />
+                                              Height="8.258"
+                                              Margin="9,6,5,0"
+                                              VerticalAlignment="Top"
+                                              Stretch="Fill"
+                                              Data="M10.108397,6.5404582 L10.108397,10.415268 L13.538931,13.738435"
+                                              HorizontalAlignment="Left"
+                                              Stroke="{DynamicResource Theme_BorderBrush}" />
                                         <Ellipse Margin="0"
-                          Stroke="{DynamicResource Theme_BorderBrush}"
-                          StrokeThickness="2"
-                          x:Name="ellipse" />
+                                                 Stroke="{DynamicResource Theme_BorderBrush}"
+                                                 StrokeThickness="2"
+                                                 x:Name="ellipse" />
                                         <Ellipse Margin="0"
-                          Stroke="{TemplateBinding BorderBrush}"
-                          StrokeThickness="2"
-                          x:Name="Highlight"
-                          Visibility="Collapsed" />
+                                                 Stroke="{TemplateBinding BorderBrush}"
+                                                 StrokeThickness="2"
+                                                 x:Name="Highlight"
+                                                 Visibility="Collapsed" />
                                         <Ellipse Margin="0"
-                          Stroke="{TemplateBinding BorderBrush}"
-                          StrokeThickness="2"
-                          x:Name="HighlightChecked"
-                          Visibility="Collapsed" />
+                                                 Stroke="{TemplateBinding BorderBrush}"
+                                                 StrokeThickness="2"
+                                                 x:Name="HighlightChecked"
+                                                 Visibility="Collapsed" />
                                     </Grid>
                                 </Grid>
                             </ControlTemplate>
@@ -388,39 +396,39 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- Value is being synched in code, because of inability to do TwoWay TemplateBinding -->
-                        <inputToolkit:TimeUpDown x:Name="TimeUpDown"
-                          Height="{TemplateBinding Height}"
-                          Background="{TemplateBinding Background}"
-                          BorderBrush="{TemplateBinding BorderBrush}"
-                          BorderThickness="{TemplateBinding BorderThickness}"
-                          Padding="{TemplateBinding Padding}"
-                          Grid.ColumnSpan="2"
-                          Style="{TemplateBinding TimeUpDownStyle}"
-                          SpinnerStyle="{TemplateBinding SpinnerStyle}"
-                          Minimum="{TemplateBinding Minimum}"
-                          Maximum="{TemplateBinding Maximum}"
-                          TimeParsers="{TemplateBinding TimeParsers}"
-                          Format="{TemplateBinding Format}"
-                          Culture="{TemplateBinding Culture}"
-                          TimeGlobalizationInfo="{TemplateBinding TimeGlobalizationInfo}"
-                          Grid.Column="0" />
+                        <TimeUpDown x:Name="TimeUpDown"
+                                    Height="{TemplateBinding Height}"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    Padding="{TemplateBinding Padding}"
+                                    Grid.ColumnSpan="2"
+                                    Style="{TemplateBinding TimeUpDownStyle}"
+                                    SpinnerStyle="{TemplateBinding SpinnerStyle}"
+                                    Minimum="{TemplateBinding Minimum}"
+                                    Maximum="{TemplateBinding Maximum}"
+                                    TimeParsers="{TemplateBinding TimeParsers}"
+                                    Format="{TemplateBinding Format}"
+                                    Culture="{TemplateBinding Culture}"
+                                    TimeGlobalizationInfo="{TemplateBinding TimeGlobalizationInfo}"
+                                    Grid.Column="0" />
                         <ToggleButton x:Name="DropDownToggle"
-               Template="{StaticResource PopupButtonTemplate}"
-               Margin="3,0,7,0"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Center"
-               Grid.Column="1"
-               BorderBrush="{TemplateBinding BorderBrush}" />
+                                      Template="{StaticResource PopupButtonTemplate}"
+                                      Margin="3,0,7,0"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Center"
+                                      Grid.Column="1"
+                                      BorderBrush="{TemplateBinding BorderBrush}" />
                         <!-- Value is being synched in code, because of inability to do TwoWay TemplateBinding -->
                         <Popup x:Name="Popup">
                             <Border x:Name="PopupRoot"
-             BorderBrush="{DynamicResource Theme_BorderBrush}"
-             BorderThickness="1"
-             CornerRadius="5">
+                                    BorderBrush="{DynamicResource Theme_BorderBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="5">
                                 <ContentControl x:Name="PopupPlaceHolder"
-                         IsTabStop="False"
-                         HorizontalContentAlignment="Stretch"
-                         VerticalContentAlignment="Stretch" />
+                                                IsTabStop="False"
+                                                HorizontalContentAlignment="Stretch"
+                                                VerticalContentAlignment="Stretch" />
                             </Border>
                         </Popup>
                     </Grid>
@@ -429,7 +437,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="inputToolkit:TimePicker"
+    <Style TargetType="TimePicker"
            BasedOn="{StaticResource FlatTimePickerStyle}" />
 
     <Style x:Name="FlatTimeUpDownStyle"
