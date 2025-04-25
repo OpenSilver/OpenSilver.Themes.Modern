@@ -2369,7 +2369,9 @@
                         <Grid.Resources>
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
-
+                            <local:BrushBuilder x:Key="MouseOverBackgroundBuilder"
+                                                BasedOn="{DynamicResource Theme_PrimaryBrush}"
+                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}" />
                             <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
                                                      BaseColor="{DynamicResource Theme_PrimaryBrush}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
@@ -2586,6 +2588,14 @@
                                         <vsm:VisualStateManager.VisualStateGroups>
                                             <vsm:VisualStateGroup x:Name="CommonStates">
                                                 <vsm:VisualState x:Name="Normal" />
+                                                <vsm:VisualState x:Name="Pressed">
+                                                    <Storyboard>
+                                                        <DoubleAnimation Duration="0"
+                                                                         Storyboard.TargetName="Hover"
+                                                                         Storyboard.TargetProperty="Opacity"
+                                                                         To=".5" />
+                                                    </Storyboard>
+                                                </vsm:VisualState>
                                                 <vsm:VisualState x:Name="Disabled">
                                                     <Storyboard>
                                                         <DoubleAnimation Duration="0"
@@ -2596,6 +2606,11 @@
                                                 </vsm:VisualState>
                                             </vsm:VisualStateGroup>
                                         </vsm:VisualStateManager.VisualStateGroups>
+                                        <Border x:Name="Hover"
+                                                Opacity="0"
+                                                Background="{Binding Source={StaticResource MouseOverBackgroundBuilder}, Path=Brush}"
+                                                IsHitTestVisible="False"
+                                                CornerRadius="12" />
                                         <ContentPresenter Cursor="{TemplateBinding Cursor}"
                                                           HorizontalAlignment="Left"
                                                           Margin="{TemplateBinding Padding}"

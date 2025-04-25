@@ -37,7 +37,7 @@ namespace OpenSilver.Themes.Modern
         public Brush Brush
         {
             get { return (Brush)GetValue(BrushProperty); }
-            set { SetValue(BrushProperty, value); }
+            private set { SetValue(BrushProperty, value); }
         }
         public static readonly DependencyProperty BrushProperty =
             DependencyProperty.Register("Brush", typeof(Brush), typeof(BrushBuilder), new PropertyMetadata(null));
