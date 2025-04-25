@@ -1175,7 +1175,7 @@
                         <Grid  x:Name="Root">
                             <Grid.Resources>
                                 <!--Start: TopLeftHeaderTemplate-->
-                                <ControlTemplate x:Key="TopLeftHeaderTemplate" TargetType="localprimitives:DataGridColumnHeader">
+                                <ControlTemplate x:Key="TopLeftHeaderTemplate" TargetType="DataGridColumnHeader">
                                     <Grid Name="Root" />
                                 </ControlTemplate>
                                 <!--End: TopLeftHeaderTemplate-->

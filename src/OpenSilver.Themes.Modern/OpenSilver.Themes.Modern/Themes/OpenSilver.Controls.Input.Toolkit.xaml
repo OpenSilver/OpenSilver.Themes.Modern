@@ -762,7 +762,7 @@
            BasedOn="{StaticResource FlatDomainUpDownStyle}" />
 
     <Style x:Key="FlatNumericUpDownStyle"
-        TargetType="controls:NumericUpDown">
+        TargetType="NumericUpDown">
         <Setter Property="VerticalContentAlignment"
                 Value="Center" />
         <Setter Property="Height"
@@ -785,7 +785,7 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="controls:NumericUpDown">
+                <ControlTemplate TargetType="NumericUpDown">
                     <Grid>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
