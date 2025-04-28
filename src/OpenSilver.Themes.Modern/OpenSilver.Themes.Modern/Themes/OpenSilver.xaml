@@ -369,46 +369,45 @@
                                 <vsm:VisualState x:Name="Unfocused" />
                                 <vsm:VisualState x:Name="Focused">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                Storyboard.TargetName="HasFocus"
-                                                                Storyboard.TargetProperty="(UIElement.Visibility)">
+                                        <ObjectAnimationUsingKeyFrames Duration="0"
+                                                                       Storyboard.TargetName="HasFocus"
+                                                                       Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                             Value="Visible" />
+                                                                    Value="Visible" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                             </vsm:VisualStateGroup>
                             <vsm:VisualStateGroup x:Name="CommonStates">
-                                <vsm:VisualStateGroup.Transitions>
-                                    <vsm:VisualTransition GeneratedDuration="00:00:00.2" />
-                                    <vsm:VisualTransition From="Pressed"
-                                                   GeneratedDuration="00:00:00" />
-                                    <vsm:VisualTransition From="MouseOver"
-                                                   GeneratedDuration="00:00:00"
-                                                   To="Pressed" />
-                                </vsm:VisualStateGroup.Transitions>
+                                <vsm:VisualState x:Name="Normal" />
                                 <vsm:VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
-                                <vsm:VisualState x:Name="Normal" />
                                 <vsm:VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
                                 <vsm:VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value="0.5" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
+                                        <DoubleAnimation Storyboard.TargetName="contentPresenter"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To="0.5" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </vsm:VisualState>
@@ -426,17 +425,10 @@
                                 Margin="-1"
                                 Opacity=".7"
                                 Visibility="Collapsed" />
-                        <ContentControl x:Name="contentControl"
-                                        Foreground="{DynamicResource Theme_TextOnPrimaryBrush}"
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center">
-                            <ContentPresenter x:Name="contentPresenter"
-                                              Content="{TemplateBinding Content}"
-                                              ContentTemplate="{TemplateBinding ContentTemplate}"
-                                              HorizontalAlignment="Center"
-                                              VerticalAlignment="Center"
-                                              Margin="8,3" />
-                        </ContentControl>
+                        <ContentPresenter x:Name="contentPresenter"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Margin="{TemplateBinding Padding}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
