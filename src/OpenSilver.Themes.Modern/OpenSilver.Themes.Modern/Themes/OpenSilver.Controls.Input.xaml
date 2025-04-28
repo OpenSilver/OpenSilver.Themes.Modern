@@ -9,6 +9,8 @@
                 Value="32" />
         <Setter Property="IsTabStop"
                 Value="False" />
+        <Setter Property="MaxDropDownHeight"
+                Value="500" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="input:AutoCompleteBox">
@@ -38,16 +40,24 @@
                             </vsm:VisualStateGroup>
                         </vsm:VisualStateManager.VisualStateGroups>
                         <TextBox x:Name="Text"
-                                 IsTabStop="True" />
+                                 IsTabStop="True"
+                                 Style="{TemplateBinding TextBoxStyle}"/>
                         <Popup x:Name="Popup">
-                            <!--<Border HorizontalAlignment="Stretch" x:Name="PopupBorder" Opacity="0.0" Background="#11000000" BorderThickness="0" CornerRadius="4">-->
-                            <ListBox x:Name="Selector"
-                                     Opacity="0"
-                                     ScrollViewer.HorizontalScrollBarVisibility="Auto"
-                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                     ItemTemplate="{TemplateBinding ItemTemplate}"
-                                     DisplayMemberPath="{TemplateBinding ValueMemberPath}" />
-                            <!--</Border>-->
+                            <Grid Opacity="{TemplateBinding Opacity}"
+                                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <ListBox x:Name="Selector"
+                                         Opacity="0"
+                                         ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                         ItemContainerStyle="{TemplateBinding ItemContainerStyle}"
+                                         ItemTemplate="{TemplateBinding ItemTemplate}">
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VirtualizingStackPanel />
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                </ListBox>
+                            </Grid>
                         </Popup>
                     </Grid>
                 </ControlTemplate>
