@@ -520,15 +520,10 @@ Value="2" />
                                 <VisualState x:Name="Active" />
                                 <VisualState x:Name="Inactive">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="NormalText"
-                                                                       Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0">
-                                                <DiscreteObjectKeyFrame.Value>
-                                                    <SolidColorBrush Color="Transparent" />
-                                                </DiscreteObjectKeyFrame.Value>
-                                            </DiscreteObjectKeyFrame>
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="NormalText"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.4" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
