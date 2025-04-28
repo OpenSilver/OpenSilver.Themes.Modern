@@ -430,29 +430,34 @@
     <!-- CalendarDayButton -->
     <Style TargetType="CalendarDayButton">
         <Setter Property="Background"
-        Value="{DynamicResource Theme_PrimaryBrush}" />
+                Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="Foreground"
-        Value="{DynamicResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="MinWidth"
-        Value="36" />
+                Value="36" />
         <Setter Property="MinHeight"
-        Value="36" />
+                Value="36" />
         <Setter Property="FontSize"
-        Value="12" />
-        <Setter Property="Margin"
-Value="2" />
+                Value="12" />
+        <Setter Property="Padding"
+                Value="2" />
         <Setter Property="HorizontalContentAlignment"
-        Value="Center" />
+                Value="Center" />
         <Setter Property="VerticalContentAlignment"
-        Value="Center" />
+                Value="Center" />
         <Setter Property="Cursor"
-        Value="Hand" />
+                Value="Hand" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CalendarDayButton">
-                    <Grid x:Name="Root"
-                  Cursor="{TemplateBinding Cursor}">
-                        <Grid.Resources>
+                    <ControlTemplate.Resources>
+                        <PathGeometry x:Key="BlackoutGeometry">M8.1772461,11.029181 L10.433105,11.029181 L11.700684,12.801641 L12.973633,11.029181 L15.191895,11.029181 L12.844727,13.999395 L15.21875,17.060919 L12.962891,17.060919 L11.673828,15.256231 L10.352539,17.060919 L8.1396484,17.060919 L10.519043,14.042364 z</PathGeometry>
+                    </ControlTemplate.Resources>
+                    <Border x:Name="Root"
+                            Cursor="{TemplateBinding Cursor}"
+                            Background="Transparent"
+                            Padding="{TemplateBinding Padding}">
+                        <Border.Resources>
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
@@ -462,33 +467,36 @@ Value="2" />
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledBrush"
                                              Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
-                        </Grid.Resources>
+                        </Border.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover" Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value=".06" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="Hover"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To=".06" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover"
-                                                               Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value=".5" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="Hover"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To=".5" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Hover"
-                                                               Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalText" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledBrush}"/>
+                                        <DoubleAnimation Storyboard.TargetName="Hover"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To="0" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="NormalText"
+                                                                       Storyboard.TargetProperty="Foreground">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource DisabledBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
@@ -498,12 +506,12 @@ Value="2" />
                                 <VisualState x:Name="Selected">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Duration="0"
-                                                               Storyboard.TargetName="DayButtonSelectedVisual"
-                                                               Storyboard.TargetProperty="Visibility">
+                                                                       Storyboard.TargetName="DayButtonSelectedVisual"
+                                                                       Storyboard.TargetProperty="Visibility">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                            Value="Visible" />
+                                                                    Value="Visible" />
                                         </ObjectAnimationUsingKeyFrames>
-                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001"
+                                        <ObjectAnimationUsingKeyFrames Duration="0"
                                                                        Storyboard.TargetName="NormalText"
                                                                        Storyboard.TargetProperty="Foreground">
                                             <DiscreteObjectKeyFrame KeyTime="0"
@@ -528,64 +536,57 @@ Value="2" />
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="DayStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="RegularDay" />
                                 <VisualState x:Name="Today">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="TodayBackground"
-                                                               Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                              Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="TodayBackground"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To="1" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="BlackoutDayStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="NormalDay" />
                                 <VisualState x:Name="BlackoutDay">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Blackout"
-                                                               Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                          Value=".2" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="Blackout"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To=".2" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Ellipse x:Name="TodayBackground"
-                           Opacity="0"
-                           Stroke="{DynamicResource Theme_BorderBrush}" />
-
-                        <Ellipse x:Name="DayButtonSelectedVisual"
-                           IsHitTestVisible="false"
-                           Visibility="Collapsed"
-                           Fill="{TemplateBinding Background}" />
-                        <Ellipse x:Name="Hover"
-                           Opacity="0"
-                           Fill="{TemplateBinding Foreground}" />
-                        <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                Margin="5,1,5,3"
-                                x:Name="NormalText"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                FontSize="{TemplateBinding FontSize}"
-                                IsTabStop="False"
-                                Content="{TemplateBinding Content}"
-                                ContentTemplate="{TemplateBinding ContentTemplate}"
-                                Foreground="{TemplateBinding Foreground}" />
-                        <Path Margin="3"
-                      x:Name="Blackout"
-                      Opacity="0"
-                      RenderTransformOrigin="0.5,0.5"
-                      Fill="#FF000000"
-                      Stretch="Fill"
-                      Data="M8.1772461,11.029181 L10.433105,11.029181 L11.700684,12.801641 L12.973633,11.029181 L15.191895,11.029181 L12.844727,13.999395 L15.21875,17.060919 L12.962891,17.060919 L11.673828,15.256231 L10.352539,17.060919 L8.1396484,17.060919 L10.519043,14.042364 z" />
-                    </Grid>
+                        <Grid>
+                            <Ellipse x:Name="TodayBackground"
+                                     Opacity="0"
+                                     Stroke="{DynamicResource Theme_BorderBrush}" />
+                            <Ellipse x:Name="DayButtonSelectedVisual"
+                                     IsHitTestVisible="false"
+                                     Visibility="Collapsed"
+                                     Fill="{TemplateBinding Background}" />
+                            <Ellipse x:Name="Hover"
+                                     Opacity="0"
+                                     Fill="{TemplateBinding Foreground}" />
+                            <ContentControl x:Name="NormalText"
+                                            Margin="5,1,5,3"
+                                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                            FontSize="{TemplateBinding FontSize}"
+                                            IsTabStop="False"
+                                            Content="{TemplateBinding Content}"
+                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            Foreground="{TemplateBinding Foreground}" />
+                            <Path Margin="3"
+                                  x:Name="Blackout"
+                                  Opacity="0"
+                                  RenderTransformOrigin="0.5,0.5"
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stretch="Fill"
+                                  Data="{StaticResource BlackoutGeometry}" />
+                        </Grid>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
