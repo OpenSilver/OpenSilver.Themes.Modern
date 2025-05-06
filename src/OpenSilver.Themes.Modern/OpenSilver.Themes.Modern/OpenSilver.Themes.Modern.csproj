@@ -11,6 +11,7 @@
     <Company>Userware</Company>
     <Description>Styles for controls with a more modern look in OpenSilver</Description>
     <LangVersion>12</LangVersion>
+    <OpenSilverXamlPreprocessorOptions>optimize</OpenSilverXamlPreprocessorOptions>
   </PropertyGroup>
 
   <ItemGroup>
