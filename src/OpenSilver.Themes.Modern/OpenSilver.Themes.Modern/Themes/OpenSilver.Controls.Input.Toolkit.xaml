@@ -695,12 +695,12 @@
                     <Grid x:Name="RootElement">
                         <Grid.Resources>
                             <local:ColorInterpolator x:Key="DisabledBorderBuilder"
-                                                     BaseColor="{TemplateBinding BorderBrush}"
+                                                     BasedOn="{TemplateBinding BorderBrush}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />

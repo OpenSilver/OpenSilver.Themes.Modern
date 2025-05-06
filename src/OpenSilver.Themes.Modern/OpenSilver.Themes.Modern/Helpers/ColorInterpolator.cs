@@ -1,84 +1,103 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls.DataVisualization;
 using System.Windows.Media;
 
 namespace OpenSilver.Themes.Modern
 {
-    internal class ColorInterpolator : DependencyObject
+    public sealed class ColorInterpolator : DependencyObject
     {
-        public object BaseColor
+        public Brush BasedOn
         {
-            get { return (object)GetValue(BaseColorProperty); }
-            set { SetValue(BaseColorProperty, value); }
+            get => (Brush)GetValue(BasedOnProperty);
+            set => SetValue(BasedOnProperty, value);
         }
-        public static readonly DependencyProperty BaseColorProperty =
-            DependencyProperty.Register("BaseColor", typeof(object), typeof(ColorInterpolator), new PropertyMetadata(null, OnChange));
+
+        public static readonly DependencyProperty BasedOnProperty =
+            DependencyProperty.Register(
+                nameof(BasedOn),
+                typeof(object),
+                typeof(ColorInterpolator),
+                new PropertyMetadata(null, OnChange));
 
         public Color TargetColor
         {
-            get { return (Color)GetValue(TargetColorProperty); }
-            set { SetValue(TargetColorProperty, value); }
+            get => (Color)GetValue(TargetColorProperty);
+            set => SetValue(TargetColorProperty, value);
         }
+
         public static readonly DependencyProperty TargetColorProperty =
-            DependencyProperty.Register("TargetColor", typeof(Color), typeof(ColorInterpolator), new PropertyMetadata(Colors.White, OnChange));
+            DependencyProperty.Register(
+                nameof(TargetColor),
+                typeof(Color),
+                typeof(ColorInterpolator),
+                new PropertyMetadata(Colors.White, OnChange));
 
         public double InterpolationRatio
         {
-            get { return (double)GetValue(InterpolationRatioProperty); }
-            set { SetValue(InterpolationRatioProperty, value); }
+            get => (double)GetValue(InterpolationRatioProperty);
+            set => SetValue(InterpolationRatioProperty, value);
         }
+
         public static readonly DependencyProperty InterpolationRatioProperty =
-            DependencyProperty.Register("InterpolationRatio", typeof(double), typeof(ColorInterpolator), new PropertyMetadata(0d, OnChange));
+            DependencyProperty.Register(
+                nameof(InterpolationRatio),
+                typeof(double),
+                typeof(ColorInterpolator),
+                new PropertyMetadata(0d, OnChange));
 
         public double DesaturationRatio
         {
-            get { return (double)GetValue(DesaturationRatioProperty); }
-            set { SetValue(DesaturationRatioProperty, value); }
+            get => (double)GetValue(DesaturationRatioProperty);
+            set => SetValue(DesaturationRatioProperty, value);
         }
+
         public static readonly DependencyProperty DesaturationRatioProperty =
-            DependencyProperty.Register("DesaturationRatio", typeof(double), typeof(ColorInterpolator), new PropertyMetadata(0d, OnChange));
+            DependencyProperty.Register(
+                nameof(DesaturationRatio),
+                typeof(double),
+                typeof(ColorInterpolator),
+                new PropertyMetadata(0d, OnChange),
+                ValidateDesaturationRatio);
+
+        private static bool ValidateDesaturationRatio(object value)
+        {
+            double d = (double)value;
+            return d >= 0 && d <= 1;
+        }
 
         public Color ResultColor
         {
-            get { return (Color)GetValue(ResultColorProperty); }
-            set { SetValue(ResultColorProperty, value); }
+            get => (Color)GetValue(ResultColorProperty);
+            private set => SetValue(ResultColorPropertyKey, value);
         }
-        public static readonly DependencyProperty ResultColorProperty =
-            DependencyProperty.Register("ResultColor", typeof(Color), typeof(ColorInterpolator), new PropertyMetadata(null));
 
+        private static readonly DependencyPropertyKey ResultColorPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(ResultColor),
+                typeof(Color),
+                typeof(ColorInterpolator),
+                null);
+
+        public static readonly DependencyProperty ResultColorProperty = ResultColorPropertyKey.DependencyProperty;
 
         private static void OnChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            ColorInterpolator builder = (ColorInterpolator)d;
-            builder.UpdateResultColor();
+            ((ColorInterpolator)d).UpdateResultColor();
         }
 
-        void UpdateResultColor()
+        private void UpdateResultColor()
         {
-            Color color = Colors.White;
-            switch (BaseColor)
+            Color color = BasedOn switch
             {
-                case Color:
-                    color = (Color)BaseColor;
-                    break;
-                case SolidColorBrush brush:
-                    color = brush.Color;
-                    break;
-                default:
-                    break;
-            }
+                SolidColorBrush solid => solid.Color,
+                _ => Colors.White,
+            };
 
             ResultColor = PartiallyDesaturate(InterpolateColor(color, TargetColor, InterpolationRatio), DesaturationRatio);
         }
 
-        Color InterpolateColor(Color baseColor, Color targetColor, double ratio)
+        private static Color InterpolateColor(Color baseColor, Color targetColor, double ratio)
         {
-
             Color color = Color.FromArgb(
                 (byte)(baseColor.A + (ratio * (targetColor.A - baseColor.A))),
                 (byte)(baseColor.R + (ratio * (targetColor.R - baseColor.R))),
@@ -88,10 +107,12 @@ namespace OpenSilver.Themes.Modern
             return color;
         }
 
-        Color PartiallyDesaturate(Color color, double factor)
+        private static Color PartiallyDesaturate(Color color, double factor)
         {
             if (factor < 0 || factor > 1)
+            {
                 throw new ArgumentOutOfRangeException(nameof(factor), "Factor must be between 0 and 1.");
+            }
 
             // Convert the color to grayscale
             byte gray = (byte)((color.R * 0.3) + (color.G * 0.59) + (color.B * 0.11));

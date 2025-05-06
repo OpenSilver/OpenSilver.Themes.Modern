@@ -1,80 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
 namespace OpenSilver.Themes.Modern
 {
-    internal class BrushBuilder : DependencyObject
+    public sealed class BrushBuilder : DependencyObject
     {
         public Brush BasedOn
         {
-            get { return (Brush)GetValue(BasedOnProperty); }
-            set { SetValue(BasedOnProperty, value); }
+            get => (Brush)GetValue(BasedOnProperty);
+            set => SetValue(BasedOnProperty, value);
         }
+
         public static readonly DependencyProperty BasedOnProperty =
-            DependencyProperty.Register("BasedOn", typeof(Brush), typeof(BrushBuilder), new PropertyMetadata(null, OnChange));
+            DependencyProperty.Register(
+                nameof(BasedOn),
+                typeof(Brush),
+                typeof(BrushBuilder),
+                new PropertyMetadata(null, OnChange));
 
         public double BrightnessRatio
         {
-            get { return (double)GetValue(BrightnessRatioProperty); }
-            set { SetValue(BrightnessRatioProperty, value); }
+            get => (double)GetValue(BrightnessRatioProperty);
+            set => SetValue(BrightnessRatioProperty, value);
         }
+
         public static readonly DependencyProperty BrightnessRatioProperty =
-            DependencyProperty.Register("BrightnessRatio", typeof(double), typeof(BrushBuilder), new PropertyMetadata(0d, OnChange));
+            DependencyProperty.Register(
+                nameof(BrightnessRatio),
+                typeof(double),
+                typeof(BrushBuilder),
+                new PropertyMetadata(0.0, OnChange));
 
         public double DesaturationRatio
         {
-            get { return (double)GetValue(DesaturationRatioProperty); }
-            set { SetValue(DesaturationRatioProperty, value); }
+            get => (double)GetValue(DesaturationRatioProperty);
+            set => SetValue(DesaturationRatioProperty, value);
         }
+
         public static readonly DependencyProperty DesaturationRatioProperty =
-            DependencyProperty.Register("DesaturationRatio", typeof(double), typeof(BrushBuilder), new PropertyMetadata(0d, OnChange));
+            DependencyProperty.Register(
+                nameof(DesaturationRatio),
+                typeof(double),
+                typeof(BrushBuilder),
+                new PropertyMetadata(0.0, OnChange),
+                ValidateDesaturationRatio);
+
+        private static bool ValidateDesaturationRatio(object value)
+        {
+            double d = (double)value;
+            return d >= 0 && d <= 1;
+        }
 
         public Brush Brush
         {
-            get { return (Brush)GetValue(BrushProperty); }
-            private set { SetValue(BrushProperty, value); }
+            get => (Brush)GetValue(BrushProperty);
+            private set => SetValue(BrushPropertyKey, value);
         }
-        public static readonly DependencyProperty BrushProperty =
-            DependencyProperty.Register("Brush", typeof(Brush), typeof(BrushBuilder), new PropertyMetadata(null));
 
+        private static readonly DependencyPropertyKey BrushPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(Brush),
+                typeof(Brush),
+                typeof(BrushBuilder),
+                null);
+
+        public static readonly DependencyProperty BrushProperty = BrushPropertyKey.DependencyProperty;
 
         private static void OnChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            BrushBuilder builder = (BrushBuilder)d;
-            builder.UpdateBrush();
+            ((BrushBuilder)d).UpdateBrush();
         }
 
-        void UpdateBrush()
+        private void UpdateBrush()
         {
-            if (BasedOn != null)
+            Brush basedOn = BasedOn;
+
+            Brush = basedOn switch
             {
-                switch (BasedOn)
-                {
-                    //Comment this for now.
-                    //case Color color:
-                    //    return ConvertColor(color);
-
-                    case SolidColorBrush brush:
-                        //Color brushColor = ConvertColor(brush.Color);
-                        //brushColor = PartiallyDesaturate(brushColor, DesaturationRatio);
-                        Color brushColor = PartiallyDesaturate(brush.Color, DesaturationRatio);
-                        brushColor = ConvertColor(brushColor);
-                        Brush = new SolidColorBrush(brushColor);
-                        break;
-
-                    default:
-                        Brush = BasedOn; // Return original value if the type is not handled
-                        break;
-                }
-            }
+                SolidColorBrush solid => new SolidColorBrush(ConvertColor(PartiallyDesaturate(solid.Color, DesaturationRatio))),
+                _ => basedOn, // Return original value if the type is not handled
+            };
         }
 
-        Color ConvertColor(Color color)
+        private Color ConvertColor(Color color)
         {
             if (BrightnessRatio < 0) // Darken the color
             {
@@ -101,10 +110,12 @@ namespace OpenSilver.Themes.Modern
             return color;
         }
 
-        Color PartiallyDesaturate(Color color, double factor)
+        private static Color PartiallyDesaturate(Color color, double factor)
         {
             if (factor < 0 || factor > 1)
+            {
                 throw new ArgumentOutOfRangeException(nameof(factor), "Factor must be between 0 and 1.");
+            }
 
             // Convert the color to grayscale
             byte gray = (byte)((color.R * 0.3) + (color.G * 0.59) + (color.B * 0.11));

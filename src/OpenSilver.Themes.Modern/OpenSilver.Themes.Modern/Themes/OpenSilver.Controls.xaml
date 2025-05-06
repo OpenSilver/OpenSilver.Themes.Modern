@@ -79,17 +79,17 @@
                                              Color="{DynamicResource Theme_WatermarkColor}" />
 
                             <local:ColorInterpolator x:Key="DisabledBorderBuilder"
-                                                     BaseColor="{DynamicResource Theme_BorderBrush}"
+                                                     BasedOn="{DynamicResource Theme_BorderBrush}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <local:ColorInterpolator x:Key="DisabledWatermarkForegroundBuilder"
-                                                     BaseColor="{DynamicResource Theme_WatermarkBrush}"
+                                                     BasedOn="{DynamicResource Theme_WatermarkBrush}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -303,7 +303,7 @@
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -461,7 +461,7 @@
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -597,7 +597,7 @@
         <Grid Cursor="Hand">
             <Grid.Resources>
                 <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                         BaseColor="{TemplateBinding Foreground}"
+                                         BasedOn="{TemplateBinding Foreground}"
                                          TargetColor="{DynamicResource Theme_BackgroundColor}"
                                          DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                          InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -635,7 +635,7 @@
                     <Grid x:Name="Root">
                         <Grid.Resources>
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -907,12 +907,12 @@
                     <Grid x:Name="Root">
                         <Grid.Resources>
                             <local:ColorInterpolator x:Key="DisabledBorderBrushBuilder"
-                                                     BaseColor="{TemplateBinding BorderBrush}"
+                                                     BasedOn="{TemplateBinding BorderBrush}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>

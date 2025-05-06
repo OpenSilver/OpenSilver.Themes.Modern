@@ -1,88 +1,98 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows;
 
 namespace OpenSilver.Themes.Modern
 {
-    internal class BrushEffectBuilder : DependencyObject
+    public sealed class BrushEffectBuilder : DependencyObject
     {
         public Color BasedOn
         {
-            get { return (Color)GetValue(BasedOnProperty); }
-            set { SetValue(BasedOnProperty, value); }
+            get => (Color)GetValue(BasedOnProperty);
+            set => SetValue(BasedOnProperty, value);
         }
-        public static readonly DependencyProperty BasedOnProperty =
-            DependencyProperty.Register("BasedOn", typeof(Color), typeof(BrushEffectBuilder), new PropertyMetadata(Colors.White, OnChange));
 
+        public static readonly DependencyProperty BasedOnProperty =
+            DependencyProperty.Register(
+                nameof(BasedOn),
+                typeof(Color),
+                typeof(BrushEffectBuilder),
+                new PropertyMetadata(Colors.White, OnChange));
 
         public BrushEffectMode Mode
         {
-            get { return (BrushEffectMode)GetValue(ModeProperty); }
-            set { SetValue(ModeProperty, value); }
+            get => (BrushEffectMode)GetValue(ModeProperty);
+            set => SetValue(ModeProperty, value);
         }
 
-        // Using a DependencyProperty as the backing store for Mode.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ModeProperty =
-            DependencyProperty.Register("Mode", typeof(BrushEffectMode), typeof(BrushEffectBuilder), new PropertyMetadata(BrushEffectMode.Solid, OnChange));
+            DependencyProperty.Register(
+                nameof(Mode),
+                typeof(BrushEffectMode),
+                typeof(BrushEffectBuilder),
+                new PropertyMetadata(BrushEffectMode.Solid, OnChange),
+                ValidateMode);
 
-
-
+        private static bool ValidateMode(object value)
+        {
+            BrushEffectMode mode = (BrushEffectMode)value;
+            return mode == BrushEffectMode.Solid || mode == BrushEffectMode.Linear;
+        }
 
         private static void OnChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            BrushEffectBuilder builder = (BrushEffectBuilder)d;
-            builder.UpdateBrush();
+            ((BrushEffectBuilder)d).UpdateBrush();
         }
-
 
         public GradientStopCollection GradientStops
         {
-            get { return (GradientStopCollection)GetValue(GradientStopsProperty); }
-            set { SetValue(GradientStopsProperty, value); }
+            get => (GradientStopCollection)GetValue(GradientStopsProperty);
+            private set => SetValue(GradientStopsPropertyKey, value);
         }
-        public static readonly DependencyProperty GradientStopsProperty =
-            DependencyProperty.Register("GradientStops", typeof(GradientStopCollection), typeof(BrushEffectBuilder), new PropertyMetadata(null));
 
+        private static readonly DependencyPropertyKey GradientStopsPropertyKey =
+            DependencyProperty.RegisterReadOnly(
+                nameof(GradientStops),
+                typeof(GradientStopCollection),
+                typeof(BrushEffectBuilder),
+                null);
 
-        void UpdateBrush()
+        public static readonly DependencyProperty GradientStopsProperty = GradientStopsPropertyKey.DependencyProperty;
+
+        private void UpdateBrush()
         {
-            if (BasedOn != null)
+            Color basedOn = BasedOn;
+
+            switch (Mode)
             {
-                switch (Mode)
-                {
-                    case BrushEffectMode.Linear:
-                        // Convert base color to HSL (Hue, Saturation, Lightness)
-                        double hue, saturation, lightness;
-                        ColorToHsl(BasedOn, out hue, out saturation, out lightness);
+                case BrushEffectMode.Linear:
+                    // Convert base color to HSL (Hue, Saturation, Lightness)
+                    double hue, saturation, lightness;
+                    ColorToHsl(basedOn, out hue, out saturation, out lightness);
 
-                        // Create a GradientStopCollection with shifted hues
-                        var gradientStops = new GradientStopCollection
-                        {
-                            new GradientStop() { Color = BasedOn, Offset=0.0 },
-                            new GradientStop() { Color = HslToColor((hue + 10) % 360, saturation, lightness), Offset=0.5 },
-                            new GradientStop() { Color = HslToColor((hue + 20) % 360, saturation, lightness), Offset=1.0 }
-                        };
+                    // Create a GradientStopCollection with shifted hues
+                    var gradientStops = new GradientStopCollection
+                    {
+                        new GradientStop(basedOn, 0.0),
+                        new GradientStop(HslToColor((hue + 10) % 360, saturation, lightness), 0.5),
+                        new GradientStop(HslToColor((hue + 20) % 360, saturation, lightness), 1.0),
+                    };
 
-                        GradientStops = gradientStops;
-                        break;
-                    case BrushEffectMode.Solid:
-                    default:
-                        var flatGradientStops = new GradientStopCollection
-                        {
-                            new GradientStop() { Color = BasedOn, Offset=0.0 },
-                        };
+                    GradientStops = gradientStops;
+                    break;
+                case BrushEffectMode.Solid:
+                default:
+                    var flatGradientStops = new GradientStopCollection
+                    {
+                        new GradientStop(basedOn, 0.0),
+                    };
 
-                        GradientStops = flatGradientStops;
-                        break;
-                }
+                    GradientStops = flatGradientStops;
+                    break;
             }
         }
 
-        private void ColorToHsl(Color color, out double hue, out double saturation, out double lightness)
+        private static void ColorToHsl(Color color, out double hue, out double saturation, out double lightness)
         {
             double r = color.R / 255.0;
             double g = color.G / 255.0;
@@ -113,7 +123,7 @@ namespace OpenSilver.Themes.Modern
             }
         }
 
-        private Color HslToColor(double hue, double saturation, double lightness)
+        private static Color HslToColor(double hue, double saturation, double lightness)
         {
             double c = (1 - Math.Abs(2 * lightness - 1)) * saturation;
             double x = c * (1 - Math.Abs((hue / 60) % 2 - 1));

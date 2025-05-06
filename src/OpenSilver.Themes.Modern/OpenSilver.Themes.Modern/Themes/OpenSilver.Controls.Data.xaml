@@ -25,7 +25,7 @@
                                                 BasedOn="{TemplateBinding Background}"
                                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BaseColor="{TemplateBinding Foreground}"
+                                                     BasedOn="{TemplateBinding Foreground}"
                                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -99,7 +99,7 @@
                                             BasedOn="{TemplateBinding Background}"
                                             BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
                             <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                 BaseColor="{TemplateBinding Foreground}"
+                                                 BasedOn="{TemplateBinding Foreground}"
                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>

@@ -59,7 +59,7 @@
         <Grid Cursor="Hand">
             <Grid.Resources>
                 <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                         BaseColor="{TemplateBinding Foreground}"
+                                         BasedOn="{TemplateBinding Foreground}"
                                          TargetColor="{DynamicResource Theme_BackgroundColor}"
                                          DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                          InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -289,7 +289,7 @@
                                 <Grid Background="Transparent">
                                     <Grid.Resources>
                                         <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                                 BaseColor="{TemplateBinding Foreground}"
+                                                                 BasedOn="{TemplateBinding Foreground}"
                                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -415,7 +415,7 @@
                                 <Grid Background="Transparent" Cursor="Hand">
                                     <Grid.Resources>
                                         <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                                 BaseColor="{TemplateBinding Foreground}"
+                                                                 BasedOn="{TemplateBinding Foreground}"
                                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -536,7 +536,7 @@
                                 <Grid Background="Transparent">
                                     <Grid.Resources>
                                         <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                                 BaseColor="{TemplateBinding Foreground}"
+                                                                 BasedOn="{TemplateBinding Foreground}"
                                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
@@ -657,7 +657,7 @@
                                 <Grid Background="Transparent">
                                     <Grid.Resources>
                                         <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                                 BaseColor="{TemplateBinding Foreground}"
+                                                                 BasedOn="{TemplateBinding Foreground}"
                                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
