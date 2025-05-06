@@ -1,7 +1,7 @@
 <Project>
 
   <PropertyGroup>
-    <OpenSilverVersion Condition=" '$(OpenSilverVersion)' == '' ">3.2.0</OpenSilverVersion>
+    <OpenSilverVersion Condition=" '$(OpenSilverVersion)' == '' ">3.3.0-preview-2025-05-06-085801-c5c58922</OpenSilverVersion>
   </PropertyGroup>
 
 </Project>
