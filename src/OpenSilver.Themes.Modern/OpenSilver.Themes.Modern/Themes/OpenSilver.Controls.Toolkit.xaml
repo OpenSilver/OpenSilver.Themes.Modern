@@ -51,7 +51,7 @@
                                       Visibility="Collapsed"
                                       Stroke="{TemplateBinding Foreground}" StrokeThickness="2" StrokeDashArray="5.5,5"/>
             <Ellipse x:Name="Hover" Fill="Transparent"/>
-            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ContentPresenter x:Name="Content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
     </ControlTemplate>
 
@@ -80,12 +80,13 @@
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                   x:Name="buttonContent"
-                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                   IsTabStop="False"
-                   Content="{TemplateBinding Content}"
-                   ContentTemplate="{TemplateBinding ContentTemplate}"
-                   Foreground="{TemplateBinding Foreground}" />
+                            x:Name="buttonContent"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            IsTabStop="False"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                            Foreground="{TemplateBinding Foreground}" />
         </Grid>
     </ControlTemplate>
 
@@ -220,9 +221,10 @@
                                                   BlurRadius="10"
                                                   Opacity="0.2" />
                             </Border.Effect>
-                            <Grid TextOptions.TextHintingMode="Fixed">
+                            <Grid>
                                 <ContentControl x:Name="content"
                                                 ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                                 Content="{TemplateBinding Content}"
                                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
@@ -405,7 +407,8 @@
                                                             VerticalAlignment="Center"
                                                             Foreground="{TemplateBinding Foreground}"
                                                             Content="{TemplateBinding Content}"
-                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -526,7 +529,8 @@
                                                             VerticalAlignment="Center"
                                                             Foreground="{TemplateBinding Foreground}"
                                                             Content="{TemplateBinding Content}"
-                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -647,7 +651,8 @@
                                                             VerticalAlignment="Center"
                                                             Foreground="{TemplateBinding Foreground}"
                                                             Content="{TemplateBinding Content}"
-                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -768,7 +773,8 @@
                                                             VerticalAlignment="Center"
                                                             Foreground="{TemplateBinding Foreground}"
                                                             Content="{TemplateBinding Content}"
-                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
                                         </Grid>
                                     </Border>
                                 </Grid>
@@ -1001,7 +1007,8 @@
                                                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                                     Content="{TemplateBinding Content}"
-                                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                                    ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                    ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" />
                                 </Border>
                             </Grid>
                         </Border>
@@ -1163,20 +1170,21 @@
                             Background="{TemplateBinding Background}" />
                         </Grid>
                         <Rectangle x:Name="CalendarButtonFocusVisual"
-                               IsHitTestVisible="false"
-                               Visibility="Collapsed"
-                               RadiusX="18"
-                               RadiusY="18"
-                               Fill="{DynamicResource Theme_PrimaryBrush}" />
+                                   IsHitTestVisible="false"
+                                   Visibility="Collapsed"
+                                   RadiusX="18"
+                                   RadiusY="18"
+                                   Fill="{DynamicResource Theme_PrimaryBrush}" />
                         <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                Margin="18,3,18,5"
-                                x:Name="NormalText"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                FontSize="{TemplateBinding FontSize}"
-                                IsTabStop="False"
-                                Content="{TemplateBinding Content}"
-                                ContentTemplate="{TemplateBinding ContentTemplate}"
-                                Foreground="{TemplateBinding Foreground}" />
+                                        Margin="18,3,18,5"
+                                        x:Name="NormalText"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        IsTabStop="False"
+                                        Content="{TemplateBinding Content}"
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                        Foreground="{TemplateBinding Foreground}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -1329,21 +1337,22 @@
                            Opacity="0"
                            Fill="{TemplateBinding Foreground}" />
                         <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                Margin="5,1,5,3"
-                                x:Name="NormalText"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                FontSize="{TemplateBinding FontSize}"
-                                IsTabStop="False"
-                                Content="{TemplateBinding Content}"
-                                ContentTemplate="{TemplateBinding ContentTemplate}"
-                                Foreground="{TemplateBinding Foreground}" />
+                                        Margin="5,1,5,3"
+                                        x:Name="NormalText"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        FontSize="{TemplateBinding FontSize}"
+                                        IsTabStop="False"
+                                        Content="{TemplateBinding Content}"
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                        Foreground="{TemplateBinding Foreground}" />
                         <Path Margin="3"
-                      x:Name="Blackout"
-                      Opacity="0"
-                      RenderTransformOrigin="0.5,0.5"
-                      Fill="{DynamicResource Theme_BackgroundBrush}"
-                      Stretch="Fill"
-                      Data="M8.1772461,11.029181 L10.433105,11.029181 L11.700684,12.801641 L12.973633,11.029181 L15.191895,11.029181 L12.844727,13.999395 L15.21875,17.060919 L12.962891,17.060919 L11.673828,15.256231 L10.352539,17.060919 L8.1396484,17.060919 L10.519043,14.042364 z" />
+                              x:Name="Blackout"
+                              Opacity="0"
+                              RenderTransformOrigin="0.5,0.5"
+                              Fill="{DynamicResource Theme_BackgroundBrush}"
+                              Stretch="Fill"
+                              Data="M8.1772461,11.029181 L10.433105,11.029181 L11.700684,12.801641 L12.973633,11.029181 L15.191895,11.029181 L12.844727,13.999395 L15.21875,17.060919 L12.962891,17.060919 L11.673828,15.256231 L10.352539,17.060919 L8.1396484,17.060919 L10.519043,14.042364 z" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>

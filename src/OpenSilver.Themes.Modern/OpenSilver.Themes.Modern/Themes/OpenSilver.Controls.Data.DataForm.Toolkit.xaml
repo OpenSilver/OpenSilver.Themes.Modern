@@ -70,7 +70,7 @@
 
                         <Ellipse x:Name="Background" Fill="Transparent" />
                         <ContentControl x:Name="ForegroundContentControl" Foreground="{TemplateBinding Foreground}">
-                            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" Width="23" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter x:Name="Content" Width="23" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </ContentControl>
                     </Grid>
                 </ControlTemplate>
@@ -135,7 +135,7 @@
                                                     <ScrollContentPresenter x:Name="ScrollContentPresenter"
                                                                             Cursor="{TemplateBinding Cursor}"
                                                                             Margin="{TemplateBinding Padding}"
-                                                                            ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                                                            CanContentScroll="{TemplateBinding CanContentScroll}" />
                                                     <Rectangle Fill="#FFE9EEF4"
                                                                Grid.Column="1"
                                                                Grid.Row="1" />

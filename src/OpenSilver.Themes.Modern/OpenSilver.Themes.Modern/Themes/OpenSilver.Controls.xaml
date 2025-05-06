@@ -57,7 +57,7 @@
                                       Visibility="Collapsed"
                                       Stroke="{TemplateBinding Foreground}" StrokeThickness="2" StrokeDashArray="5.5,5"/>
             <Ellipse x:Name="Hover" Fill="Transparent"/>
-            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <ContentPresenter x:Name="Content" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
     </ControlTemplate>
 
@@ -420,6 +420,7 @@
                                 IsTabStop="False"
                                 Content="{TemplateBinding Content}"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
+                                ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                 Foreground="{TemplateBinding Foreground}" />
                     </Grid>
                 </ControlTemplate>
@@ -577,6 +578,7 @@
                                             IsTabStop="False"
                                             Content="{TemplateBinding Content}"
                                             ContentTemplate="{TemplateBinding ContentTemplate}"
+                                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                             Foreground="{TemplateBinding Foreground}" />
                             <Path Margin="3"
                                   x:Name="Blackout"
@@ -618,12 +620,13 @@
                 </VisualStateGroup>
             </VisualStateManager.VisualStateGroups>
             <ContentControl HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                    x:Name="buttonContent"
-                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                    IsTabStop="False"
-                    Content="{TemplateBinding Content}"
-                    ContentTemplate="{TemplateBinding ContentTemplate}"
-                    Foreground="{TemplateBinding Foreground}" />
+                            x:Name="buttonContent"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            IsTabStop="False"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                            Foreground="{TemplateBinding Foreground}" />
         </Grid>
     </ControlTemplate>
 

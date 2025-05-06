@@ -799,6 +799,8 @@
                                 </Grid.ColumnDefinitions>
                                 <ContentPresenter Grid.RowSpan="2"
                                                   Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{x:Null}"
+                                                  ContentTemplateSelector="{x:Null}"
                                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                 <RepeatButton x:Name="IncreaseButton"
@@ -1117,8 +1119,6 @@
                                           Cursor="{TemplateBinding Cursor}"
                                           HorizontalAlignment="Left"
                                           Margin="{TemplateBinding Padding}"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
                                           Grid.RowSpan="2"
                                           Grid.Row="1" />
                     </Grid>

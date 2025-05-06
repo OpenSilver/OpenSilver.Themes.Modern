@@ -159,7 +159,7 @@
                                     </VisualStateManager.VisualStateGroups>
                                     <Rectangle x:Name="FillColor" Opacity="0" Fill="{DynamicResource Theme_ErrorBrush}" IsHitTestVisible="False" RadiusX="4" RadiusY="4" />
                                     <Rectangle x:Name="FillColor2" Opacity="0" Fill="{DynamicResource Theme_ErrorBrush}" IsHitTestVisible="False" RadiusX="4" RadiusY="4" />
-                                    <ContentPresenter x:Name="ContentPresenter" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}"/>
+                                    <ContentPresenter x:Name="ContentPresenter" HorizontalAlignment="Left" Margin="{TemplateBinding Padding}"/>
                                     <Rectangle x:Name="FocusVisualElement" Stroke="{DynamicResource Theme_ErrorBrush}" StrokeThickness="1" Visibility="Collapsed" RadiusX="4" RadiusY="4" />
                                 </Grid>
                             </ControlTemplate>

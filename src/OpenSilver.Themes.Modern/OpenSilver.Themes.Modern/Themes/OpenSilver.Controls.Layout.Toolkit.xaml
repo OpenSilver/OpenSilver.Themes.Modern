@@ -13,7 +13,7 @@
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
-        Value="{DynamicResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="HorizontalAlignment"
                 Value="Left" />
         <Setter Property="VerticalAlignment"
@@ -529,6 +529,7 @@
                                                                      Margin="5"
                                                                      Content="{TemplateBinding Content}"
                                                                      ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                     ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                                                      Grid.Column="1"
                                                                      Grid.Row="0"
                                                                      Grid.RowSpan="1" />
@@ -854,6 +855,7 @@
                                                                                   VerticalAlignment="{TemplateBinding VerticalAlignment}"
                                                                                   Content="{TemplateBinding Content}"
                                                                                   ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                                                  ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
                                                                                   Grid.Row="1"
                                                                                   Percentage="0"
                                                                                   RevealMode="{TemplateBinding ExpandDirection}"
