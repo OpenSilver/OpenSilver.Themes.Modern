@@ -16,38 +16,38 @@
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="Icon"
-                                                     Storyboard.TargetProperty="Opacity"
-                                                     To="1"
-                                                     Duration="0" />
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="Icon"
-                                                     Storyboard.TargetProperty="Opacity"
-                                                     To="1"
-                                                     Duration="0" />
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1"
+                                                         Duration="0" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled" />
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Grid x:Name="Icon"
-                          Opacity="0.8"
-                          Width="16"
-                          Height="16"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center">
+                              Opacity="0.8"
+                              Width="16"
+                              Height="16"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
                             <Ellipse Fill="{TemplateBinding Background}" />
                             <Path Height="12"
-                                HorizontalAlignment="Center"
-                                Margin="0,0,0,1"
-                                VerticalAlignment="Center"
-                                Width="4"
-                                Data="M0.5,0.60000002 C0.5,0.54477155 0.54477155,0.5 0.60000002,0.5 L2.4000001,0.5 C2.4552286,0.5 2.5,0.54477155 2.5,0.60000002 L2.5,1.6215254 C2.5,1.6767539 2.4552286,1.7215254 2.4000001,1.7215254 L0.60000002,1.7215254 C0.54477155,1.7215254 0.5,1.6767539 0.5,1.6215254 z M0.50000548,3.3151906 C0.50000548,3.2599623 0.54477704,3.2151906 0.60000551,3.2151906 L2.4000056,3.2151906 C2.4552341,3.2151906 2.5000055,3.2599623 2.5000055,3.3151906 L2.5000055,8.4000092 C2.5000055,8.4552374 2.4552341,8.5000095 2.4000056,8.5000095 L0.60000551,8.5000095 C0.54477704,8.5000095 0.50000548,8.4552374 0.50000548,8.4000092 z"
-                                Stretch="Fill"
-                                Fill="{TemplateBinding Foreground}"
-                                Stroke="Transparent">
+                                  HorizontalAlignment="Center"
+                                  Margin="0,0,0,1"
+                                  VerticalAlignment="Center"
+                                  Width="4"
+                                  Data="M0.5,0.60000002 C0.5,0.54477155 0.54477155,0.5 0.60000002,0.5 L2.4000001,0.5 C2.4552286,0.5 2.5,0.54477155 2.5,0.60000002 L2.5,1.6215254 C2.5,1.6767539 2.4552286,1.7215254 2.4000001,1.7215254 L0.60000002,1.7215254 C0.54477155,1.7215254 0.5,1.6767539 0.5,1.6215254 z M0.50000548,3.3151906 C0.50000548,3.2599623 0.54477704,3.2151906 0.60000551,3.2151906 L2.4000056,3.2151906 C2.4552341,3.2151906 2.5000055,3.2599623 2.5000055,3.3151906 L2.5000055,8.4000092 C2.5000055,8.4552374 2.4552341,8.5000095 2.4000056,8.5000095 L0.60000551,8.5000095 C0.54477704,8.5000095 0.50000548,8.4552374 0.50000548,8.4000092 z"
+                                  Stretch="Fill"
+                                  Fill="{TemplateBinding Foreground}"
+                                  Stroke="Transparent">
                             </Path>
                         </Grid>
                     </Grid>
@@ -64,31 +64,31 @@
                                 <VisualState x:Name="HasDescription">
                                     <Storyboard>
                                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="DescriptionContent"
-                                                                   Storyboard.TargetProperty="Visibility"
-                                                                   Duration="0">
+                                                                       Storyboard.TargetProperty="Visibility"
+                                                                       Duration="0">
                                             <DiscreteObjectKeyFrame KeyTime="0"
-                                                                Value="Visible" />
+                                                                    Value="Visible" />
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border Background="Transparent"
-                            BorderThickness="1"
-                            Padding="{TemplateBinding Padding}">
+                                BorderThickness="1"
+                                Padding="{TemplateBinding Padding}">
                             <Button x:Name="DescriptionContent"
-                                Visibility="Collapsed"
-                                IsTabStop="False"
-                                Template="{TemplateBinding GlyphTemplate}"
-                                Background="{TemplateBinding Background}"
-                                Foreground="{TemplateBinding Foreground}"
-                                BorderThickness="0"
-                                Padding="5"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                    Visibility="Collapsed"
+                                    IsTabStop="False"
+                                    Template="{TemplateBinding GlyphTemplate}"
+                                    Background="{TemplateBinding Background}"
+                                    Foreground="{TemplateBinding Foreground}"
+                                    BorderThickness="0"
+                                    Padding="5"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                                 <ToolTipService.ToolTip>
                                     <ToolTip Style="{TemplateBinding ToolTipStyle}"
-                                         Content="{TemplateBinding Description}" />
+                                             Content="{TemplateBinding Description}" />
                                 </ToolTipService.ToolTip>
                             </Button>
                         </Border>

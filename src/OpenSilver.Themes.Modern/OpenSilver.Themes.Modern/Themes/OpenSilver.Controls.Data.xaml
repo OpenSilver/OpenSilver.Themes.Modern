@@ -28,51 +28,61 @@
                                                   BasedOn="{TemplateBinding Foreground}"
                                                   TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                   DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledForegroundBrush"
-                 Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
+                                             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="FocusStates">
                                 <VisualState x:Name="Unfocused" />
                                 <VisualState x:Name="Focused">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Focus" Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value=".6" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="Focus"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To=".6" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Fill">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ForegroundContentControl" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+                                                                       Storyboard.TargetProperty="(TextElement.Foreground)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-
-                        <Ellipse x:Name="Background" Fill="Transparent" />
-                        <ContentControl x:Name="ForegroundContentControl" Foreground="{TemplateBinding Foreground}">
-                            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}" Width="23" Height="23" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </ContentControl>
+                        <Ellipse x:Name="Background"
+                                 Fill="Transparent" />
+                        <ContentPresenter x:Name="Content"
+                                          Width="23"
+                                          Height="23"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -80,13 +90,13 @@
     </Style>
 
     <Style x:Key="DataPagerNumericButtonStyle"
-       TargetType="ToggleButton">
+           TargetType="ToggleButton">
         <Setter Property="Foreground"
-            Value="{DynamicResource Theme_TextBrush}" />
+                Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
-            Value="{DynamicResource Theme_ControlBackgroundBrush}" />
+                Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Padding"
-            Value="8,0,8,2" />
+                Value="8,0,8,2" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -102,65 +112,77 @@
                                                   BasedOn="{TemplateBinding Foreground}"
                                                   TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                   DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                 InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledForegroundBrush"
-             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
+                                             Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
                         </Grid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="FocusStates">
                                 <VisualState x:Name="Unfocused" />
                                 <VisualState x:Name="Focused">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Focus" Storyboard.TargetProperty="Opacity">
-                                            <SplineDoubleKeyFrame KeyTime="0" Value=".6" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Storyboard.TargetName="Focus"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         Duration="0"
+                                                         To=".6" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Fill">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Fill">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background" Storyboard.TargetProperty="Background">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Background"
+                                                                       Storyboard.TargetProperty="Background">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ForegroundContentControl" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource DisabledForegroundBrush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+                                                                       Storyboard.TargetProperty="(TextElement.Foreground)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{StaticResource DisabledForegroundBrush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
-                            <vsm:VisualStateGroup x:Name="CheckStates">
-                                <vsm:VisualState x:Name="Checked">
+                            <VisualStateGroup x:Name="CheckStates">
+                                <VisualState x:Name="Checked">
                                     <Storyboard>
                                         <DoubleAnimation Duration="0"
                                                          Storyboard.TargetName="Background"
                                                          Storyboard.TargetProperty="Opacity"
                                                          To="0" />
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ForegroundContentControl" Storyboard.TargetProperty="Foreground">
-                                            <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+                                                                       Storyboard.TargetProperty="(TextElement.Foreground)">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+                                                                    Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                         </ObjectAnimationUsingKeyFrames>
                                     </Storyboard>
-                                </vsm:VisualState>
-                                <vsm:VisualState x:Name="Unchecked" />
-                            </vsm:VisualStateGroup>
+                                </VisualState>
+                                <VisualState x:Name="Unchecked" />
+                            </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-
-                        <Ellipse x:Name="Background" Fill="Transparent" />
-                        <ContentControl x:Name="ForegroundContentControl" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="23" Height="23">
-                            <ContentPresenter x:Name="Content" Content="{TemplateBinding Content}"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </ContentControl>
+                        <Ellipse x:Name="Background"
+                                 Fill="Transparent" />
+                        <ContentPresenter x:Name="Content"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          Width="23"
+                                          Height="23"
+                                          TextElement.Foreground="{TemplateBinding Foreground}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -199,110 +221,110 @@
                             <VisualStateGroup x:Name="MoveStates">
                                 <VisualState x:Name="MoveEnabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="CurrentPageTextBox"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="True" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="CurrentPageTextBox"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="True" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="MoveDisabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="CurrentPageTextBox"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="False" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="CurrentPageTextBox"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="False" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="MoveFirstStates">
                                 <VisualState x:Name="MoveFirstEnabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="FirstPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="True" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="FirstPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="True" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="MoveFirstDisabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="FirstPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="False" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="FirstPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="False" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="MovePreviousStates">
                                 <VisualState x:Name="MovePreviousEnabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="PreviousPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="True" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="PreviousPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="True" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="MovePreviousDisabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="PreviousPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="False" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="PreviousPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="False" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="MoveNextStates">
                                 <VisualState x:Name="MoveNextEnabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="NextPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="True" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="NextPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="True" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="MoveNextDisabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="NextPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="False" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="NextPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="False" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="MoveLastStates">
                                 <VisualState x:Name="MoveLastEnabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="LastPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="True" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="LastPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="True" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="MoveLastDisabled">
                                     <Storyboard>
-                                        <ObjectAnimationUsingKeyFrames Duration="0"
-                                                                       Storyboard.TargetName="LastPageButton"
-                                                                       Storyboard.TargetProperty="IsEnabled">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="False" />
-                                        </ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Duration="0"
+                                                                        Storyboard.TargetName="LastPageButton"
+                                                                        Storyboard.TargetProperty="IsEnabled">
+                                            <DiscreteBooleanKeyFrame KeyTime="0"
+                                                                     Value="False" />
+                                        </BooleanAnimationUsingKeyFrames>
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -592,9 +614,6 @@
                     <Grid x:Name="Root">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="00:00:0.2" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
@@ -740,37 +759,27 @@
                     <Grid x:Name="Root" Background="Transparent">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="00:00:0.1" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value=".65" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames Duration="00:00:00.001"
-                                                                       Storyboard.TargetName="Background"
-                                                                       Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)">
-                                            <SplineDoubleKeyFrame KeyTime="0"
-                                                                  Value=".1" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To=".65" />
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="Background"
+                                                         Storyboard.TargetProperty="(Rectangle.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Offset)"
+                                                         To=".1" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="SortStates">
-                                <!--<VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="00:00:0.1" />
-                                </VisualStateGroup.Transitions>-->
                                 <VisualState x:Name="Unsorted">
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetName="SortIconTransform"
-                                                     Storyboard.TargetProperty="Angle"
-                                                     Duration="0:00:00.5"
-                                                     To="180" />
+                                                         Storyboard.TargetProperty="Angle"
+                                                         Duration="0:00:00.5"
+                                                         To="180" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="SortAscending">
@@ -779,7 +788,6 @@
                                                          Storyboard.TargetProperty="Opacity"
                                                          Duration="0"
                                                          To="1.0" />
-
                                         <DoubleAnimation Storyboard.TargetName="SortIconTransform"
                                                          Storyboard.TargetProperty="Angle"
                                                          Duration="0:00:00.5"
@@ -834,7 +842,7 @@
                               Grid.Column="1"
                               Stretch="Uniform"
                               Width="12"
-                            Data="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z">
+                              Data="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z">
                             <Path.RenderTransform>
                                 <TransformGroup>
                                     <RotateTransform x:Name="SortIconTransform" Angle="180" />
@@ -868,9 +876,6 @@
                         </DataGridFrozenGrid.Resources>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="0" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="Normal AlternatingRow">
                                     <Storyboard>
@@ -981,7 +986,6 @@
                                                     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ExpandedArrow" Storyboard.TargetProperty="Fill">
                                                         <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding Source={StaticResource PressBrushBuilder}, Path=Brush}"/>
                                                     </ObjectAnimationUsingKeyFrames>
-                                                    
                                                 </Storyboard>
                                             </VisualState>
                                             <VisualState x:Name="Disabled">

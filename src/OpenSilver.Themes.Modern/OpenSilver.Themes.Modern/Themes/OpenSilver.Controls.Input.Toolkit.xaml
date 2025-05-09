@@ -165,11 +165,10 @@
                                             </VisualState>
                                             <VisualState x:Name="Disabled">
                                                 <Storyboard>
-                                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root"
-                                                                                   Storyboard.TargetProperty="Opacity">
-                                                        <SplineDoubleKeyFrame KeyTime="0"
-                                                                              Value=".55" />
-                                                    </DoubleAnimationUsingKeyFrames>
+                                                    <DoubleAnimation Storyboard.TargetName="Root"
+                                                                     Storyboard.TargetProperty="Opacity"
+                                                                     Duration="0"
+                                                                     To=".55" />
                                                 </Storyboard>
                                             </VisualState>
                                         </VisualStateGroup>
@@ -703,7 +702,7 @@
                                                   BasedOn="{TemplateBinding Foreground}"
                                                   TargetColor="{DynamicResource Theme_BackgroundColor}"
                                                   DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />
 
                             <SolidColorBrush x:Key="DisabledBorderBrush"
                                              Color="{Binding Source={StaticResource DisabledBorderBuilder}, Path=ResultColor}" />
@@ -862,13 +861,10 @@
                                 <VisualState x:Name="Disabled" />
                                 <VisualState x:Name="ReadOnly">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="ReadOnlyVisualElement"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="0.03" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="ReadOnlyVisualElement"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.03" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
@@ -932,90 +928,59 @@
                         </Grid.RowDefinitions>
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="00:00:00.2000000" />
-                                    <VisualTransition From="MouseOver"
-                                                      GeneratedDuration="00:00:00.2000000"
-                                                      To="Normal" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Normal" />
                                 <VisualState x:Name="MouseOver">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="MouseOverRatingItem"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="MouseOverHighlight"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="0.325" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="MouseOverRatingItem"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="MouseOverHighlight"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.325" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Pressed">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="PressedRatingItem"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="0.39" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="PressedRatingItem"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="0.39" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="Disabled">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="DisabledRatingItem"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="DisabledRatingItemBackground"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <ColorAnimationUsingKeyFrames Duration="00:00:00"
-                                                                      Storyboard.TargetName="clipper"
-                                                                      Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)">
-                                            <SplineColorKeyFrame KeyTime="0" Value="{DynamicResource Theme_BorderColor}" />
-                                        </ColorAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="DisabledRatingItem"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="DisabledRatingItemBackground"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
+                                        <ColorAnimation Duration="0"
+                                                        Storyboard.TargetName="clipper"
+                                                        Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource Theme_BorderColor}" />
                                     </Storyboard>
                                 </VisualState>
                                 <VisualState x:Name="ReadOnly">
                                     <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Duration="00:00:00.0010000"
-                                                                       Storyboard.TargetName="ReadOnlyRatingItem"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <EasingDoubleKeyFrame KeyTime="00:00:00"
-                                                                  Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimation Duration="0"
+                                                         Storyboard.TargetName="ReadOnlyRatingItem"
+                                                         Storyboard.TargetProperty="Opacity"
+                                                         To="1" />
                                     </Storyboard>
                                 </VisualState>
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FocusStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="00:00:00.1000000" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Focused">
                                     <Storyboard />
                                 </VisualState>
                                 <VisualState x:Name="Unfocused" />
                             </VisualStateGroup>
                             <VisualStateGroup x:Name="FillStates">
-                                <VisualStateGroup.Transitions>
-                                    <VisualTransition GeneratedDuration="00:00:00.1000000" />
-                                </VisualStateGroup.Transitions>
                                 <VisualState x:Name="Empty" />
                                 <VisualState x:Name="Partial" />
                                 <VisualState x:Name="Filled" />
