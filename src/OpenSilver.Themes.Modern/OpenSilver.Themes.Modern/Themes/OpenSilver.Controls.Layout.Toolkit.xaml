@@ -3,7 +3,7 @@
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:layoutToolkit="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Layout.Toolkit"
                     xmlns:layoutPrimitivesToolkit="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls.Layout.Toolkit"
-                    xmlns:local="http://opensilver.net/themes/modern">
+                    xmlns:mt="http://opensilver.net/themes/modern">
 
     <!--Accordion-->
     <Style x:Name="FlatAccordionStyle"
@@ -113,21 +113,21 @@
                     <Grid Margin="{TemplateBinding Padding}"
                           Background="Transparent">
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="HoverBrushBuilder"
-                                                BasedOn="{DynamicResource Theme_BorderBrush}"
-                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="PressBrushBuilder"
-                                                BasedOn="{DynamicResource Theme_BorderBrush}"
-                                                BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledBackgroundBuilder"
-                                                     BasedOn="{DynamicResource Theme_BorderBrush}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:BrushBuilder x:Key="HoverBrushBuilder"
+                                             BasedOn="{DynamicResource Theme_BorderBrush}"
+                                             BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <mt:BrushBuilder x:Key="PressBrushBuilder"
+                                             BasedOn="{DynamicResource Theme_BorderBrush}"
+                                             BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledBackgroundBuilder"
+                                                  BasedOn="{DynamicResource Theme_BorderBrush}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
 
                             <SolidColorBrush x:Key="DisabledBackgroundBrush"

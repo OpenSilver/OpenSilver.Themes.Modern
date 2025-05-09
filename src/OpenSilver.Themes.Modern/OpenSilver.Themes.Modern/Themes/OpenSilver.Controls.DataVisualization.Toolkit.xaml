@@ -2,7 +2,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:modern="clr-namespace:OpenSilver.Themes.Modern"
-    xmlns:local="http://opensilver.net/themes/modern">
+    xmlns:mt="http://opensilver.net/themes/modern">
 
 
     <!--  AreaDataPoint  -->
@@ -263,9 +263,9 @@
                 <ResourceDictionaryCollection>
                     <!-- Blue -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder1"
-                                                  BasedOn="{DynamicResource Theme_ChartSeriesColor1}"
-                                                  Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder1"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor1}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder1}" Path="GradientStops"/>
@@ -283,9 +283,9 @@
                     </ResourceDictionary>
                     <!-- Red -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder2"
-                                                  BasedOn="{DynamicResource Theme_ChartSeriesColor2}"
-                                                  Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder2"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor2}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder2}" Path="GradientStops"/>
@@ -303,9 +303,9 @@
                     </ResourceDictionary>
                     <!-- Light Green -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder3"
-                                                  BasedOn="{DynamicResource Theme_ChartSeriesColor3}"
-                                                  Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder3"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor3}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder3}" Path="GradientStops"/>
@@ -323,9 +323,9 @@
                     </ResourceDictionary>
                     <!-- Yellow -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder4"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor4}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder4"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor4}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder4}" Path="GradientStops"/>
@@ -343,9 +343,9 @@
                     </ResourceDictionary>
                     <!-- Indigo -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder5"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor5}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder5"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor5}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder5}" Path="GradientStops"/>
@@ -363,9 +363,9 @@
                     </ResourceDictionary>
                     <!-- Magenta -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder6"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor6}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder6"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor6}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder6}" Path="GradientStops"/>
@@ -383,9 +383,9 @@
                     </ResourceDictionary>
                     <!-- Dark Green -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder7"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor7}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder7"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor7}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder7}" Path="GradientStops"/>
@@ -403,9 +403,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder8"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor8}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder8"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor8}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder8}" Path="GradientStops"/>
@@ -423,9 +423,9 @@
                     </ResourceDictionary>
                     <!-- Blue -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder9"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor9}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder9"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor9}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder9}" Path="GradientStops"/>
@@ -443,9 +443,9 @@
                     </ResourceDictionary>
                     <!-- Brown -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder10"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor10}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder10"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor10}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder10}" Path="GradientStops"/>
@@ -463,9 +463,9 @@
                     </ResourceDictionary>
                     <!-- Cyan -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder11"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor11}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder11"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor11}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder11}" Path="GradientStops"/>
@@ -483,9 +483,9 @@
                     </ResourceDictionary>
                     <!-- Special Blue -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder12"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor12}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder12"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor12}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder12}" Path="GradientStops"/>
@@ -503,9 +503,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade 2 -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder13"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor13}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder13"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor13}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder13}" Path="GradientStops"/>
@@ -523,9 +523,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade 3 -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder14"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor14}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder14"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor14}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder14}" Path="GradientStops"/>
@@ -543,9 +543,9 @@
                     </ResourceDictionary>
                     <!-- Gray Shade 4 -->
                     <ResourceDictionary>
-                        <local:BrushEffectBuilder x:Key="BrushEffectBuilder15"
-                          BasedOn="{DynamicResource Theme_ChartSeriesColor15}"
-                          Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
+                        <mt:BrushEffectBuilder x:Key="BrushEffectBuilder15"
+                                               BasedOn="{DynamicResource Theme_ChartSeriesColor15}"
+                                               Mode="{DynamicResource Theme_ChartsBrushEffectMode}"/>
                         <LinearGradientBrush x:Key="Background" StartPoint="0.5,0" EndPoint="0.5,1">
                             <LinearGradientBrush.GradientStops>
                                 <Binding Source="{StaticResource BrushEffectBuilder15}" Path="GradientStops"/>

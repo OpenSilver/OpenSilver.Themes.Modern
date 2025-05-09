@@ -3,7 +3,7 @@
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:controls="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls"
                     xmlns:controlsPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls"
-                    xmlns:local="http://opensilver.net/themes/modern">
+                    xmlns:mt="http://opensilver.net/themes/modern">
 
     <!-- TextBlock -->
     <Style TargetType="TextBlock">
@@ -14,9 +14,9 @@
     <ControlTemplate x:Key="CircleButtonTemplate" TargetType="Button">
         <Grid>
             <Grid.Resources>
-                <local:BrushBuilder x:Key="PressBrushBuilder"
-                    BasedOn="{TemplateBinding Foreground}"
-                    BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                <mt:BrushBuilder x:Key="PressBrushBuilder"
+                                 BasedOn="{TemplateBinding Foreground}"
+                                 BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
             </Grid.Resources>
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup x:Name="FocusStates">
@@ -78,20 +78,20 @@
                             <SolidColorBrush x:Key="Theme_WatermarkBrush"
                                              Color="{DynamicResource Theme_WatermarkColor}" />
 
-                            <local:ColorInterpolator x:Key="DisabledBorderBuilder"
-                                                     BasedOn="{DynamicResource Theme_BorderBrush}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledWatermarkForegroundBuilder"
-                                                     BasedOn="{DynamicResource Theme_WatermarkBrush}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:ColorInterpolator x:Key="DisabledBorderBuilder"
+                                                  BasedOn="{DynamicResource Theme_BorderBrush}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledWatermarkForegroundBuilder"
+                                                  BasedOn="{DynamicResource Theme_WatermarkBrush}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
 
                             <SolidColorBrush x:Key="DisabledBorderBrush"
@@ -302,10 +302,10 @@
                             <SolidColorBrush x:Key="InactiveBrush">#FF777777</SolidColorBrush>
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledBrush"
                                              Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
@@ -461,10 +461,10 @@
                         <Border.Resources>
                             <SolidColorBrush x:Key="SelectedBrush"
                                              Color="{DynamicResource Theme_TextOnPrimaryColor}" />
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledBrush"
                                              Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
@@ -598,10 +598,10 @@
     <ControlTemplate x:Key="HeaderButtonTemplate" TargetType="Button">
         <Grid Cursor="Hand">
             <Grid.Resources>
-                <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                         BasedOn="{TemplateBinding Foreground}"
-                                         TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                         DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                      BasedOn="{TemplateBinding Foreground}"
+                                      TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                      DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                          InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                 <SolidColorBrush x:Key="DisabledBrush"
                                  Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
@@ -637,10 +637,10 @@
                 <ControlTemplate TargetType="CalendarItem">
                     <Grid x:Name="Root">
                         <Grid.Resources>
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledBrush"
                                              Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
@@ -909,15 +909,15 @@
                 <ControlTemplate TargetType="TabItem">
                     <Grid x:Name="Root">
                         <Grid.Resources>
-                            <local:ColorInterpolator x:Key="DisabledBorderBrushBuilder"
-                                                     BasedOn="{TemplateBinding BorderBrush}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:ColorInterpolator x:Key="DisabledBorderBrushBuilder"
+                                                  BasedOn="{TemplateBinding BorderBrush}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
 
                             <SolidColorBrush x:Key="DisabledBorderBrush"

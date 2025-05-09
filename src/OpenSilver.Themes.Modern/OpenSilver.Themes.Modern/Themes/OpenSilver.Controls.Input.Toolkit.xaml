@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="http://opensilver.net/themes/modern">
+                    xmlns:mt="http://opensilver.net/themes/modern">
 
     <!-- ListTimePickerPopup Style -->
     <Style TargetType="ListTimePickerPopup">
@@ -694,15 +694,15 @@
                 <ControlTemplate TargetType="ButtonSpinner">
                     <Grid x:Name="RootElement">
                         <Grid.Resources>
-                            <local:ColorInterpolator x:Key="DisabledBorderBuilder"
-                                                     BasedOn="{TemplateBinding BorderBrush}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
-                                                     InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:ColorInterpolator x:Key="DisabledBorderBuilder"
+                                                  BasedOn="{TemplateBinding BorderBrush}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}" />
 
                             <SolidColorBrush x:Key="DisabledBorderBrush"

@@ -3,7 +3,7 @@
                     xmlns:vsm="clr-namespace:System.Windows;assembly=OpenSilver"
                     xmlns:data="clr-namespace:System.Windows.Controls;assembly=OpenSilver.Controls.Data"
                     xmlns:dataPrimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=OpenSilver.Controls.Data"
-                    xmlns:local="http://opensilver.net/themes/modern">
+                    xmlns:mt="http://opensilver.net/themes/modern">
 
     <Style x:Key="DataPagerButtonStyle"
            TargetType="Button">
@@ -18,16 +18,16 @@
                 <ControlTemplate TargetType="Button">
                     <Grid>
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="HoverBrushBuilder"
-                                                BasedOn="{TemplateBinding Background}"
-                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="PressBrushBuilder"
-                                                BasedOn="{TemplateBinding Background}"
-                                                BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                     BasedOn="{TemplateBinding Foreground}"
-                                                     TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                     DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:BrushBuilder x:Key="HoverBrushBuilder"
+                                             BasedOn="{TemplateBinding Background}"
+                                             BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <mt:BrushBuilder x:Key="PressBrushBuilder"
+                                             BasedOn="{TemplateBinding Background}"
+                                             BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                      InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledForegroundBrush"
                  Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
@@ -92,16 +92,16 @@
                 <ControlTemplate TargetType="Button">
                     <Grid>
                         <Grid.Resources>
-                            <local:BrushBuilder x:Key="HoverBrushBuilder"
-                                            BasedOn="{TemplateBinding Background}"
-                                            BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
-                            <local:BrushBuilder x:Key="PressBrushBuilder"
-                                            BasedOn="{TemplateBinding Background}"
-                                            BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
-                            <local:ColorInterpolator x:Key="DisabledForegroundBuilder"
-                                                 BasedOn="{TemplateBinding Foreground}"
-                                                 TargetColor="{DynamicResource Theme_BackgroundColor}"
-                                                 DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
+                            <mt:BrushBuilder x:Key="HoverBrushBuilder"
+                                             BasedOn="{TemplateBinding Background}"
+                                             BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <mt:BrushBuilder x:Key="PressBrushBuilder"
+                                             BasedOn="{TemplateBinding Background}"
+                                             BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                            <mt:ColorInterpolator x:Key="DisabledForegroundBuilder"
+                                                  BasedOn="{TemplateBinding Foreground}"
+                                                  TargetColor="{DynamicResource Theme_BackgroundColor}"
+                                                  DesaturationRatio="{DynamicResource Theme_DisabledDesaturationRatio}"
                                                  InterpolationRatio="{DynamicResource Theme_DisabledInterpolationRatio}"/>
                             <SolidColorBrush x:Key="DisabledForegroundBrush"
              Color="{Binding Source={StaticResource DisabledForegroundBuilder}, Path=ResultColor}" />
@@ -857,9 +857,9 @@
                 <ControlTemplate TargetType="data:DataGridRow">
                     <DataGridFrozenGrid x:Name="Root">
                         <DataGridFrozenGrid.Resources>
-                            <local:BrushBuilder x:Key="HoverBrushBuilder"
-                                                BasedOn="{Binding Background, ElementName=Root}"
-                                                BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                            <mt:BrushBuilder x:Key="HoverBrushBuilder"
+                                             BasedOn="{Binding Background, ElementName=Root}"
+                                             BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
                             <Storyboard x:Key="DetailsVisibleTransition">
                                 <DoubleAnimation Storyboard.TargetName="DetailsPresenter"
                                                  Storyboard.TargetProperty="ContentHeight"
@@ -953,12 +953,12 @@
                             <ControlTemplate x:Key="ToggleButtonTemplate" TargetType="ToggleButton">
                                 <Grid Background="Transparent">
                                     <Grid.Resources>
-                                        <local:BrushBuilder x:Key="HoverBrushBuilder"
-                                                            BasedOn="{TemplateBinding Background}"
-                                                            BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
-                                        <local:BrushBuilder x:Key="PressBrushBuilder"
-                                                            BasedOn="{TemplateBinding Background}"
-                                                            BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
+                                        <mt:BrushBuilder x:Key="HoverBrushBuilder"
+                                                         BasedOn="{TemplateBinding Background}"
+                                                         BrightnessRatio="{DynamicResource Theme_HoverBrightnessRatio}"/>
+                                        <mt:BrushBuilder x:Key="PressBrushBuilder"
+                                                         BasedOn="{TemplateBinding Background}"
+                                                         BrightnessRatio="{DynamicResource Theme_PressBrightnessRatio}"/>
                                     </Grid.Resources>
                                     <VisualStateManager.VisualStateGroups>
                                         <VisualStateGroup x:Name="CommonStates">
