@@ -1536,6 +1536,10 @@
                 Value="False" />
         <Setter Property="TabNavigation"
                 Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                Value="Auto" />
         <Setter Property="BorderThickness"
                 Value="1" />
         <Setter Property="FontSize"
@@ -2620,6 +2624,10 @@
                 Value="Left" />
         <Setter Property="TabNavigation"
                 Value="Once" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
+                Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
+                Value="Auto" />
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
