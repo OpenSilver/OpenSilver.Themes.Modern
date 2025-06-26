@@ -1109,7 +1109,7 @@
                     <Setter Property="Background"
                             Value="{DynamicResource Theme_ControlBackgroundBrush}" />
                     <Setter Property="BorderBrush"
-                            Value="{DynamicResource Theme_PrimaryColor}" />
+                            Value="{DynamicResource Theme_PrimaryBrush}" />
                     <Setter Property="Opacity"
                             Value=".6" />
                     <Setter Property="Template">
