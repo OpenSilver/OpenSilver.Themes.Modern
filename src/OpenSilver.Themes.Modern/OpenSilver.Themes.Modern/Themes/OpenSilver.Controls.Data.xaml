@@ -11,8 +11,10 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
                 Value="{DynamicResource Theme_ControlBackgroundBrush}" />
-        <Setter Property="Padding"
-                Value="8,0,8,2" />
+        <Setter Property="MinWidth"
+                Value="23" />
+        <Setter Property="MinHeight"
+                Value="23" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -78,8 +80,7 @@
                         <Ellipse x:Name="Background"
                                  Fill="Transparent" />
                         <ContentPresenter x:Name="Content"
-                                          Width="23"
-                                          Height="23"
+                                          Margin="1 0"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
                                           TextElement.Foreground="{TemplateBinding Foreground}"/>
@@ -95,8 +96,10 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="Background"
                 Value="{DynamicResource Theme_ControlBackgroundBrush}" />
-        <Setter Property="Padding"
-                Value="8,0,8,2" />
+        <Setter Property="MinWidth"
+                Value="23" />
+        <Setter Property="MinHeight"
+                Value="23" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -178,10 +181,9 @@
                         <Ellipse x:Name="Background"
                                  Fill="Transparent" />
                         <ContentPresenter x:Name="Content"
+                                          Margin="1 0"
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"
-                                          Width="23"
-                                          Height="23"
                                           TextElement.Foreground="{TemplateBinding Foreground}" />
                     </Grid>
                 </ControlTemplate>
