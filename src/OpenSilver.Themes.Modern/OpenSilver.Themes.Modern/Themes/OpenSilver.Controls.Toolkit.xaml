@@ -126,6 +126,8 @@
                             Value="10" />
                     <Setter Property="Margin"
                             Value="8,0,8,8" />
+                    <Setter Property="CornerRadius"
+                            Value="2" />
                 </Style>
             </Setter.Value>
         </Setter>
@@ -209,7 +211,7 @@
                         <Border BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{DynamicResource Theme_ControlBackgroundBrush}"
                                 BorderBrush="{DynamicResource Theme_PrimaryBrush}"
-                                CornerRadius="2">
+                                CornerRadius="{TemplateBinding CornerRadius}">
                             <Border.Effect>
                                 <DropShadowEffect Direction="0"
                                                   ShadowDepth="0"
@@ -269,6 +271,8 @@
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4"/>
         <Setter Property="ExpandDirection"
                 Value="Down" />
         <Setter Property="Background"
@@ -869,7 +873,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
+                                CornerRadius="{TemplateBinding CornerRadius}">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"
@@ -940,6 +944,7 @@
     <Style TargetType="GlobalCalendar">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="6" />
         <Setter Property="Background" Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="FontFamily" Value="&quot;Roboto&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif" />
@@ -951,7 +956,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="GlobalCalendar">
-                        <Border HorizontalAlignment="Center" CornerRadius="6">
+                    <Border HorizontalAlignment="Center" CornerRadius="{TemplateBinding CornerRadius}">
                             <Border.Effect>
                                 <DropShadowEffect ShadowDepth="0"
                                           Color="{Binding ElementName=Background, Path=BorderBrush.(SolidColorBrush.Color)}"
@@ -961,6 +966,7 @@
                             <StackPanel HorizontalAlignment="Center" x:Name="Root">
                                 <GlobalCalendarItem x:Name="CalendarItem"
                                                  BorderThickness="{TemplateBinding BorderThickness}"
+                                                 CornerRadius="{TemplateBinding CornerRadius}"
                                                  BorderBrush="{TemplateBinding BorderBrush}"
                                                  Background="{TemplateBinding Background}" />
                             </StackPanel>
@@ -1261,6 +1267,8 @@
                 Value="{DynamicResource Theme_BorderBrush}"/>
         <Setter Property="Foreground"
                 Value="{DynamicResource Theme_TextBrush}"/>
+        <Setter Property="CornerRadius"
+                Value="4"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="GlobalCalendarItem">
@@ -1283,10 +1291,10 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="4" />
+                        CornerRadius="{TemplateBinding CornerRadius}" />
                         <Border>
                             <Border BorderThickness="2"
-                            CornerRadius="3,3,3,3"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             BorderBrush="{x:Null}">
                                 <Grid>
                                     <Grid.Resources>

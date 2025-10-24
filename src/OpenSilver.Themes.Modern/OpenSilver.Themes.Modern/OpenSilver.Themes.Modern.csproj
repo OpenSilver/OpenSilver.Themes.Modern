@@ -6,7 +6,7 @@
     <DefineSilverlight>true</DefineSilverlight>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>OpenSilver.Themes.Modern</Title>
-    <Version>3.2.0</Version>
+    <Version>3.3.0-test01</Version>
     <Authors>OpenSilver</Authors>
     <Company>Userware</Company>
     <Description>Styles for controls with a more modern look in OpenSilver</Description>
@@ -15,7 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenSilver" Version="[$(OpenSilverVersion)]" />
+    <PackageReference Include="OpenSilver" Version="3.3.0-preview-2025-10-13-224054-f467cb95" />
   </ItemGroup>
 
 

@@ -1097,6 +1097,8 @@
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="DragIndicatorStyle">
@@ -1161,7 +1163,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="4">
+                            CornerRadius="{TemplateBinding CornerRadius}">
                         <VisualStateManager.VisualStateGroups>
                             <VisualStateGroup x:Name="CommonStates">
                                 <VisualState x:Name="Normal" />

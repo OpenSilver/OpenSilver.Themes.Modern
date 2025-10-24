@@ -10,6 +10,8 @@
                 Value="0" />
         <Setter Property="IsTabStop"
                 Value="False" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ListTimePickerPopup">
@@ -40,6 +42,7 @@
                                  IsTabStop="True"
                                  TabIndex="1"
                                  MaxHeight="130"
+                                 CornerRadius="{TemplateBinding CornerRadius}"
                                  DisplayMemberPath="Key"
                                  DataContext="{TemplateBinding TimeItemsSelection}"
                                  ItemsSource="{Binding Items}"
@@ -69,6 +72,8 @@
                 Value="150" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
@@ -226,6 +231,7 @@
                                     Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     Padding="{TemplateBinding Padding}"
                                     Style="{TemplateBinding TimeUpDownStyle}"
                                     SpinnerStyle="{TemplateBinding SpinnerStyle}"
@@ -278,6 +284,8 @@
                 Value="125" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
@@ -410,6 +418,7 @@
                                        Background="{TemplateBinding Background}"
                                        BorderBrush="{TemplateBinding BorderBrush}"
                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                       CornerRadius="{TemplateBinding CornerRadius}"
                                        Padding="{TemplateBinding Padding}"
                                        Style="{TemplateBinding SpinnerStyle}"
                                        MinWidth="24"
@@ -466,6 +475,8 @@
                 Value="125" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
@@ -534,6 +545,7 @@
                                        Background="{TemplateBinding Background}"
                                        BorderBrush="{TemplateBinding BorderBrush}"
                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                       CornerRadius="{TemplateBinding CornerRadius}"
                                        Padding="{TemplateBinding Padding}"
                                        Style="{TemplateBinding SpinnerStyle}"
                                        HorizontalAlignment="Stretch"
@@ -608,6 +620,8 @@
                 Value="False" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Background"
                 Value="Transparent" />
         <Setter Property="Padding"
@@ -635,6 +649,7 @@
                                        Background="{TemplateBinding Background}"
                                        BorderBrush="{TemplateBinding BorderBrush}"
                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                       CornerRadius="{TemplateBinding CornerRadius}"
                                        Padding="{TemplateBinding Padding}"
                                        MinWidth="35"
                                        HorizontalContentAlignment="Stretch"
@@ -688,6 +703,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ButtonSpinner">
@@ -760,18 +777,18 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}" />
                         <Border x:Name="BorderColor"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
                                 Opacity="0" />
                         <Border x:Name="HasFocus"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 IsHitTestVisible="False"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"

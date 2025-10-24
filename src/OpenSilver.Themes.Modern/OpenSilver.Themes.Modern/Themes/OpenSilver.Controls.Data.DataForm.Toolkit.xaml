@@ -96,6 +96,8 @@
                 Value="True" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Background"
@@ -258,7 +260,7 @@
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="DataFormBorder"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 Padding="0">

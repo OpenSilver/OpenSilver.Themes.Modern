@@ -84,6 +84,8 @@
                 Value="Hand" />
         <Setter Property="FontSize"
                 Value="14" />
+        <Setter Property="CornerRadius"
+                Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -153,12 +155,12 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="5"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"/>
                         <Border x:Name="HasFocus"
-                                CornerRadius="6"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 Margin="-1"
                                 Opacity=".7"
@@ -191,6 +193,8 @@
                 Value="Hand" />
         <Setter Property="FontSize"
                 Value="14" />
+        <Setter Property="CornerRadius"
+                Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -271,18 +275,18 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="5"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"/>
                         <Border x:Name="HasFocus"
-                                CornerRadius="6"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 Margin="-1"
                                 Opacity=".7"
                                 Visibility="Collapsed" />
                         <Border x:Name="Toggled"
-                                CornerRadius="5"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{DynamicResource DisabledBrush}"
                                 Opacity="0" />
                         <ContentPresenter x:Name="contentPresenter"
@@ -313,6 +317,8 @@
                 Value="Hand" />
         <Setter Property="FontSize"
                 Value="14" />
+        <Setter Property="CornerRadius"
+                Value="5" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
@@ -384,12 +390,12 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="5"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 BorderBrush="{TemplateBinding BorderBrush}"/>
                         <Border x:Name="HasFocus"
-                                CornerRadius="6"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 Margin="-1"
                                 Opacity=".7"
@@ -427,6 +433,8 @@
                 Value="Center" />
         <Setter Property="FontSize"
                 Value="14" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
@@ -525,18 +533,18 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}" />
                         <Border x:Name="BorderColor"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
                                 Opacity="0" />
                         <Border x:Name="HasFocus"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
@@ -561,7 +569,7 @@
                                 Visibility="Collapsed"
                                 BorderBrush="{DynamicResource Theme_ErrorBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
+                                CornerRadius="{TemplateBinding CornerRadius}">
                             <ToolTipService.ToolTip>
                                 <ToolTip x:Name="validationTooltip"
                                          DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}"
@@ -692,6 +700,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="2" />
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="Template">
@@ -867,7 +877,7 @@
                               Width="16"
                               Height="16"
                               x:Name="Radio">
-                            <Border CornerRadius="2"
+                            <Border CornerRadius="{TemplateBinding CornerRadius}"
                                     x:Name="Background"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -901,12 +911,12 @@
                                       StrokeMiterLimit="10" />
                             </Grid>
                             <Border x:Name="FadedBorder"
-                                    CornerRadius="2"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     BorderBrush="{DynamicResource Theme_BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     Background="Transparent" />
                             <Border x:Name="HasFocus"
-                                    CornerRadius="2"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     Background="Transparent"
@@ -989,6 +999,8 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Padding"
                 Value="9,0,9,2" />
         <Setter Property="Template">
@@ -1086,18 +1098,18 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}" />
                         <Border x:Name="BorderColor"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
                                 Opacity="0" />
                         <Border x:Name="HasFocus"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
@@ -1181,6 +1193,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="8" />
         <Setter Property="Cursor"
                 Value="Hand" />
         <Setter Property="Template">
@@ -1311,7 +1325,7 @@
                               Width="16"
                               Height="16">
                             <Border x:Name="HasFocus"
-                                    CornerRadius="8"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="1"
                                     Background="Transparent"
@@ -1323,7 +1337,7 @@
                                                       BlurRadius="2" />
                                 </Border.Effect>
                             </Border>
-                            <Border CornerRadius="8"
+                            <Border CornerRadius="{TemplateBinding CornerRadius}"
                                     x:Name="Background"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -1339,13 +1353,13 @@
                                         Opacity=".7"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="3"
-                                        CornerRadius="8" />
+                                        CornerRadius="{TemplateBinding CornerRadius}" />
                                 <Border x:Name="BulletBorder"
                                         Background="Transparent"
                                         Visibility="Collapsed"
                                         BorderBrush="{TemplateBinding BorderBrush}"
                                         BorderThickness="5"
-                                        CornerRadius="8" />
+                                        CornerRadius="{TemplateBinding CornerRadius}" />
                             </Grid>
                             <Border x:Name="ValidationErrorElement"
                                     Visibility="Collapsed"
@@ -1416,6 +1430,8 @@
         Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="TabNavigation"
                 Value="Local" />
         <Setter Property="Template">
@@ -1498,13 +1514,13 @@
                                 Background="{DynamicResource Theme_PrimaryBrush}"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Opacity="0" />
                         <Border x:Name="Hover"
                                 Background="{Binding Source={StaticResource HoverBrushBuilder}, Path=Brush}"
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Opacity="0" />
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                           Margin="{TemplateBinding Padding}"
@@ -1514,7 +1530,7 @@
                                 Visibility="Collapsed"
                                 BorderBrush="{DynamicResource Theme_PrimaryBrush}"
                                 BorderThickness="0.5"
-                                CornerRadius="4" />
+                                CornerRadius="{TemplateBinding CornerRadius}" />
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -1542,6 +1558,8 @@
                 Value="Auto" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="BorderBrush"
@@ -1593,7 +1611,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4">
+                                CornerRadius="{TemplateBinding CornerRadius}">
                             <ScrollViewer x:Name="ScrollViewer"
                                           Background="Transparent"
                                           Foreground="{TemplateBinding Foreground}"
@@ -1948,6 +1966,8 @@
                 Value="1" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="VerticalScrollBarVisibility"
                 Value="Auto" />
         <Setter Property="Template">
@@ -1957,7 +1977,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="4">
+                            CornerRadius="{TemplateBinding CornerRadius}">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*" />
@@ -2007,6 +2027,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="2" />
+        <Setter Property="CornerRadius"
+                Value="8" />
         <Setter Property="IsTabStop"
                 Value="False" />
         <Setter Property="BorderBrush"
@@ -2059,14 +2081,14 @@
                         </VisualStateManager.VisualStateGroups>
                         <Grid x:Name="ThumbVisual">
                             <Border x:Name="Background"
-                                    CornerRadius="8"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     Width="{TemplateBinding Width}"
                                     Height="{TemplateBinding Height}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     Background="{TemplateBinding Background}" />
                             <Border x:Name="FocusBorder"
-                                    CornerRadius="8"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     Width="{TemplateBinding Width}"
                                     Height="{TemplateBinding Height}"
                                     BorderThickness="1"
@@ -2092,6 +2114,8 @@
            TargetType="Slider">
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="8" />
         <Setter Property="Maximum"
                 Value="10" />
         <Setter Property="Minimum"
@@ -2181,12 +2205,13 @@
                                    Grid.Column="1"
                                    Style="{StaticResource SliderThumbStyle}"
                                    Background="{TemplateBinding Background}"
-                                   BorderBrush="{TemplateBinding BorderBrush}" />
+                                   BorderBrush="{TemplateBinding BorderBrush}"
+                                   CornerRadius="{TemplateBinding CornerRadius}" />
                             <Border x:Name="ThumbFocusHighlight"
                                     Width="16"
                                     Height="16"
                                     Grid.Column="1"
-                                    CornerRadius="8" />
+                                    CornerRadius="{TemplateBinding CornerRadius}" />
                             <RepeatButton x:Name="HorizontalTrackLargeChangeIncreaseRepeatButton"
                                           IsTabStop="False"
                                           Template="{StaticResource RepeatButtonTemplate}"
@@ -2233,7 +2258,8 @@
                                    Grid.Row="1"
                                    Style="{StaticResource SliderThumbStyle}"
                                    Background="{TemplateBinding Background}"
-                                   BorderBrush="{TemplateBinding BorderBrush}" />
+                                   BorderBrush="{TemplateBinding BorderBrush}"
+                                   CornerRadius="{TemplateBinding CornerRadius}" />
                             <RepeatButton x:Name="VerticalTrackLargeChangeIncreaseRepeatButton"
                                           IsTabStop="False"
                                           Template="{StaticResource RepeatButtonTemplate}" />
@@ -2259,6 +2285,8 @@
                 Value="Transparent" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="12" />
         <Setter Property="Cursor"
                 Value="Arrow" />
         <Setter Property="IsTabStop"
@@ -2372,13 +2400,14 @@
                               Opacity="0"
                               x:Name="grid">
                             <Border x:Name="Background"
-                                    CornerRadius="12"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="1"
                                     Background="{DynamicResource Theme_PrimaryBrush}" />
                         </Grid>
                         <ToggleButton HorizontalAlignment="Stretch"
                                       x:Name="ExpanderButton"
+                                      CornerRadius="{TemplateBinding CornerRadius}"
                                       VerticalAlignment="Stretch"
                                       IsTabStop="False"
                                       Cursor="Hand"
@@ -2466,6 +2495,7 @@
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Background="{TemplateBinding Background}"
                                 Foreground="{TemplateBinding Foreground}"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 IsTabStop="False"
                                 TabNavigation="Once"
                                 Grid.Column="1"
@@ -2502,7 +2532,7 @@
                                                 Opacity="0"
                                                 Background="{Binding Source={StaticResource MouseOverBackgroundBuilder}, Path=Brush}"
                                                 IsHitTestVisible="False"
-                                                CornerRadius="12" />
+                                                CornerRadius="{TemplateBinding CornerRadius}" />
                                         <ContentPresenter Cursor="{TemplateBinding Cursor}"
                                                           HorizontalAlignment="Left"
                                                           Margin="{TemplateBinding Padding}"
@@ -2545,6 +2575,8 @@
                 Value="Once" />
         <Setter Property="BorderThickness"
                 Value="0" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="FontSize"
                 Value="14" />
         <Setter Property="Template">
@@ -2555,7 +2587,7 @@
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
                             Padding="{TemplateBinding Padding}"
-                            CornerRadius="4">
+                            CornerRadius="{TemplateBinding CornerRadius}">
                         <ScrollViewer x:Name="ScrollViewer"
                                       Background="{x:Null}"
                                       BorderBrush="Transparent"
@@ -2638,6 +2670,8 @@
                 Value=" " />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Padding"
                 Value="8,2,8,2" />
         <Setter Property="Cursor"
@@ -2738,7 +2772,7 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Border CornerRadius="4"
+                        <Border CornerRadius="{TemplateBinding CornerRadius}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="1"
@@ -2813,7 +2847,7 @@
                             </Grid>
                         </Border>
                         <Border x:Name="HasFocus"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="1"
                                 Padding="{TemplateBinding Padding}"
@@ -2862,7 +2896,7 @@
                             <Border x:Name="PopupBorder"
                                     Height="Auto"
                                     BorderBrush="{DynamicResource Theme_BorderBrush}"
-                                    CornerRadius="4"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     Background="{TemplateBinding Background}"
                                     BorderThickness="1">
                                 <ScrollViewer x:Name="ScrollViewer"
@@ -2899,6 +2933,8 @@
                 Value="Stretch" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="FontSize"
                 Value="16" />
         <Setter Property="Background"
@@ -3077,7 +3113,7 @@
                             <Border Background="{TemplateBinding Background}"
                                     BorderBrush="{TemplateBinding BorderBrush}"
                                     BorderThickness="{TemplateBinding BorderThickness}"
-                                    CornerRadius="4">
+                                    CornerRadius="{TemplateBinding CornerRadius}">
                                 <Grid>
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
@@ -3259,6 +3295,8 @@
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="5" />
         <Setter Property="Padding"
                 Value="3" />
         <Setter Property="Template">
@@ -3268,7 +3306,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="5"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             Padding="{TemplateBinding Padding}">
                         <ContentPresenter Cursor="{TemplateBinding Cursor}"
                                           Margin="{TemplateBinding Padding}" />
@@ -3288,6 +3326,8 @@
                 Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_BorderBrush}" />
         <Setter Property="Padding"
@@ -3298,7 +3338,7 @@
                     <Border x:Name="ContextBorder" BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             Background="{TemplateBinding Background}"
-                            CornerRadius="4">
+                            CornerRadius="{TemplateBinding CornerRadius}">
                         <Border.Effect>
                             <DropShadowEffect ShadowDepth="0"
                                               Color="{Binding ElementName=ContextBorder, Path=BorderBrush.(SolidColorBrush.Color)}"
@@ -3306,19 +3346,19 @@
                                               BlurRadius="2" />
                         </Border.Effect>
                         <Grid>
-                            <Border CornerRadius="4"
+                            <Border CornerRadius="{TemplateBinding CornerRadius}"
                                     Background="{DynamicResource Theme_BackgroundBrush}"
                                     Opacity="0.7"
                                     Width="28"
                                     Margin="2"
                                     HorizontalAlignment="Left" />
-                            <Border CornerRadius="4"                             
+                            <Border CornerRadius="{TemplateBinding CornerRadius}"                             
                                     Background="{DynamicResource Theme_BackgroundBrush}"
                                     Opacity="0.9"
                                     Width="1"
                                     Margin="30,2,0,2"
                                     HorizontalAlignment="Left" />
-                            <Border CornerRadius="4" 
+                            <Border CornerRadius="{TemplateBinding CornerRadius}" 
                                     Background="{DynamicResource Theme_BackgroundBrush}"
                                     Opacity="0.9"
                                     Width="1"
@@ -3341,6 +3381,8 @@
                 Value="Transparent" />
         <Setter Property="BorderBrush"
                 Value="Transparent" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Padding"
                 Value="4,3,2,3" />
         <Setter Property="Template">
@@ -3385,14 +3427,14 @@
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="1" />
                         <Border x:Name="Bg"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="Transparent"
                                 Background="{DynamicResource Theme_PrimaryBrush}"
                                 BorderThickness="1"
                                 Opacity="0">
                         </Border>
                         <Border x:Name="InnerBorder"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 Opacity="0"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="1"

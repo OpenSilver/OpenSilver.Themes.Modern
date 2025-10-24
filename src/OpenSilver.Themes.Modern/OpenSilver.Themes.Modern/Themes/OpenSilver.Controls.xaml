@@ -62,6 +62,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="CaretBrush" Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="CornerRadius" Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="DatePickerTextBox">
@@ -159,13 +160,13 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="Background"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{DynamicResource Theme_BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="{TemplateBinding Background}"
                                 Grid.ColumnSpan="2" />
                         <Border x:Name="Hover"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Background="Transparent"
@@ -191,7 +192,7 @@
                                             Content="{TemplateBinding Watermark}" />
                         </Grid>
                         <Border x:Name="HasFocus"
-                                CornerRadius="4"
+                                CornerRadius="{TemplateBinding CornerRadius}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 Visibility="Collapsed"
@@ -219,6 +220,8 @@
                 Value="{DynamicResource Theme_PrimaryBrush}" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
 
         <Setter Property="Template">
             <Setter.Value>
@@ -232,6 +235,7 @@
                                            Background="{TemplateBinding Background}"
                                            BorderBrush="{TemplateBinding BorderBrush}"
                                            BorderThickness="{TemplateBinding BorderThickness}"
+                                           CornerRadius="{TemplateBinding CornerRadius}"
                                            Padding="{TemplateBinding Padding}"
                                            SelectionBackground="{TemplateBinding SelectionBackground}"
                                            Foreground="{TemplateBinding Foreground}"
@@ -605,6 +609,8 @@
 
     <!-- CalendarItem -->
     <Style TargetType="CalendarItem">
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CalendarItem">
@@ -641,10 +647,10 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="4" />
+                                CornerRadius="{TemplateBinding CornerRadius}" />
                         <Border>
                             <Border BorderThickness="2"
-                                    CornerRadius="3,3,3,3"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
                                     BorderBrush="{x:Null}">
                                 <Grid>
                                     <Grid.Resources>
@@ -766,13 +772,14 @@
            TargetType="controls:Calendar">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="6" />
         <Setter Property="Background" Value="{DynamicResource Theme_ControlBackgroundBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource Theme_TextBrush}" />
         <Setter Property="FontFamily" Value="&quot;Roboto&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="controls:Calendar">
-                    <Border HorizontalAlignment="Center" CornerRadius="6">
+                    <Border HorizontalAlignment="Center" CornerRadius="{TemplateBinding CornerRadius}">
                         <Border.Effect>
                             <DropShadowEffect ShadowDepth="0"
                                               Color="{Binding ElementName=Background, Path=BorderBrush.(SolidColorBrush.Color)}"
@@ -782,6 +789,7 @@
                         <StackPanel HorizontalAlignment="Center" x:Name="Root">
                             <CalendarItem x:Name="CalendarItem"
                                           BorderThickness="{TemplateBinding BorderThickness}"
+                                          CornerRadius="{TemplateBinding CornerRadius}"
                                           BorderBrush="{TemplateBinding BorderBrush}"
                                           Background="{TemplateBinding Background}" />
                         </StackPanel>

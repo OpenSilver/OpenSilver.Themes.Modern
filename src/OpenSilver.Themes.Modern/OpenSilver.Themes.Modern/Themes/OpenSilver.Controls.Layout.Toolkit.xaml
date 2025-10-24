@@ -25,6 +25,8 @@
                 Value="Arrow" />
         <Setter Property="BorderThickness"
                 Value="1" />
+        <Setter Property="CornerRadius"
+                Value="4" />
         <Setter Property="Padding"
                 Value="0" />
         <Setter Property="Margin"
@@ -66,7 +68,7 @@
                                 Padding="{TemplateBinding Padding}"
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
-                                CornerRadius="4">
+                                CornerRadius="{TemplateBinding CornerRadius}">
                             <ScrollViewer IsTabStop="False"
                                           HorizontalScrollBarVisibility="Disabled"
                                           VerticalScrollBarVisibility="Disabled"
@@ -89,6 +91,8 @@
     <!--AccordionButton-->
     <Style TargetType="layoutPrimitivesToolkit:AccordionButton">
         <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="CornerRadius"
                 Value="0" />
         <Setter Property="BorderBrush"
                 Value="{DynamicResource Theme_BorderBrush}" />
@@ -419,14 +423,16 @@
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
                         <Border x:Name="background"
-                                Background="{TemplateBinding Background}">
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="{TemplateBinding CornerRadius}" >
                             <Grid>
                                 <Border x:Name="ButtonBackground"
                                         Height="Auto"
                                         Margin="0,0,0,0"
                                         VerticalAlignment="Stretch"
                                         Opacity="0.2"
-                                        Background="{DynamicResource Theme_BorderBrush}" />
+                                        Background="{DynamicResource Theme_BorderBrush}"
+                                        CornerRadius="{Binding CornerRadius, RelativeSource={RelativeSource AncestorType=Accordion}}" />
                                 <Grid Background="Transparent">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition x:Name="cd0"
