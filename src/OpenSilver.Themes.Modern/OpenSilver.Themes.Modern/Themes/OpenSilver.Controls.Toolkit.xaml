@@ -119,13 +119,13 @@
             <Setter.Value>
                 <Style TargetType="ProgressBar">
                     <Setter Property="IsIndeterminate"
-                            Value="True" />
+                            Value="{Binding IsBusy, RelativeSource={RelativeSource TemplatedParent}}" />
                     <Setter Property="IsTabStop"
                             Value="False" />
                     <Setter Property="Height"
                             Value="10" />
                     <Setter Property="Margin"
-                            Value="8,0,8,8" />
+                            Value="12,0,15,12" />
                     <Setter Property="CornerRadius"
                             Value="2" />
                 </Style>
@@ -236,9 +236,6 @@
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <ProgressBar Grid.Row="1"
-                                                     IsIndeterminate="True"
-                                                     Height="10"
-                                                     Margin="12,0,15,12"
                                                      Style="{TemplateBinding ProgressBarStyle}" />
                                         <ContentPresenter ContentTemplate="{TemplateBinding BusyContentTemplate}"
                                                           Content="{TemplateBinding BusyContent}"
