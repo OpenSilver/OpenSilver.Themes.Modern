@@ -1970,6 +1970,11 @@
                 Value="4" />
         <Setter Property="VerticalScrollBarVisibility"
                 Value="Auto" />
+        <!-- Transparent (rather than null) so that empty areas remain hit-testable,
+             enabling mouse-wheel and touch scrolling over the whole surface.
+             Set Background to {x:Null} to opt out of this behavior. -->
+        <Setter Property="Background"
+                Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollViewer">
