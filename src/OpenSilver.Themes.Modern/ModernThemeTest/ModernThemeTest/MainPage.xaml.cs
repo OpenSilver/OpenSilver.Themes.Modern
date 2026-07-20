@@ -249,8 +249,10 @@ namespace ModernThemeTest
         public string FirstName { get; set; }
         [DisplayName("Last name")]
         public string LastName { get; set; }
+        [Display(Description = "Age")]
         public int Age { get; set; }
         [DisplayName("Is VIP?")]
+        [Display(Description = "VIP")]
         public bool IsVIP { get; set; }
 
         public Person(string firstName, string lastName, int age, bool isVIP)
