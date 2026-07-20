@@ -33,5 +33,13 @@ namespace ModernThemeTest.Pages
             Canvas.SetLeft(thumb, left);
             Canvas.SetTop(thumb, top);
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is MenuItem menuItem)
+            {
+                MenuOutputTextBlock.Text = $"Clicked: {menuItem.Header}";
+            }
+        }
     }
 }

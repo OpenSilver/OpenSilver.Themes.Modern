@@ -3379,97 +3379,609 @@
     <Style TargetType="ContextMenu"
            BasedOn="{StaticResource FlatContextMenuStyle}"/>
 
-    <!--  MenuItem  -->
-    <Style x:Key="FlatMenuItemStyle"
-        TargetType="MenuItem">
+    <!--  Menu  -->
+    <Style x:Key="FlatMenuStyle"
+           TargetType="Menu">
         <Setter Property="Background"
-                Value="Transparent" />
+                Value="{DynamicResource Theme_ContainerBackgroundBrush}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="BorderThickness"
+                Value="0" />
         <Setter Property="BorderBrush"
                 Value="Transparent" />
-        <Setter Property="CornerRadius"
-                Value="4" />
         <Setter Property="Padding"
-                Value="4,3,2,3" />
+                Value="0" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="MenuItem">
-                    <Grid>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="Disabled">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="Presenter"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="0.5" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                            <VisualStateGroup x:Name="FocusStates">
-                                <VisualState x:Name="Unfocused" />
-                                <VisualState x:Name="Focused">
-                                    <Storyboard>
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="Bg"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="1" />
-                                        <DoubleAnimation Duration="0"
-                                                         Storyboard.TargetName="InnerBorder"
-                                                         Storyboard.TargetProperty="Opacity"
-                                                         To="0.25" />
-                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
-                                                                       Storyboard.TargetProperty="(TextElement.Foreground)">
-                                            <DiscreteObjectKeyFrame KeyTime="0"
-                                                                    Value="{DynamicResource Theme_TextOnPrimaryBrush}"/>
-                                        </ObjectAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <Border CornerRadius="2"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="1" />
-                        <Border x:Name="Bg"
-                                CornerRadius="{TemplateBinding CornerRadius}"
-                                BorderBrush="Transparent"
-                                Background="{DynamicResource Theme_PrimaryBrush}"
-                                BorderThickness="1"
-                                Opacity="0">
-                        </Border>
-                        <Border x:Name="InnerBorder"
-                                CornerRadius="{TemplateBinding CornerRadius}"
-                                Opacity="0"
-                                BorderBrush="{DynamicResource Theme_BorderBrush}"
-                                BorderThickness="1"
-                                Margin="1" />
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"
-                                                  MinWidth="24" />
-                                <ColumnDefinition Width="4" />
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="17" />
-                            </Grid.ColumnDefinitions>
-                            <ContentPresenter Content="{TemplateBinding Icon}"
-                                              Margin="1"
-                                              VerticalAlignment="Center" />
-
-                            <ContentPresenter x:Name="Presenter"
-                                              Content="{TemplateBinding Header}"
-                                              ContentTemplate="{TemplateBinding HeaderTemplate}"
-                                              Margin="{TemplateBinding Padding}"
-                                              Grid.Column="2" />
-
-                        </Grid>
-                    </Grid>
+                <ControlTemplate TargetType="Menu">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}">
+                        <ItemsPresenter />
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+    <Style TargetType="Menu"
+           BasedOn="{StaticResource FlatMenuStyle}" />
+
+    <!--  MenuItem  -->
+    <ControlTemplate x:Key="FlatMenuItemTopLevelItemTemplate"
+                     TargetType="MenuItem">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Presenter"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Bg"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="1" />
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="InnerBorder"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.25" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
+                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border CornerRadius="2"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1" />
+            <Border x:Name="Bg"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    BorderBrush="Transparent"
+                    Background="{DynamicResource Theme_PrimaryBrush}"
+                    BorderThickness="1"
+                    Opacity="0" />
+            <Border x:Name="InnerBorder"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Opacity="0"
+                    BorderBrush="{DynamicResource Theme_BorderBrush}"
+                    BorderThickness="1"
+                    Margin="1" />
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Icon"
+                                  Content="{TemplateBinding Icon}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Width="16"
+                                  Height="16"
+                                  Margin="3" />
+                <Border x:Name="GlyphPanel"
+                        Width="16"
+                        Height="16"
+                        Margin="3"
+                        Visibility="Collapsed"
+                        VerticalAlignment="Center">
+                    <Path x:Name="Glyph"
+                          Data="F1 M 10.0,1.2 L 4.7,9.1 L 4.5,9.1 L 0,5.2 L 1.3,3.5 L 4.3,6.1L 8.3,0 L 10.0,1.2 Z"
+                          FlowDirection="LeftToRight"
+                          Fill="{DynamicResource Theme_PrimaryBrush}"
+                          VerticalAlignment="Center"
+                          HorizontalAlignment="Center" />
+                </Border>
+                <ContentPresenter x:Name="Presenter"
+                                  Grid.Column="1"
+                                  VerticalAlignment="Center"
+                                  RecognizesAccessKey="True"
+                                  Content="{TemplateBinding Header}"
+                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                  Margin="{TemplateBinding Padding}" />
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon"
+                     Value="{x:Null}">
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsChecked"
+                     Value="True">
+                <Setter TargetName="GlyphPanel"
+                        Property="Visibility"
+                        Value="Visible" />
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="FlatMenuItemTopLevelHeaderTemplate"
+                     TargetType="MenuItem">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Presenter"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Bg"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="1" />
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="InnerBorder"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.25" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
+                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border CornerRadius="2"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1" />
+            <Border x:Name="Bg"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    BorderBrush="Transparent"
+                    Background="{DynamicResource Theme_PrimaryBrush}"
+                    BorderThickness="1"
+                    Opacity="0" />
+            <Border x:Name="InnerBorder"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Opacity="0"
+                    BorderBrush="{DynamicResource Theme_BorderBrush}"
+                    BorderThickness="1"
+                    Margin="1" />
+            <Grid VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Icon"
+                                  Content="{TemplateBinding Icon}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Width="16"
+                                  Height="16"
+                                  Margin="3" />
+                <ContentPresenter x:Name="Presenter"
+                                  Grid.Column="1"
+                                  VerticalAlignment="Center"
+                                  RecognizesAccessKey="True"
+                                  Content="{TemplateBinding Header}"
+                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                  Margin="{TemplateBinding Padding}" />
+            </Grid>
+            <Popup x:Name="PART_Popup"
+                   Placement="Bottom"
+                   StayOpen="False"
+                   StaysWithinScreenBounds="True"
+                   IsOpen="{TemplateBinding IsSubmenuOpen}">
+                <Border x:Name="SubmenuBorder"
+                        Background="{DynamicResource Theme_BackgroundBrush}"
+                        BorderBrush="{DynamicResource Theme_BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                          Color="{Binding ElementName=SubmenuBorder, Path=BorderBrush.(SolidColorBrush.Color)}"
+                                          Opacity="1"
+                                          BlurRadius="2" />
+                    </Border.Effect>
+                    <Grid>
+                        <Border CornerRadius="4"
+                                Background="{DynamicResource Theme_BackgroundBrush}"
+                                Opacity="0.7"
+                                Width="28"
+                                Margin="2"
+                                HorizontalAlignment="Left" />
+                        <Border CornerRadius="4"
+                                Background="{DynamicResource Theme_BackgroundBrush}"
+                                Opacity="0.9"
+                                Width="1"
+                                Margin="30,2,0,2"
+                                HorizontalAlignment="Left" />
+                        <Border CornerRadius="4"
+                                Background="{DynamicResource Theme_BackgroundBrush}"
+                                Opacity="0.9"
+                                Width="1"
+                                Margin="31,2,0,2"
+                                HorizontalAlignment="Left" />
+                        <ItemsPresenter Margin="2" />
+                    </Grid>
+                </Border>
+            </Popup>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon"
+                     Value="{x:Null}">
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="FlatMenuItemSubmenuItemTemplate"
+                     TargetType="MenuItem">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Presenter"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Bg"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="1" />
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="InnerBorder"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.25" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
+                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InputGestureText"
+                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border CornerRadius="2"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1" />
+            <Border x:Name="Bg"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    BorderBrush="Transparent"
+                    Background="{DynamicResource Theme_PrimaryBrush}"
+                    BorderThickness="1"
+                    Opacity="0" />
+            <Border x:Name="InnerBorder"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Opacity="0"
+                    BorderBrush="{DynamicResource Theme_BorderBrush}"
+                    BorderThickness="1"
+                    Margin="1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"
+                                      MinWidth="24" />
+                    <ColumnDefinition Width="4" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Icon"
+                                  Content="{TemplateBinding Icon}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Width="16"
+                                  Height="16"
+                                  Margin="3" />
+                <Border x:Name="GlyphPanel"
+                        Visibility="Collapsed"
+                        Height="22"
+                        Width="22"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        BorderBrush="{DynamicResource Theme_BorderBrush}"
+                        Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                        BorderThickness="1"
+                        CornerRadius="3"
+                        Margin="-1,0,0,0">
+                    <Path x:Name="Glyph"
+                          Data="F1 M 10.0,1.2 L 4.7,9.1 L 4.5,9.1 L 0,5.2 L 1.3,3.5 L 4.3,6.1L 8.3,0 L 10.0,1.2 Z"
+                          FlowDirection="LeftToRight"
+                          Height="11"
+                          Width="10"
+                          Fill="{DynamicResource Theme_PrimaryBrush}" />
+                </Border>
+                <ContentPresenter x:Name="Presenter"
+                                  Grid.Column="2"
+                                  Content="{TemplateBinding Header}"
+                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                  Margin="{TemplateBinding Padding}"
+                                  RecognizesAccessKey="True"
+                                  HorizontalAlignment="Left"
+                                  VerticalAlignment="Center" />
+                <TextBlock x:Name="InputGestureText"
+                           Grid.Column="4"
+                           Text="{TemplateBinding InputGestureText}"
+                           Margin="{TemplateBinding Padding}"
+                           VerticalAlignment="Center"
+                           Opacity="0.7" />
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon"
+                     Value="{x:Null}">
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsChecked"
+                     Value="True">
+                <Setter TargetName="GlyphPanel"
+                        Property="Visibility"
+                        Value="Visible" />
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="FlatMenuItemSubmenuHeaderTemplate"
+                     TargetType="MenuItem">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Presenter"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.5" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Unfocused" />
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="Bg"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="1" />
+                            <DoubleAnimation Duration="0"
+                                             Storyboard.TargetName="InnerBorder"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.25" />
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Presenter"
+                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="InputGestureText"
+                                                           Storyboard.TargetProperty="(TextElement.Foreground)">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Arrow"
+                                                           Storyboard.TargetProperty="Fill">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{DynamicResource Theme_TextOnPrimaryBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Border CornerRadius="2"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1" />
+            <Border x:Name="Bg"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    BorderBrush="Transparent"
+                    Background="{DynamicResource Theme_PrimaryBrush}"
+                    BorderThickness="1"
+                    Opacity="0" />
+            <Border x:Name="InnerBorder"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Opacity="0"
+                    BorderBrush="{DynamicResource Theme_BorderBrush}"
+                    BorderThickness="1"
+                    Margin="1" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"
+                                      MinWidth="24" />
+                    <ColumnDefinition Width="4" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="30" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter x:Name="Icon"
+                                  Content="{TemplateBinding Icon}"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Center"
+                                  Width="16"
+                                  Height="16"
+                                  Margin="3" />
+                <Border x:Name="GlyphPanel"
+                        BorderThickness="1"
+                        Width="22"
+                        Height="22"
+                        Visibility="Collapsed"
+                        VerticalAlignment="Center"
+                        Margin="-1,0,0,0"
+                        BorderBrush="{DynamicResource Theme_BorderBrush}"
+                        Background="{DynamicResource Theme_ControlBackgroundBrush}"
+                        CornerRadius="3">
+                    <Path x:Name="Glyph"
+                          Data="F1 M 10.0,1.2 L 4.7,9.1 L 4.5,9.1 L 0,5.2 L 1.3,3.5 L 4.3,6.1L 8.3,0 L 10.0,1.2 Z"
+                          FlowDirection="LeftToRight"
+                          Height="11"
+                          Width="9"
+                          Fill="{DynamicResource Theme_PrimaryBrush}" />
+                </Border>
+                <ContentPresenter x:Name="Presenter"
+                                  Grid.Column="2"
+                                  Content="{TemplateBinding Header}"
+                                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                  Margin="{TemplateBinding Padding}"
+                                  RecognizesAccessKey="True" />
+                <TextBlock x:Name="InputGestureText"
+                           Grid.Column="4"
+                           Text="{TemplateBinding InputGestureText}"
+                           Margin="{TemplateBinding Padding}"
+                           VerticalAlignment="Center"
+                           Opacity="0.7" />
+                <Path x:Name="Arrow"
+                      Grid.Column="5"
+                      Margin="4,0,6,0"
+                      VerticalAlignment="Center"
+                      Fill="{DynamicResource Theme_TextBrush}"
+                      Data="M 0 0 L 4 3.5 L 0 7 Z" />
+            </Grid>
+            <Popup x:Name="PART_Popup"
+                   Placement="Right"
+                   StayOpen="True"
+                   StaysWithinScreenBounds="True"
+                   IsOpen="{TemplateBinding IsSubmenuOpen}">
+                <Border x:Name="SubmenuBorder"
+                        Background="{DynamicResource Theme_BackgroundBrush}"
+                        BorderBrush="{DynamicResource Theme_BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="4">
+                    <Border.Effect>
+                        <DropShadowEffect ShadowDepth="0"
+                                          Color="{Binding ElementName=SubmenuBorder, Path=BorderBrush.(SolidColorBrush.Color)}"
+                                          Opacity="1"
+                                          BlurRadius="2" />
+                    </Border.Effect>
+                    <Grid>
+                        <Border CornerRadius="4"
+                                Background="{DynamicResource Theme_BackgroundBrush}"
+                                Opacity="0.7"
+                                Width="28"
+                                Margin="2"
+                                HorizontalAlignment="Left" />
+                        <Border CornerRadius="4"
+                                Background="{DynamicResource Theme_BackgroundBrush}"
+                                Opacity="0.9"
+                                Width="1"
+                                Margin="30,2,0,2"
+                                HorizontalAlignment="Left" />
+                        <Border CornerRadius="4"
+                                Background="{DynamicResource Theme_BackgroundBrush}"
+                                Opacity="0.9"
+                                Width="1"
+                                Margin="31,2,0,2"
+                                HorizontalAlignment="Left" />
+                        <ItemsPresenter Margin="2" />
+                    </Grid>
+                </Border>
+            </Popup>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="Icon"
+                     Value="{x:Null}">
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsChecked"
+                     Value="True">
+                <Setter TargetName="GlyphPanel"
+                        Property="Visibility"
+                        Value="Visible" />
+                <Setter TargetName="Icon"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="FlatMenuItemStyle"
+           TargetType="MenuItem">
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderBrush"
+                Value="Transparent" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Theme_TextBrush}" />
+        <Setter Property="CornerRadius"
+                Value="4" />
+        <Setter Property="Padding"
+                Value="4,3,2,3" />
+        <Setter Property="Template"
+                Value="{StaticResource FlatMenuItemSubmenuItemTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="Role"
+                     Value="TopLevelHeader">
+                <Setter Property="Template"
+                        Value="{StaticResource FlatMenuItemTopLevelHeaderTemplate}" />
+                <Setter Property="Padding"
+                        Value="6,3" />
+            </Trigger>
+            <Trigger Property="Role"
+                     Value="TopLevelItem">
+                <Setter Property="Template"
+                        Value="{StaticResource FlatMenuItemTopLevelItemTemplate}" />
+                <Setter Property="Padding"
+                        Value="6,3" />
+            </Trigger>
+            <Trigger Property="Role"
+                     Value="SubmenuHeader">
+                <Setter Property="Template"
+                        Value="{StaticResource FlatMenuItemSubmenuHeaderTemplate}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <Style TargetType="MenuItem"
-           BasedOn="{StaticResource FlatMenuItemStyle}"/>
+           BasedOn="{StaticResource FlatMenuItemStyle}" />
 
     <!--  Separator  -->
     <Style x:Key="FlatSeparatorStyle"

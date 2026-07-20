@@ -13,10 +13,38 @@
     
     
     <Canvas Background="Transparent" Height="2500">
-        <TextBlock Canvas.Left="53" Canvas.Top="11" Text="Textblock" FontSize="13"/>
+        <TextBlock x:Name="MenuOutputTextBlock" Canvas.Left="53" Canvas.Top="11" Text="Textblock" FontSize="13"/>
         <HyperlinkButton Canvas.Left="150" Canvas.Top="11" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" />
         <HyperlinkButton Canvas.Left="250" Canvas.Top="11" Content="OpenSilver.net" NavigateUri="https://opensilver.net/" TargetName="_blank" IsEnabled="False"/>
 
+        <Menu Canvas.Left="53" Canvas.Top="30">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New">
+                    <MenuItem Header="Project..." InputGestureText="Ctrl+Shift+N" Click="MenuItem_Click"/>
+                    <MenuItem Header="File..." InputGestureText="Ctrl+N" Click="MenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Open" InputGestureText="Ctrl+O" Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Viewbox Width="16" Height="16">
+                            <Path Data="M 3,1 L 11,1 L 14,4 L 14,15 L 3,15 Z M 11,1 L 11,4 L 14,4" Fill="#FF212121"/>
+                        </Viewbox>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="E_xit" InputGestureText="Alt+F4" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut" InputGestureText="Ctrl+X" Click="MenuItem_Click"/>
+                <MenuItem Header="_Copy" InputGestureText="Ctrl+C" Click="MenuItem_Click"/>
+                <MenuItem Header="_Paste">
+                    <MenuItem Header="Paste" InputGestureText="Ctrl+V" Click="MenuItem_Click"/>
+                    <MenuItem Header="Paste Special..." Click="MenuItem_Click"/>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="About" Click="MenuItem_Click"/>
+            </MenuItem>
+        </Menu>
 
         <Button Canvas.Left="53" Canvas.Top="53" Content="Button" FontSize="13" Padding="12,7"/>
         <!--<Button Canvas.Left="150" Canvas.Top="54" Content="Button" FontSize="13" Padding="12,7" Style="{StaticResource ClearFlatButtonStyle}"/>-->
