@@ -905,32 +905,36 @@
                                 <VisualState x:Name="Unfocused Selected"/>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
-                        <Grid x:Name="SubRoot">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="*" />
-                            </Grid.ColumnDefinitions>
-
-                            <DataGridRowHeader Grid.RowSpan="3"
+                        <!-- RowHeader and CellsPresenter must be direct children of this grid.
+                             DataGridRow compensates horizontal scrolling only on frozen direct children.
+                             A wrapper grid drops that compensation and cells scroll twice as far as the headers. -->
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="SubRoot"
+                              Grid.RowSpan="3"
+                              Grid.ColumnSpan="2"
+                              IsHitTestVisible="False" />
+                        <DataGridRowHeader Grid.RowSpan="3"
                                            x:Name="RowHeader" SeparatorVisibility="Visible"
                                            DataGridFrozenGrid.IsFrozen="True" />
-                            <DataGridCellsPresenter Grid.Column="1"
+                        <DataGridCellsPresenter Grid.Column="1"
                                                 x:Name="CellsPresenter"
                                                 DataGridFrozenGrid.IsFrozen="True" />
-                            <DataGridDetailsPresenter Grid.Row="1"
+                        <DataGridDetailsPresenter Grid.Row="1"
                                                   Grid.Column="1"
                                                   Margin="0,1,0,0"
                                                   x:Name="DetailsPresenter" />
-                            <Rectangle Grid.Row="2"
+                        <Rectangle Grid.Row="2"
                                    Grid.Column="1"
                                    x:Name="BottomGridLine"
                                    Height="1" />
-                        </Grid>
                     </DataGridFrozenGrid>
                 </ControlTemplate>
             </Setter.Value>

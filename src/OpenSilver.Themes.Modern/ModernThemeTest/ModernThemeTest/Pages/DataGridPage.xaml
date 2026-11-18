@@ -14,7 +14,8 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding PagedProducts}" GridLinesVisibility="All" HeadersVisibility="All" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid ItemsSource="{Binding PagedProducts}" GridLinesVisibility="All" HeadersVisibility="All" RowDetailsVisibilityMode="VisibleWhenSelected"
+                  MaxWidth="500" MaxHeight="400">
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
                     <Grid Background="Transparent">
